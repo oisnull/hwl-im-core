@@ -28,6 +28,14 @@ public enum ImMessageType
    * <code>HeartBeat = 4;</code>
    */
   HeartBeat(4),
+  /**
+   * <code>AddFriend = 5;</code>
+   */
+  AddFriend(5),
+  /**
+   * <code>ConfirmFriend = 6;</code>
+   */
+  ConfirmFriend(6),
   UNRECOGNIZED(-1),
   ;
 
@@ -51,6 +59,14 @@ public enum ImMessageType
    * <code>HeartBeat = 4;</code>
    */
   public static final int HeartBeat_VALUE = 4;
+  /**
+   * <code>AddFriend = 5;</code>
+   */
+  public static final int AddFriend_VALUE = 5;
+  /**
+   * <code>ConfirmFriend = 6;</code>
+   */
+  public static final int ConfirmFriend_VALUE = 6;
 
 
   public final int getNumber() {
@@ -76,6 +92,8 @@ public enum ImMessageType
       case 2: return ChatUser;
       case 3: return ChatGroup;
       case 4: return HeartBeat;
+      case 5: return AddFriend;
+      case 6: return ConfirmFriend;
       default: return null;
     }
   }

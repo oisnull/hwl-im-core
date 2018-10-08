@@ -72,5 +72,31 @@ public interface ImMessageRequestOrBuilder extends
    */
   com.hwl.im.improto.ImHeartBeatMessageRequestOrBuilder getHeartBeatMessageRequestOrBuilder();
 
+  /**
+   * <code>.ImAddFriendRequestMessageRequest addFriendRequestMessageRequest = 6;</code>
+   */
+  boolean hasAddFriendRequestMessageRequest();
+  /**
+   * <code>.ImAddFriendRequestMessageRequest addFriendRequestMessageRequest = 6;</code>
+   */
+  com.hwl.im.improto.ImAddFriendRequestMessageRequest getAddFriendRequestMessageRequest();
+  /**
+   * <code>.ImAddFriendRequestMessageRequest addFriendRequestMessageRequest = 6;</code>
+   */
+  com.hwl.im.improto.ImAddFriendRequestMessageRequestOrBuilder getAddFriendRequestMessageRequestOrBuilder();
+
+  /**
+   * <code>.ImConfirmFriendRequestMessageRequest confirmFriendRequestMessageRequest = 7;</code>
+   */
+  boolean hasConfirmFriendRequestMessageRequest();
+  /**
+   * <code>.ImConfirmFriendRequestMessageRequest confirmFriendRequestMessageRequest = 7;</code>
+   */
+  com.hwl.im.improto.ImConfirmFriendRequestMessageRequest getConfirmFriendRequestMessageRequest();
+  /**
+   * <code>.ImConfirmFriendRequestMessageRequest confirmFriendRequestMessageRequest = 7;</code>
+   */
+  com.hwl.im.improto.ImConfirmFriendRequestMessageRequestOrBuilder getConfirmFriendRequestMessageRequestOrBuilder();
+
   public com.hwl.im.improto.ImMessageRequest.RequestBodyCase getRequestBodyCase();
 }

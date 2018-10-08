@@ -1,11 +1,5 @@
 syntax = "proto3";
-//protoc --java_out=src/main/java src/main/java/com/hwl/im/com.hwl.im.protocol/im_message.proto
-
-//git subtree add --prefix=directory repository master --squash 
-//--squash参数表示不拉取历史信息
-//git subtree pull --prefix=directory repository master --squash
-//git subtree push --prefix=directory repository master
-
+//protoc --java_out=src/main/java src/main/java/com/hwl/im/protocol/im_message.proto
 option csharp_namespace = "IMCore.Protocol";
 option java_multiple_files = true;
 option java_package = "com.hwl.im.improto";
@@ -16,20 +10,22 @@ enum ImMessageType {
     ChatUser = 2;
     ChatGroup = 3;
     HeartBeat = 4;
+    AddFriend = 5;
+    ConfirmFriend = 6;
 }
 
 enum ImMessageResponseCode {
     Other = 0;
     Success = 100;
     Failed = 200;
-    SessionidInvalid=201;
+    SessionidInvalid = 201;
 }
 
-enum ImMessageSourcePosition{
-    None=0;
-    RealTime=1;
-    Offline=2;
-    Retry=3;
+enum ImMessageSourcePosition {
+    None = 0;
+    RealTime = 1;
+    Offline = 2;
+    Retry = 3;
 }
 
 message ImMessageContext {
@@ -47,6 +43,8 @@ message ImMessageRequest {
         ImChatUserMessageRequest chatUserMessageRequest = 3;
         ImChatGroupMessageRequest chatGroupMessageRequest = 4;
         ImHeartBeatMessageRequest heartBeatMessageRequest = 5;
+        ImAddFriendRequestMessageRequest addFriendRequestMessageRequest = 6;
+        ImConfirmFriendRequestMessageRequest confirmFriendRequestMessageRequest = 7;
     }
 }
 
@@ -94,7 +92,7 @@ message ImChatUserMessageResponse {
     uint64 buildTime = 2;
 }
 
-message ImChatUserMessageContent{
+message ImChatUserMessageContent {
     uint64 fromUserId = 1;
     string fromUserName = 2;
     string fromUserImage = 3;
@@ -117,7 +115,7 @@ message ImChatGroupMessageResponse {
     uint64 buildTime = 2;
 }
 
-message ImChatGroupMessageContent{
+message ImChatGroupMessageContent {
     uint64 fromUserId = 1;
     string fromUserName = 2;
     string fromUserImage = 3;
@@ -133,4 +131,23 @@ message ImChatGroupMessageContent{
 
 message ImHeartBeatMessageRequest {
     uint64 currentTime = 1;
+}
+
+message ImAddFriendRequestMessageRequest {
+    uint64 fromUserId = 1;
+    string fromUserName = 2;
+    string fromUserHeadImage = 3;
+    uint64 toUserId = 4;
+    string toUserName = 5;
+}
+
+message ImConfirmFriendRequestMessageRequest {
+    uint64 fromUserId = 1;
+    string fromUserSymbol = 2;
+    string fromUserName = 3;
+    string fromUserHeadImage = 4;
+    uint64 toUserId = 5;
+    uint32 contentType = 6;
+    string content = 7;
+    uint64 sendTime = 8;
 }

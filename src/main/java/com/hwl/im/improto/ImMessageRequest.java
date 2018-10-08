@@ -118,6 +118,34 @@ private static final long serialVersionUID = 0L;
             requestBodyCase_ = 5;
             break;
           }
+          case 50: {
+            com.hwl.im.improto.ImAddFriendRequestMessageRequest.Builder subBuilder = null;
+            if (requestBodyCase_ == 6) {
+              subBuilder = ((com.hwl.im.improto.ImAddFriendRequestMessageRequest) requestBody_).toBuilder();
+            }
+            requestBody_ =
+                input.readMessage(com.hwl.im.improto.ImAddFriendRequestMessageRequest.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.hwl.im.improto.ImAddFriendRequestMessageRequest) requestBody_);
+              requestBody_ = subBuilder.buildPartial();
+            }
+            requestBodyCase_ = 6;
+            break;
+          }
+          case 58: {
+            com.hwl.im.improto.ImConfirmFriendRequestMessageRequest.Builder subBuilder = null;
+            if (requestBodyCase_ == 7) {
+              subBuilder = ((com.hwl.im.improto.ImConfirmFriendRequestMessageRequest) requestBody_).toBuilder();
+            }
+            requestBody_ =
+                input.readMessage(com.hwl.im.improto.ImConfirmFriendRequestMessageRequest.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.hwl.im.improto.ImConfirmFriendRequestMessageRequest) requestBody_);
+              requestBody_ = subBuilder.buildPartial();
+            }
+            requestBodyCase_ = 7;
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -150,6 +178,8 @@ private static final long serialVersionUID = 0L;
     CHATUSERMESSAGEREQUEST(3),
     CHATGROUPMESSAGEREQUEST(4),
     HEARTBEATMESSAGEREQUEST(5),
+    ADDFRIENDREQUESTMESSAGEREQUEST(6),
+    CONFIRMFRIENDREQUESTMESSAGEREQUEST(7),
     REQUESTBODY_NOT_SET(0);
     private final int value;
     private RequestBodyCase(int value) {
@@ -169,6 +199,8 @@ private static final long serialVersionUID = 0L;
         case 3: return CHATUSERMESSAGEREQUEST;
         case 4: return CHATGROUPMESSAGEREQUEST;
         case 5: return HEARTBEATMESSAGEREQUEST;
+        case 6: return ADDFRIENDREQUESTMESSAGEREQUEST;
+        case 7: return CONFIRMFRIENDREQUESTMESSAGEREQUEST;
         case 0: return REQUESTBODY_NOT_SET;
         default: return null;
       }
@@ -309,6 +341,58 @@ private static final long serialVersionUID = 0L;
     return com.hwl.im.improto.ImHeartBeatMessageRequest.getDefaultInstance();
   }
 
+  public static final int ADDFRIENDREQUESTMESSAGEREQUEST_FIELD_NUMBER = 6;
+  /**
+   * <code>.ImAddFriendRequestMessageRequest addFriendRequestMessageRequest = 6;</code>
+   */
+  public boolean hasAddFriendRequestMessageRequest() {
+    return requestBodyCase_ == 6;
+  }
+  /**
+   * <code>.ImAddFriendRequestMessageRequest addFriendRequestMessageRequest = 6;</code>
+   */
+  public com.hwl.im.improto.ImAddFriendRequestMessageRequest getAddFriendRequestMessageRequest() {
+    if (requestBodyCase_ == 6) {
+       return (com.hwl.im.improto.ImAddFriendRequestMessageRequest) requestBody_;
+    }
+    return com.hwl.im.improto.ImAddFriendRequestMessageRequest.getDefaultInstance();
+  }
+  /**
+   * <code>.ImAddFriendRequestMessageRequest addFriendRequestMessageRequest = 6;</code>
+   */
+  public com.hwl.im.improto.ImAddFriendRequestMessageRequestOrBuilder getAddFriendRequestMessageRequestOrBuilder() {
+    if (requestBodyCase_ == 6) {
+       return (com.hwl.im.improto.ImAddFriendRequestMessageRequest) requestBody_;
+    }
+    return com.hwl.im.improto.ImAddFriendRequestMessageRequest.getDefaultInstance();
+  }
+
+  public static final int CONFIRMFRIENDREQUESTMESSAGEREQUEST_FIELD_NUMBER = 7;
+  /**
+   * <code>.ImConfirmFriendRequestMessageRequest confirmFriendRequestMessageRequest = 7;</code>
+   */
+  public boolean hasConfirmFriendRequestMessageRequest() {
+    return requestBodyCase_ == 7;
+  }
+  /**
+   * <code>.ImConfirmFriendRequestMessageRequest confirmFriendRequestMessageRequest = 7;</code>
+   */
+  public com.hwl.im.improto.ImConfirmFriendRequestMessageRequest getConfirmFriendRequestMessageRequest() {
+    if (requestBodyCase_ == 7) {
+       return (com.hwl.im.improto.ImConfirmFriendRequestMessageRequest) requestBody_;
+    }
+    return com.hwl.im.improto.ImConfirmFriendRequestMessageRequest.getDefaultInstance();
+  }
+  /**
+   * <code>.ImConfirmFriendRequestMessageRequest confirmFriendRequestMessageRequest = 7;</code>
+   */
+  public com.hwl.im.improto.ImConfirmFriendRequestMessageRequestOrBuilder getConfirmFriendRequestMessageRequestOrBuilder() {
+    if (requestBodyCase_ == 7) {
+       return (com.hwl.im.improto.ImConfirmFriendRequestMessageRequest) requestBody_;
+    }
+    return com.hwl.im.improto.ImConfirmFriendRequestMessageRequest.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -335,6 +419,12 @@ private static final long serialVersionUID = 0L;
     }
     if (requestBodyCase_ == 5) {
       output.writeMessage(5, (com.hwl.im.improto.ImHeartBeatMessageRequest) requestBody_);
+    }
+    if (requestBodyCase_ == 6) {
+      output.writeMessage(6, (com.hwl.im.improto.ImAddFriendRequestMessageRequest) requestBody_);
+    }
+    if (requestBodyCase_ == 7) {
+      output.writeMessage(7, (com.hwl.im.improto.ImConfirmFriendRequestMessageRequest) requestBody_);
     }
     unknownFields.writeTo(output);
   }
@@ -363,6 +453,14 @@ private static final long serialVersionUID = 0L;
     if (requestBodyCase_ == 5) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, (com.hwl.im.improto.ImHeartBeatMessageRequest) requestBody_);
+    }
+    if (requestBodyCase_ == 6) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, (com.hwl.im.improto.ImAddFriendRequestMessageRequest) requestBody_);
+    }
+    if (requestBodyCase_ == 7) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, (com.hwl.im.improto.ImConfirmFriendRequestMessageRequest) requestBody_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -405,6 +503,14 @@ private static final long serialVersionUID = 0L;
         result = result && getHeartBeatMessageRequest()
             .equals(other.getHeartBeatMessageRequest());
         break;
+      case 6:
+        result = result && getAddFriendRequestMessageRequest()
+            .equals(other.getAddFriendRequestMessageRequest());
+        break;
+      case 7:
+        result = result && getConfirmFriendRequestMessageRequest()
+            .equals(other.getConfirmFriendRequestMessageRequest());
+        break;
       case 0:
       default:
     }
@@ -439,6 +545,14 @@ private static final long serialVersionUID = 0L;
       case 5:
         hash = (37 * hash) + HEARTBEATMESSAGEREQUEST_FIELD_NUMBER;
         hash = (53 * hash) + getHeartBeatMessageRequest().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + ADDFRIENDREQUESTMESSAGEREQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getAddFriendRequestMessageRequest().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + CONFIRMFRIENDREQUESTMESSAGEREQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getConfirmFriendRequestMessageRequest().hashCode();
         break;
       case 0:
       default:
@@ -635,6 +749,20 @@ private static final long serialVersionUID = 0L;
           result.requestBody_ = heartBeatMessageRequestBuilder_.build();
         }
       }
+      if (requestBodyCase_ == 6) {
+        if (addFriendRequestMessageRequestBuilder_ == null) {
+          result.requestBody_ = requestBody_;
+        } else {
+          result.requestBody_ = addFriendRequestMessageRequestBuilder_.build();
+        }
+      }
+      if (requestBodyCase_ == 7) {
+        if (confirmFriendRequestMessageRequestBuilder_ == null) {
+          result.requestBody_ = requestBody_;
+        } else {
+          result.requestBody_ = confirmFriendRequestMessageRequestBuilder_.build();
+        }
+      }
       result.requestBodyCase_ = requestBodyCase_;
       onBuilt();
       return result;
@@ -695,6 +823,14 @@ private static final long serialVersionUID = 0L;
         }
         case HEARTBEATMESSAGEREQUEST: {
           mergeHeartBeatMessageRequest(other.getHeartBeatMessageRequest());
+          break;
+        }
+        case ADDFRIENDREQUESTMESSAGEREQUEST: {
+          mergeAddFriendRequestMessageRequest(other.getAddFriendRequestMessageRequest());
+          break;
+        }
+        case CONFIRMFRIENDREQUESTMESSAGEREQUEST: {
+          mergeConfirmFriendRequestMessageRequest(other.getConfirmFriendRequestMessageRequest());
           break;
         }
         case REQUESTBODY_NOT_SET: {
@@ -1402,6 +1538,278 @@ private static final long serialVersionUID = 0L;
       requestBodyCase_ = 5;
       onChanged();;
       return heartBeatMessageRequestBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.hwl.im.improto.ImAddFriendRequestMessageRequest, com.hwl.im.improto.ImAddFriendRequestMessageRequest.Builder, com.hwl.im.improto.ImAddFriendRequestMessageRequestOrBuilder> addFriendRequestMessageRequestBuilder_;
+    /**
+     * <code>.ImAddFriendRequestMessageRequest addFriendRequestMessageRequest = 6;</code>
+     */
+    public boolean hasAddFriendRequestMessageRequest() {
+      return requestBodyCase_ == 6;
+    }
+    /**
+     * <code>.ImAddFriendRequestMessageRequest addFriendRequestMessageRequest = 6;</code>
+     */
+    public com.hwl.im.improto.ImAddFriendRequestMessageRequest getAddFriendRequestMessageRequest() {
+      if (addFriendRequestMessageRequestBuilder_ == null) {
+        if (requestBodyCase_ == 6) {
+          return (com.hwl.im.improto.ImAddFriendRequestMessageRequest) requestBody_;
+        }
+        return com.hwl.im.improto.ImAddFriendRequestMessageRequest.getDefaultInstance();
+      } else {
+        if (requestBodyCase_ == 6) {
+          return addFriendRequestMessageRequestBuilder_.getMessage();
+        }
+        return com.hwl.im.improto.ImAddFriendRequestMessageRequest.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.ImAddFriendRequestMessageRequest addFriendRequestMessageRequest = 6;</code>
+     */
+    public Builder setAddFriendRequestMessageRequest(com.hwl.im.improto.ImAddFriendRequestMessageRequest value) {
+      if (addFriendRequestMessageRequestBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        requestBody_ = value;
+        onChanged();
+      } else {
+        addFriendRequestMessageRequestBuilder_.setMessage(value);
+      }
+      requestBodyCase_ = 6;
+      return this;
+    }
+    /**
+     * <code>.ImAddFriendRequestMessageRequest addFriendRequestMessageRequest = 6;</code>
+     */
+    public Builder setAddFriendRequestMessageRequest(
+        com.hwl.im.improto.ImAddFriendRequestMessageRequest.Builder builderForValue) {
+      if (addFriendRequestMessageRequestBuilder_ == null) {
+        requestBody_ = builderForValue.build();
+        onChanged();
+      } else {
+        addFriendRequestMessageRequestBuilder_.setMessage(builderForValue.build());
+      }
+      requestBodyCase_ = 6;
+      return this;
+    }
+    /**
+     * <code>.ImAddFriendRequestMessageRequest addFriendRequestMessageRequest = 6;</code>
+     */
+    public Builder mergeAddFriendRequestMessageRequest(com.hwl.im.improto.ImAddFriendRequestMessageRequest value) {
+      if (addFriendRequestMessageRequestBuilder_ == null) {
+        if (requestBodyCase_ == 6 &&
+            requestBody_ != com.hwl.im.improto.ImAddFriendRequestMessageRequest.getDefaultInstance()) {
+          requestBody_ = com.hwl.im.improto.ImAddFriendRequestMessageRequest.newBuilder((com.hwl.im.improto.ImAddFriendRequestMessageRequest) requestBody_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          requestBody_ = value;
+        }
+        onChanged();
+      } else {
+        if (requestBodyCase_ == 6) {
+          addFriendRequestMessageRequestBuilder_.mergeFrom(value);
+        }
+        addFriendRequestMessageRequestBuilder_.setMessage(value);
+      }
+      requestBodyCase_ = 6;
+      return this;
+    }
+    /**
+     * <code>.ImAddFriendRequestMessageRequest addFriendRequestMessageRequest = 6;</code>
+     */
+    public Builder clearAddFriendRequestMessageRequest() {
+      if (addFriendRequestMessageRequestBuilder_ == null) {
+        if (requestBodyCase_ == 6) {
+          requestBodyCase_ = 0;
+          requestBody_ = null;
+          onChanged();
+        }
+      } else {
+        if (requestBodyCase_ == 6) {
+          requestBodyCase_ = 0;
+          requestBody_ = null;
+        }
+        addFriendRequestMessageRequestBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.ImAddFriendRequestMessageRequest addFriendRequestMessageRequest = 6;</code>
+     */
+    public com.hwl.im.improto.ImAddFriendRequestMessageRequest.Builder getAddFriendRequestMessageRequestBuilder() {
+      return getAddFriendRequestMessageRequestFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.ImAddFriendRequestMessageRequest addFriendRequestMessageRequest = 6;</code>
+     */
+    public com.hwl.im.improto.ImAddFriendRequestMessageRequestOrBuilder getAddFriendRequestMessageRequestOrBuilder() {
+      if ((requestBodyCase_ == 6) && (addFriendRequestMessageRequestBuilder_ != null)) {
+        return addFriendRequestMessageRequestBuilder_.getMessageOrBuilder();
+      } else {
+        if (requestBodyCase_ == 6) {
+          return (com.hwl.im.improto.ImAddFriendRequestMessageRequest) requestBody_;
+        }
+        return com.hwl.im.improto.ImAddFriendRequestMessageRequest.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.ImAddFriendRequestMessageRequest addFriendRequestMessageRequest = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.hwl.im.improto.ImAddFriendRequestMessageRequest, com.hwl.im.improto.ImAddFriendRequestMessageRequest.Builder, com.hwl.im.improto.ImAddFriendRequestMessageRequestOrBuilder> 
+        getAddFriendRequestMessageRequestFieldBuilder() {
+      if (addFriendRequestMessageRequestBuilder_ == null) {
+        if (!(requestBodyCase_ == 6)) {
+          requestBody_ = com.hwl.im.improto.ImAddFriendRequestMessageRequest.getDefaultInstance();
+        }
+        addFriendRequestMessageRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.hwl.im.improto.ImAddFriendRequestMessageRequest, com.hwl.im.improto.ImAddFriendRequestMessageRequest.Builder, com.hwl.im.improto.ImAddFriendRequestMessageRequestOrBuilder>(
+                (com.hwl.im.improto.ImAddFriendRequestMessageRequest) requestBody_,
+                getParentForChildren(),
+                isClean());
+        requestBody_ = null;
+      }
+      requestBodyCase_ = 6;
+      onChanged();;
+      return addFriendRequestMessageRequestBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.hwl.im.improto.ImConfirmFriendRequestMessageRequest, com.hwl.im.improto.ImConfirmFriendRequestMessageRequest.Builder, com.hwl.im.improto.ImConfirmFriendRequestMessageRequestOrBuilder> confirmFriendRequestMessageRequestBuilder_;
+    /**
+     * <code>.ImConfirmFriendRequestMessageRequest confirmFriendRequestMessageRequest = 7;</code>
+     */
+    public boolean hasConfirmFriendRequestMessageRequest() {
+      return requestBodyCase_ == 7;
+    }
+    /**
+     * <code>.ImConfirmFriendRequestMessageRequest confirmFriendRequestMessageRequest = 7;</code>
+     */
+    public com.hwl.im.improto.ImConfirmFriendRequestMessageRequest getConfirmFriendRequestMessageRequest() {
+      if (confirmFriendRequestMessageRequestBuilder_ == null) {
+        if (requestBodyCase_ == 7) {
+          return (com.hwl.im.improto.ImConfirmFriendRequestMessageRequest) requestBody_;
+        }
+        return com.hwl.im.improto.ImConfirmFriendRequestMessageRequest.getDefaultInstance();
+      } else {
+        if (requestBodyCase_ == 7) {
+          return confirmFriendRequestMessageRequestBuilder_.getMessage();
+        }
+        return com.hwl.im.improto.ImConfirmFriendRequestMessageRequest.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.ImConfirmFriendRequestMessageRequest confirmFriendRequestMessageRequest = 7;</code>
+     */
+    public Builder setConfirmFriendRequestMessageRequest(com.hwl.im.improto.ImConfirmFriendRequestMessageRequest value) {
+      if (confirmFriendRequestMessageRequestBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        requestBody_ = value;
+        onChanged();
+      } else {
+        confirmFriendRequestMessageRequestBuilder_.setMessage(value);
+      }
+      requestBodyCase_ = 7;
+      return this;
+    }
+    /**
+     * <code>.ImConfirmFriendRequestMessageRequest confirmFriendRequestMessageRequest = 7;</code>
+     */
+    public Builder setConfirmFriendRequestMessageRequest(
+        com.hwl.im.improto.ImConfirmFriendRequestMessageRequest.Builder builderForValue) {
+      if (confirmFriendRequestMessageRequestBuilder_ == null) {
+        requestBody_ = builderForValue.build();
+        onChanged();
+      } else {
+        confirmFriendRequestMessageRequestBuilder_.setMessage(builderForValue.build());
+      }
+      requestBodyCase_ = 7;
+      return this;
+    }
+    /**
+     * <code>.ImConfirmFriendRequestMessageRequest confirmFriendRequestMessageRequest = 7;</code>
+     */
+    public Builder mergeConfirmFriendRequestMessageRequest(com.hwl.im.improto.ImConfirmFriendRequestMessageRequest value) {
+      if (confirmFriendRequestMessageRequestBuilder_ == null) {
+        if (requestBodyCase_ == 7 &&
+            requestBody_ != com.hwl.im.improto.ImConfirmFriendRequestMessageRequest.getDefaultInstance()) {
+          requestBody_ = com.hwl.im.improto.ImConfirmFriendRequestMessageRequest.newBuilder((com.hwl.im.improto.ImConfirmFriendRequestMessageRequest) requestBody_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          requestBody_ = value;
+        }
+        onChanged();
+      } else {
+        if (requestBodyCase_ == 7) {
+          confirmFriendRequestMessageRequestBuilder_.mergeFrom(value);
+        }
+        confirmFriendRequestMessageRequestBuilder_.setMessage(value);
+      }
+      requestBodyCase_ = 7;
+      return this;
+    }
+    /**
+     * <code>.ImConfirmFriendRequestMessageRequest confirmFriendRequestMessageRequest = 7;</code>
+     */
+    public Builder clearConfirmFriendRequestMessageRequest() {
+      if (confirmFriendRequestMessageRequestBuilder_ == null) {
+        if (requestBodyCase_ == 7) {
+          requestBodyCase_ = 0;
+          requestBody_ = null;
+          onChanged();
+        }
+      } else {
+        if (requestBodyCase_ == 7) {
+          requestBodyCase_ = 0;
+          requestBody_ = null;
+        }
+        confirmFriendRequestMessageRequestBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.ImConfirmFriendRequestMessageRequest confirmFriendRequestMessageRequest = 7;</code>
+     */
+    public com.hwl.im.improto.ImConfirmFriendRequestMessageRequest.Builder getConfirmFriendRequestMessageRequestBuilder() {
+      return getConfirmFriendRequestMessageRequestFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.ImConfirmFriendRequestMessageRequest confirmFriendRequestMessageRequest = 7;</code>
+     */
+    public com.hwl.im.improto.ImConfirmFriendRequestMessageRequestOrBuilder getConfirmFriendRequestMessageRequestOrBuilder() {
+      if ((requestBodyCase_ == 7) && (confirmFriendRequestMessageRequestBuilder_ != null)) {
+        return confirmFriendRequestMessageRequestBuilder_.getMessageOrBuilder();
+      } else {
+        if (requestBodyCase_ == 7) {
+          return (com.hwl.im.improto.ImConfirmFriendRequestMessageRequest) requestBody_;
+        }
+        return com.hwl.im.improto.ImConfirmFriendRequestMessageRequest.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.ImConfirmFriendRequestMessageRequest confirmFriendRequestMessageRequest = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.hwl.im.improto.ImConfirmFriendRequestMessageRequest, com.hwl.im.improto.ImConfirmFriendRequestMessageRequest.Builder, com.hwl.im.improto.ImConfirmFriendRequestMessageRequestOrBuilder> 
+        getConfirmFriendRequestMessageRequestFieldBuilder() {
+      if (confirmFriendRequestMessageRequestBuilder_ == null) {
+        if (!(requestBodyCase_ == 7)) {
+          requestBody_ = com.hwl.im.improto.ImConfirmFriendRequestMessageRequest.getDefaultInstance();
+        }
+        confirmFriendRequestMessageRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.hwl.im.improto.ImConfirmFriendRequestMessageRequest, com.hwl.im.improto.ImConfirmFriendRequestMessageRequest.Builder, com.hwl.im.improto.ImConfirmFriendRequestMessageRequestOrBuilder>(
+                (com.hwl.im.improto.ImConfirmFriendRequestMessageRequest) requestBody_,
+                getParentForChildren(),
+                isClean());
+        requestBody_ = null;
+      }
+      requestBodyCase_ = 7;
+      onChanged();;
+      return confirmFriendRequestMessageRequestBuilder_;
     }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
