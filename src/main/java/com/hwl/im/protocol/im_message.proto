@@ -43,8 +43,8 @@ message ImMessageRequest {
         ImChatUserMessageRequest chatUserMessageRequest = 3;
         ImChatGroupMessageRequest chatGroupMessageRequest = 4;
         ImHeartBeatMessageRequest heartBeatMessageRequest = 5;
-        ImAddFriendRequestMessageRequest addFriendRequestMessageRequest = 6;
-        ImConfirmFriendRequestMessageRequest confirmFriendRequestMessageRequest = 7;
+        ImAddFriendMessageRequest addFriendMessageRequest = 6;
+        ImConfirmFriendMessageRequest confirmFriendMessageRequest = 7;
     }
 }
 
@@ -54,6 +54,7 @@ message ImMessageResponse {
         ImUserValidateResponse userValidateResponse = 2;
         ImChatUserMessageResponse chatUserMessageResponse = 3;
         ImChatGroupMessageResponse chatGroupMessageResponse = 4;
+        ImAddFriendMessageResponse addFriendMessageResponse = 5;
     }
 }
 
@@ -133,15 +134,24 @@ message ImHeartBeatMessageRequest {
     uint64 currentTime = 1;
 }
 
-message ImAddFriendRequestMessageRequest {
+message ImAddFriendMessageRequest {
+    ImAddFriendMessageContent addFriendMessageContent = 1;
+}
+
+message ImAddFriendMessageResponse {
+    ImAddFriendMessageContent addFriendMessageContent = 1;
+    uint64 buildTime = 2;
+}
+
+message ImAddFriendMessageContent {
     uint64 fromUserId = 1;
     string fromUserName = 2;
     string fromUserHeadImage = 3;
     uint64 toUserId = 4;
-    string toUserName = 5;
+    string content = 6;
 }
 
-message ImConfirmFriendRequestMessageRequest {
+message ImConfirmFriendMessageRequest {
     uint64 fromUserId = 1;
     string fromUserSymbol = 2;
     string fromUserName = 3;

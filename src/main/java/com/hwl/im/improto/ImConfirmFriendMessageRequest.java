@@ -4,18 +4,18 @@
 package com.hwl.im.improto;
 
 /**
- * Protobuf type {@code ImConfirmFriendRequestMessageRequest}
+ * Protobuf type {@code ImConfirmFriendMessageRequest}
  */
-public  final class ImConfirmFriendRequestMessageRequest extends
+public  final class ImConfirmFriendMessageRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:ImConfirmFriendRequestMessageRequest)
-    ImConfirmFriendRequestMessageRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:ImConfirmFriendMessageRequest)
+    ImConfirmFriendMessageRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use ImConfirmFriendRequestMessageRequest.newBuilder() to construct.
-  private ImConfirmFriendRequestMessageRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ImConfirmFriendMessageRequest.newBuilder() to construct.
+  private ImConfirmFriendMessageRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ImConfirmFriendRequestMessageRequest() {
+  private ImConfirmFriendMessageRequest() {
     fromUserId_ = 0L;
     fromUserSymbol_ = "";
     fromUserName_ = "";
@@ -31,7 +31,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private ImConfirmFriendRequestMessageRequest(
+  private ImConfirmFriendMessageRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -115,14 +115,14 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.hwl.im.improto.ImMessage.internal_static_ImConfirmFriendRequestMessageRequest_descriptor;
+    return com.hwl.im.improto.ImMessage.internal_static_ImConfirmFriendMessageRequest_descriptor;
   }
 
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.hwl.im.improto.ImMessage.internal_static_ImConfirmFriendRequestMessageRequest_fieldAccessorTable
+    return com.hwl.im.improto.ImMessage.internal_static_ImConfirmFriendMessageRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.hwl.im.improto.ImConfirmFriendRequestMessageRequest.class, com.hwl.im.improto.ImConfirmFriendRequestMessageRequest.Builder.class);
+            com.hwl.im.improto.ImConfirmFriendMessageRequest.class, com.hwl.im.improto.ImConfirmFriendMessageRequest.Builder.class);
   }
 
   public static final int FROMUSERID_FIELD_NUMBER = 1;
@@ -379,10 +379,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.hwl.im.improto.ImConfirmFriendRequestMessageRequest)) {
+    if (!(obj instanceof com.hwl.im.improto.ImConfirmFriendMessageRequest)) {
       return super.equals(obj);
     }
-    com.hwl.im.improto.ImConfirmFriendRequestMessageRequest other = (com.hwl.im.improto.ImConfirmFriendRequestMessageRequest) obj;
+    com.hwl.im.improto.ImConfirmFriendMessageRequest other = (com.hwl.im.improto.ImConfirmFriendMessageRequest) obj;
 
     boolean result = true;
     result = result && (getFromUserId()
@@ -436,69 +436,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.hwl.im.improto.ImConfirmFriendRequestMessageRequest parseFrom(
+  public static com.hwl.im.improto.ImConfirmFriendMessageRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hwl.im.improto.ImConfirmFriendRequestMessageRequest parseFrom(
+  public static com.hwl.im.improto.ImConfirmFriendMessageRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hwl.im.improto.ImConfirmFriendRequestMessageRequest parseFrom(
+  public static com.hwl.im.improto.ImConfirmFriendMessageRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hwl.im.improto.ImConfirmFriendRequestMessageRequest parseFrom(
+  public static com.hwl.im.improto.ImConfirmFriendMessageRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hwl.im.improto.ImConfirmFriendRequestMessageRequest parseFrom(byte[] data)
+  public static com.hwl.im.improto.ImConfirmFriendMessageRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hwl.im.improto.ImConfirmFriendRequestMessageRequest parseFrom(
+  public static com.hwl.im.improto.ImConfirmFriendMessageRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hwl.im.improto.ImConfirmFriendRequestMessageRequest parseFrom(java.io.InputStream input)
+  public static com.hwl.im.improto.ImConfirmFriendMessageRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.hwl.im.improto.ImConfirmFriendRequestMessageRequest parseFrom(
+  public static com.hwl.im.improto.ImConfirmFriendMessageRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.hwl.im.improto.ImConfirmFriendRequestMessageRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.hwl.im.improto.ImConfirmFriendMessageRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.hwl.im.improto.ImConfirmFriendRequestMessageRequest parseDelimitedFrom(
+  public static com.hwl.im.improto.ImConfirmFriendMessageRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.hwl.im.improto.ImConfirmFriendRequestMessageRequest parseFrom(
+  public static com.hwl.im.improto.ImConfirmFriendMessageRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.hwl.im.improto.ImConfirmFriendRequestMessageRequest parseFrom(
+  public static com.hwl.im.improto.ImConfirmFriendMessageRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -510,7 +510,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.hwl.im.improto.ImConfirmFriendRequestMessageRequest prototype) {
+  public static Builder newBuilder(com.hwl.im.improto.ImConfirmFriendMessageRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   public Builder toBuilder() {
@@ -525,25 +525,25 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code ImConfirmFriendRequestMessageRequest}
+   * Protobuf type {@code ImConfirmFriendMessageRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:ImConfirmFriendRequestMessageRequest)
-      com.hwl.im.improto.ImConfirmFriendRequestMessageRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:ImConfirmFriendMessageRequest)
+      com.hwl.im.improto.ImConfirmFriendMessageRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.hwl.im.improto.ImMessage.internal_static_ImConfirmFriendRequestMessageRequest_descriptor;
+      return com.hwl.im.improto.ImMessage.internal_static_ImConfirmFriendMessageRequest_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.hwl.im.improto.ImMessage.internal_static_ImConfirmFriendRequestMessageRequest_fieldAccessorTable
+      return com.hwl.im.improto.ImMessage.internal_static_ImConfirmFriendMessageRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.hwl.im.improto.ImConfirmFriendRequestMessageRequest.class, com.hwl.im.improto.ImConfirmFriendRequestMessageRequest.Builder.class);
+              com.hwl.im.improto.ImConfirmFriendMessageRequest.class, com.hwl.im.improto.ImConfirmFriendMessageRequest.Builder.class);
     }
 
-    // Construct using com.hwl.im.improto.ImConfirmFriendRequestMessageRequest.newBuilder()
+    // Construct using com.hwl.im.improto.ImConfirmFriendMessageRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -581,23 +581,23 @@ private static final long serialVersionUID = 0L;
 
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.hwl.im.improto.ImMessage.internal_static_ImConfirmFriendRequestMessageRequest_descriptor;
+      return com.hwl.im.improto.ImMessage.internal_static_ImConfirmFriendMessageRequest_descriptor;
     }
 
-    public com.hwl.im.improto.ImConfirmFriendRequestMessageRequest getDefaultInstanceForType() {
-      return com.hwl.im.improto.ImConfirmFriendRequestMessageRequest.getDefaultInstance();
+    public com.hwl.im.improto.ImConfirmFriendMessageRequest getDefaultInstanceForType() {
+      return com.hwl.im.improto.ImConfirmFriendMessageRequest.getDefaultInstance();
     }
 
-    public com.hwl.im.improto.ImConfirmFriendRequestMessageRequest build() {
-      com.hwl.im.improto.ImConfirmFriendRequestMessageRequest result = buildPartial();
+    public com.hwl.im.improto.ImConfirmFriendMessageRequest build() {
+      com.hwl.im.improto.ImConfirmFriendMessageRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public com.hwl.im.improto.ImConfirmFriendRequestMessageRequest buildPartial() {
-      com.hwl.im.improto.ImConfirmFriendRequestMessageRequest result = new com.hwl.im.improto.ImConfirmFriendRequestMessageRequest(this);
+    public com.hwl.im.improto.ImConfirmFriendMessageRequest buildPartial() {
+      com.hwl.im.improto.ImConfirmFriendMessageRequest result = new com.hwl.im.improto.ImConfirmFriendMessageRequest(this);
       result.fromUserId_ = fromUserId_;
       result.fromUserSymbol_ = fromUserSymbol_;
       result.fromUserName_ = fromUserName_;
@@ -637,16 +637,16 @@ private static final long serialVersionUID = 0L;
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.hwl.im.improto.ImConfirmFriendRequestMessageRequest) {
-        return mergeFrom((com.hwl.im.improto.ImConfirmFriendRequestMessageRequest)other);
+      if (other instanceof com.hwl.im.improto.ImConfirmFriendMessageRequest) {
+        return mergeFrom((com.hwl.im.improto.ImConfirmFriendMessageRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.hwl.im.improto.ImConfirmFriendRequestMessageRequest other) {
-      if (other == com.hwl.im.improto.ImConfirmFriendRequestMessageRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.hwl.im.improto.ImConfirmFriendMessageRequest other) {
+      if (other == com.hwl.im.improto.ImConfirmFriendMessageRequest.getDefaultInstance()) return this;
       if (other.getFromUserId() != 0L) {
         setFromUserId(other.getFromUserId());
       }
@@ -688,11 +688,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.hwl.im.improto.ImConfirmFriendRequestMessageRequest parsedMessage = null;
+      com.hwl.im.improto.ImConfirmFriendMessageRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.hwl.im.improto.ImConfirmFriendRequestMessageRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.hwl.im.improto.ImConfirmFriendMessageRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -1092,39 +1092,39 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:ImConfirmFriendRequestMessageRequest)
+    // @@protoc_insertion_point(builder_scope:ImConfirmFriendMessageRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:ImConfirmFriendRequestMessageRequest)
-  private static final com.hwl.im.improto.ImConfirmFriendRequestMessageRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:ImConfirmFriendMessageRequest)
+  private static final com.hwl.im.improto.ImConfirmFriendMessageRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.hwl.im.improto.ImConfirmFriendRequestMessageRequest();
+    DEFAULT_INSTANCE = new com.hwl.im.improto.ImConfirmFriendMessageRequest();
   }
 
-  public static com.hwl.im.improto.ImConfirmFriendRequestMessageRequest getDefaultInstance() {
+  public static com.hwl.im.improto.ImConfirmFriendMessageRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ImConfirmFriendRequestMessageRequest>
-      PARSER = new com.google.protobuf.AbstractParser<ImConfirmFriendRequestMessageRequest>() {
-    public ImConfirmFriendRequestMessageRequest parsePartialFrom(
+  private static final com.google.protobuf.Parser<ImConfirmFriendMessageRequest>
+      PARSER = new com.google.protobuf.AbstractParser<ImConfirmFriendMessageRequest>() {
+    public ImConfirmFriendMessageRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ImConfirmFriendRequestMessageRequest(input, extensionRegistry);
+      return new ImConfirmFriendMessageRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<ImConfirmFriendRequestMessageRequest> parser() {
+  public static com.google.protobuf.Parser<ImConfirmFriendMessageRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ImConfirmFriendRequestMessageRequest> getParserForType() {
+  public com.google.protobuf.Parser<ImConfirmFriendMessageRequest> getParserForType() {
     return PARSER;
   }
 
-  public com.hwl.im.improto.ImConfirmFriendRequestMessageRequest getDefaultInstanceForType() {
+  public com.hwl.im.improto.ImConfirmFriendMessageRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

@@ -59,5 +59,18 @@ public interface ImMessageResponseOrBuilder extends
    */
   com.hwl.im.improto.ImChatGroupMessageResponseOrBuilder getChatGroupMessageResponseOrBuilder();
 
+  /**
+   * <code>.ImAddFriendMessageResponse addFriendMessageResponse = 5;</code>
+   */
+  boolean hasAddFriendMessageResponse();
+  /**
+   * <code>.ImAddFriendMessageResponse addFriendMessageResponse = 5;</code>
+   */
+  com.hwl.im.improto.ImAddFriendMessageResponse getAddFriendMessageResponse();
+  /**
+   * <code>.ImAddFriendMessageResponse addFriendMessageResponse = 5;</code>
+   */
+  com.hwl.im.improto.ImAddFriendMessageResponseOrBuilder getAddFriendMessageResponseOrBuilder();
+
   public com.hwl.im.improto.ImMessageResponse.ResponseBodyCase getResponseBodyCase();
 }

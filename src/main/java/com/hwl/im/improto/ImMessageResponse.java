@@ -104,6 +104,20 @@ private static final long serialVersionUID = 0L;
             responseBodyCase_ = 4;
             break;
           }
+          case 42: {
+            com.hwl.im.improto.ImAddFriendMessageResponse.Builder subBuilder = null;
+            if (responseBodyCase_ == 5) {
+              subBuilder = ((com.hwl.im.improto.ImAddFriendMessageResponse) responseBody_).toBuilder();
+            }
+            responseBody_ =
+                input.readMessage(com.hwl.im.improto.ImAddFriendMessageResponse.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.hwl.im.improto.ImAddFriendMessageResponse) responseBody_);
+              responseBody_ = subBuilder.buildPartial();
+            }
+            responseBodyCase_ = 5;
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -135,6 +149,7 @@ private static final long serialVersionUID = 0L;
     USERVALIDATERESPONSE(2),
     CHATUSERMESSAGERESPONSE(3),
     CHATGROUPMESSAGERESPONSE(4),
+    ADDFRIENDMESSAGERESPONSE(5),
     RESPONSEBODY_NOT_SET(0);
     private final int value;
     private ResponseBodyCase(int value) {
@@ -153,6 +168,7 @@ private static final long serialVersionUID = 0L;
         case 2: return USERVALIDATERESPONSE;
         case 3: return CHATUSERMESSAGERESPONSE;
         case 4: return CHATGROUPMESSAGERESPONSE;
+        case 5: return ADDFRIENDMESSAGERESPONSE;
         case 0: return RESPONSEBODY_NOT_SET;
         default: return null;
       }
@@ -267,6 +283,32 @@ private static final long serialVersionUID = 0L;
     return com.hwl.im.improto.ImChatGroupMessageResponse.getDefaultInstance();
   }
 
+  public static final int ADDFRIENDMESSAGERESPONSE_FIELD_NUMBER = 5;
+  /**
+   * <code>.ImAddFriendMessageResponse addFriendMessageResponse = 5;</code>
+   */
+  public boolean hasAddFriendMessageResponse() {
+    return responseBodyCase_ == 5;
+  }
+  /**
+   * <code>.ImAddFriendMessageResponse addFriendMessageResponse = 5;</code>
+   */
+  public com.hwl.im.improto.ImAddFriendMessageResponse getAddFriendMessageResponse() {
+    if (responseBodyCase_ == 5) {
+       return (com.hwl.im.improto.ImAddFriendMessageResponse) responseBody_;
+    }
+    return com.hwl.im.improto.ImAddFriendMessageResponse.getDefaultInstance();
+  }
+  /**
+   * <code>.ImAddFriendMessageResponse addFriendMessageResponse = 5;</code>
+   */
+  public com.hwl.im.improto.ImAddFriendMessageResponseOrBuilder getAddFriendMessageResponseOrBuilder() {
+    if (responseBodyCase_ == 5) {
+       return (com.hwl.im.improto.ImAddFriendMessageResponse) responseBody_;
+    }
+    return com.hwl.im.improto.ImAddFriendMessageResponse.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -291,6 +333,9 @@ private static final long serialVersionUID = 0L;
     if (responseBodyCase_ == 4) {
       output.writeMessage(4, (com.hwl.im.improto.ImChatGroupMessageResponse) responseBody_);
     }
+    if (responseBodyCase_ == 5) {
+      output.writeMessage(5, (com.hwl.im.improto.ImAddFriendMessageResponse) responseBody_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -314,6 +359,10 @@ private static final long serialVersionUID = 0L;
     if (responseBodyCase_ == 4) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, (com.hwl.im.improto.ImChatGroupMessageResponse) responseBody_);
+    }
+    if (responseBodyCase_ == 5) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(5, (com.hwl.im.improto.ImAddFriendMessageResponse) responseBody_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -352,6 +401,10 @@ private static final long serialVersionUID = 0L;
         result = result && getChatGroupMessageResponse()
             .equals(other.getChatGroupMessageResponse());
         break;
+      case 5:
+        result = result && getAddFriendMessageResponse()
+            .equals(other.getAddFriendMessageResponse());
+        break;
       case 0:
       default:
     }
@@ -382,6 +435,10 @@ private static final long serialVersionUID = 0L;
       case 4:
         hash = (37 * hash) + CHATGROUPMESSAGERESPONSE_FIELD_NUMBER;
         hash = (53 * hash) + getChatGroupMessageResponse().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + ADDFRIENDMESSAGERESPONSE_FIELD_NUMBER;
+        hash = (53 * hash) + getAddFriendMessageResponse().hashCode();
         break;
       case 0:
       default:
@@ -571,6 +628,13 @@ private static final long serialVersionUID = 0L;
           result.responseBody_ = chatGroupMessageResponseBuilder_.build();
         }
       }
+      if (responseBodyCase_ == 5) {
+        if (addFriendMessageResponseBuilder_ == null) {
+          result.responseBody_ = responseBody_;
+        } else {
+          result.responseBody_ = addFriendMessageResponseBuilder_.build();
+        }
+      }
       result.responseBodyCase_ = responseBodyCase_;
       onBuilt();
       return result;
@@ -627,6 +691,10 @@ private static final long serialVersionUID = 0L;
         }
         case CHATGROUPMESSAGERESPONSE: {
           mergeChatGroupMessageResponse(other.getChatGroupMessageResponse());
+          break;
+        }
+        case ADDFRIENDMESSAGERESPONSE: {
+          mergeAddFriendMessageResponse(other.getAddFriendMessageResponse());
           break;
         }
         case RESPONSEBODY_NOT_SET: {
@@ -1198,6 +1266,142 @@ private static final long serialVersionUID = 0L;
       responseBodyCase_ = 4;
       onChanged();;
       return chatGroupMessageResponseBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.hwl.im.improto.ImAddFriendMessageResponse, com.hwl.im.improto.ImAddFriendMessageResponse.Builder, com.hwl.im.improto.ImAddFriendMessageResponseOrBuilder> addFriendMessageResponseBuilder_;
+    /**
+     * <code>.ImAddFriendMessageResponse addFriendMessageResponse = 5;</code>
+     */
+    public boolean hasAddFriendMessageResponse() {
+      return responseBodyCase_ == 5;
+    }
+    /**
+     * <code>.ImAddFriendMessageResponse addFriendMessageResponse = 5;</code>
+     */
+    public com.hwl.im.improto.ImAddFriendMessageResponse getAddFriendMessageResponse() {
+      if (addFriendMessageResponseBuilder_ == null) {
+        if (responseBodyCase_ == 5) {
+          return (com.hwl.im.improto.ImAddFriendMessageResponse) responseBody_;
+        }
+        return com.hwl.im.improto.ImAddFriendMessageResponse.getDefaultInstance();
+      } else {
+        if (responseBodyCase_ == 5) {
+          return addFriendMessageResponseBuilder_.getMessage();
+        }
+        return com.hwl.im.improto.ImAddFriendMessageResponse.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.ImAddFriendMessageResponse addFriendMessageResponse = 5;</code>
+     */
+    public Builder setAddFriendMessageResponse(com.hwl.im.improto.ImAddFriendMessageResponse value) {
+      if (addFriendMessageResponseBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        responseBody_ = value;
+        onChanged();
+      } else {
+        addFriendMessageResponseBuilder_.setMessage(value);
+      }
+      responseBodyCase_ = 5;
+      return this;
+    }
+    /**
+     * <code>.ImAddFriendMessageResponse addFriendMessageResponse = 5;</code>
+     */
+    public Builder setAddFriendMessageResponse(
+        com.hwl.im.improto.ImAddFriendMessageResponse.Builder builderForValue) {
+      if (addFriendMessageResponseBuilder_ == null) {
+        responseBody_ = builderForValue.build();
+        onChanged();
+      } else {
+        addFriendMessageResponseBuilder_.setMessage(builderForValue.build());
+      }
+      responseBodyCase_ = 5;
+      return this;
+    }
+    /**
+     * <code>.ImAddFriendMessageResponse addFriendMessageResponse = 5;</code>
+     */
+    public Builder mergeAddFriendMessageResponse(com.hwl.im.improto.ImAddFriendMessageResponse value) {
+      if (addFriendMessageResponseBuilder_ == null) {
+        if (responseBodyCase_ == 5 &&
+            responseBody_ != com.hwl.im.improto.ImAddFriendMessageResponse.getDefaultInstance()) {
+          responseBody_ = com.hwl.im.improto.ImAddFriendMessageResponse.newBuilder((com.hwl.im.improto.ImAddFriendMessageResponse) responseBody_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          responseBody_ = value;
+        }
+        onChanged();
+      } else {
+        if (responseBodyCase_ == 5) {
+          addFriendMessageResponseBuilder_.mergeFrom(value);
+        }
+        addFriendMessageResponseBuilder_.setMessage(value);
+      }
+      responseBodyCase_ = 5;
+      return this;
+    }
+    /**
+     * <code>.ImAddFriendMessageResponse addFriendMessageResponse = 5;</code>
+     */
+    public Builder clearAddFriendMessageResponse() {
+      if (addFriendMessageResponseBuilder_ == null) {
+        if (responseBodyCase_ == 5) {
+          responseBodyCase_ = 0;
+          responseBody_ = null;
+          onChanged();
+        }
+      } else {
+        if (responseBodyCase_ == 5) {
+          responseBodyCase_ = 0;
+          responseBody_ = null;
+        }
+        addFriendMessageResponseBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.ImAddFriendMessageResponse addFriendMessageResponse = 5;</code>
+     */
+    public com.hwl.im.improto.ImAddFriendMessageResponse.Builder getAddFriendMessageResponseBuilder() {
+      return getAddFriendMessageResponseFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.ImAddFriendMessageResponse addFriendMessageResponse = 5;</code>
+     */
+    public com.hwl.im.improto.ImAddFriendMessageResponseOrBuilder getAddFriendMessageResponseOrBuilder() {
+      if ((responseBodyCase_ == 5) && (addFriendMessageResponseBuilder_ != null)) {
+        return addFriendMessageResponseBuilder_.getMessageOrBuilder();
+      } else {
+        if (responseBodyCase_ == 5) {
+          return (com.hwl.im.improto.ImAddFriendMessageResponse) responseBody_;
+        }
+        return com.hwl.im.improto.ImAddFriendMessageResponse.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.ImAddFriendMessageResponse addFriendMessageResponse = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.hwl.im.improto.ImAddFriendMessageResponse, com.hwl.im.improto.ImAddFriendMessageResponse.Builder, com.hwl.im.improto.ImAddFriendMessageResponseOrBuilder> 
+        getAddFriendMessageResponseFieldBuilder() {
+      if (addFriendMessageResponseBuilder_ == null) {
+        if (!(responseBodyCase_ == 5)) {
+          responseBody_ = com.hwl.im.improto.ImAddFriendMessageResponse.getDefaultInstance();
+        }
+        addFriendMessageResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.hwl.im.improto.ImAddFriendMessageResponse, com.hwl.im.improto.ImAddFriendMessageResponse.Builder, com.hwl.im.improto.ImAddFriendMessageResponseOrBuilder>(
+                (com.hwl.im.improto.ImAddFriendMessageResponse) responseBody_,
+                getParentForChildren(),
+                isClean());
+        responseBody_ = null;
+      }
+      responseBodyCase_ = 5;
+      onChanged();;
+      return addFriendMessageResponseBuilder_;
     }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {

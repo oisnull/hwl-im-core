@@ -4,23 +4,23 @@
 package com.hwl.im.improto;
 
 /**
- * Protobuf type {@code ImAddFriendRequestMessageRequest}
+ * Protobuf type {@code ImAddFriendMessageContent}
  */
-public  final class ImAddFriendRequestMessageRequest extends
+public  final class ImAddFriendMessageContent extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:ImAddFriendRequestMessageRequest)
-    ImAddFriendRequestMessageRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:ImAddFriendMessageContent)
+    ImAddFriendMessageContentOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use ImAddFriendRequestMessageRequest.newBuilder() to construct.
-  private ImAddFriendRequestMessageRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ImAddFriendMessageContent.newBuilder() to construct.
+  private ImAddFriendMessageContent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ImAddFriendRequestMessageRequest() {
+  private ImAddFriendMessageContent() {
     fromUserId_ = 0L;
     fromUserName_ = "";
     fromUserHeadImage_ = "";
     toUserId_ = 0L;
-    toUserName_ = "";
+    content_ = "";
   }
 
   @java.lang.Override
@@ -28,7 +28,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private ImAddFriendRequestMessageRequest(
+  private ImAddFriendMessageContent(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -76,10 +76,10 @@ private static final long serialVersionUID = 0L;
             toUserId_ = input.readUInt64();
             break;
           }
-          case 42: {
+          case 50: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            toUserName_ = s;
+            content_ = s;
             break;
           }
         }
@@ -96,14 +96,14 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.hwl.im.improto.ImMessage.internal_static_ImAddFriendRequestMessageRequest_descriptor;
+    return com.hwl.im.improto.ImMessage.internal_static_ImAddFriendMessageContent_descriptor;
   }
 
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.hwl.im.improto.ImMessage.internal_static_ImAddFriendRequestMessageRequest_fieldAccessorTable
+    return com.hwl.im.improto.ImMessage.internal_static_ImAddFriendMessageContent_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.hwl.im.improto.ImAddFriendRequestMessageRequest.class, com.hwl.im.improto.ImAddFriendRequestMessageRequest.Builder.class);
+            com.hwl.im.improto.ImAddFriendMessageContent.class, com.hwl.im.improto.ImAddFriendMessageContent.Builder.class);
   }
 
   public static final int FROMUSERID_FIELD_NUMBER = 1;
@@ -192,34 +192,34 @@ private static final long serialVersionUID = 0L;
     return toUserId_;
   }
 
-  public static final int TOUSERNAME_FIELD_NUMBER = 5;
-  private volatile java.lang.Object toUserName_;
+  public static final int CONTENT_FIELD_NUMBER = 6;
+  private volatile java.lang.Object content_;
   /**
-   * <code>string toUserName = 5;</code>
+   * <code>string content = 6;</code>
    */
-  public java.lang.String getToUserName() {
-    java.lang.Object ref = toUserName_;
+  public java.lang.String getContent() {
+    java.lang.Object ref = content_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      toUserName_ = s;
+      content_ = s;
       return s;
     }
   }
   /**
-   * <code>string toUserName = 5;</code>
+   * <code>string content = 6;</code>
    */
   public com.google.protobuf.ByteString
-      getToUserNameBytes() {
-    java.lang.Object ref = toUserName_;
+      getContentBytes() {
+    java.lang.Object ref = content_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      toUserName_ = b;
+      content_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -250,8 +250,8 @@ private static final long serialVersionUID = 0L;
     if (toUserId_ != 0L) {
       output.writeUInt64(4, toUserId_);
     }
-    if (!getToUserNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, toUserName_);
+    if (!getContentBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, content_);
     }
     unknownFields.writeTo(output);
   }
@@ -275,8 +275,8 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeUInt64Size(4, toUserId_);
     }
-    if (!getToUserNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, toUserName_);
+    if (!getContentBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, content_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -288,10 +288,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.hwl.im.improto.ImAddFriendRequestMessageRequest)) {
+    if (!(obj instanceof com.hwl.im.improto.ImAddFriendMessageContent)) {
       return super.equals(obj);
     }
-    com.hwl.im.improto.ImAddFriendRequestMessageRequest other = (com.hwl.im.improto.ImAddFriendRequestMessageRequest) obj;
+    com.hwl.im.improto.ImAddFriendMessageContent other = (com.hwl.im.improto.ImAddFriendMessageContent) obj;
 
     boolean result = true;
     result = result && (getFromUserId()
@@ -302,8 +302,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getFromUserHeadImage());
     result = result && (getToUserId()
         == other.getToUserId());
-    result = result && getToUserName()
-        .equals(other.getToUserName());
+    result = result && getContent()
+        .equals(other.getContent());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -325,76 +325,76 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + TOUSERID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getToUserId());
-    hash = (37 * hash) + TOUSERNAME_FIELD_NUMBER;
-    hash = (53 * hash) + getToUserName().hashCode();
+    hash = (37 * hash) + CONTENT_FIELD_NUMBER;
+    hash = (53 * hash) + getContent().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.hwl.im.improto.ImAddFriendRequestMessageRequest parseFrom(
+  public static com.hwl.im.improto.ImAddFriendMessageContent parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hwl.im.improto.ImAddFriendRequestMessageRequest parseFrom(
+  public static com.hwl.im.improto.ImAddFriendMessageContent parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hwl.im.improto.ImAddFriendRequestMessageRequest parseFrom(
+  public static com.hwl.im.improto.ImAddFriendMessageContent parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hwl.im.improto.ImAddFriendRequestMessageRequest parseFrom(
+  public static com.hwl.im.improto.ImAddFriendMessageContent parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hwl.im.improto.ImAddFriendRequestMessageRequest parseFrom(byte[] data)
+  public static com.hwl.im.improto.ImAddFriendMessageContent parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hwl.im.improto.ImAddFriendRequestMessageRequest parseFrom(
+  public static com.hwl.im.improto.ImAddFriendMessageContent parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hwl.im.improto.ImAddFriendRequestMessageRequest parseFrom(java.io.InputStream input)
+  public static com.hwl.im.improto.ImAddFriendMessageContent parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.hwl.im.improto.ImAddFriendRequestMessageRequest parseFrom(
+  public static com.hwl.im.improto.ImAddFriendMessageContent parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.hwl.im.improto.ImAddFriendRequestMessageRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.hwl.im.improto.ImAddFriendMessageContent parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.hwl.im.improto.ImAddFriendRequestMessageRequest parseDelimitedFrom(
+  public static com.hwl.im.improto.ImAddFriendMessageContent parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.hwl.im.improto.ImAddFriendRequestMessageRequest parseFrom(
+  public static com.hwl.im.improto.ImAddFriendMessageContent parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.hwl.im.improto.ImAddFriendRequestMessageRequest parseFrom(
+  public static com.hwl.im.improto.ImAddFriendMessageContent parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -406,7 +406,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.hwl.im.improto.ImAddFriendRequestMessageRequest prototype) {
+  public static Builder newBuilder(com.hwl.im.improto.ImAddFriendMessageContent prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   public Builder toBuilder() {
@@ -421,25 +421,25 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code ImAddFriendRequestMessageRequest}
+   * Protobuf type {@code ImAddFriendMessageContent}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:ImAddFriendRequestMessageRequest)
-      com.hwl.im.improto.ImAddFriendRequestMessageRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:ImAddFriendMessageContent)
+      com.hwl.im.improto.ImAddFriendMessageContentOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.hwl.im.improto.ImMessage.internal_static_ImAddFriendRequestMessageRequest_descriptor;
+      return com.hwl.im.improto.ImMessage.internal_static_ImAddFriendMessageContent_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.hwl.im.improto.ImMessage.internal_static_ImAddFriendRequestMessageRequest_fieldAccessorTable
+      return com.hwl.im.improto.ImMessage.internal_static_ImAddFriendMessageContent_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.hwl.im.improto.ImAddFriendRequestMessageRequest.class, com.hwl.im.improto.ImAddFriendRequestMessageRequest.Builder.class);
+              com.hwl.im.improto.ImAddFriendMessageContent.class, com.hwl.im.improto.ImAddFriendMessageContent.Builder.class);
     }
 
-    // Construct using com.hwl.im.improto.ImAddFriendRequestMessageRequest.newBuilder()
+    // Construct using com.hwl.im.improto.ImAddFriendMessageContent.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -464,35 +464,35 @@ private static final long serialVersionUID = 0L;
 
       toUserId_ = 0L;
 
-      toUserName_ = "";
+      content_ = "";
 
       return this;
     }
 
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.hwl.im.improto.ImMessage.internal_static_ImAddFriendRequestMessageRequest_descriptor;
+      return com.hwl.im.improto.ImMessage.internal_static_ImAddFriendMessageContent_descriptor;
     }
 
-    public com.hwl.im.improto.ImAddFriendRequestMessageRequest getDefaultInstanceForType() {
-      return com.hwl.im.improto.ImAddFriendRequestMessageRequest.getDefaultInstance();
+    public com.hwl.im.improto.ImAddFriendMessageContent getDefaultInstanceForType() {
+      return com.hwl.im.improto.ImAddFriendMessageContent.getDefaultInstance();
     }
 
-    public com.hwl.im.improto.ImAddFriendRequestMessageRequest build() {
-      com.hwl.im.improto.ImAddFriendRequestMessageRequest result = buildPartial();
+    public com.hwl.im.improto.ImAddFriendMessageContent build() {
+      com.hwl.im.improto.ImAddFriendMessageContent result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public com.hwl.im.improto.ImAddFriendRequestMessageRequest buildPartial() {
-      com.hwl.im.improto.ImAddFriendRequestMessageRequest result = new com.hwl.im.improto.ImAddFriendRequestMessageRequest(this);
+    public com.hwl.im.improto.ImAddFriendMessageContent buildPartial() {
+      com.hwl.im.improto.ImAddFriendMessageContent result = new com.hwl.im.improto.ImAddFriendMessageContent(this);
       result.fromUserId_ = fromUserId_;
       result.fromUserName_ = fromUserName_;
       result.fromUserHeadImage_ = fromUserHeadImage_;
       result.toUserId_ = toUserId_;
-      result.toUserName_ = toUserName_;
+      result.content_ = content_;
       onBuilt();
       return result;
     }
@@ -524,16 +524,16 @@ private static final long serialVersionUID = 0L;
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.hwl.im.improto.ImAddFriendRequestMessageRequest) {
-        return mergeFrom((com.hwl.im.improto.ImAddFriendRequestMessageRequest)other);
+      if (other instanceof com.hwl.im.improto.ImAddFriendMessageContent) {
+        return mergeFrom((com.hwl.im.improto.ImAddFriendMessageContent)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.hwl.im.improto.ImAddFriendRequestMessageRequest other) {
-      if (other == com.hwl.im.improto.ImAddFriendRequestMessageRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.hwl.im.improto.ImAddFriendMessageContent other) {
+      if (other == com.hwl.im.improto.ImAddFriendMessageContent.getDefaultInstance()) return this;
       if (other.getFromUserId() != 0L) {
         setFromUserId(other.getFromUserId());
       }
@@ -548,8 +548,8 @@ private static final long serialVersionUID = 0L;
       if (other.getToUserId() != 0L) {
         setToUserId(other.getToUserId());
       }
-      if (!other.getToUserName().isEmpty()) {
-        toUserName_ = other.toUserName_;
+      if (!other.getContent().isEmpty()) {
+        content_ = other.content_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -565,11 +565,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.hwl.im.improto.ImAddFriendRequestMessageRequest parsedMessage = null;
+      com.hwl.im.improto.ImAddFriendMessageContent parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.hwl.im.improto.ImAddFriendRequestMessageRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.hwl.im.improto.ImAddFriendMessageContent) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -769,71 +769,71 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object toUserName_ = "";
+    private java.lang.Object content_ = "";
     /**
-     * <code>string toUserName = 5;</code>
+     * <code>string content = 6;</code>
      */
-    public java.lang.String getToUserName() {
-      java.lang.Object ref = toUserName_;
+    public java.lang.String getContent() {
+      java.lang.Object ref = content_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        toUserName_ = s;
+        content_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string toUserName = 5;</code>
+     * <code>string content = 6;</code>
      */
     public com.google.protobuf.ByteString
-        getToUserNameBytes() {
-      java.lang.Object ref = toUserName_;
+        getContentBytes() {
+      java.lang.Object ref = content_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        toUserName_ = b;
+        content_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string toUserName = 5;</code>
+     * <code>string content = 6;</code>
      */
-    public Builder setToUserName(
+    public Builder setContent(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      toUserName_ = value;
+      content_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string toUserName = 5;</code>
+     * <code>string content = 6;</code>
      */
-    public Builder clearToUserName() {
+    public Builder clearContent() {
       
-      toUserName_ = getDefaultInstance().getToUserName();
+      content_ = getDefaultInstance().getContent();
       onChanged();
       return this;
     }
     /**
-     * <code>string toUserName = 5;</code>
+     * <code>string content = 6;</code>
      */
-    public Builder setToUserNameBytes(
+    public Builder setContentBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      toUserName_ = value;
+      content_ = value;
       onChanged();
       return this;
     }
@@ -848,39 +848,39 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:ImAddFriendRequestMessageRequest)
+    // @@protoc_insertion_point(builder_scope:ImAddFriendMessageContent)
   }
 
-  // @@protoc_insertion_point(class_scope:ImAddFriendRequestMessageRequest)
-  private static final com.hwl.im.improto.ImAddFriendRequestMessageRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:ImAddFriendMessageContent)
+  private static final com.hwl.im.improto.ImAddFriendMessageContent DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.hwl.im.improto.ImAddFriendRequestMessageRequest();
+    DEFAULT_INSTANCE = new com.hwl.im.improto.ImAddFriendMessageContent();
   }
 
-  public static com.hwl.im.improto.ImAddFriendRequestMessageRequest getDefaultInstance() {
+  public static com.hwl.im.improto.ImAddFriendMessageContent getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ImAddFriendRequestMessageRequest>
-      PARSER = new com.google.protobuf.AbstractParser<ImAddFriendRequestMessageRequest>() {
-    public ImAddFriendRequestMessageRequest parsePartialFrom(
+  private static final com.google.protobuf.Parser<ImAddFriendMessageContent>
+      PARSER = new com.google.protobuf.AbstractParser<ImAddFriendMessageContent>() {
+    public ImAddFriendMessageContent parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ImAddFriendRequestMessageRequest(input, extensionRegistry);
+      return new ImAddFriendMessageContent(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<ImAddFriendRequestMessageRequest> parser() {
+  public static com.google.protobuf.Parser<ImAddFriendMessageContent> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ImAddFriendRequestMessageRequest> getParserForType() {
+  public com.google.protobuf.Parser<ImAddFriendMessageContent> getParserForType() {
     return PARSER;
   }
 
-  public com.hwl.im.improto.ImAddFriendRequestMessageRequest getDefaultInstanceForType() {
+  public com.hwl.im.improto.ImAddFriendMessageContent getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 
