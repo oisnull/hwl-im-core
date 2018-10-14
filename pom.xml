@@ -7,7 +7,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <groupId>com.hwl.im</groupId>
+    <groupId>com.hwl.imcore</groupId>
     <artifactId>hwl-im-core</artifactId>
     <version>1.0</version>
 
@@ -58,7 +58,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>com.hwl.im.entry.IMEntry</mainClass>
+                            <mainClass>com.hwl.imcore.entry.IMEntry</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
