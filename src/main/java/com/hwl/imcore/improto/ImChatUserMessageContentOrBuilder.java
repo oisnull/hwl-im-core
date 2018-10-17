@@ -81,4 +81,9 @@ public interface ImChatUserMessageContentOrBuilder extends
    * <code>uint32 playTime = 11;</code>
    */
   int getPlayTime();
+
+  /**
+   * <code>bool isFriend = 12;</code>
+   */
+  boolean getIsFriend();
 }

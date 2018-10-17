@@ -105,6 +105,7 @@ message ImChatUserMessageContent {
     uint32 imageHeight = 9;
     uint32 size = 10;
     uint32 playTime = 11;
+    bool isFriend = 12;
 }
 
 message ImChatGroupMessageRequest {

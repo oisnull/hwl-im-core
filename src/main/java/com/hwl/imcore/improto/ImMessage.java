@@ -151,47 +151,48 @@ public final class ImMessage {
       "ent\030\001 \001(\0132\031.ImChatUserMessageContent\"i\n\031" +
       "ImChatUserMessageResponse\0229\n\026chatUserMes" +
       "sageContent\030\001 \001(\0132\031.ImChatUserMessageCon" +
-      "tent\022\021\n\tbuildTime\030\002 \001(\004\"\360\001\n\030ImChatUserMe" +
+      "tent\022\021\n\tbuildTime\030\002 \001(\004\"\202\002\n\030ImChatUserMe" +
       "ssageContent\022\022\n\nfromUserId\030\001 \001(\004\022\024\n\014from" +
       "UserName\030\002 \001(\t\022\025\n\rfromUserImage\030\003 \001(\t\022\020\n" +
       "\010toUserId\030\004 \001(\004\022\023\n\013contentType\030\005 \001(\r\022\017\n\007" +
       "content\030\006 \001(\t\022\022\n\npreviewUrl\030\007 \001(\t\022\022\n\nima" +
       "geWidth\030\010 \001(\r\022\023\n\013imageHeight\030\t \001(\r\022\014\n\004si" +
-      "ze\030\n \001(\r\022\020\n\010playTime\030\013 \001(\r\"X\n\031ImChatGrou" +
-      "pMessageRequest\022;\n\027chatGroupMessageConte" +
-      "nt\030\001 \001(\0132\032.ImChatGroupMessageContent\"l\n\032" +
-      "ImChatGroupMessageResponse\022;\n\027chatGroupM" +
-      "essageContent\030\001 \001(\0132\032.ImChatGroupMessage" +
-      "Content\022\021\n\tbuildTime\030\002 \001(\004\"\365\001\n\031ImChatGro" +
-      "upMessageContent\022\022\n\nfromUserId\030\001 \001(\004\022\024\n\014" +
-      "fromUserName\030\002 \001(\t\022\025\n\rfromUserImage\030\003 \001(" +
-      "\t\022\024\n\014toGrouopGuid\030\004 \001(\t\022\023\n\013contentType\030\005" +
-      " \001(\r\022\017\n\007content\030\006 \001(\t\022\022\n\npreviewUrl\030\007 \001(" +
-      "\t\022\022\n\nimageWidth\030\010 \001(\r\022\023\n\013imageHeight\030\t \001" +
-      "(\r\022\014\n\004size\030\n \001(\r\022\020\n\010playTime\030\013 \001(\r\"0\n\031Im" +
-      "HeartBeatMessageRequest\022\023\n\013currentTime\030\001" +
-      " \001(\004\"X\n\031ImAddFriendMessageRequest\022;\n\027add" +
-      "FriendMessageContent\030\001 \001(\0132\032.ImAddFriend" +
-      "MessageContent\"l\n\032ImAddFriendMessageResp" +
-      "onse\022;\n\027addFriendMessageContent\030\001 \001(\0132\032." +
-      "ImAddFriendMessageContent\022\021\n\tbuildTime\030\002" +
-      " \001(\004\"\203\001\n\031ImAddFriendMessageContent\022\022\n\nfr" +
-      "omUserId\030\001 \001(\004\022\024\n\014fromUserName\030\002 \001(\t\022\031\n\021" +
-      "fromUserHeadImage\030\003 \001(\t\022\020\n\010toUserId\030\004 \001(" +
-      "\004\022\017\n\007content\030\006 \001(\t\"\306\001\n\035ImConfirmFriendMe" +
-      "ssageRequest\022\022\n\nfromUserId\030\001 \001(\004\022\026\n\016from" +
-      "UserSymbol\030\002 \001(\t\022\024\n\014fromUserName\030\003 \001(\t\022\031" +
-      "\n\021fromUserHeadImage\030\004 \001(\t\022\020\n\010toUserId\030\005 " +
-      "\001(\004\022\023\n\013contentType\030\006 \001(\r\022\017\n\007content\030\007 \001(" +
-      "\t\022\020\n\010sendTime\030\010 \001(\004*y\n\rImMessageType\022\010\n\004" +
-      "Base\020\000\022\020\n\014UserValidate\020\001\022\014\n\010ChatUser\020\002\022\r" +
-      "\n\tChatGroup\020\003\022\r\n\tHeartBeat\020\004\022\r\n\tAddFrien" +
-      "d\020\005\022\021\n\rConfirmFriend\020\006*S\n\025ImMessageRespo" +
-      "nseCode\022\t\n\005Other\020\000\022\013\n\007Success\020d\022\013\n\006Faile" +
-      "d\020\310\001\022\025\n\020SessionidInvalid\020\311\001*I\n\027ImMessage" +
-      "SourcePosition\022\010\n\004None\020\000\022\014\n\010RealTime\020\001\022\013" +
-      "\n\007Offline\020\002\022\t\n\005Retry\020\003B,\n\026com.hwl.imcore" +
-      ".improtoP\001\252\002\017IMCore.Protocolb\006proto3"
+      "ze\030\n \001(\r\022\020\n\010playTime\030\013 \001(\r\022\020\n\010isFriend\030\014" +
+      " \001(\010\"X\n\031ImChatGroupMessageRequest\022;\n\027cha" +
+      "tGroupMessageContent\030\001 \001(\0132\032.ImChatGroup" +
+      "MessageContent\"l\n\032ImChatGroupMessageResp" +
+      "onse\022;\n\027chatGroupMessageContent\030\001 \001(\0132\032." +
+      "ImChatGroupMessageContent\022\021\n\tbuildTime\030\002" +
+      " \001(\004\"\365\001\n\031ImChatGroupMessageContent\022\022\n\nfr" +
+      "omUserId\030\001 \001(\004\022\024\n\014fromUserName\030\002 \001(\t\022\025\n\r" +
+      "fromUserImage\030\003 \001(\t\022\024\n\014toGrouopGuid\030\004 \001(" +
+      "\t\022\023\n\013contentType\030\005 \001(\r\022\017\n\007content\030\006 \001(\t\022" +
+      "\022\n\npreviewUrl\030\007 \001(\t\022\022\n\nimageWidth\030\010 \001(\r\022" +
+      "\023\n\013imageHeight\030\t \001(\r\022\014\n\004size\030\n \001(\r\022\020\n\010pl" +
+      "ayTime\030\013 \001(\r\"0\n\031ImHeartBeatMessageReques" +
+      "t\022\023\n\013currentTime\030\001 \001(\004\"X\n\031ImAddFriendMes" +
+      "sageRequest\022;\n\027addFriendMessageContent\030\001" +
+      " \001(\0132\032.ImAddFriendMessageContent\"l\n\032ImAd" +
+      "dFriendMessageResponse\022;\n\027addFriendMessa" +
+      "geContent\030\001 \001(\0132\032.ImAddFriendMessageCont" +
+      "ent\022\021\n\tbuildTime\030\002 \001(\004\"\203\001\n\031ImAddFriendMe" +
+      "ssageContent\022\022\n\nfromUserId\030\001 \001(\004\022\024\n\014from" +
+      "UserName\030\002 \001(\t\022\031\n\021fromUserHeadImage\030\003 \001(" +
+      "\t\022\020\n\010toUserId\030\004 \001(\004\022\017\n\007content\030\006 \001(\t\"\306\001\n" +
+      "\035ImConfirmFriendMessageRequest\022\022\n\nfromUs" +
+      "erId\030\001 \001(\004\022\026\n\016fromUserSymbol\030\002 \001(\t\022\024\n\014fr" +
+      "omUserName\030\003 \001(\t\022\031\n\021fromUserHeadImage\030\004 " +
+      "\001(\t\022\020\n\010toUserId\030\005 \001(\004\022\023\n\013contentType\030\006 \001" +
+      "(\r\022\017\n\007content\030\007 \001(\t\022\020\n\010sendTime\030\010 \001(\004*y\n" +
+      "\rImMessageType\022\010\n\004Base\020\000\022\020\n\014UserValidate" +
+      "\020\001\022\014\n\010ChatUser\020\002\022\r\n\tChatGroup\020\003\022\r\n\tHeart" +
+      "Beat\020\004\022\r\n\tAddFriend\020\005\022\021\n\rConfirmFriend\020\006" +
+      "*S\n\025ImMessageResponseCode\022\t\n\005Other\020\000\022\013\n\007" +
+      "Success\020d\022\013\n\006Failed\020\310\001\022\025\n\020SessionidInval" +
+      "id\020\311\001*I\n\027ImMessageSourcePosition\022\010\n\004None" +
+      "\020\000\022\014\n\010RealTime\020\001\022\013\n\007Offline\020\002\022\t\n\005Retry\020\003" +
+      "B,\n\026com.hwl.imcore.improtoP\001\252\002\017IMCore.Pr" +
+      "otocolb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -264,7 +265,7 @@ public final class ImMessage {
     internal_static_ImChatUserMessageContent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ImChatUserMessageContent_descriptor,
-        new java.lang.String[] { "FromUserId", "FromUserName", "FromUserImage", "ToUserId", "ContentType", "Content", "PreviewUrl", "ImageWidth", "ImageHeight", "Size", "PlayTime", });
+        new java.lang.String[] { "FromUserId", "FromUserName", "FromUserImage", "ToUserId", "ContentType", "Content", "PreviewUrl", "ImageWidth", "ImageHeight", "Size", "PlayTime", "IsFriend", });
     internal_static_ImChatGroupMessageRequest_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_ImChatGroupMessageRequest_fieldAccessorTable = new
