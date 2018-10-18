@@ -157,7 +157,6 @@ message ImAddFriendMessageContent {
 message ImTestConnectionMessageRequest {
     uint64 fromUserId = 1;
     string content = 2;
-    uint64 sendTime = 3;
 }
 
 message ImTestConnectionMessageResponse {

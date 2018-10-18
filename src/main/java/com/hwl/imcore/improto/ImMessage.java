@@ -186,19 +186,19 @@ public final class ImMessage {
       "\203\001\n\031ImAddFriendMessageContent\022\022\n\nfromUse" +
       "rId\030\001 \001(\004\022\024\n\014fromUserName\030\002 \001(\t\022\031\n\021fromU" +
       "serHeadImage\030\003 \001(\t\022\020\n\010toUserId\030\004 \001(\004\022\017\n\007" +
-      "content\030\006 \001(\t\"W\n\036ImTestConnectionMessage" +
+      "content\030\006 \001(\t\"E\n\036ImTestConnectionMessage" +
       "Request\022\022\n\nfromUserId\030\001 \001(\004\022\017\n\007content\030\002" +
-      " \001(\t\022\020\n\010sendTime\030\003 \001(\004\"D\n\037ImTestConnecti" +
-      "onMessageResponse\022\017\n\007content\030\001 \001(\t\022\020\n\010se" +
-      "ndTime\030\002 \001(\004*z\n\rImMessageType\022\010\n\004Base\020\000\022" +
-      "\020\n\014UserValidate\020\001\022\014\n\010ChatUser\020\002\022\r\n\tChatG" +
-      "roup\020\003\022\r\n\tHeartBeat\020\004\022\r\n\tAddFriend\020\005\022\022\n\016" +
-      "TestConnection\020\006*S\n\025ImMessageResponseCod" +
-      "e\022\t\n\005Other\020\000\022\013\n\007Success\020d\022\013\n\006Failed\020\310\001\022\025" +
-      "\n\020SessionidInvalid\020\311\001*I\n\027ImMessageSource" +
-      "Position\022\010\n\004None\020\000\022\014\n\010RealTime\020\001\022\013\n\007Offl" +
-      "ine\020\002\022\t\n\005Retry\020\003B,\n\026com.hwl.imcore.impro" +
-      "toP\001\252\002\017IMCore.Protocolb\006proto3"
+      " \001(\t\"D\n\037ImTestConnectionMessageResponse\022" +
+      "\017\n\007content\030\001 \001(\t\022\020\n\010sendTime\030\002 \001(\004*z\n\rIm" +
+      "MessageType\022\010\n\004Base\020\000\022\020\n\014UserValidate\020\001\022" +
+      "\014\n\010ChatUser\020\002\022\r\n\tChatGroup\020\003\022\r\n\tHeartBea" +
+      "t\020\004\022\r\n\tAddFriend\020\005\022\022\n\016TestConnection\020\006*S" +
+      "\n\025ImMessageResponseCode\022\t\n\005Other\020\000\022\013\n\007Su" +
+      "ccess\020d\022\013\n\006Failed\020\310\001\022\025\n\020SessionidInvalid" +
+      "\020\311\001*I\n\027ImMessageSourcePosition\022\010\n\004None\020\000" +
+      "\022\014\n\010RealTime\020\001\022\013\n\007Offline\020\002\022\t\n\005Retry\020\003B," +
+      "\n\026com.hwl.imcore.improtoP\001\252\002\017IMCore.Prot" +
+      "ocolb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -319,7 +319,7 @@ public final class ImMessage {
     internal_static_ImTestConnectionMessageRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ImTestConnectionMessageRequest_descriptor,
-        new java.lang.String[] { "FromUserId", "Content", "SendTime", });
+        new java.lang.String[] { "FromUserId", "Content", });
     internal_static_ImTestConnectionMessageResponse_descriptor =
       getDescriptor().getMessageTypes().get(18);
     internal_static_ImTestConnectionMessageResponse_fieldAccessorTable = new

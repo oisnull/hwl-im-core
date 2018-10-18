@@ -21,9 +21,4 @@ public interface ImTestConnectionMessageRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getContentBytes();
-
-  /**
-   * <code>uint64 sendTime = 3;</code>
-   */
-  long getSendTime();
 }

@@ -18,7 +18,6 @@ private static final long serialVersionUID = 0L;
   private ImTestConnectionMessageRequest() {
     fromUserId_ = 0L;
     content_ = "";
-    sendTime_ = 0L;
   }
 
   @java.lang.Override
@@ -61,11 +60,6 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             content_ = s;
-            break;
-          }
-          case 24: {
-
-            sendTime_ = input.readUInt64();
             break;
           }
         }
@@ -135,15 +129,6 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int SENDTIME_FIELD_NUMBER = 3;
-  private long sendTime_;
-  /**
-   * <code>uint64 sendTime = 3;</code>
-   */
-  public long getSendTime() {
-    return sendTime_;
-  }
-
   private byte memoizedIsInitialized = -1;
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -162,9 +147,6 @@ private static final long serialVersionUID = 0L;
     if (!getContentBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, content_);
     }
-    if (sendTime_ != 0L) {
-      output.writeUInt64(3, sendTime_);
-    }
     unknownFields.writeTo(output);
   }
 
@@ -179,10 +161,6 @@ private static final long serialVersionUID = 0L;
     }
     if (!getContentBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, content_);
-    }
-    if (sendTime_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeUInt64Size(3, sendTime_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -204,8 +182,6 @@ private static final long serialVersionUID = 0L;
         == other.getFromUserId());
     result = result && getContent()
         .equals(other.getContent());
-    result = result && (getSendTime()
-        == other.getSendTime());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -222,9 +198,6 @@ private static final long serialVersionUID = 0L;
         getFromUserId());
     hash = (37 * hash) + CONTENT_FIELD_NUMBER;
     hash = (53 * hash) + getContent().hashCode();
-    hash = (37 * hash) + SENDTIME_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getSendTime());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -358,8 +331,6 @@ private static final long serialVersionUID = 0L;
 
       content_ = "";
 
-      sendTime_ = 0L;
-
       return this;
     }
 
@@ -384,7 +355,6 @@ private static final long serialVersionUID = 0L;
       com.hwl.imcore.improto.ImTestConnectionMessageRequest result = new com.hwl.imcore.improto.ImTestConnectionMessageRequest(this);
       result.fromUserId_ = fromUserId_;
       result.content_ = content_;
-      result.sendTime_ = sendTime_;
       onBuilt();
       return result;
     }
@@ -432,9 +402,6 @@ private static final long serialVersionUID = 0L;
       if (!other.getContent().isEmpty()) {
         content_ = other.content_;
         onChanged();
-      }
-      if (other.getSendTime() != 0L) {
-        setSendTime(other.getSendTime());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -554,32 +521,6 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       content_ = value;
-      onChanged();
-      return this;
-    }
-
-    private long sendTime_ ;
-    /**
-     * <code>uint64 sendTime = 3;</code>
-     */
-    public long getSendTime() {
-      return sendTime_;
-    }
-    /**
-     * <code>uint64 sendTime = 3;</code>
-     */
-    public Builder setSendTime(long value) {
-      
-      sendTime_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>uint64 sendTime = 3;</code>
-     */
-    public Builder clearSendTime() {
-      
-      sendTime_ = 0L;
       onChanged();
       return this;
     }
