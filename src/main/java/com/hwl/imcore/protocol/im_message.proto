@@ -11,7 +11,7 @@ enum ImMessageType {
     ChatGroup = 3;
     HeartBeat = 4;
     AddFriend = 5;
-    ConfirmFriend = 6;
+    TestConnection = 6;
 }
 
 enum ImMessageResponseCode {
@@ -44,7 +44,7 @@ message ImMessageRequest {
         ImChatGroupMessageRequest chatGroupMessageRequest = 4;
         ImHeartBeatMessageRequest heartBeatMessageRequest = 5;
         ImAddFriendMessageRequest addFriendMessageRequest = 6;
-        ImConfirmFriendMessageRequest confirmFriendMessageRequest = 7;
+        ImTestConnectionMessageRequest testConnectionMessageRequest = 7;
     }
 }
 
@@ -55,6 +55,7 @@ message ImMessageResponse {
         ImChatUserMessageResponse chatUserMessageResponse = 3;
         ImChatGroupMessageResponse chatGroupMessageResponse = 4;
         ImAddFriendMessageResponse addFriendMessageResponse = 5;
+        ImTestConnectionMessageResponse testConnectionMessageResponse = 6;
     }
 }
 
@@ -131,7 +132,8 @@ message ImChatGroupMessageContent {
 }
 
 message ImHeartBeatMessageRequest {
-    uint64 currentTime = 1;
+    uint64 fromUserId = 1;
+    uint64 currentTime = 2;
 }
 
 message ImAddFriendMessageRequest {
@@ -151,13 +153,13 @@ message ImAddFriendMessageContent {
     string content = 6;
 }
 
-message ImConfirmFriendMessageRequest {
+message ImTestConnectionMessageRequest {
     uint64 fromUserId = 1;
-    string fromUserSymbol = 2;
-    string fromUserName = 3;
-    string fromUserHeadImage = 4;
-    uint64 toUserId = 5;
-    uint32 contentType = 6;
-    string content = 7;
-    uint64 sendTime = 8;
+    string content = 2;
+    uint64 sendTime = 3;
+}
+
+message ImTestConnectionMessageResponse {
+    string content = 1;
+    uint64 sendTime = 2;
 }
