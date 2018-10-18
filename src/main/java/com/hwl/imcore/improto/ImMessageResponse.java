@@ -118,6 +118,20 @@ private static final long serialVersionUID = 0L;
             responseBodyCase_ = 5;
             break;
           }
+          case 50: {
+            com.hwl.imcore.improto.ImTestConnectionMessageResponse.Builder subBuilder = null;
+            if (responseBodyCase_ == 6) {
+              subBuilder = ((com.hwl.imcore.improto.ImTestConnectionMessageResponse) responseBody_).toBuilder();
+            }
+            responseBody_ =
+                input.readMessage(com.hwl.imcore.improto.ImTestConnectionMessageResponse.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.hwl.imcore.improto.ImTestConnectionMessageResponse) responseBody_);
+              responseBody_ = subBuilder.buildPartial();
+            }
+            responseBodyCase_ = 6;
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -150,6 +164,7 @@ private static final long serialVersionUID = 0L;
     CHATUSERMESSAGERESPONSE(3),
     CHATGROUPMESSAGERESPONSE(4),
     ADDFRIENDMESSAGERESPONSE(5),
+    TESTCONNECTIONMESSAGERESPONSE(6),
     RESPONSEBODY_NOT_SET(0);
     private final int value;
     private ResponseBodyCase(int value) {
@@ -169,6 +184,7 @@ private static final long serialVersionUID = 0L;
         case 3: return CHATUSERMESSAGERESPONSE;
         case 4: return CHATGROUPMESSAGERESPONSE;
         case 5: return ADDFRIENDMESSAGERESPONSE;
+        case 6: return TESTCONNECTIONMESSAGERESPONSE;
         case 0: return RESPONSEBODY_NOT_SET;
         default: return null;
       }
@@ -309,6 +325,32 @@ private static final long serialVersionUID = 0L;
     return com.hwl.imcore.improto.ImAddFriendMessageResponse.getDefaultInstance();
   }
 
+  public static final int TESTCONNECTIONMESSAGERESPONSE_FIELD_NUMBER = 6;
+  /**
+   * <code>.ImTestConnectionMessageResponse testConnectionMessageResponse = 6;</code>
+   */
+  public boolean hasTestConnectionMessageResponse() {
+    return responseBodyCase_ == 6;
+  }
+  /**
+   * <code>.ImTestConnectionMessageResponse testConnectionMessageResponse = 6;</code>
+   */
+  public com.hwl.imcore.improto.ImTestConnectionMessageResponse getTestConnectionMessageResponse() {
+    if (responseBodyCase_ == 6) {
+       return (com.hwl.imcore.improto.ImTestConnectionMessageResponse) responseBody_;
+    }
+    return com.hwl.imcore.improto.ImTestConnectionMessageResponse.getDefaultInstance();
+  }
+  /**
+   * <code>.ImTestConnectionMessageResponse testConnectionMessageResponse = 6;</code>
+   */
+  public com.hwl.imcore.improto.ImTestConnectionMessageResponseOrBuilder getTestConnectionMessageResponseOrBuilder() {
+    if (responseBodyCase_ == 6) {
+       return (com.hwl.imcore.improto.ImTestConnectionMessageResponse) responseBody_;
+    }
+    return com.hwl.imcore.improto.ImTestConnectionMessageResponse.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -335,6 +377,9 @@ private static final long serialVersionUID = 0L;
     }
     if (responseBodyCase_ == 5) {
       output.writeMessage(5, (com.hwl.imcore.improto.ImAddFriendMessageResponse) responseBody_);
+    }
+    if (responseBodyCase_ == 6) {
+      output.writeMessage(6, (com.hwl.imcore.improto.ImTestConnectionMessageResponse) responseBody_);
     }
     unknownFields.writeTo(output);
   }
@@ -363,6 +408,10 @@ private static final long serialVersionUID = 0L;
     if (responseBodyCase_ == 5) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(5, (com.hwl.imcore.improto.ImAddFriendMessageResponse) responseBody_);
+    }
+    if (responseBodyCase_ == 6) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(6, (com.hwl.imcore.improto.ImTestConnectionMessageResponse) responseBody_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -405,6 +454,10 @@ private static final long serialVersionUID = 0L;
         result = result && getAddFriendMessageResponse()
             .equals(other.getAddFriendMessageResponse());
         break;
+      case 6:
+        result = result && getTestConnectionMessageResponse()
+            .equals(other.getTestConnectionMessageResponse());
+        break;
       case 0:
       default:
     }
@@ -439,6 +492,10 @@ private static final long serialVersionUID = 0L;
       case 5:
         hash = (37 * hash) + ADDFRIENDMESSAGERESPONSE_FIELD_NUMBER;
         hash = (53 * hash) + getAddFriendMessageResponse().hashCode();
+        break;
+      case 6:
+        hash = (37 * hash) + TESTCONNECTIONMESSAGERESPONSE_FIELD_NUMBER;
+        hash = (53 * hash) + getTestConnectionMessageResponse().hashCode();
         break;
       case 0:
       default:
@@ -635,6 +692,13 @@ private static final long serialVersionUID = 0L;
           result.responseBody_ = addFriendMessageResponseBuilder_.build();
         }
       }
+      if (responseBodyCase_ == 6) {
+        if (testConnectionMessageResponseBuilder_ == null) {
+          result.responseBody_ = responseBody_;
+        } else {
+          result.responseBody_ = testConnectionMessageResponseBuilder_.build();
+        }
+      }
       result.responseBodyCase_ = responseBodyCase_;
       onBuilt();
       return result;
@@ -695,6 +759,10 @@ private static final long serialVersionUID = 0L;
         }
         case ADDFRIENDMESSAGERESPONSE: {
           mergeAddFriendMessageResponse(other.getAddFriendMessageResponse());
+          break;
+        }
+        case TESTCONNECTIONMESSAGERESPONSE: {
+          mergeTestConnectionMessageResponse(other.getTestConnectionMessageResponse());
           break;
         }
         case RESPONSEBODY_NOT_SET: {
@@ -1402,6 +1470,142 @@ private static final long serialVersionUID = 0L;
       responseBodyCase_ = 5;
       onChanged();;
       return addFriendMessageResponseBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.hwl.imcore.improto.ImTestConnectionMessageResponse, com.hwl.imcore.improto.ImTestConnectionMessageResponse.Builder, com.hwl.imcore.improto.ImTestConnectionMessageResponseOrBuilder> testConnectionMessageResponseBuilder_;
+    /**
+     * <code>.ImTestConnectionMessageResponse testConnectionMessageResponse = 6;</code>
+     */
+    public boolean hasTestConnectionMessageResponse() {
+      return responseBodyCase_ == 6;
+    }
+    /**
+     * <code>.ImTestConnectionMessageResponse testConnectionMessageResponse = 6;</code>
+     */
+    public com.hwl.imcore.improto.ImTestConnectionMessageResponse getTestConnectionMessageResponse() {
+      if (testConnectionMessageResponseBuilder_ == null) {
+        if (responseBodyCase_ == 6) {
+          return (com.hwl.imcore.improto.ImTestConnectionMessageResponse) responseBody_;
+        }
+        return com.hwl.imcore.improto.ImTestConnectionMessageResponse.getDefaultInstance();
+      } else {
+        if (responseBodyCase_ == 6) {
+          return testConnectionMessageResponseBuilder_.getMessage();
+        }
+        return com.hwl.imcore.improto.ImTestConnectionMessageResponse.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.ImTestConnectionMessageResponse testConnectionMessageResponse = 6;</code>
+     */
+    public Builder setTestConnectionMessageResponse(com.hwl.imcore.improto.ImTestConnectionMessageResponse value) {
+      if (testConnectionMessageResponseBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        responseBody_ = value;
+        onChanged();
+      } else {
+        testConnectionMessageResponseBuilder_.setMessage(value);
+      }
+      responseBodyCase_ = 6;
+      return this;
+    }
+    /**
+     * <code>.ImTestConnectionMessageResponse testConnectionMessageResponse = 6;</code>
+     */
+    public Builder setTestConnectionMessageResponse(
+        com.hwl.imcore.improto.ImTestConnectionMessageResponse.Builder builderForValue) {
+      if (testConnectionMessageResponseBuilder_ == null) {
+        responseBody_ = builderForValue.build();
+        onChanged();
+      } else {
+        testConnectionMessageResponseBuilder_.setMessage(builderForValue.build());
+      }
+      responseBodyCase_ = 6;
+      return this;
+    }
+    /**
+     * <code>.ImTestConnectionMessageResponse testConnectionMessageResponse = 6;</code>
+     */
+    public Builder mergeTestConnectionMessageResponse(com.hwl.imcore.improto.ImTestConnectionMessageResponse value) {
+      if (testConnectionMessageResponseBuilder_ == null) {
+        if (responseBodyCase_ == 6 &&
+            responseBody_ != com.hwl.imcore.improto.ImTestConnectionMessageResponse.getDefaultInstance()) {
+          responseBody_ = com.hwl.imcore.improto.ImTestConnectionMessageResponse.newBuilder((com.hwl.imcore.improto.ImTestConnectionMessageResponse) responseBody_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          responseBody_ = value;
+        }
+        onChanged();
+      } else {
+        if (responseBodyCase_ == 6) {
+          testConnectionMessageResponseBuilder_.mergeFrom(value);
+        }
+        testConnectionMessageResponseBuilder_.setMessage(value);
+      }
+      responseBodyCase_ = 6;
+      return this;
+    }
+    /**
+     * <code>.ImTestConnectionMessageResponse testConnectionMessageResponse = 6;</code>
+     */
+    public Builder clearTestConnectionMessageResponse() {
+      if (testConnectionMessageResponseBuilder_ == null) {
+        if (responseBodyCase_ == 6) {
+          responseBodyCase_ = 0;
+          responseBody_ = null;
+          onChanged();
+        }
+      } else {
+        if (responseBodyCase_ == 6) {
+          responseBodyCase_ = 0;
+          responseBody_ = null;
+        }
+        testConnectionMessageResponseBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.ImTestConnectionMessageResponse testConnectionMessageResponse = 6;</code>
+     */
+    public com.hwl.imcore.improto.ImTestConnectionMessageResponse.Builder getTestConnectionMessageResponseBuilder() {
+      return getTestConnectionMessageResponseFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.ImTestConnectionMessageResponse testConnectionMessageResponse = 6;</code>
+     */
+    public com.hwl.imcore.improto.ImTestConnectionMessageResponseOrBuilder getTestConnectionMessageResponseOrBuilder() {
+      if ((responseBodyCase_ == 6) && (testConnectionMessageResponseBuilder_ != null)) {
+        return testConnectionMessageResponseBuilder_.getMessageOrBuilder();
+      } else {
+        if (responseBodyCase_ == 6) {
+          return (com.hwl.imcore.improto.ImTestConnectionMessageResponse) responseBody_;
+        }
+        return com.hwl.imcore.improto.ImTestConnectionMessageResponse.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.ImTestConnectionMessageResponse testConnectionMessageResponse = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.hwl.imcore.improto.ImTestConnectionMessageResponse, com.hwl.imcore.improto.ImTestConnectionMessageResponse.Builder, com.hwl.imcore.improto.ImTestConnectionMessageResponseOrBuilder> 
+        getTestConnectionMessageResponseFieldBuilder() {
+      if (testConnectionMessageResponseBuilder_ == null) {
+        if (!(responseBodyCase_ == 6)) {
+          responseBody_ = com.hwl.imcore.improto.ImTestConnectionMessageResponse.getDefaultInstance();
+        }
+        testConnectionMessageResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.hwl.imcore.improto.ImTestConnectionMessageResponse, com.hwl.imcore.improto.ImTestConnectionMessageResponse.Builder, com.hwl.imcore.improto.ImTestConnectionMessageResponseOrBuilder>(
+                (com.hwl.imcore.improto.ImTestConnectionMessageResponse) responseBody_,
+                getParentForChildren(),
+                isClean());
+        responseBody_ = null;
+      }
+      responseBodyCase_ = 6;
+      onChanged();;
+      return testConnectionMessageResponseBuilder_;
     }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {

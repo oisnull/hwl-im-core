@@ -8,7 +8,12 @@ public interface ImHeartBeatMessageRequestOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>uint64 currentTime = 1;</code>
+   * <code>uint64 fromUserId = 1;</code>
+   */
+  long getFromUserId();
+
+  /**
+   * <code>uint64 currentTime = 2;</code>
    */
   long getCurrentTime();
 }

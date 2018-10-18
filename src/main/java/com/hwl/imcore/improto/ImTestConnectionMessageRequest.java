@@ -4,20 +4,21 @@
 package com.hwl.imcore.improto;
 
 /**
- * Protobuf type {@code ImHeartBeatMessageRequest}
+ * Protobuf type {@code ImTestConnectionMessageRequest}
  */
-public  final class ImHeartBeatMessageRequest extends
+public  final class ImTestConnectionMessageRequest extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:ImHeartBeatMessageRequest)
-    ImHeartBeatMessageRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:ImTestConnectionMessageRequest)
+    ImTestConnectionMessageRequestOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use ImHeartBeatMessageRequest.newBuilder() to construct.
-  private ImHeartBeatMessageRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ImTestConnectionMessageRequest.newBuilder() to construct.
+  private ImTestConnectionMessageRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ImHeartBeatMessageRequest() {
+  private ImTestConnectionMessageRequest() {
     fromUserId_ = 0L;
-    currentTime_ = 0L;
+    content_ = "";
+    sendTime_ = 0L;
   }
 
   @java.lang.Override
@@ -25,7 +26,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private ImHeartBeatMessageRequest(
+  private ImTestConnectionMessageRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -56,9 +57,15 @@ private static final long serialVersionUID = 0L;
             fromUserId_ = input.readUInt64();
             break;
           }
-          case 16: {
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
 
-            currentTime_ = input.readUInt64();
+            content_ = s;
+            break;
+          }
+          case 24: {
+
+            sendTime_ = input.readUInt64();
             break;
           }
         }
@@ -75,14 +82,14 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.hwl.imcore.improto.ImMessage.internal_static_ImHeartBeatMessageRequest_descriptor;
+    return com.hwl.imcore.improto.ImMessage.internal_static_ImTestConnectionMessageRequest_descriptor;
   }
 
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.hwl.imcore.improto.ImMessage.internal_static_ImHeartBeatMessageRequest_fieldAccessorTable
+    return com.hwl.imcore.improto.ImMessage.internal_static_ImTestConnectionMessageRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.hwl.imcore.improto.ImHeartBeatMessageRequest.class, com.hwl.imcore.improto.ImHeartBeatMessageRequest.Builder.class);
+            com.hwl.imcore.improto.ImTestConnectionMessageRequest.class, com.hwl.imcore.improto.ImTestConnectionMessageRequest.Builder.class);
   }
 
   public static final int FROMUSERID_FIELD_NUMBER = 1;
@@ -94,13 +101,47 @@ private static final long serialVersionUID = 0L;
     return fromUserId_;
   }
 
-  public static final int CURRENTTIME_FIELD_NUMBER = 2;
-  private long currentTime_;
+  public static final int CONTENT_FIELD_NUMBER = 2;
+  private volatile java.lang.Object content_;
   /**
-   * <code>uint64 currentTime = 2;</code>
+   * <code>string content = 2;</code>
    */
-  public long getCurrentTime() {
-    return currentTime_;
+  public java.lang.String getContent() {
+    java.lang.Object ref = content_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      content_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string content = 2;</code>
+   */
+  public com.google.protobuf.ByteString
+      getContentBytes() {
+    java.lang.Object ref = content_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      content_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SENDTIME_FIELD_NUMBER = 3;
+  private long sendTime_;
+  /**
+   * <code>uint64 sendTime = 3;</code>
+   */
+  public long getSendTime() {
+    return sendTime_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -118,8 +159,11 @@ private static final long serialVersionUID = 0L;
     if (fromUserId_ != 0L) {
       output.writeUInt64(1, fromUserId_);
     }
-    if (currentTime_ != 0L) {
-      output.writeUInt64(2, currentTime_);
+    if (!getContentBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, content_);
+    }
+    if (sendTime_ != 0L) {
+      output.writeUInt64(3, sendTime_);
     }
     unknownFields.writeTo(output);
   }
@@ -133,9 +177,12 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeUInt64Size(1, fromUserId_);
     }
-    if (currentTime_ != 0L) {
+    if (!getContentBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, content_);
+    }
+    if (sendTime_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt64Size(2, currentTime_);
+        .computeUInt64Size(3, sendTime_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -147,16 +194,18 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.hwl.imcore.improto.ImHeartBeatMessageRequest)) {
+    if (!(obj instanceof com.hwl.imcore.improto.ImTestConnectionMessageRequest)) {
       return super.equals(obj);
     }
-    com.hwl.imcore.improto.ImHeartBeatMessageRequest other = (com.hwl.imcore.improto.ImHeartBeatMessageRequest) obj;
+    com.hwl.imcore.improto.ImTestConnectionMessageRequest other = (com.hwl.imcore.improto.ImTestConnectionMessageRequest) obj;
 
     boolean result = true;
     result = result && (getFromUserId()
         == other.getFromUserId());
-    result = result && (getCurrentTime()
-        == other.getCurrentTime());
+    result = result && getContent()
+        .equals(other.getContent());
+    result = result && (getSendTime()
+        == other.getSendTime());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -171,77 +220,79 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + FROMUSERID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getFromUserId());
-    hash = (37 * hash) + CURRENTTIME_FIELD_NUMBER;
+    hash = (37 * hash) + CONTENT_FIELD_NUMBER;
+    hash = (53 * hash) + getContent().hashCode();
+    hash = (37 * hash) + SENDTIME_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getCurrentTime());
+        getSendTime());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.hwl.imcore.improto.ImHeartBeatMessageRequest parseFrom(
+  public static com.hwl.imcore.improto.ImTestConnectionMessageRequest parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hwl.imcore.improto.ImHeartBeatMessageRequest parseFrom(
+  public static com.hwl.imcore.improto.ImTestConnectionMessageRequest parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hwl.imcore.improto.ImHeartBeatMessageRequest parseFrom(
+  public static com.hwl.imcore.improto.ImTestConnectionMessageRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hwl.imcore.improto.ImHeartBeatMessageRequest parseFrom(
+  public static com.hwl.imcore.improto.ImTestConnectionMessageRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hwl.imcore.improto.ImHeartBeatMessageRequest parseFrom(byte[] data)
+  public static com.hwl.imcore.improto.ImTestConnectionMessageRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hwl.imcore.improto.ImHeartBeatMessageRequest parseFrom(
+  public static com.hwl.imcore.improto.ImTestConnectionMessageRequest parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hwl.imcore.improto.ImHeartBeatMessageRequest parseFrom(java.io.InputStream input)
+  public static com.hwl.imcore.improto.ImTestConnectionMessageRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.hwl.imcore.improto.ImHeartBeatMessageRequest parseFrom(
+  public static com.hwl.imcore.improto.ImTestConnectionMessageRequest parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.hwl.imcore.improto.ImHeartBeatMessageRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.hwl.imcore.improto.ImTestConnectionMessageRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.hwl.imcore.improto.ImHeartBeatMessageRequest parseDelimitedFrom(
+  public static com.hwl.imcore.improto.ImTestConnectionMessageRequest parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.hwl.imcore.improto.ImHeartBeatMessageRequest parseFrom(
+  public static com.hwl.imcore.improto.ImTestConnectionMessageRequest parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.hwl.imcore.improto.ImHeartBeatMessageRequest parseFrom(
+  public static com.hwl.imcore.improto.ImTestConnectionMessageRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -253,7 +304,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.hwl.imcore.improto.ImHeartBeatMessageRequest prototype) {
+  public static Builder newBuilder(com.hwl.imcore.improto.ImTestConnectionMessageRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   public Builder toBuilder() {
@@ -268,25 +319,25 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code ImHeartBeatMessageRequest}
+   * Protobuf type {@code ImTestConnectionMessageRequest}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:ImHeartBeatMessageRequest)
-      com.hwl.imcore.improto.ImHeartBeatMessageRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:ImTestConnectionMessageRequest)
+      com.hwl.imcore.improto.ImTestConnectionMessageRequestOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.hwl.imcore.improto.ImMessage.internal_static_ImHeartBeatMessageRequest_descriptor;
+      return com.hwl.imcore.improto.ImMessage.internal_static_ImTestConnectionMessageRequest_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.hwl.imcore.improto.ImMessage.internal_static_ImHeartBeatMessageRequest_fieldAccessorTable
+      return com.hwl.imcore.improto.ImMessage.internal_static_ImTestConnectionMessageRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.hwl.imcore.improto.ImHeartBeatMessageRequest.class, com.hwl.imcore.improto.ImHeartBeatMessageRequest.Builder.class);
+              com.hwl.imcore.improto.ImTestConnectionMessageRequest.class, com.hwl.imcore.improto.ImTestConnectionMessageRequest.Builder.class);
     }
 
-    // Construct using com.hwl.imcore.improto.ImHeartBeatMessageRequest.newBuilder()
+    // Construct using com.hwl.imcore.improto.ImTestConnectionMessageRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -305,32 +356,35 @@ private static final long serialVersionUID = 0L;
       super.clear();
       fromUserId_ = 0L;
 
-      currentTime_ = 0L;
+      content_ = "";
+
+      sendTime_ = 0L;
 
       return this;
     }
 
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.hwl.imcore.improto.ImMessage.internal_static_ImHeartBeatMessageRequest_descriptor;
+      return com.hwl.imcore.improto.ImMessage.internal_static_ImTestConnectionMessageRequest_descriptor;
     }
 
-    public com.hwl.imcore.improto.ImHeartBeatMessageRequest getDefaultInstanceForType() {
-      return com.hwl.imcore.improto.ImHeartBeatMessageRequest.getDefaultInstance();
+    public com.hwl.imcore.improto.ImTestConnectionMessageRequest getDefaultInstanceForType() {
+      return com.hwl.imcore.improto.ImTestConnectionMessageRequest.getDefaultInstance();
     }
 
-    public com.hwl.imcore.improto.ImHeartBeatMessageRequest build() {
-      com.hwl.imcore.improto.ImHeartBeatMessageRequest result = buildPartial();
+    public com.hwl.imcore.improto.ImTestConnectionMessageRequest build() {
+      com.hwl.imcore.improto.ImTestConnectionMessageRequest result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public com.hwl.imcore.improto.ImHeartBeatMessageRequest buildPartial() {
-      com.hwl.imcore.improto.ImHeartBeatMessageRequest result = new com.hwl.imcore.improto.ImHeartBeatMessageRequest(this);
+    public com.hwl.imcore.improto.ImTestConnectionMessageRequest buildPartial() {
+      com.hwl.imcore.improto.ImTestConnectionMessageRequest result = new com.hwl.imcore.improto.ImTestConnectionMessageRequest(this);
       result.fromUserId_ = fromUserId_;
-      result.currentTime_ = currentTime_;
+      result.content_ = content_;
+      result.sendTime_ = sendTime_;
       onBuilt();
       return result;
     }
@@ -362,21 +416,25 @@ private static final long serialVersionUID = 0L;
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.hwl.imcore.improto.ImHeartBeatMessageRequest) {
-        return mergeFrom((com.hwl.imcore.improto.ImHeartBeatMessageRequest)other);
+      if (other instanceof com.hwl.imcore.improto.ImTestConnectionMessageRequest) {
+        return mergeFrom((com.hwl.imcore.improto.ImTestConnectionMessageRequest)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.hwl.imcore.improto.ImHeartBeatMessageRequest other) {
-      if (other == com.hwl.imcore.improto.ImHeartBeatMessageRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.hwl.imcore.improto.ImTestConnectionMessageRequest other) {
+      if (other == com.hwl.imcore.improto.ImTestConnectionMessageRequest.getDefaultInstance()) return this;
       if (other.getFromUserId() != 0L) {
         setFromUserId(other.getFromUserId());
       }
-      if (other.getCurrentTime() != 0L) {
-        setCurrentTime(other.getCurrentTime());
+      if (!other.getContent().isEmpty()) {
+        content_ = other.content_;
+        onChanged();
+      }
+      if (other.getSendTime() != 0L) {
+        setSendTime(other.getSendTime());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -391,11 +449,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.hwl.imcore.improto.ImHeartBeatMessageRequest parsedMessage = null;
+      com.hwl.imcore.improto.ImTestConnectionMessageRequest parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.hwl.imcore.improto.ImHeartBeatMessageRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.hwl.imcore.improto.ImTestConnectionMessageRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -431,28 +489,97 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long currentTime_ ;
+    private java.lang.Object content_ = "";
     /**
-     * <code>uint64 currentTime = 2;</code>
+     * <code>string content = 2;</code>
      */
-    public long getCurrentTime() {
-      return currentTime_;
+    public java.lang.String getContent() {
+      java.lang.Object ref = content_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        content_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
     }
     /**
-     * <code>uint64 currentTime = 2;</code>
+     * <code>string content = 2;</code>
      */
-    public Builder setCurrentTime(long value) {
-      
-      currentTime_ = value;
+    public com.google.protobuf.ByteString
+        getContentBytes() {
+      java.lang.Object ref = content_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        content_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string content = 2;</code>
+     */
+    public Builder setContent(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      content_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>uint64 currentTime = 2;</code>
+     * <code>string content = 2;</code>
      */
-    public Builder clearCurrentTime() {
+    public Builder clearContent() {
       
-      currentTime_ = 0L;
+      content_ = getDefaultInstance().getContent();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string content = 2;</code>
+     */
+    public Builder setContentBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      content_ = value;
+      onChanged();
+      return this;
+    }
+
+    private long sendTime_ ;
+    /**
+     * <code>uint64 sendTime = 3;</code>
+     */
+    public long getSendTime() {
+      return sendTime_;
+    }
+    /**
+     * <code>uint64 sendTime = 3;</code>
+     */
+    public Builder setSendTime(long value) {
+      
+      sendTime_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>uint64 sendTime = 3;</code>
+     */
+    public Builder clearSendTime() {
+      
+      sendTime_ = 0L;
       onChanged();
       return this;
     }
@@ -467,39 +594,39 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:ImHeartBeatMessageRequest)
+    // @@protoc_insertion_point(builder_scope:ImTestConnectionMessageRequest)
   }
 
-  // @@protoc_insertion_point(class_scope:ImHeartBeatMessageRequest)
-  private static final com.hwl.imcore.improto.ImHeartBeatMessageRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:ImTestConnectionMessageRequest)
+  private static final com.hwl.imcore.improto.ImTestConnectionMessageRequest DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.hwl.imcore.improto.ImHeartBeatMessageRequest();
+    DEFAULT_INSTANCE = new com.hwl.imcore.improto.ImTestConnectionMessageRequest();
   }
 
-  public static com.hwl.imcore.improto.ImHeartBeatMessageRequest getDefaultInstance() {
+  public static com.hwl.imcore.improto.ImTestConnectionMessageRequest getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ImHeartBeatMessageRequest>
-      PARSER = new com.google.protobuf.AbstractParser<ImHeartBeatMessageRequest>() {
-    public ImHeartBeatMessageRequest parsePartialFrom(
+  private static final com.google.protobuf.Parser<ImTestConnectionMessageRequest>
+      PARSER = new com.google.protobuf.AbstractParser<ImTestConnectionMessageRequest>() {
+    public ImTestConnectionMessageRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ImHeartBeatMessageRequest(input, extensionRegistry);
+      return new ImTestConnectionMessageRequest(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<ImHeartBeatMessageRequest> parser() {
+  public static com.google.protobuf.Parser<ImTestConnectionMessageRequest> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ImHeartBeatMessageRequest> getParserForType() {
+  public com.google.protobuf.Parser<ImTestConnectionMessageRequest> getParserForType() {
     return PARSER;
   }
 
-  public com.hwl.imcore.improto.ImHeartBeatMessageRequest getDefaultInstanceForType() {
+  public com.hwl.imcore.improto.ImTestConnectionMessageRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

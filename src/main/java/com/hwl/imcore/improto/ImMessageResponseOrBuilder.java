@@ -72,5 +72,18 @@ public interface ImMessageResponseOrBuilder extends
    */
   com.hwl.imcore.improto.ImAddFriendMessageResponseOrBuilder getAddFriendMessageResponseOrBuilder();
 
+  /**
+   * <code>.ImTestConnectionMessageResponse testConnectionMessageResponse = 6;</code>
+   */
+  boolean hasTestConnectionMessageResponse();
+  /**
+   * <code>.ImTestConnectionMessageResponse testConnectionMessageResponse = 6;</code>
+   */
+  com.hwl.imcore.improto.ImTestConnectionMessageResponse getTestConnectionMessageResponse();
+  /**
+   * <code>.ImTestConnectionMessageResponse testConnectionMessageResponse = 6;</code>
+   */
+  com.hwl.imcore.improto.ImTestConnectionMessageResponseOrBuilder getTestConnectionMessageResponseOrBuilder();
+
   public com.hwl.imcore.improto.ImMessageResponse.ResponseBodyCase getResponseBodyCase();
 }

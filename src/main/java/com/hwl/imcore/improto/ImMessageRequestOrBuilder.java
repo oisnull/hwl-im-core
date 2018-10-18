@@ -86,17 +86,17 @@ public interface ImMessageRequestOrBuilder extends
   com.hwl.imcore.improto.ImAddFriendMessageRequestOrBuilder getAddFriendMessageRequestOrBuilder();
 
   /**
-   * <code>.ImConfirmFriendMessageRequest confirmFriendMessageRequest = 7;</code>
+   * <code>.ImTestConnectionMessageRequest testConnectionMessageRequest = 7;</code>
    */
-  boolean hasConfirmFriendMessageRequest();
+  boolean hasTestConnectionMessageRequest();
   /**
-   * <code>.ImConfirmFriendMessageRequest confirmFriendMessageRequest = 7;</code>
+   * <code>.ImTestConnectionMessageRequest testConnectionMessageRequest = 7;</code>
    */
-  com.hwl.imcore.improto.ImConfirmFriendMessageRequest getConfirmFriendMessageRequest();
+  com.hwl.imcore.improto.ImTestConnectionMessageRequest getTestConnectionMessageRequest();
   /**
-   * <code>.ImConfirmFriendMessageRequest confirmFriendMessageRequest = 7;</code>
+   * <code>.ImTestConnectionMessageRequest testConnectionMessageRequest = 7;</code>
    */
-  com.hwl.imcore.improto.ImConfirmFriendMessageRequestOrBuilder getConfirmFriendMessageRequestOrBuilder();
+  com.hwl.imcore.improto.ImTestConnectionMessageRequestOrBuilder getTestConnectionMessageRequestOrBuilder();
 
   public com.hwl.imcore.improto.ImMessageRequest.RequestBodyCase getRequestBodyCase();
 }

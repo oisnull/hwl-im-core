@@ -133,14 +133,14 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 58: {
-            com.hwl.imcore.improto.ImConfirmFriendMessageRequest.Builder subBuilder = null;
+            com.hwl.imcore.improto.ImTestConnectionMessageRequest.Builder subBuilder = null;
             if (requestBodyCase_ == 7) {
-              subBuilder = ((com.hwl.imcore.improto.ImConfirmFriendMessageRequest) requestBody_).toBuilder();
+              subBuilder = ((com.hwl.imcore.improto.ImTestConnectionMessageRequest) requestBody_).toBuilder();
             }
             requestBody_ =
-                input.readMessage(com.hwl.imcore.improto.ImConfirmFriendMessageRequest.parser(), extensionRegistry);
+                input.readMessage(com.hwl.imcore.improto.ImTestConnectionMessageRequest.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom((com.hwl.imcore.improto.ImConfirmFriendMessageRequest) requestBody_);
+              subBuilder.mergeFrom((com.hwl.imcore.improto.ImTestConnectionMessageRequest) requestBody_);
               requestBody_ = subBuilder.buildPartial();
             }
             requestBodyCase_ = 7;
@@ -179,7 +179,7 @@ private static final long serialVersionUID = 0L;
     CHATGROUPMESSAGEREQUEST(4),
     HEARTBEATMESSAGEREQUEST(5),
     ADDFRIENDMESSAGEREQUEST(6),
-    CONFIRMFRIENDMESSAGEREQUEST(7),
+    TESTCONNECTIONMESSAGEREQUEST(7),
     REQUESTBODY_NOT_SET(0);
     private final int value;
     private RequestBodyCase(int value) {
@@ -200,7 +200,7 @@ private static final long serialVersionUID = 0L;
         case 4: return CHATGROUPMESSAGEREQUEST;
         case 5: return HEARTBEATMESSAGEREQUEST;
         case 6: return ADDFRIENDMESSAGEREQUEST;
-        case 7: return CONFIRMFRIENDMESSAGEREQUEST;
+        case 7: return TESTCONNECTIONMESSAGEREQUEST;
         case 0: return REQUESTBODY_NOT_SET;
         default: return null;
       }
@@ -367,30 +367,30 @@ private static final long serialVersionUID = 0L;
     return com.hwl.imcore.improto.ImAddFriendMessageRequest.getDefaultInstance();
   }
 
-  public static final int CONFIRMFRIENDMESSAGEREQUEST_FIELD_NUMBER = 7;
+  public static final int TESTCONNECTIONMESSAGEREQUEST_FIELD_NUMBER = 7;
   /**
-   * <code>.ImConfirmFriendMessageRequest confirmFriendMessageRequest = 7;</code>
+   * <code>.ImTestConnectionMessageRequest testConnectionMessageRequest = 7;</code>
    */
-  public boolean hasConfirmFriendMessageRequest() {
+  public boolean hasTestConnectionMessageRequest() {
     return requestBodyCase_ == 7;
   }
   /**
-   * <code>.ImConfirmFriendMessageRequest confirmFriendMessageRequest = 7;</code>
+   * <code>.ImTestConnectionMessageRequest testConnectionMessageRequest = 7;</code>
    */
-  public com.hwl.imcore.improto.ImConfirmFriendMessageRequest getConfirmFriendMessageRequest() {
+  public com.hwl.imcore.improto.ImTestConnectionMessageRequest getTestConnectionMessageRequest() {
     if (requestBodyCase_ == 7) {
-       return (com.hwl.imcore.improto.ImConfirmFriendMessageRequest) requestBody_;
+       return (com.hwl.imcore.improto.ImTestConnectionMessageRequest) requestBody_;
     }
-    return com.hwl.imcore.improto.ImConfirmFriendMessageRequest.getDefaultInstance();
+    return com.hwl.imcore.improto.ImTestConnectionMessageRequest.getDefaultInstance();
   }
   /**
-   * <code>.ImConfirmFriendMessageRequest confirmFriendMessageRequest = 7;</code>
+   * <code>.ImTestConnectionMessageRequest testConnectionMessageRequest = 7;</code>
    */
-  public com.hwl.imcore.improto.ImConfirmFriendMessageRequestOrBuilder getConfirmFriendMessageRequestOrBuilder() {
+  public com.hwl.imcore.improto.ImTestConnectionMessageRequestOrBuilder getTestConnectionMessageRequestOrBuilder() {
     if (requestBodyCase_ == 7) {
-       return (com.hwl.imcore.improto.ImConfirmFriendMessageRequest) requestBody_;
+       return (com.hwl.imcore.improto.ImTestConnectionMessageRequest) requestBody_;
     }
-    return com.hwl.imcore.improto.ImConfirmFriendMessageRequest.getDefaultInstance();
+    return com.hwl.imcore.improto.ImTestConnectionMessageRequest.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -424,7 +424,7 @@ private static final long serialVersionUID = 0L;
       output.writeMessage(6, (com.hwl.imcore.improto.ImAddFriendMessageRequest) requestBody_);
     }
     if (requestBodyCase_ == 7) {
-      output.writeMessage(7, (com.hwl.imcore.improto.ImConfirmFriendMessageRequest) requestBody_);
+      output.writeMessage(7, (com.hwl.imcore.improto.ImTestConnectionMessageRequest) requestBody_);
     }
     unknownFields.writeTo(output);
   }
@@ -460,7 +460,7 @@ private static final long serialVersionUID = 0L;
     }
     if (requestBodyCase_ == 7) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, (com.hwl.imcore.improto.ImConfirmFriendMessageRequest) requestBody_);
+        .computeMessageSize(7, (com.hwl.imcore.improto.ImTestConnectionMessageRequest) requestBody_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -508,8 +508,8 @@ private static final long serialVersionUID = 0L;
             .equals(other.getAddFriendMessageRequest());
         break;
       case 7:
-        result = result && getConfirmFriendMessageRequest()
-            .equals(other.getConfirmFriendMessageRequest());
+        result = result && getTestConnectionMessageRequest()
+            .equals(other.getTestConnectionMessageRequest());
         break;
       case 0:
       default:
@@ -551,8 +551,8 @@ private static final long serialVersionUID = 0L;
         hash = (53 * hash) + getAddFriendMessageRequest().hashCode();
         break;
       case 7:
-        hash = (37 * hash) + CONFIRMFRIENDMESSAGEREQUEST_FIELD_NUMBER;
-        hash = (53 * hash) + getConfirmFriendMessageRequest().hashCode();
+        hash = (37 * hash) + TESTCONNECTIONMESSAGEREQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getTestConnectionMessageRequest().hashCode();
         break;
       case 0:
       default:
@@ -757,10 +757,10 @@ private static final long serialVersionUID = 0L;
         }
       }
       if (requestBodyCase_ == 7) {
-        if (confirmFriendMessageRequestBuilder_ == null) {
+        if (testConnectionMessageRequestBuilder_ == null) {
           result.requestBody_ = requestBody_;
         } else {
-          result.requestBody_ = confirmFriendMessageRequestBuilder_.build();
+          result.requestBody_ = testConnectionMessageRequestBuilder_.build();
         }
       }
       result.requestBodyCase_ = requestBodyCase_;
@@ -829,8 +829,8 @@ private static final long serialVersionUID = 0L;
           mergeAddFriendMessageRequest(other.getAddFriendMessageRequest());
           break;
         }
-        case CONFIRMFRIENDMESSAGEREQUEST: {
-          mergeConfirmFriendMessageRequest(other.getConfirmFriendMessageRequest());
+        case TESTCONNECTIONMESSAGEREQUEST: {
+          mergeTestConnectionMessageRequest(other.getTestConnectionMessageRequest());
           break;
         }
         case REQUESTBODY_NOT_SET: {
@@ -1677,67 +1677,67 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.hwl.imcore.improto.ImConfirmFriendMessageRequest, com.hwl.imcore.improto.ImConfirmFriendMessageRequest.Builder, com.hwl.imcore.improto.ImConfirmFriendMessageRequestOrBuilder> confirmFriendMessageRequestBuilder_;
+        com.hwl.imcore.improto.ImTestConnectionMessageRequest, com.hwl.imcore.improto.ImTestConnectionMessageRequest.Builder, com.hwl.imcore.improto.ImTestConnectionMessageRequestOrBuilder> testConnectionMessageRequestBuilder_;
     /**
-     * <code>.ImConfirmFriendMessageRequest confirmFriendMessageRequest = 7;</code>
+     * <code>.ImTestConnectionMessageRequest testConnectionMessageRequest = 7;</code>
      */
-    public boolean hasConfirmFriendMessageRequest() {
+    public boolean hasTestConnectionMessageRequest() {
       return requestBodyCase_ == 7;
     }
     /**
-     * <code>.ImConfirmFriendMessageRequest confirmFriendMessageRequest = 7;</code>
+     * <code>.ImTestConnectionMessageRequest testConnectionMessageRequest = 7;</code>
      */
-    public com.hwl.imcore.improto.ImConfirmFriendMessageRequest getConfirmFriendMessageRequest() {
-      if (confirmFriendMessageRequestBuilder_ == null) {
+    public com.hwl.imcore.improto.ImTestConnectionMessageRequest getTestConnectionMessageRequest() {
+      if (testConnectionMessageRequestBuilder_ == null) {
         if (requestBodyCase_ == 7) {
-          return (com.hwl.imcore.improto.ImConfirmFriendMessageRequest) requestBody_;
+          return (com.hwl.imcore.improto.ImTestConnectionMessageRequest) requestBody_;
         }
-        return com.hwl.imcore.improto.ImConfirmFriendMessageRequest.getDefaultInstance();
+        return com.hwl.imcore.improto.ImTestConnectionMessageRequest.getDefaultInstance();
       } else {
         if (requestBodyCase_ == 7) {
-          return confirmFriendMessageRequestBuilder_.getMessage();
+          return testConnectionMessageRequestBuilder_.getMessage();
         }
-        return com.hwl.imcore.improto.ImConfirmFriendMessageRequest.getDefaultInstance();
+        return com.hwl.imcore.improto.ImTestConnectionMessageRequest.getDefaultInstance();
       }
     }
     /**
-     * <code>.ImConfirmFriendMessageRequest confirmFriendMessageRequest = 7;</code>
+     * <code>.ImTestConnectionMessageRequest testConnectionMessageRequest = 7;</code>
      */
-    public Builder setConfirmFriendMessageRequest(com.hwl.imcore.improto.ImConfirmFriendMessageRequest value) {
-      if (confirmFriendMessageRequestBuilder_ == null) {
+    public Builder setTestConnectionMessageRequest(com.hwl.imcore.improto.ImTestConnectionMessageRequest value) {
+      if (testConnectionMessageRequestBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
         requestBody_ = value;
         onChanged();
       } else {
-        confirmFriendMessageRequestBuilder_.setMessage(value);
+        testConnectionMessageRequestBuilder_.setMessage(value);
       }
       requestBodyCase_ = 7;
       return this;
     }
     /**
-     * <code>.ImConfirmFriendMessageRequest confirmFriendMessageRequest = 7;</code>
+     * <code>.ImTestConnectionMessageRequest testConnectionMessageRequest = 7;</code>
      */
-    public Builder setConfirmFriendMessageRequest(
-        com.hwl.imcore.improto.ImConfirmFriendMessageRequest.Builder builderForValue) {
-      if (confirmFriendMessageRequestBuilder_ == null) {
+    public Builder setTestConnectionMessageRequest(
+        com.hwl.imcore.improto.ImTestConnectionMessageRequest.Builder builderForValue) {
+      if (testConnectionMessageRequestBuilder_ == null) {
         requestBody_ = builderForValue.build();
         onChanged();
       } else {
-        confirmFriendMessageRequestBuilder_.setMessage(builderForValue.build());
+        testConnectionMessageRequestBuilder_.setMessage(builderForValue.build());
       }
       requestBodyCase_ = 7;
       return this;
     }
     /**
-     * <code>.ImConfirmFriendMessageRequest confirmFriendMessageRequest = 7;</code>
+     * <code>.ImTestConnectionMessageRequest testConnectionMessageRequest = 7;</code>
      */
-    public Builder mergeConfirmFriendMessageRequest(com.hwl.imcore.improto.ImConfirmFriendMessageRequest value) {
-      if (confirmFriendMessageRequestBuilder_ == null) {
+    public Builder mergeTestConnectionMessageRequest(com.hwl.imcore.improto.ImTestConnectionMessageRequest value) {
+      if (testConnectionMessageRequestBuilder_ == null) {
         if (requestBodyCase_ == 7 &&
-            requestBody_ != com.hwl.imcore.improto.ImConfirmFriendMessageRequest.getDefaultInstance()) {
-          requestBody_ = com.hwl.imcore.improto.ImConfirmFriendMessageRequest.newBuilder((com.hwl.imcore.improto.ImConfirmFriendMessageRequest) requestBody_)
+            requestBody_ != com.hwl.imcore.improto.ImTestConnectionMessageRequest.getDefaultInstance()) {
+          requestBody_ = com.hwl.imcore.improto.ImTestConnectionMessageRequest.newBuilder((com.hwl.imcore.improto.ImTestConnectionMessageRequest) requestBody_)
               .mergeFrom(value).buildPartial();
         } else {
           requestBody_ = value;
@@ -1745,18 +1745,18 @@ private static final long serialVersionUID = 0L;
         onChanged();
       } else {
         if (requestBodyCase_ == 7) {
-          confirmFriendMessageRequestBuilder_.mergeFrom(value);
+          testConnectionMessageRequestBuilder_.mergeFrom(value);
         }
-        confirmFriendMessageRequestBuilder_.setMessage(value);
+        testConnectionMessageRequestBuilder_.setMessage(value);
       }
       requestBodyCase_ = 7;
       return this;
     }
     /**
-     * <code>.ImConfirmFriendMessageRequest confirmFriendMessageRequest = 7;</code>
+     * <code>.ImTestConnectionMessageRequest testConnectionMessageRequest = 7;</code>
      */
-    public Builder clearConfirmFriendMessageRequest() {
-      if (confirmFriendMessageRequestBuilder_ == null) {
+    public Builder clearTestConnectionMessageRequest() {
+      if (testConnectionMessageRequestBuilder_ == null) {
         if (requestBodyCase_ == 7) {
           requestBodyCase_ = 0;
           requestBody_ = null;
@@ -1767,49 +1767,49 @@ private static final long serialVersionUID = 0L;
           requestBodyCase_ = 0;
           requestBody_ = null;
         }
-        confirmFriendMessageRequestBuilder_.clear();
+        testConnectionMessageRequestBuilder_.clear();
       }
       return this;
     }
     /**
-     * <code>.ImConfirmFriendMessageRequest confirmFriendMessageRequest = 7;</code>
+     * <code>.ImTestConnectionMessageRequest testConnectionMessageRequest = 7;</code>
      */
-    public com.hwl.imcore.improto.ImConfirmFriendMessageRequest.Builder getConfirmFriendMessageRequestBuilder() {
-      return getConfirmFriendMessageRequestFieldBuilder().getBuilder();
+    public com.hwl.imcore.improto.ImTestConnectionMessageRequest.Builder getTestConnectionMessageRequestBuilder() {
+      return getTestConnectionMessageRequestFieldBuilder().getBuilder();
     }
     /**
-     * <code>.ImConfirmFriendMessageRequest confirmFriendMessageRequest = 7;</code>
+     * <code>.ImTestConnectionMessageRequest testConnectionMessageRequest = 7;</code>
      */
-    public com.hwl.imcore.improto.ImConfirmFriendMessageRequestOrBuilder getConfirmFriendMessageRequestOrBuilder() {
-      if ((requestBodyCase_ == 7) && (confirmFriendMessageRequestBuilder_ != null)) {
-        return confirmFriendMessageRequestBuilder_.getMessageOrBuilder();
+    public com.hwl.imcore.improto.ImTestConnectionMessageRequestOrBuilder getTestConnectionMessageRequestOrBuilder() {
+      if ((requestBodyCase_ == 7) && (testConnectionMessageRequestBuilder_ != null)) {
+        return testConnectionMessageRequestBuilder_.getMessageOrBuilder();
       } else {
         if (requestBodyCase_ == 7) {
-          return (com.hwl.imcore.improto.ImConfirmFriendMessageRequest) requestBody_;
+          return (com.hwl.imcore.improto.ImTestConnectionMessageRequest) requestBody_;
         }
-        return com.hwl.imcore.improto.ImConfirmFriendMessageRequest.getDefaultInstance();
+        return com.hwl.imcore.improto.ImTestConnectionMessageRequest.getDefaultInstance();
       }
     }
     /**
-     * <code>.ImConfirmFriendMessageRequest confirmFriendMessageRequest = 7;</code>
+     * <code>.ImTestConnectionMessageRequest testConnectionMessageRequest = 7;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.hwl.imcore.improto.ImConfirmFriendMessageRequest, com.hwl.imcore.improto.ImConfirmFriendMessageRequest.Builder, com.hwl.imcore.improto.ImConfirmFriendMessageRequestOrBuilder> 
-        getConfirmFriendMessageRequestFieldBuilder() {
-      if (confirmFriendMessageRequestBuilder_ == null) {
+        com.hwl.imcore.improto.ImTestConnectionMessageRequest, com.hwl.imcore.improto.ImTestConnectionMessageRequest.Builder, com.hwl.imcore.improto.ImTestConnectionMessageRequestOrBuilder> 
+        getTestConnectionMessageRequestFieldBuilder() {
+      if (testConnectionMessageRequestBuilder_ == null) {
         if (!(requestBodyCase_ == 7)) {
-          requestBody_ = com.hwl.imcore.improto.ImConfirmFriendMessageRequest.getDefaultInstance();
+          requestBody_ = com.hwl.imcore.improto.ImTestConnectionMessageRequest.getDefaultInstance();
         }
-        confirmFriendMessageRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.hwl.imcore.improto.ImConfirmFriendMessageRequest, com.hwl.imcore.improto.ImConfirmFriendMessageRequest.Builder, com.hwl.imcore.improto.ImConfirmFriendMessageRequestOrBuilder>(
-                (com.hwl.imcore.improto.ImConfirmFriendMessageRequest) requestBody_,
+        testConnectionMessageRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.hwl.imcore.improto.ImTestConnectionMessageRequest, com.hwl.imcore.improto.ImTestConnectionMessageRequest.Builder, com.hwl.imcore.improto.ImTestConnectionMessageRequestOrBuilder>(
+                (com.hwl.imcore.improto.ImTestConnectionMessageRequest) requestBody_,
                 getParentForChildren(),
                 isClean());
         requestBody_ = null;
       }
       requestBodyCase_ = 7;
       onChanged();;
-      return confirmFriendMessageRequestBuilder_;
+      return testConnectionMessageRequestBuilder_;
     }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
