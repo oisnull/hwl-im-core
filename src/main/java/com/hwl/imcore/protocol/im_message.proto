@@ -101,12 +101,13 @@ message ImChatUserMessageContent {
     uint64 toUserId = 4;
     uint32 contentType = 5;
     string content = 6;
-    string previewUrl = 7;
-    uint32 imageWidth = 8;
-    uint32 imageHeight = 9;
-    uint32 size = 10;
-    uint32 playTime = 11;
-    bool isFriend = 12;
+    string originalUrl = 7;
+    string previewUrl = 8;
+    uint32 imageWidth = 9;
+    uint32 imageHeight = 10;
+    uint32 size = 11;
+    uint32 playTime = 12;
+    bool isFriend = 13;
 }
 
 message ImChatGroupMessageRequest {
@@ -122,14 +123,16 @@ message ImChatGroupMessageContent {
     uint64 fromUserId = 1;
     string fromUserName = 2;
     string fromUserImage = 3;
-    string toGrouopGuid = 4;
+    string toGroupGuid = 4;
     uint32 contentType = 5;
     string content = 6;
-    string previewUrl = 7;
-    uint32 imageWidth = 8;
-    uint32 imageHeight = 9;
-    uint32 size = 10;
-    uint32 playTime = 11;
+    string originalUrl = 7;
+    string previewUrl = 8;
+    uint32 imageWidth = 9;
+    uint32 imageHeight = 10;
+    uint32 size = 11;
+    uint32 playTime = 12;
+    bool isFriend = 13;
 }
 
 message ImHeartBeatMessageRequest {

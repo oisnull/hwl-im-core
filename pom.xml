@@ -9,7 +9,7 @@
 
     <groupId>com.hwl.imcore</groupId>
     <artifactId>hwl-im-core</artifactId>
-    <version>1.0.4</version>
+    <version>1.0.5</version>
 
     <build>
         <finalName>${project.artifactId}-${project.version}</finalName>
