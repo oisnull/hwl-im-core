@@ -19,14 +19,16 @@ private static final long serialVersionUID = 0L;
     fromUserId_ = 0L;
     fromUserName_ = "";
     fromUserImage_ = "";
-    toGrouopGuid_ = "";
+    toGroupGuid_ = "";
     contentType_ = 0;
     content_ = "";
+    originalUrl_ = "";
     previewUrl_ = "";
     imageWidth_ = 0;
     imageHeight_ = 0;
     size_ = 0;
     playTime_ = 0;
+    isFriend_ = false;
   }
 
   @java.lang.Override
@@ -80,7 +82,7 @@ private static final long serialVersionUID = 0L;
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            toGrouopGuid_ = s;
+            toGroupGuid_ = s;
             break;
           }
           case 40: {
@@ -97,27 +99,38 @@ private static final long serialVersionUID = 0L;
           case 58: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            previewUrl_ = s;
+            originalUrl_ = s;
             break;
           }
-          case 64: {
+          case 66: {
+            java.lang.String s = input.readStringRequireUtf8();
 
-            imageWidth_ = input.readUInt32();
+            previewUrl_ = s;
             break;
           }
           case 72: {
 
-            imageHeight_ = input.readUInt32();
+            imageWidth_ = input.readUInt32();
             break;
           }
           case 80: {
 
-            size_ = input.readUInt32();
+            imageHeight_ = input.readUInt32();
             break;
           }
           case 88: {
 
+            size_ = input.readUInt32();
+            break;
+          }
+          case 96: {
+
             playTime_ = input.readUInt32();
+            break;
+          }
+          case 104: {
+
+            isFriend_ = input.readBool();
             break;
           }
         }
@@ -221,34 +234,34 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TOGROUOPGUID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object toGrouopGuid_;
+  public static final int TOGROUPGUID_FIELD_NUMBER = 4;
+  private volatile java.lang.Object toGroupGuid_;
   /**
-   * <code>string toGrouopGuid = 4;</code>
+   * <code>string toGroupGuid = 4;</code>
    */
-  public java.lang.String getToGrouopGuid() {
-    java.lang.Object ref = toGrouopGuid_;
+  public java.lang.String getToGroupGuid() {
+    java.lang.Object ref = toGroupGuid_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      toGrouopGuid_ = s;
+      toGroupGuid_ = s;
       return s;
     }
   }
   /**
-   * <code>string toGrouopGuid = 4;</code>
+   * <code>string toGroupGuid = 4;</code>
    */
   public com.google.protobuf.ByteString
-      getToGrouopGuidBytes() {
-    java.lang.Object ref = toGrouopGuid_;
+      getToGroupGuidBytes() {
+    java.lang.Object ref = toGroupGuid_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      toGrouopGuid_ = b;
+      toGroupGuid_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -298,10 +311,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int PREVIEWURL_FIELD_NUMBER = 7;
+  public static final int ORIGINALURL_FIELD_NUMBER = 7;
+  private volatile java.lang.Object originalUrl_;
+  /**
+   * <code>string originalUrl = 7;</code>
+   */
+  public java.lang.String getOriginalUrl() {
+    java.lang.Object ref = originalUrl_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      originalUrl_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string originalUrl = 7;</code>
+   */
+  public com.google.protobuf.ByteString
+      getOriginalUrlBytes() {
+    java.lang.Object ref = originalUrl_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      originalUrl_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PREVIEWURL_FIELD_NUMBER = 8;
   private volatile java.lang.Object previewUrl_;
   /**
-   * <code>string previewUrl = 7;</code>
+   * <code>string previewUrl = 8;</code>
    */
   public java.lang.String getPreviewUrl() {
     java.lang.Object ref = previewUrl_;
@@ -316,7 +363,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string previewUrl = 7;</code>
+   * <code>string previewUrl = 8;</code>
    */
   public com.google.protobuf.ByteString
       getPreviewUrlBytes() {
@@ -332,40 +379,49 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int IMAGEWIDTH_FIELD_NUMBER = 8;
+  public static final int IMAGEWIDTH_FIELD_NUMBER = 9;
   private int imageWidth_;
   /**
-   * <code>uint32 imageWidth = 8;</code>
+   * <code>uint32 imageWidth = 9;</code>
    */
   public int getImageWidth() {
     return imageWidth_;
   }
 
-  public static final int IMAGEHEIGHT_FIELD_NUMBER = 9;
+  public static final int IMAGEHEIGHT_FIELD_NUMBER = 10;
   private int imageHeight_;
   /**
-   * <code>uint32 imageHeight = 9;</code>
+   * <code>uint32 imageHeight = 10;</code>
    */
   public int getImageHeight() {
     return imageHeight_;
   }
 
-  public static final int SIZE_FIELD_NUMBER = 10;
+  public static final int SIZE_FIELD_NUMBER = 11;
   private int size_;
   /**
-   * <code>uint32 size = 10;</code>
+   * <code>uint32 size = 11;</code>
    */
   public int getSize() {
     return size_;
   }
 
-  public static final int PLAYTIME_FIELD_NUMBER = 11;
+  public static final int PLAYTIME_FIELD_NUMBER = 12;
   private int playTime_;
   /**
-   * <code>uint32 playTime = 11;</code>
+   * <code>uint32 playTime = 12;</code>
    */
   public int getPlayTime() {
     return playTime_;
+  }
+
+  public static final int ISFRIEND_FIELD_NUMBER = 13;
+  private boolean isFriend_;
+  /**
+   * <code>bool isFriend = 13;</code>
+   */
+  public boolean getIsFriend() {
+    return isFriend_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -389,8 +445,8 @@ private static final long serialVersionUID = 0L;
     if (!getFromUserImageBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, fromUserImage_);
     }
-    if (!getToGrouopGuidBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, toGrouopGuid_);
+    if (!getToGroupGuidBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, toGroupGuid_);
     }
     if (contentType_ != 0) {
       output.writeUInt32(5, contentType_);
@@ -398,20 +454,26 @@ private static final long serialVersionUID = 0L;
     if (!getContentBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, content_);
     }
+    if (!getOriginalUrlBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, originalUrl_);
+    }
     if (!getPreviewUrlBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, previewUrl_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, previewUrl_);
     }
     if (imageWidth_ != 0) {
-      output.writeUInt32(8, imageWidth_);
+      output.writeUInt32(9, imageWidth_);
     }
     if (imageHeight_ != 0) {
-      output.writeUInt32(9, imageHeight_);
+      output.writeUInt32(10, imageHeight_);
     }
     if (size_ != 0) {
-      output.writeUInt32(10, size_);
+      output.writeUInt32(11, size_);
     }
     if (playTime_ != 0) {
-      output.writeUInt32(11, playTime_);
+      output.writeUInt32(12, playTime_);
+    }
+    if (isFriend_ != false) {
+      output.writeBool(13, isFriend_);
     }
     unknownFields.writeTo(output);
   }
@@ -431,8 +493,8 @@ private static final long serialVersionUID = 0L;
     if (!getFromUserImageBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, fromUserImage_);
     }
-    if (!getToGrouopGuidBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, toGrouopGuid_);
+    if (!getToGroupGuidBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, toGroupGuid_);
     }
     if (contentType_ != 0) {
       size += com.google.protobuf.CodedOutputStream
@@ -441,24 +503,31 @@ private static final long serialVersionUID = 0L;
     if (!getContentBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, content_);
     }
+    if (!getOriginalUrlBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, originalUrl_);
+    }
     if (!getPreviewUrlBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, previewUrl_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, previewUrl_);
     }
     if (imageWidth_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(8, imageWidth_);
+        .computeUInt32Size(9, imageWidth_);
     }
     if (imageHeight_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(9, imageHeight_);
+        .computeUInt32Size(10, imageHeight_);
     }
     if (size_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(10, size_);
+        .computeUInt32Size(11, size_);
     }
     if (playTime_ != 0) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(11, playTime_);
+        .computeUInt32Size(12, playTime_);
+    }
+    if (isFriend_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(13, isFriend_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -482,12 +551,14 @@ private static final long serialVersionUID = 0L;
         .equals(other.getFromUserName());
     result = result && getFromUserImage()
         .equals(other.getFromUserImage());
-    result = result && getToGrouopGuid()
-        .equals(other.getToGrouopGuid());
+    result = result && getToGroupGuid()
+        .equals(other.getToGroupGuid());
     result = result && (getContentType()
         == other.getContentType());
     result = result && getContent()
         .equals(other.getContent());
+    result = result && getOriginalUrl()
+        .equals(other.getOriginalUrl());
     result = result && getPreviewUrl()
         .equals(other.getPreviewUrl());
     result = result && (getImageWidth()
@@ -498,6 +569,8 @@ private static final long serialVersionUID = 0L;
         == other.getSize());
     result = result && (getPlayTime()
         == other.getPlayTime());
+    result = result && (getIsFriend()
+        == other.getIsFriend());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -516,12 +589,14 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getFromUserName().hashCode();
     hash = (37 * hash) + FROMUSERIMAGE_FIELD_NUMBER;
     hash = (53 * hash) + getFromUserImage().hashCode();
-    hash = (37 * hash) + TOGROUOPGUID_FIELD_NUMBER;
-    hash = (53 * hash) + getToGrouopGuid().hashCode();
+    hash = (37 * hash) + TOGROUPGUID_FIELD_NUMBER;
+    hash = (53 * hash) + getToGroupGuid().hashCode();
     hash = (37 * hash) + CONTENTTYPE_FIELD_NUMBER;
     hash = (53 * hash) + getContentType();
     hash = (37 * hash) + CONTENT_FIELD_NUMBER;
     hash = (53 * hash) + getContent().hashCode();
+    hash = (37 * hash) + ORIGINALURL_FIELD_NUMBER;
+    hash = (53 * hash) + getOriginalUrl().hashCode();
     hash = (37 * hash) + PREVIEWURL_FIELD_NUMBER;
     hash = (53 * hash) + getPreviewUrl().hashCode();
     hash = (37 * hash) + IMAGEWIDTH_FIELD_NUMBER;
@@ -532,6 +607,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getSize();
     hash = (37 * hash) + PLAYTIME_FIELD_NUMBER;
     hash = (53 * hash) + getPlayTime();
+    hash = (37 * hash) + ISFRIEND_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsFriend());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -667,11 +745,13 @@ private static final long serialVersionUID = 0L;
 
       fromUserImage_ = "";
 
-      toGrouopGuid_ = "";
+      toGroupGuid_ = "";
 
       contentType_ = 0;
 
       content_ = "";
+
+      originalUrl_ = "";
 
       previewUrl_ = "";
 
@@ -682,6 +762,8 @@ private static final long serialVersionUID = 0L;
       size_ = 0;
 
       playTime_ = 0;
+
+      isFriend_ = false;
 
       return this;
     }
@@ -708,14 +790,16 @@ private static final long serialVersionUID = 0L;
       result.fromUserId_ = fromUserId_;
       result.fromUserName_ = fromUserName_;
       result.fromUserImage_ = fromUserImage_;
-      result.toGrouopGuid_ = toGrouopGuid_;
+      result.toGroupGuid_ = toGroupGuid_;
       result.contentType_ = contentType_;
       result.content_ = content_;
+      result.originalUrl_ = originalUrl_;
       result.previewUrl_ = previewUrl_;
       result.imageWidth_ = imageWidth_;
       result.imageHeight_ = imageHeight_;
       result.size_ = size_;
       result.playTime_ = playTime_;
+      result.isFriend_ = isFriend_;
       onBuilt();
       return result;
     }
@@ -768,8 +852,8 @@ private static final long serialVersionUID = 0L;
         fromUserImage_ = other.fromUserImage_;
         onChanged();
       }
-      if (!other.getToGrouopGuid().isEmpty()) {
-        toGrouopGuid_ = other.toGrouopGuid_;
+      if (!other.getToGroupGuid().isEmpty()) {
+        toGroupGuid_ = other.toGroupGuid_;
         onChanged();
       }
       if (other.getContentType() != 0) {
@@ -777,6 +861,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getContent().isEmpty()) {
         content_ = other.content_;
+        onChanged();
+      }
+      if (!other.getOriginalUrl().isEmpty()) {
+        originalUrl_ = other.originalUrl_;
         onChanged();
       }
       if (!other.getPreviewUrl().isEmpty()) {
@@ -794,6 +882,9 @@ private static final long serialVersionUID = 0L;
       }
       if (other.getPlayTime() != 0) {
         setPlayTime(other.getPlayTime());
+      }
+      if (other.getIsFriend() != false) {
+        setIsFriend(other.getIsFriend());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -986,71 +1077,71 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object toGrouopGuid_ = "";
+    private java.lang.Object toGroupGuid_ = "";
     /**
-     * <code>string toGrouopGuid = 4;</code>
+     * <code>string toGroupGuid = 4;</code>
      */
-    public java.lang.String getToGrouopGuid() {
-      java.lang.Object ref = toGrouopGuid_;
+    public java.lang.String getToGroupGuid() {
+      java.lang.Object ref = toGroupGuid_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        toGrouopGuid_ = s;
+        toGroupGuid_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string toGrouopGuid = 4;</code>
+     * <code>string toGroupGuid = 4;</code>
      */
     public com.google.protobuf.ByteString
-        getToGrouopGuidBytes() {
-      java.lang.Object ref = toGrouopGuid_;
+        getToGroupGuidBytes() {
+      java.lang.Object ref = toGroupGuid_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        toGrouopGuid_ = b;
+        toGroupGuid_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string toGrouopGuid = 4;</code>
+     * <code>string toGroupGuid = 4;</code>
      */
-    public Builder setToGrouopGuid(
+    public Builder setToGroupGuid(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      toGrouopGuid_ = value;
+      toGroupGuid_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string toGrouopGuid = 4;</code>
+     * <code>string toGroupGuid = 4;</code>
      */
-    public Builder clearToGrouopGuid() {
+    public Builder clearToGroupGuid() {
       
-      toGrouopGuid_ = getDefaultInstance().getToGrouopGuid();
+      toGroupGuid_ = getDefaultInstance().getToGroupGuid();
       onChanged();
       return this;
     }
     /**
-     * <code>string toGrouopGuid = 4;</code>
+     * <code>string toGroupGuid = 4;</code>
      */
-    public Builder setToGrouopGuidBytes(
+    public Builder setToGroupGuidBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      toGrouopGuid_ = value;
+      toGroupGuid_ = value;
       onChanged();
       return this;
     }
@@ -1150,9 +1241,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object originalUrl_ = "";
+    /**
+     * <code>string originalUrl = 7;</code>
+     */
+    public java.lang.String getOriginalUrl() {
+      java.lang.Object ref = originalUrl_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        originalUrl_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string originalUrl = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getOriginalUrlBytes() {
+      java.lang.Object ref = originalUrl_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        originalUrl_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string originalUrl = 7;</code>
+     */
+    public Builder setOriginalUrl(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      originalUrl_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string originalUrl = 7;</code>
+     */
+    public Builder clearOriginalUrl() {
+      
+      originalUrl_ = getDefaultInstance().getOriginalUrl();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string originalUrl = 7;</code>
+     */
+    public Builder setOriginalUrlBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      originalUrl_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object previewUrl_ = "";
     /**
-     * <code>string previewUrl = 7;</code>
+     * <code>string previewUrl = 8;</code>
      */
     public java.lang.String getPreviewUrl() {
       java.lang.Object ref = previewUrl_;
@@ -1167,7 +1327,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string previewUrl = 7;</code>
+     * <code>string previewUrl = 8;</code>
      */
     public com.google.protobuf.ByteString
         getPreviewUrlBytes() {
@@ -1183,7 +1343,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string previewUrl = 7;</code>
+     * <code>string previewUrl = 8;</code>
      */
     public Builder setPreviewUrl(
         java.lang.String value) {
@@ -1196,7 +1356,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string previewUrl = 7;</code>
+     * <code>string previewUrl = 8;</code>
      */
     public Builder clearPreviewUrl() {
       
@@ -1205,7 +1365,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string previewUrl = 7;</code>
+     * <code>string previewUrl = 8;</code>
      */
     public Builder setPreviewUrlBytes(
         com.google.protobuf.ByteString value) {
@@ -1221,13 +1381,13 @@ private static final long serialVersionUID = 0L;
 
     private int imageWidth_ ;
     /**
-     * <code>uint32 imageWidth = 8;</code>
+     * <code>uint32 imageWidth = 9;</code>
      */
     public int getImageWidth() {
       return imageWidth_;
     }
     /**
-     * <code>uint32 imageWidth = 8;</code>
+     * <code>uint32 imageWidth = 9;</code>
      */
     public Builder setImageWidth(int value) {
       
@@ -1236,7 +1396,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>uint32 imageWidth = 8;</code>
+     * <code>uint32 imageWidth = 9;</code>
      */
     public Builder clearImageWidth() {
       
@@ -1247,13 +1407,13 @@ private static final long serialVersionUID = 0L;
 
     private int imageHeight_ ;
     /**
-     * <code>uint32 imageHeight = 9;</code>
+     * <code>uint32 imageHeight = 10;</code>
      */
     public int getImageHeight() {
       return imageHeight_;
     }
     /**
-     * <code>uint32 imageHeight = 9;</code>
+     * <code>uint32 imageHeight = 10;</code>
      */
     public Builder setImageHeight(int value) {
       
@@ -1262,7 +1422,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>uint32 imageHeight = 9;</code>
+     * <code>uint32 imageHeight = 10;</code>
      */
     public Builder clearImageHeight() {
       
@@ -1273,13 +1433,13 @@ private static final long serialVersionUID = 0L;
 
     private int size_ ;
     /**
-     * <code>uint32 size = 10;</code>
+     * <code>uint32 size = 11;</code>
      */
     public int getSize() {
       return size_;
     }
     /**
-     * <code>uint32 size = 10;</code>
+     * <code>uint32 size = 11;</code>
      */
     public Builder setSize(int value) {
       
@@ -1288,7 +1448,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>uint32 size = 10;</code>
+     * <code>uint32 size = 11;</code>
      */
     public Builder clearSize() {
       
@@ -1299,13 +1459,13 @@ private static final long serialVersionUID = 0L;
 
     private int playTime_ ;
     /**
-     * <code>uint32 playTime = 11;</code>
+     * <code>uint32 playTime = 12;</code>
      */
     public int getPlayTime() {
       return playTime_;
     }
     /**
-     * <code>uint32 playTime = 11;</code>
+     * <code>uint32 playTime = 12;</code>
      */
     public Builder setPlayTime(int value) {
       
@@ -1314,11 +1474,37 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>uint32 playTime = 11;</code>
+     * <code>uint32 playTime = 12;</code>
      */
     public Builder clearPlayTime() {
       
       playTime_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean isFriend_ ;
+    /**
+     * <code>bool isFriend = 13;</code>
+     */
+    public boolean getIsFriend() {
+      return isFriend_;
+    }
+    /**
+     * <code>bool isFriend = 13;</code>
+     */
+    public Builder setIsFriend(boolean value) {
+      
+      isFriend_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool isFriend = 13;</code>
+     */
+    public Builder clearIsFriend() {
+      
+      isFriend_ = false;
       onChanged();
       return this;
     }

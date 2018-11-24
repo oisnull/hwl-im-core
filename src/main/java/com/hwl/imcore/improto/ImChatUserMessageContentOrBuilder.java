@@ -53,37 +53,47 @@ public interface ImChatUserMessageContentOrBuilder extends
       getContentBytes();
 
   /**
-   * <code>string previewUrl = 7;</code>
+   * <code>string originalUrl = 7;</code>
+   */
+  java.lang.String getOriginalUrl();
+  /**
+   * <code>string originalUrl = 7;</code>
+   */
+  com.google.protobuf.ByteString
+      getOriginalUrlBytes();
+
+  /**
+   * <code>string previewUrl = 8;</code>
    */
   java.lang.String getPreviewUrl();
   /**
-   * <code>string previewUrl = 7;</code>
+   * <code>string previewUrl = 8;</code>
    */
   com.google.protobuf.ByteString
       getPreviewUrlBytes();
 
   /**
-   * <code>uint32 imageWidth = 8;</code>
+   * <code>uint32 imageWidth = 9;</code>
    */
   int getImageWidth();
 
   /**
-   * <code>uint32 imageHeight = 9;</code>
+   * <code>uint32 imageHeight = 10;</code>
    */
   int getImageHeight();
 
   /**
-   * <code>uint32 size = 10;</code>
+   * <code>uint32 size = 11;</code>
    */
   int getSize();
 
   /**
-   * <code>uint32 playTime = 11;</code>
+   * <code>uint32 playTime = 12;</code>
    */
   int getPlayTime();
 
   /**
-   * <code>bool isFriend = 12;</code>
+   * <code>bool isFriend = 13;</code>
    */
   boolean getIsFriend();
 }
