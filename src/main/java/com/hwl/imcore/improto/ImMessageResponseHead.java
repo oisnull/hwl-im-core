@@ -18,6 +18,7 @@ private static final long serialVersionUID = 0L;
   private ImMessageResponseHead() {
     code_ = 0;
     message_ = "";
+    isAck_ = false;
     source_ = 0;
   }
 
@@ -64,6 +65,11 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 24: {
+
+            isAck_ = input.readBool();
+            break;
+          }
+          case 32: {
             int rawValue = input.readEnum();
 
             source_ = rawValue;
@@ -136,16 +142,25 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int SOURCE_FIELD_NUMBER = 3;
+  public static final int ISACK_FIELD_NUMBER = 3;
+  private boolean isAck_;
+  /**
+   * <code>bool isAck = 3;</code>
+   */
+  public boolean getIsAck() {
+    return isAck_;
+  }
+
+  public static final int SOURCE_FIELD_NUMBER = 4;
   private int source_;
   /**
-   * <code>.ImMessageSourcePosition source = 3;</code>
+   * <code>.ImMessageSourcePosition source = 4;</code>
    */
   public int getSourceValue() {
     return source_;
   }
   /**
-   * <code>.ImMessageSourcePosition source = 3;</code>
+   * <code>.ImMessageSourcePosition source = 4;</code>
    */
   public com.hwl.imcore.improto.ImMessageSourcePosition getSource() {
     com.hwl.imcore.improto.ImMessageSourcePosition result = com.hwl.imcore.improto.ImMessageSourcePosition.valueOf(source_);
@@ -170,8 +185,11 @@ private static final long serialVersionUID = 0L;
     if (!getMessageBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
     }
+    if (isAck_ != false) {
+      output.writeBool(3, isAck_);
+    }
     if (source_ != com.hwl.imcore.improto.ImMessageSourcePosition.None.getNumber()) {
-      output.writeEnum(3, source_);
+      output.writeEnum(4, source_);
     }
     unknownFields.writeTo(output);
   }
@@ -188,9 +206,13 @@ private static final long serialVersionUID = 0L;
     if (!getMessageBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
     }
+    if (isAck_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(3, isAck_);
+    }
     if (source_ != com.hwl.imcore.improto.ImMessageSourcePosition.None.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(3, source_);
+        .computeEnumSize(4, source_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -212,6 +234,8 @@ private static final long serialVersionUID = 0L;
         == other.getCode());
     result = result && getMessage()
         .equals(other.getMessage());
+    result = result && (getIsAck()
+        == other.getIsAck());
     result = result && source_ == other.source_;
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -228,6 +252,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getCode();
     hash = (37 * hash) + MESSAGE_FIELD_NUMBER;
     hash = (53 * hash) + getMessage().hashCode();
+    hash = (37 * hash) + ISACK_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getIsAck());
     hash = (37 * hash) + SOURCE_FIELD_NUMBER;
     hash = (53 * hash) + source_;
     hash = (29 * hash) + unknownFields.hashCode();
@@ -363,6 +390,8 @@ private static final long serialVersionUID = 0L;
 
       message_ = "";
 
+      isAck_ = false;
+
       source_ = 0;
 
       return this;
@@ -389,6 +418,7 @@ private static final long serialVersionUID = 0L;
       com.hwl.imcore.improto.ImMessageResponseHead result = new com.hwl.imcore.improto.ImMessageResponseHead(this);
       result.code_ = code_;
       result.message_ = message_;
+      result.isAck_ = isAck_;
       result.source_ = source_;
       onBuilt();
       return result;
@@ -437,6 +467,9 @@ private static final long serialVersionUID = 0L;
       if (!other.getMessage().isEmpty()) {
         message_ = other.message_;
         onChanged();
+      }
+      if (other.getIsAck() != false) {
+        setIsAck(other.getIsAck());
       }
       if (other.source_ != 0) {
         setSourceValue(other.getSourceValue());
@@ -563,15 +596,41 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private boolean isAck_ ;
+    /**
+     * <code>bool isAck = 3;</code>
+     */
+    public boolean getIsAck() {
+      return isAck_;
+    }
+    /**
+     * <code>bool isAck = 3;</code>
+     */
+    public Builder setIsAck(boolean value) {
+      
+      isAck_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>bool isAck = 3;</code>
+     */
+    public Builder clearIsAck() {
+      
+      isAck_ = false;
+      onChanged();
+      return this;
+    }
+
     private int source_ = 0;
     /**
-     * <code>.ImMessageSourcePosition source = 3;</code>
+     * <code>.ImMessageSourcePosition source = 4;</code>
      */
     public int getSourceValue() {
       return source_;
     }
     /**
-     * <code>.ImMessageSourcePosition source = 3;</code>
+     * <code>.ImMessageSourcePosition source = 4;</code>
      */
     public Builder setSourceValue(int value) {
       source_ = value;
@@ -579,14 +638,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.ImMessageSourcePosition source = 3;</code>
+     * <code>.ImMessageSourcePosition source = 4;</code>
      */
     public com.hwl.imcore.improto.ImMessageSourcePosition getSource() {
       com.hwl.imcore.improto.ImMessageSourcePosition result = com.hwl.imcore.improto.ImMessageSourcePosition.valueOf(source_);
       return result == null ? com.hwl.imcore.improto.ImMessageSourcePosition.UNRECOGNIZED : result;
     }
     /**
-     * <code>.ImMessageSourcePosition source = 3;</code>
+     * <code>.ImMessageSourcePosition source = 4;</code>
      */
     public Builder setSource(com.hwl.imcore.improto.ImMessageSourcePosition value) {
       if (value == null) {
@@ -598,7 +657,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.ImMessageSourcePosition source = 3;</code>
+     * <code>.ImMessageSourcePosition source = 4;</code>
      */
     public Builder clearSource() {
       

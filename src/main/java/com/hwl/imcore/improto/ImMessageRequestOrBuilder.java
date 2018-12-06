@@ -98,5 +98,18 @@ public interface ImMessageRequestOrBuilder extends
    */
   com.hwl.imcore.improto.ImTestConnectionMessageRequestOrBuilder getTestConnectionMessageRequestOrBuilder();
 
+  /**
+   * <code>.ImAckMessageRequest ackMessageRequest = 8;</code>
+   */
+  boolean hasAckMessageRequest();
+  /**
+   * <code>.ImAckMessageRequest ackMessageRequest = 8;</code>
+   */
+  com.hwl.imcore.improto.ImAckMessageRequest getAckMessageRequest();
+  /**
+   * <code>.ImAckMessageRequest ackMessageRequest = 8;</code>
+   */
+  com.hwl.imcore.improto.ImAckMessageRequestOrBuilder getAckMessageRequestOrBuilder();
+
   public com.hwl.imcore.improto.ImMessageRequest.RequestBodyCase getRequestBodyCase();
 }

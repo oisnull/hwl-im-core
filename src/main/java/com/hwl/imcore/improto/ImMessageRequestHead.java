@@ -19,6 +19,7 @@ private static final long serialVersionUID = 0L;
     timestamp_ = 0L;
     client_ = "";
     sessionid_ = "";
+    messageid_ = "";
     language_ = "";
     version_ = "";
   }
@@ -74,10 +75,16 @@ private static final long serialVersionUID = 0L;
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            language_ = s;
+            messageid_ = s;
             break;
           }
           case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            language_ = s;
+            break;
+          }
+          case 50: {
             java.lang.String s = input.readStringRequireUtf8();
 
             version_ = s;
@@ -184,10 +191,44 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int LANGUAGE_FIELD_NUMBER = 4;
+  public static final int MESSAGEID_FIELD_NUMBER = 4;
+  private volatile java.lang.Object messageid_;
+  /**
+   * <code>string messageid = 4;</code>
+   */
+  public java.lang.String getMessageid() {
+    java.lang.Object ref = messageid_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      messageid_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string messageid = 4;</code>
+   */
+  public com.google.protobuf.ByteString
+      getMessageidBytes() {
+    java.lang.Object ref = messageid_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      messageid_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int LANGUAGE_FIELD_NUMBER = 5;
   private volatile java.lang.Object language_;
   /**
-   * <code>string language = 4;</code>
+   * <code>string language = 5;</code>
    */
   public java.lang.String getLanguage() {
     java.lang.Object ref = language_;
@@ -202,7 +243,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string language = 4;</code>
+   * <code>string language = 5;</code>
    */
   public com.google.protobuf.ByteString
       getLanguageBytes() {
@@ -218,10 +259,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int VERSION_FIELD_NUMBER = 5;
+  public static final int VERSION_FIELD_NUMBER = 6;
   private volatile java.lang.Object version_;
   /**
-   * <code>string version = 5;</code>
+   * <code>string version = 6;</code>
    */
   public java.lang.String getVersion() {
     java.lang.Object ref = version_;
@@ -236,7 +277,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string version = 5;</code>
+   * <code>string version = 6;</code>
    */
   public com.google.protobuf.ByteString
       getVersionBytes() {
@@ -273,11 +314,14 @@ private static final long serialVersionUID = 0L;
     if (!getSessionidBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, sessionid_);
     }
+    if (!getMessageidBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, messageid_);
+    }
     if (!getLanguageBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, language_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, language_);
     }
     if (!getVersionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, version_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, version_);
     }
     unknownFields.writeTo(output);
   }
@@ -297,11 +341,14 @@ private static final long serialVersionUID = 0L;
     if (!getSessionidBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, sessionid_);
     }
+    if (!getMessageidBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, messageid_);
+    }
     if (!getLanguageBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, language_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, language_);
     }
     if (!getVersionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, version_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, version_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -325,6 +372,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getClient());
     result = result && getSessionid()
         .equals(other.getSessionid());
+    result = result && getMessageid()
+        .equals(other.getMessageid());
     result = result && getLanguage()
         .equals(other.getLanguage());
     result = result && getVersion()
@@ -347,6 +396,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getClient().hashCode();
     hash = (37 * hash) + SESSIONID_FIELD_NUMBER;
     hash = (53 * hash) + getSessionid().hashCode();
+    hash = (37 * hash) + MESSAGEID_FIELD_NUMBER;
+    hash = (53 * hash) + getMessageid().hashCode();
     hash = (37 * hash) + LANGUAGE_FIELD_NUMBER;
     hash = (53 * hash) + getLanguage().hashCode();
     hash = (37 * hash) + VERSION_FIELD_NUMBER;
@@ -486,6 +537,8 @@ private static final long serialVersionUID = 0L;
 
       sessionid_ = "";
 
+      messageid_ = "";
+
       language_ = "";
 
       version_ = "";
@@ -515,6 +568,7 @@ private static final long serialVersionUID = 0L;
       result.timestamp_ = timestamp_;
       result.client_ = client_;
       result.sessionid_ = sessionid_;
+      result.messageid_ = messageid_;
       result.language_ = language_;
       result.version_ = version_;
       onBuilt();
@@ -567,6 +621,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getSessionid().isEmpty()) {
         sessionid_ = other.sessionid_;
+        onChanged();
+      }
+      if (!other.getMessageid().isEmpty()) {
+        messageid_ = other.messageid_;
         onChanged();
       }
       if (!other.getLanguage().isEmpty()) {
@@ -768,9 +826,78 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object messageid_ = "";
+    /**
+     * <code>string messageid = 4;</code>
+     */
+    public java.lang.String getMessageid() {
+      java.lang.Object ref = messageid_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        messageid_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string messageid = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getMessageidBytes() {
+      java.lang.Object ref = messageid_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        messageid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string messageid = 4;</code>
+     */
+    public Builder setMessageid(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      messageid_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string messageid = 4;</code>
+     */
+    public Builder clearMessageid() {
+      
+      messageid_ = getDefaultInstance().getMessageid();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string messageid = 4;</code>
+     */
+    public Builder setMessageidBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      messageid_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object language_ = "";
     /**
-     * <code>string language = 4;</code>
+     * <code>string language = 5;</code>
      */
     public java.lang.String getLanguage() {
       java.lang.Object ref = language_;
@@ -785,7 +912,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string language = 4;</code>
+     * <code>string language = 5;</code>
      */
     public com.google.protobuf.ByteString
         getLanguageBytes() {
@@ -801,7 +928,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string language = 4;</code>
+     * <code>string language = 5;</code>
      */
     public Builder setLanguage(
         java.lang.String value) {
@@ -814,7 +941,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string language = 4;</code>
+     * <code>string language = 5;</code>
      */
     public Builder clearLanguage() {
       
@@ -823,7 +950,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string language = 4;</code>
+     * <code>string language = 5;</code>
      */
     public Builder setLanguageBytes(
         com.google.protobuf.ByteString value) {
@@ -839,7 +966,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object version_ = "";
     /**
-     * <code>string version = 5;</code>
+     * <code>string version = 6;</code>
      */
     public java.lang.String getVersion() {
       java.lang.Object ref = version_;
@@ -854,7 +981,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string version = 5;</code>
+     * <code>string version = 6;</code>
      */
     public com.google.protobuf.ByteString
         getVersionBytes() {
@@ -870,7 +997,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string version = 5;</code>
+     * <code>string version = 6;</code>
      */
     public Builder setVersion(
         java.lang.String value) {
@@ -883,7 +1010,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string version = 5;</code>
+     * <code>string version = 6;</code>
      */
     public Builder clearVersion() {
       
@@ -892,7 +1019,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string version = 5;</code>
+     * <code>string version = 6;</code>
      */
     public Builder setVersionBytes(
         com.google.protobuf.ByteString value) {

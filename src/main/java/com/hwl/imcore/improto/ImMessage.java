@@ -109,6 +109,11 @@ public final class ImMessage {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_ImTestConnectionMessageResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ImAckMessageRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ImAckMessageRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -122,7 +127,7 @@ public final class ImMessage {
       "im_message.proto\"\206\001\n\020ImMessageContext\022\034\n" +
       "\004type\030\001 \001(\0162\016.ImMessageType\022$\n\007request\030\002" +
       " \001(\0132\021.ImMessageRequestH\000\022&\n\010response\030\003 " +
-      "\001(\0132\022.ImMessageResponseH\000B\006\n\004body\"\307\003\n\020Im" +
+      "\001(\0132\022.ImMessageResponseH\000B\006\n\004body\"\372\003\n\020Im" +
       "MessageRequest\022*\n\013requestHead\030\001 \001(\0132\025.Im" +
       "MessageRequestHead\0225\n\023userValidateReques" +
       "t\030\002 \001(\0132\026.ImUserValidateRequestH\000\022;\n\026cha" +
@@ -133,73 +138,78 @@ public final class ImMessage {
       "BeatMessageRequestH\000\022=\n\027addFriendMessage" +
       "Request\030\006 \001(\0132\032.ImAddFriendMessageReques" +
       "tH\000\022G\n\034testConnectionMessageRequest\030\007 \001(" +
-      "\0132\037.ImTestConnectionMessageRequestH\000B\r\n\013" +
-      "requestBody\"\226\003\n\021ImMessageResponse\022,\n\014res" +
-      "ponseHead\030\001 \001(\0132\026.ImMessageResponseHead\022" +
-      "7\n\024userValidateResponse\030\002 \001(\0132\027.ImUserVa" +
-      "lidateResponseH\000\022=\n\027chatUserMessageRespo" +
-      "nse\030\003 \001(\0132\032.ImChatUserMessageResponseH\000\022" +
-      "?\n\030chatGroupMessageResponse\030\004 \001(\0132\033.ImCh" +
-      "atGroupMessageResponseH\000\022?\n\030addFriendMes" +
-      "sageResponse\030\005 \001(\0132\033.ImAddFriendMessageR" +
-      "esponseH\000\022I\n\035testConnectionMessageRespon" +
-      "se\030\006 \001(\0132 .ImTestConnectionMessageRespon" +
-      "seH\000B\016\n\014responseBody\"o\n\024ImMessageRequest" +
-      "Head\022\021\n\ttimestamp\030\001 \001(\004\022\016\n\006client\030\002 \001(\t\022" +
-      "\021\n\tsessionid\030\003 \001(\t\022\020\n\010language\030\004 \001(\t\022\017\n\007" +
-      "version\030\005 \001(\t\"`\n\025ImMessageResponseHead\022\014" +
-      "\n\004code\030\001 \001(\r\022\017\n\007message\030\002 \001(\t\022(\n\006source\030" +
-      "\003 \001(\0162\030.ImMessageSourcePosition\"6\n\025ImUse" +
-      "rValidateRequest\022\016\n\006userId\030\001 \001(\004\022\r\n\005toke" +
-      "n\030\002 \001(\t\"a\n\026ImUserValidateResponse\022\021\n\tisS" +
-      "uccess\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\022\020\n\010isOnlin" +
-      "e\030\003 \001(\010\022\021\n\tsessionid\030\004 \001(\t\"U\n\030ImChatUser" +
-      "MessageRequest\0229\n\026chatUserMessageContent" +
-      "\030\001 \001(\0132\031.ImChatUserMessageContent\"i\n\031ImC" +
-      "hatUserMessageResponse\0229\n\026chatUserMessag" +
-      "eContent\030\001 \001(\0132\031.ImChatUserMessageConten" +
-      "t\022\021\n\tbuildTime\030\002 \001(\004\"\227\002\n\030ImChatUserMessa" +
-      "geContent\022\022\n\nfromUserId\030\001 \001(\004\022\024\n\014fromUse" +
-      "rName\030\002 \001(\t\022\025\n\rfromUserImage\030\003 \001(\t\022\020\n\010to" +
-      "UserId\030\004 \001(\004\022\023\n\013contentType\030\005 \001(\r\022\017\n\007con" +
-      "tent\030\006 \001(\t\022\023\n\013originalUrl\030\007 \001(\t\022\022\n\nprevi" +
-      "ewUrl\030\010 \001(\t\022\022\n\nimageWidth\030\t \001(\r\022\023\n\013image" +
-      "Height\030\n \001(\r\022\014\n\004size\030\013 \001(\r\022\020\n\010playTime\030\014" +
-      " \001(\r\022\020\n\010isFriend\030\r \001(\010\"X\n\031ImChatGroupMes" +
-      "sageRequest\022;\n\027chatGroupMessageContent\030\001" +
-      " \001(\0132\032.ImChatGroupMessageContent\"l\n\032ImCh" +
-      "atGroupMessageResponse\022;\n\027chatGroupMessa" +
-      "geContent\030\001 \001(\0132\032.ImChatGroupMessageCont" +
-      "ent\022\021\n\tbuildTime\030\002 \001(\004\"\233\002\n\031ImChatGroupMe" +
-      "ssageContent\022\022\n\nfromUserId\030\001 \001(\004\022\024\n\014from" +
-      "UserName\030\002 \001(\t\022\025\n\rfromUserImage\030\003 \001(\t\022\023\n" +
-      "\013toGroupGuid\030\004 \001(\t\022\023\n\013contentType\030\005 \001(\r\022" +
+      "\0132\037.ImTestConnectionMessageRequestH\000\0221\n\021" +
+      "ackMessageRequest\030\010 \001(\0132\024.ImAckMessageRe" +
+      "questH\000B\r\n\013requestBody\"\226\003\n\021ImMessageResp" +
+      "onse\022,\n\014responseHead\030\001 \001(\0132\026.ImMessageRe" +
+      "sponseHead\0227\n\024userValidateResponse\030\002 \001(\013" +
+      "2\027.ImUserValidateResponseH\000\022=\n\027chatUserM" +
+      "essageResponse\030\003 \001(\0132\032.ImChatUserMessage" +
+      "ResponseH\000\022?\n\030chatGroupMessageResponse\030\004" +
+      " \001(\0132\033.ImChatGroupMessageResponseH\000\022?\n\030a" +
+      "ddFriendMessageResponse\030\005 \001(\0132\033.ImAddFri" +
+      "endMessageResponseH\000\022I\n\035testConnectionMe" +
+      "ssageResponse\030\006 \001(\0132 .ImTestConnectionMe" +
+      "ssageResponseH\000B\016\n\014responseBody\"\202\001\n\024ImMe" +
+      "ssageRequestHead\022\021\n\ttimestamp\030\001 \001(\004\022\016\n\006c" +
+      "lient\030\002 \001(\t\022\021\n\tsessionid\030\003 \001(\t\022\021\n\tmessag" +
+      "eid\030\004 \001(\t\022\020\n\010language\030\005 \001(\t\022\017\n\007version\030\006" +
+      " \001(\t\"o\n\025ImMessageResponseHead\022\014\n\004code\030\001 " +
+      "\001(\r\022\017\n\007message\030\002 \001(\t\022\r\n\005isAck\030\003 \001(\010\022(\n\006s" +
+      "ource\030\004 \001(\0162\030.ImMessageSourcePosition\"6\n" +
+      "\025ImUserValidateRequest\022\016\n\006userId\030\001 \001(\004\022\r" +
+      "\n\005token\030\002 \001(\t\"a\n\026ImUserValidateResponse\022" +
+      "\021\n\tisSuccess\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\022\020\n\010i" +
+      "sOnline\030\003 \001(\010\022\021\n\tsessionid\030\004 \001(\t\"U\n\030ImCh" +
+      "atUserMessageRequest\0229\n\026chatUserMessageC" +
+      "ontent\030\001 \001(\0132\031.ImChatUserMessageContent\"" +
+      "i\n\031ImChatUserMessageResponse\0229\n\026chatUser" +
+      "MessageContent\030\001 \001(\0132\031.ImChatUserMessage" +
+      "Content\022\021\n\tbuildTime\030\002 \001(\004\"\227\002\n\030ImChatUse" +
+      "rMessageContent\022\022\n\nfromUserId\030\001 \001(\004\022\024\n\014f" +
+      "romUserName\030\002 \001(\t\022\025\n\rfromUserImage\030\003 \001(\t" +
+      "\022\020\n\010toUserId\030\004 \001(\004\022\023\n\013contentType\030\005 \001(\r\022" +
       "\017\n\007content\030\006 \001(\t\022\023\n\013originalUrl\030\007 \001(\t\022\022\n" +
       "\npreviewUrl\030\010 \001(\t\022\022\n\nimageWidth\030\t \001(\r\022\023\n" +
       "\013imageHeight\030\n \001(\r\022\014\n\004size\030\013 \001(\r\022\020\n\010play" +
-      "Time\030\014 \001(\r\022\020\n\010isFriend\030\r \001(\010\"D\n\031ImHeartB" +
-      "eatMessageRequest\022\022\n\nfromUserId\030\001 \001(\004\022\023\n" +
-      "\013currentTime\030\002 \001(\004\"X\n\031ImAddFriendMessage" +
-      "Request\022;\n\027addFriendMessageContent\030\001 \001(\013" +
-      "2\032.ImAddFriendMessageContent\"l\n\032ImAddFri" +
-      "endMessageResponse\022;\n\027addFriendMessageCo" +
-      "ntent\030\001 \001(\0132\032.ImAddFriendMessageContent\022" +
-      "\021\n\tbuildTime\030\002 \001(\004\"\203\001\n\031ImAddFriendMessag" +
-      "eContent\022\022\n\nfromUserId\030\001 \001(\004\022\024\n\014fromUser" +
-      "Name\030\002 \001(\t\022\031\n\021fromUserHeadImage\030\003 \001(\t\022\020\n" +
-      "\010toUserId\030\004 \001(\004\022\017\n\007content\030\006 \001(\t\"E\n\036ImTe" +
-      "stConnectionMessageRequest\022\022\n\nfromUserId" +
-      "\030\001 \001(\004\022\017\n\007content\030\002 \001(\t\"D\n\037ImTestConnect" +
-      "ionMessageResponse\022\017\n\007content\030\001 \001(\t\022\020\n\010s" +
-      "endTime\030\002 \001(\004*z\n\rImMessageType\022\010\n\004Base\020\000" +
-      "\022\020\n\014UserValidate\020\001\022\014\n\010ChatUser\020\002\022\r\n\tChat" +
-      "Group\020\003\022\r\n\tHeartBeat\020\004\022\r\n\tAddFriend\020\005\022\022\n" +
-      "\016TestConnection\020\006*S\n\025ImMessageResponseCo" +
-      "de\022\t\n\005Other\020\000\022\013\n\007Success\020d\022\013\n\006Failed\020\310\001\022" +
-      "\025\n\020SessionidInvalid\020\311\001*I\n\027ImMessageSourc" +
-      "ePosition\022\010\n\004None\020\000\022\014\n\010RealTime\020\001\022\013\n\007Off" +
-      "line\020\002\022\t\n\005Retry\020\003B,\n\026com.hwl.imcore.impr" +
-      "otoP\001\252\002\017IMCore.Protocolb\006proto3"
+      "Time\030\014 \001(\r\022\020\n\010isFriend\030\r \001(\010\"X\n\031ImChatGr" +
+      "oupMessageRequest\022;\n\027chatGroupMessageCon" +
+      "tent\030\001 \001(\0132\032.ImChatGroupMessageContent\"l" +
+      "\n\032ImChatGroupMessageResponse\022;\n\027chatGrou" +
+      "pMessageContent\030\001 \001(\0132\032.ImChatGroupMessa" +
+      "geContent\022\021\n\tbuildTime\030\002 \001(\004\"\233\002\n\031ImChatG" +
+      "roupMessageContent\022\022\n\nfromUserId\030\001 \001(\004\022\024" +
+      "\n\014fromUserName\030\002 \001(\t\022\025\n\rfromUserImage\030\003 " +
+      "\001(\t\022\023\n\013toGroupGuid\030\004 \001(\t\022\023\n\013contentType\030" +
+      "\005 \001(\r\022\017\n\007content\030\006 \001(\t\022\023\n\013originalUrl\030\007 " +
+      "\001(\t\022\022\n\npreviewUrl\030\010 \001(\t\022\022\n\nimageWidth\030\t " +
+      "\001(\r\022\023\n\013imageHeight\030\n \001(\r\022\014\n\004size\030\013 \001(\r\022\020" +
+      "\n\010playTime\030\014 \001(\r\022\020\n\010isFriend\030\r \001(\010\"D\n\031Im" +
+      "HeartBeatMessageRequest\022\022\n\nfromUserId\030\001 " +
+      "\001(\004\022\023\n\013currentTime\030\002 \001(\004\"X\n\031ImAddFriendM" +
+      "essageRequest\022;\n\027addFriendMessageContent" +
+      "\030\001 \001(\0132\032.ImAddFriendMessageContent\"l\n\032Im" +
+      "AddFriendMessageResponse\022;\n\027addFriendMes" +
+      "sageContent\030\001 \001(\0132\032.ImAddFriendMessageCo" +
+      "ntent\022\021\n\tbuildTime\030\002 \001(\004\"\203\001\n\031ImAddFriend" +
+      "MessageContent\022\022\n\nfromUserId\030\001 \001(\004\022\024\n\014fr" +
+      "omUserName\030\002 \001(\t\022\031\n\021fromUserHeadImage\030\003 " +
+      "\001(\t\022\020\n\010toUserId\030\004 \001(\004\022\017\n\007content\030\006 \001(\t\"E" +
+      "\n\036ImTestConnectionMessageRequest\022\022\n\nfrom" +
+      "UserId\030\001 \001(\004\022\017\n\007content\030\002 \001(\t\"D\n\037ImTestC" +
+      "onnectionMessageResponse\022\017\n\007content\030\001 \001(" +
+      "\t\022\020\n\010sendTime\030\002 \001(\004\"<\n\023ImAckMessageReque" +
+      "st\022\022\n\nfromUserId\030\001 \001(\004\022\021\n\tmessageid\030\002 \001(" +
+      "\t*\220\001\n\rImMessageType\022\010\n\004Base\020\000\022\020\n\014UserVal" +
+      "idate\020\001\022\014\n\010ChatUser\020\002\022\r\n\tChatGroup\020\003\022\r\n\t" +
+      "HeartBeat\020\004\022\r\n\tAddFriend\020\005\022\022\n\016TestConnec" +
+      "tion\020\006\022\024\n\020ClientAckMessage\020\007*S\n\025ImMessag" +
+      "eResponseCode\022\t\n\005Other\020\000\022\013\n\007Success\020d\022\013\n" +
+      "\006Failed\020\310\001\022\025\n\020SessionidInvalid\020\311\001*I\n\027ImM" +
+      "essageSourcePosition\022\010\n\004None\020\000\022\014\n\010RealTi" +
+      "me\020\001\022\013\n\007Offline\020\002\022\t\n\005Retry\020\003B,\n\026com.hwl." +
+      "imcore.improtoP\001\252\002\017IMCore.Protocolb\006prot" +
+      "o3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -224,7 +234,7 @@ public final class ImMessage {
     internal_static_ImMessageRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ImMessageRequest_descriptor,
-        new java.lang.String[] { "RequestHead", "UserValidateRequest", "ChatUserMessageRequest", "ChatGroupMessageRequest", "HeartBeatMessageRequest", "AddFriendMessageRequest", "TestConnectionMessageRequest", "RequestBody", });
+        new java.lang.String[] { "RequestHead", "UserValidateRequest", "ChatUserMessageRequest", "ChatGroupMessageRequest", "HeartBeatMessageRequest", "AddFriendMessageRequest", "TestConnectionMessageRequest", "AckMessageRequest", "RequestBody", });
     internal_static_ImMessageResponse_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_ImMessageResponse_fieldAccessorTable = new
@@ -236,13 +246,13 @@ public final class ImMessage {
     internal_static_ImMessageRequestHead_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ImMessageRequestHead_descriptor,
-        new java.lang.String[] { "Timestamp", "Client", "Sessionid", "Language", "Version", });
+        new java.lang.String[] { "Timestamp", "Client", "Sessionid", "Messageid", "Language", "Version", });
     internal_static_ImMessageResponseHead_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_ImMessageResponseHead_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ImMessageResponseHead_descriptor,
-        new java.lang.String[] { "Code", "Message", "Source", });
+        new java.lang.String[] { "Code", "Message", "IsAck", "Source", });
     internal_static_ImUserValidateRequest_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_ImUserValidateRequest_fieldAccessorTable = new
@@ -327,6 +337,12 @@ public final class ImMessage {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ImTestConnectionMessageResponse_descriptor,
         new java.lang.String[] { "Content", "SendTime", });
+    internal_static_ImAckMessageRequest_descriptor =
+      getDescriptor().getMessageTypes().get(19);
+    internal_static_ImAckMessageRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ImAckMessageRequest_descriptor,
+        new java.lang.String[] { "FromUserId", "Messageid", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

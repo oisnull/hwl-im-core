@@ -33,21 +33,31 @@ public interface ImMessageRequestHeadOrBuilder extends
       getSessionidBytes();
 
   /**
-   * <code>string language = 4;</code>
+   * <code>string messageid = 4;</code>
+   */
+  java.lang.String getMessageid();
+  /**
+   * <code>string messageid = 4;</code>
+   */
+  com.google.protobuf.ByteString
+      getMessageidBytes();
+
+  /**
+   * <code>string language = 5;</code>
    */
   java.lang.String getLanguage();
   /**
-   * <code>string language = 4;</code>
+   * <code>string language = 5;</code>
    */
   com.google.protobuf.ByteString
       getLanguageBytes();
 
   /**
-   * <code>string version = 5;</code>
+   * <code>string version = 6;</code>
    */
   java.lang.String getVersion();
   /**
-   * <code>string version = 5;</code>
+   * <code>string version = 6;</code>
    */
   com.google.protobuf.ByteString
       getVersionBytes();

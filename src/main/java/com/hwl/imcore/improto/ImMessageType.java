@@ -36,6 +36,10 @@ public enum ImMessageType
    * <code>TestConnection = 6;</code>
    */
   TestConnection(6),
+  /**
+   * <code>ClientAckMessage = 7;</code>
+   */
+  ClientAckMessage(7),
   UNRECOGNIZED(-1),
   ;
 
@@ -67,6 +71,10 @@ public enum ImMessageType
    * <code>TestConnection = 6;</code>
    */
   public static final int TestConnection_VALUE = 6;
+  /**
+   * <code>ClientAckMessage = 7;</code>
+   */
+  public static final int ClientAckMessage_VALUE = 7;
 
 
   public final int getNumber() {
@@ -94,6 +102,7 @@ public enum ImMessageType
       case 4: return HeartBeat;
       case 5: return AddFriend;
       case 6: return TestConnection;
+      case 7: return ClientAckMessage;
       default: return null;
     }
   }

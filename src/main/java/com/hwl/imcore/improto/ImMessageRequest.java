@@ -146,6 +146,20 @@ private static final long serialVersionUID = 0L;
             requestBodyCase_ = 7;
             break;
           }
+          case 66: {
+            com.hwl.imcore.improto.ImAckMessageRequest.Builder subBuilder = null;
+            if (requestBodyCase_ == 8) {
+              subBuilder = ((com.hwl.imcore.improto.ImAckMessageRequest) requestBody_).toBuilder();
+            }
+            requestBody_ =
+                input.readMessage(com.hwl.imcore.improto.ImAckMessageRequest.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.hwl.imcore.improto.ImAckMessageRequest) requestBody_);
+              requestBody_ = subBuilder.buildPartial();
+            }
+            requestBodyCase_ = 8;
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -180,6 +194,7 @@ private static final long serialVersionUID = 0L;
     HEARTBEATMESSAGEREQUEST(5),
     ADDFRIENDMESSAGEREQUEST(6),
     TESTCONNECTIONMESSAGEREQUEST(7),
+    ACKMESSAGEREQUEST(8),
     REQUESTBODY_NOT_SET(0);
     private final int value;
     private RequestBodyCase(int value) {
@@ -201,6 +216,7 @@ private static final long serialVersionUID = 0L;
         case 5: return HEARTBEATMESSAGEREQUEST;
         case 6: return ADDFRIENDMESSAGEREQUEST;
         case 7: return TESTCONNECTIONMESSAGEREQUEST;
+        case 8: return ACKMESSAGEREQUEST;
         case 0: return REQUESTBODY_NOT_SET;
         default: return null;
       }
@@ -393,6 +409,32 @@ private static final long serialVersionUID = 0L;
     return com.hwl.imcore.improto.ImTestConnectionMessageRequest.getDefaultInstance();
   }
 
+  public static final int ACKMESSAGEREQUEST_FIELD_NUMBER = 8;
+  /**
+   * <code>.ImAckMessageRequest ackMessageRequest = 8;</code>
+   */
+  public boolean hasAckMessageRequest() {
+    return requestBodyCase_ == 8;
+  }
+  /**
+   * <code>.ImAckMessageRequest ackMessageRequest = 8;</code>
+   */
+  public com.hwl.imcore.improto.ImAckMessageRequest getAckMessageRequest() {
+    if (requestBodyCase_ == 8) {
+       return (com.hwl.imcore.improto.ImAckMessageRequest) requestBody_;
+    }
+    return com.hwl.imcore.improto.ImAckMessageRequest.getDefaultInstance();
+  }
+  /**
+   * <code>.ImAckMessageRequest ackMessageRequest = 8;</code>
+   */
+  public com.hwl.imcore.improto.ImAckMessageRequestOrBuilder getAckMessageRequestOrBuilder() {
+    if (requestBodyCase_ == 8) {
+       return (com.hwl.imcore.improto.ImAckMessageRequest) requestBody_;
+    }
+    return com.hwl.imcore.improto.ImAckMessageRequest.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -425,6 +467,9 @@ private static final long serialVersionUID = 0L;
     }
     if (requestBodyCase_ == 7) {
       output.writeMessage(7, (com.hwl.imcore.improto.ImTestConnectionMessageRequest) requestBody_);
+    }
+    if (requestBodyCase_ == 8) {
+      output.writeMessage(8, (com.hwl.imcore.improto.ImAckMessageRequest) requestBody_);
     }
     unknownFields.writeTo(output);
   }
@@ -461,6 +506,10 @@ private static final long serialVersionUID = 0L;
     if (requestBodyCase_ == 7) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(7, (com.hwl.imcore.improto.ImTestConnectionMessageRequest) requestBody_);
+    }
+    if (requestBodyCase_ == 8) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, (com.hwl.imcore.improto.ImAckMessageRequest) requestBody_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -511,6 +560,10 @@ private static final long serialVersionUID = 0L;
         result = result && getTestConnectionMessageRequest()
             .equals(other.getTestConnectionMessageRequest());
         break;
+      case 8:
+        result = result && getAckMessageRequest()
+            .equals(other.getAckMessageRequest());
+        break;
       case 0:
       default:
     }
@@ -553,6 +606,10 @@ private static final long serialVersionUID = 0L;
       case 7:
         hash = (37 * hash) + TESTCONNECTIONMESSAGEREQUEST_FIELD_NUMBER;
         hash = (53 * hash) + getTestConnectionMessageRequest().hashCode();
+        break;
+      case 8:
+        hash = (37 * hash) + ACKMESSAGEREQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getAckMessageRequest().hashCode();
         break;
       case 0:
       default:
@@ -763,6 +820,13 @@ private static final long serialVersionUID = 0L;
           result.requestBody_ = testConnectionMessageRequestBuilder_.build();
         }
       }
+      if (requestBodyCase_ == 8) {
+        if (ackMessageRequestBuilder_ == null) {
+          result.requestBody_ = requestBody_;
+        } else {
+          result.requestBody_ = ackMessageRequestBuilder_.build();
+        }
+      }
       result.requestBodyCase_ = requestBodyCase_;
       onBuilt();
       return result;
@@ -831,6 +895,10 @@ private static final long serialVersionUID = 0L;
         }
         case TESTCONNECTIONMESSAGEREQUEST: {
           mergeTestConnectionMessageRequest(other.getTestConnectionMessageRequest());
+          break;
+        }
+        case ACKMESSAGEREQUEST: {
+          mergeAckMessageRequest(other.getAckMessageRequest());
           break;
         }
         case REQUESTBODY_NOT_SET: {
@@ -1810,6 +1878,142 @@ private static final long serialVersionUID = 0L;
       requestBodyCase_ = 7;
       onChanged();;
       return testConnectionMessageRequestBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.hwl.imcore.improto.ImAckMessageRequest, com.hwl.imcore.improto.ImAckMessageRequest.Builder, com.hwl.imcore.improto.ImAckMessageRequestOrBuilder> ackMessageRequestBuilder_;
+    /**
+     * <code>.ImAckMessageRequest ackMessageRequest = 8;</code>
+     */
+    public boolean hasAckMessageRequest() {
+      return requestBodyCase_ == 8;
+    }
+    /**
+     * <code>.ImAckMessageRequest ackMessageRequest = 8;</code>
+     */
+    public com.hwl.imcore.improto.ImAckMessageRequest getAckMessageRequest() {
+      if (ackMessageRequestBuilder_ == null) {
+        if (requestBodyCase_ == 8) {
+          return (com.hwl.imcore.improto.ImAckMessageRequest) requestBody_;
+        }
+        return com.hwl.imcore.improto.ImAckMessageRequest.getDefaultInstance();
+      } else {
+        if (requestBodyCase_ == 8) {
+          return ackMessageRequestBuilder_.getMessage();
+        }
+        return com.hwl.imcore.improto.ImAckMessageRequest.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.ImAckMessageRequest ackMessageRequest = 8;</code>
+     */
+    public Builder setAckMessageRequest(com.hwl.imcore.improto.ImAckMessageRequest value) {
+      if (ackMessageRequestBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        requestBody_ = value;
+        onChanged();
+      } else {
+        ackMessageRequestBuilder_.setMessage(value);
+      }
+      requestBodyCase_ = 8;
+      return this;
+    }
+    /**
+     * <code>.ImAckMessageRequest ackMessageRequest = 8;</code>
+     */
+    public Builder setAckMessageRequest(
+        com.hwl.imcore.improto.ImAckMessageRequest.Builder builderForValue) {
+      if (ackMessageRequestBuilder_ == null) {
+        requestBody_ = builderForValue.build();
+        onChanged();
+      } else {
+        ackMessageRequestBuilder_.setMessage(builderForValue.build());
+      }
+      requestBodyCase_ = 8;
+      return this;
+    }
+    /**
+     * <code>.ImAckMessageRequest ackMessageRequest = 8;</code>
+     */
+    public Builder mergeAckMessageRequest(com.hwl.imcore.improto.ImAckMessageRequest value) {
+      if (ackMessageRequestBuilder_ == null) {
+        if (requestBodyCase_ == 8 &&
+            requestBody_ != com.hwl.imcore.improto.ImAckMessageRequest.getDefaultInstance()) {
+          requestBody_ = com.hwl.imcore.improto.ImAckMessageRequest.newBuilder((com.hwl.imcore.improto.ImAckMessageRequest) requestBody_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          requestBody_ = value;
+        }
+        onChanged();
+      } else {
+        if (requestBodyCase_ == 8) {
+          ackMessageRequestBuilder_.mergeFrom(value);
+        }
+        ackMessageRequestBuilder_.setMessage(value);
+      }
+      requestBodyCase_ = 8;
+      return this;
+    }
+    /**
+     * <code>.ImAckMessageRequest ackMessageRequest = 8;</code>
+     */
+    public Builder clearAckMessageRequest() {
+      if (ackMessageRequestBuilder_ == null) {
+        if (requestBodyCase_ == 8) {
+          requestBodyCase_ = 0;
+          requestBody_ = null;
+          onChanged();
+        }
+      } else {
+        if (requestBodyCase_ == 8) {
+          requestBodyCase_ = 0;
+          requestBody_ = null;
+        }
+        ackMessageRequestBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.ImAckMessageRequest ackMessageRequest = 8;</code>
+     */
+    public com.hwl.imcore.improto.ImAckMessageRequest.Builder getAckMessageRequestBuilder() {
+      return getAckMessageRequestFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.ImAckMessageRequest ackMessageRequest = 8;</code>
+     */
+    public com.hwl.imcore.improto.ImAckMessageRequestOrBuilder getAckMessageRequestOrBuilder() {
+      if ((requestBodyCase_ == 8) && (ackMessageRequestBuilder_ != null)) {
+        return ackMessageRequestBuilder_.getMessageOrBuilder();
+      } else {
+        if (requestBodyCase_ == 8) {
+          return (com.hwl.imcore.improto.ImAckMessageRequest) requestBody_;
+        }
+        return com.hwl.imcore.improto.ImAckMessageRequest.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.ImAckMessageRequest ackMessageRequest = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.hwl.imcore.improto.ImAckMessageRequest, com.hwl.imcore.improto.ImAckMessageRequest.Builder, com.hwl.imcore.improto.ImAckMessageRequestOrBuilder> 
+        getAckMessageRequestFieldBuilder() {
+      if (ackMessageRequestBuilder_ == null) {
+        if (!(requestBodyCase_ == 8)) {
+          requestBody_ = com.hwl.imcore.improto.ImAckMessageRequest.getDefaultInstance();
+        }
+        ackMessageRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.hwl.imcore.improto.ImAckMessageRequest, com.hwl.imcore.improto.ImAckMessageRequest.Builder, com.hwl.imcore.improto.ImAckMessageRequestOrBuilder>(
+                (com.hwl.imcore.improto.ImAckMessageRequest) requestBody_,
+                getParentForChildren(),
+                isClean());
+        requestBody_ = null;
+      }
+      requestBodyCase_ = 8;
+      onChanged();;
+      return ackMessageRequestBuilder_;
     }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {

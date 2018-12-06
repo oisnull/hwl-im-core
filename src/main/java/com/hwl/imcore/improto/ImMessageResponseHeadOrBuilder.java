@@ -23,11 +23,16 @@ public interface ImMessageResponseHeadOrBuilder extends
       getMessageBytes();
 
   /**
-   * <code>.ImMessageSourcePosition source = 3;</code>
+   * <code>bool isAck = 3;</code>
+   */
+  boolean getIsAck();
+
+  /**
+   * <code>.ImMessageSourcePosition source = 4;</code>
    */
   int getSourceValue();
   /**
-   * <code>.ImMessageSourcePosition source = 3;</code>
+   * <code>.ImMessageSourcePosition source = 4;</code>
    */
   com.hwl.imcore.improto.ImMessageSourcePosition getSource();
 }

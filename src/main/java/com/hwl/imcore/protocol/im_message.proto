@@ -12,6 +12,7 @@ enum ImMessageType {
     HeartBeat = 4;
     AddFriend = 5;
     TestConnection = 6;
+    ClientAckMessage = 7;
 }
 
 enum ImMessageResponseCode {
@@ -45,6 +46,7 @@ message ImMessageRequest {
         ImHeartBeatMessageRequest heartBeatMessageRequest = 5;
         ImAddFriendMessageRequest addFriendMessageRequest = 6;
         ImTestConnectionMessageRequest testConnectionMessageRequest = 7;
+        ImAckMessageRequest ackMessageRequest = 8;
     }
 }
 
@@ -63,14 +65,16 @@ message ImMessageRequestHead {
     uint64 timestamp = 1;
     string client = 2;
     string sessionid = 3;
-    string language = 4;
-    string version = 5;
+    string messageid = 4;
+    string language = 5;
+    string version = 6;
 }
 
 message ImMessageResponseHead {
     uint32 code = 1;
     string message = 2;
-    ImMessageSourcePosition source = 3;
+    bool isAck = 3;
+    ImMessageSourcePosition source = 4;
 }
 
 message ImUserValidateRequest {
@@ -165,4 +169,9 @@ message ImTestConnectionMessageRequest {
 message ImTestConnectionMessageResponse {
     string content = 1;
     uint64 sendTime = 2;
+}
+
+message ImAckMessageRequest {
+    uint64 fromUserId = 1;
+    string messageid = 2;
 }
