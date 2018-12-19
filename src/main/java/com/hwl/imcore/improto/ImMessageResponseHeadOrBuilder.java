@@ -23,16 +23,26 @@ public interface ImMessageResponseHeadOrBuilder extends
       getMessageBytes();
 
   /**
-   * <code>bool isAck = 3;</code>
+   * <code>bool isack = 3;</code>
    */
-  boolean getIsAck();
+  boolean getIsack();
 
   /**
-   * <code>.ImMessageSourcePosition source = 4;</code>
+   * <code>string messageid = 4;</code>
+   */
+  java.lang.String getMessageid();
+  /**
+   * <code>string messageid = 4;</code>
+   */
+  com.google.protobuf.ByteString
+      getMessageidBytes();
+
+  /**
+   * <code>.ImMessageSourcePosition source = 5;</code>
    */
   int getSourceValue();
   /**
-   * <code>.ImMessageSourcePosition source = 4;</code>
+   * <code>.ImMessageSourcePosition source = 5;</code>
    */
   com.hwl.imcore.improto.ImMessageSourcePosition getSource();
 }

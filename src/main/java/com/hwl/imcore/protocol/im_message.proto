@@ -65,21 +65,22 @@ message ImMessageRequestHead {
     uint64 timestamp = 1;
     string client = 2;
     string sessionid = 3;
-    string messageid = 4;
-    string language = 5;
-    string version = 6;
+    string language = 4;
+    string version = 5;
 }
 
 message ImMessageResponseHead {
     uint32 code = 1;
     string message = 2;
-    bool isAck = 3;
-    ImMessageSourcePosition source = 4;
+    bool isack = 3;
+    string messageid = 4;
+    ImMessageSourcePosition source = 5;
 }
 
 message ImUserValidateRequest {
     uint64 userId = 1;
     string token = 2;
+    string messageid = 3;
 }
 
 message ImUserValidateResponse {

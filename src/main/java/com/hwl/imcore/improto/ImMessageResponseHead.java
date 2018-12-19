@@ -18,7 +18,8 @@ private static final long serialVersionUID = 0L;
   private ImMessageResponseHead() {
     code_ = 0;
     message_ = "";
-    isAck_ = false;
+    isack_ = false;
+    messageid_ = "";
     source_ = 0;
   }
 
@@ -66,10 +67,16 @@ private static final long serialVersionUID = 0L;
           }
           case 24: {
 
-            isAck_ = input.readBool();
+            isack_ = input.readBool();
             break;
           }
-          case 32: {
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            messageid_ = s;
+            break;
+          }
+          case 40: {
             int rawValue = input.readEnum();
 
             source_ = rawValue;
@@ -143,24 +150,58 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int ISACK_FIELD_NUMBER = 3;
-  private boolean isAck_;
+  private boolean isack_;
   /**
-   * <code>bool isAck = 3;</code>
+   * <code>bool isack = 3;</code>
    */
-  public boolean getIsAck() {
-    return isAck_;
+  public boolean getIsack() {
+    return isack_;
   }
 
-  public static final int SOURCE_FIELD_NUMBER = 4;
+  public static final int MESSAGEID_FIELD_NUMBER = 4;
+  private volatile java.lang.Object messageid_;
+  /**
+   * <code>string messageid = 4;</code>
+   */
+  public java.lang.String getMessageid() {
+    java.lang.Object ref = messageid_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      messageid_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string messageid = 4;</code>
+   */
+  public com.google.protobuf.ByteString
+      getMessageidBytes() {
+    java.lang.Object ref = messageid_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      messageid_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SOURCE_FIELD_NUMBER = 5;
   private int source_;
   /**
-   * <code>.ImMessageSourcePosition source = 4;</code>
+   * <code>.ImMessageSourcePosition source = 5;</code>
    */
   public int getSourceValue() {
     return source_;
   }
   /**
-   * <code>.ImMessageSourcePosition source = 4;</code>
+   * <code>.ImMessageSourcePosition source = 5;</code>
    */
   public com.hwl.imcore.improto.ImMessageSourcePosition getSource() {
     com.hwl.imcore.improto.ImMessageSourcePosition result = com.hwl.imcore.improto.ImMessageSourcePosition.valueOf(source_);
@@ -185,11 +226,14 @@ private static final long serialVersionUID = 0L;
     if (!getMessageBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, message_);
     }
-    if (isAck_ != false) {
-      output.writeBool(3, isAck_);
+    if (isack_ != false) {
+      output.writeBool(3, isack_);
+    }
+    if (!getMessageidBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, messageid_);
     }
     if (source_ != com.hwl.imcore.improto.ImMessageSourcePosition.None.getNumber()) {
-      output.writeEnum(4, source_);
+      output.writeEnum(5, source_);
     }
     unknownFields.writeTo(output);
   }
@@ -206,13 +250,16 @@ private static final long serialVersionUID = 0L;
     if (!getMessageBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, message_);
     }
-    if (isAck_ != false) {
+    if (isack_ != false) {
       size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(3, isAck_);
+        .computeBoolSize(3, isack_);
+    }
+    if (!getMessageidBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, messageid_);
     }
     if (source_ != com.hwl.imcore.improto.ImMessageSourcePosition.None.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(4, source_);
+        .computeEnumSize(5, source_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -234,8 +281,10 @@ private static final long serialVersionUID = 0L;
         == other.getCode());
     result = result && getMessage()
         .equals(other.getMessage());
-    result = result && (getIsAck()
-        == other.getIsAck());
+    result = result && (getIsack()
+        == other.getIsack());
+    result = result && getMessageid()
+        .equals(other.getMessageid());
     result = result && source_ == other.source_;
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -254,7 +303,9 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getMessage().hashCode();
     hash = (37 * hash) + ISACK_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getIsAck());
+        getIsack());
+    hash = (37 * hash) + MESSAGEID_FIELD_NUMBER;
+    hash = (53 * hash) + getMessageid().hashCode();
     hash = (37 * hash) + SOURCE_FIELD_NUMBER;
     hash = (53 * hash) + source_;
     hash = (29 * hash) + unknownFields.hashCode();
@@ -390,7 +441,9 @@ private static final long serialVersionUID = 0L;
 
       message_ = "";
 
-      isAck_ = false;
+      isack_ = false;
+
+      messageid_ = "";
 
       source_ = 0;
 
@@ -418,7 +471,8 @@ private static final long serialVersionUID = 0L;
       com.hwl.imcore.improto.ImMessageResponseHead result = new com.hwl.imcore.improto.ImMessageResponseHead(this);
       result.code_ = code_;
       result.message_ = message_;
-      result.isAck_ = isAck_;
+      result.isack_ = isack_;
+      result.messageid_ = messageid_;
       result.source_ = source_;
       onBuilt();
       return result;
@@ -468,8 +522,12 @@ private static final long serialVersionUID = 0L;
         message_ = other.message_;
         onChanged();
       }
-      if (other.getIsAck() != false) {
-        setIsAck(other.getIsAck());
+      if (other.getIsack() != false) {
+        setIsack(other.getIsack());
+      }
+      if (!other.getMessageid().isEmpty()) {
+        messageid_ = other.messageid_;
+        onChanged();
       }
       if (other.source_ != 0) {
         setSourceValue(other.getSourceValue());
@@ -596,41 +654,110 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private boolean isAck_ ;
+    private boolean isack_ ;
     /**
-     * <code>bool isAck = 3;</code>
+     * <code>bool isack = 3;</code>
      */
-    public boolean getIsAck() {
-      return isAck_;
+    public boolean getIsack() {
+      return isack_;
     }
     /**
-     * <code>bool isAck = 3;</code>
+     * <code>bool isack = 3;</code>
      */
-    public Builder setIsAck(boolean value) {
+    public Builder setIsack(boolean value) {
       
-      isAck_ = value;
+      isack_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>bool isAck = 3;</code>
+     * <code>bool isack = 3;</code>
      */
-    public Builder clearIsAck() {
+    public Builder clearIsack() {
       
-      isAck_ = false;
+      isack_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object messageid_ = "";
+    /**
+     * <code>string messageid = 4;</code>
+     */
+    public java.lang.String getMessageid() {
+      java.lang.Object ref = messageid_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        messageid_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string messageid = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getMessageidBytes() {
+      java.lang.Object ref = messageid_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        messageid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string messageid = 4;</code>
+     */
+    public Builder setMessageid(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      messageid_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string messageid = 4;</code>
+     */
+    public Builder clearMessageid() {
+      
+      messageid_ = getDefaultInstance().getMessageid();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string messageid = 4;</code>
+     */
+    public Builder setMessageidBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      messageid_ = value;
       onChanged();
       return this;
     }
 
     private int source_ = 0;
     /**
-     * <code>.ImMessageSourcePosition source = 4;</code>
+     * <code>.ImMessageSourcePosition source = 5;</code>
      */
     public int getSourceValue() {
       return source_;
     }
     /**
-     * <code>.ImMessageSourcePosition source = 4;</code>
+     * <code>.ImMessageSourcePosition source = 5;</code>
      */
     public Builder setSourceValue(int value) {
       source_ = value;
@@ -638,14 +765,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.ImMessageSourcePosition source = 4;</code>
+     * <code>.ImMessageSourcePosition source = 5;</code>
      */
     public com.hwl.imcore.improto.ImMessageSourcePosition getSource() {
       com.hwl.imcore.improto.ImMessageSourcePosition result = com.hwl.imcore.improto.ImMessageSourcePosition.valueOf(source_);
       return result == null ? com.hwl.imcore.improto.ImMessageSourcePosition.UNRECOGNIZED : result;
     }
     /**
-     * <code>.ImMessageSourcePosition source = 4;</code>
+     * <code>.ImMessageSourcePosition source = 5;</code>
      */
     public Builder setSource(com.hwl.imcore.improto.ImMessageSourcePosition value) {
       if (value == null) {
@@ -657,7 +784,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.ImMessageSourcePosition source = 4;</code>
+     * <code>.ImMessageSourcePosition source = 5;</code>
      */
     public Builder clearSource() {
       

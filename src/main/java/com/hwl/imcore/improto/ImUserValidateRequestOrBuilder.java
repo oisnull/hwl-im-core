@@ -21,4 +21,14 @@ public interface ImUserValidateRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getTokenBytes();
+
+  /**
+   * <code>string messageid = 3;</code>
+   */
+  java.lang.String getMessageid();
+  /**
+   * <code>string messageid = 3;</code>
+   */
+  com.google.protobuf.ByteString
+      getMessageidBytes();
 }

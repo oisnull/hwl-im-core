@@ -18,6 +18,7 @@ private static final long serialVersionUID = 0L;
   private ImUserValidateRequest() {
     userId_ = 0L;
     token_ = "";
+    messageid_ = "";
   }
 
   @java.lang.Override
@@ -60,6 +61,12 @@ private static final long serialVersionUID = 0L;
             java.lang.String s = input.readStringRequireUtf8();
 
             token_ = s;
+            break;
+          }
+          case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            messageid_ = s;
             break;
           }
         }
@@ -129,6 +136,40 @@ private static final long serialVersionUID = 0L;
     }
   }
 
+  public static final int MESSAGEID_FIELD_NUMBER = 3;
+  private volatile java.lang.Object messageid_;
+  /**
+   * <code>string messageid = 3;</code>
+   */
+  public java.lang.String getMessageid() {
+    java.lang.Object ref = messageid_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      messageid_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string messageid = 3;</code>
+   */
+  public com.google.protobuf.ByteString
+      getMessageidBytes() {
+    java.lang.Object ref = messageid_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      messageid_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -147,6 +188,9 @@ private static final long serialVersionUID = 0L;
     if (!getTokenBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, token_);
     }
+    if (!getMessageidBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, messageid_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -161,6 +205,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, token_);
+    }
+    if (!getMessageidBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, messageid_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -182,6 +229,8 @@ private static final long serialVersionUID = 0L;
         == other.getUserId());
     result = result && getToken()
         .equals(other.getToken());
+    result = result && getMessageid()
+        .equals(other.getMessageid());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -198,6 +247,8 @@ private static final long serialVersionUID = 0L;
         getUserId());
     hash = (37 * hash) + TOKEN_FIELD_NUMBER;
     hash = (53 * hash) + getToken().hashCode();
+    hash = (37 * hash) + MESSAGEID_FIELD_NUMBER;
+    hash = (53 * hash) + getMessageid().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -331,6 +382,8 @@ private static final long serialVersionUID = 0L;
 
       token_ = "";
 
+      messageid_ = "";
+
       return this;
     }
 
@@ -355,6 +408,7 @@ private static final long serialVersionUID = 0L;
       com.hwl.imcore.improto.ImUserValidateRequest result = new com.hwl.imcore.improto.ImUserValidateRequest(this);
       result.userId_ = userId_;
       result.token_ = token_;
+      result.messageid_ = messageid_;
       onBuilt();
       return result;
     }
@@ -401,6 +455,10 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getToken().isEmpty()) {
         token_ = other.token_;
+        onChanged();
+      }
+      if (!other.getMessageid().isEmpty()) {
+        messageid_ = other.messageid_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -521,6 +579,75 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       token_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object messageid_ = "";
+    /**
+     * <code>string messageid = 3;</code>
+     */
+    public java.lang.String getMessageid() {
+      java.lang.Object ref = messageid_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        messageid_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string messageid = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getMessageidBytes() {
+      java.lang.Object ref = messageid_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        messageid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string messageid = 3;</code>
+     */
+    public Builder setMessageid(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      messageid_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string messageid = 3;</code>
+     */
+    public Builder clearMessageid() {
+      
+      messageid_ = getDefaultInstance().getMessageid();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string messageid = 3;</code>
+     */
+    public Builder setMessageidBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      messageid_ = value;
       onChanged();
       return this;
     }
