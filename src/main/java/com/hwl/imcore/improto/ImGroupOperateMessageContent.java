@@ -54,8 +54,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 8: {
+            int rawValue = input.readEnum();
 
-            operateType_ = input.readUInt32();
+            operateType_ = rawValue;
             break;
           }
           case 18: {
@@ -123,10 +124,17 @@ private static final long serialVersionUID = 0L;
   public static final int OPERATETYPE_FIELD_NUMBER = 1;
   private int operateType_;
   /**
-   * <code>uint32 operateType = 1;</code>
+   * <code>.ImGroupOperateType operateType = 1;</code>
    */
-  public int getOperateType() {
+  public int getOperateTypeValue() {
     return operateType_;
+  }
+  /**
+   * <code>.ImGroupOperateType operateType = 1;</code>
+   */
+  public com.hwl.imcore.improto.ImGroupOperateType getOperateType() {
+    com.hwl.imcore.improto.ImGroupOperateType result = com.hwl.imcore.improto.ImGroupOperateType.valueOf(operateType_);
+    return result == null ? com.hwl.imcore.improto.ImGroupOperateType.UNRECOGNIZED : result;
   }
 
   public static final int OPERATEUSER_FIELD_NUMBER = 2;
@@ -265,8 +273,8 @@ private static final long serialVersionUID = 0L;
 
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (operateType_ != 0) {
-      output.writeUInt32(1, operateType_);
+    if (operateType_ != com.hwl.imcore.improto.ImGroupOperateType.OperateNone.getNumber()) {
+      output.writeEnum(1, operateType_);
     }
     if (operateUser_ != null) {
       output.writeMessage(2, getOperateUser());
@@ -288,9 +296,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (operateType_ != 0) {
+    if (operateType_ != com.hwl.imcore.improto.ImGroupOperateType.OperateNone.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(1, operateType_);
+        .computeEnumSize(1, operateType_);
     }
     if (operateUser_ != null) {
       size += com.google.protobuf.CodedOutputStream
@@ -322,8 +330,7 @@ private static final long serialVersionUID = 0L;
     com.hwl.imcore.improto.ImGroupOperateMessageContent other = (com.hwl.imcore.improto.ImGroupOperateMessageContent) obj;
 
     boolean result = true;
-    result = result && (getOperateType()
-        == other.getOperateType());
+    result = result && operateType_ == other.operateType_;
     result = result && (hasOperateUser() == other.hasOperateUser());
     if (hasOperateUser()) {
       result = result && getOperateUser()
@@ -347,7 +354,7 @@ private static final long serialVersionUID = 0L;
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + OPERATETYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getOperateType();
+    hash = (53 * hash) + operateType_;
     if (hasOperateUser()) {
       hash = (37 * hash) + OPERATEUSER_FIELD_NUMBER;
       hash = (53 * hash) + getOperateUser().hashCode();
@@ -591,8 +598,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.hwl.imcore.improto.ImGroupOperateMessageContent other) {
       if (other == com.hwl.imcore.improto.ImGroupOperateMessageContent.getDefaultInstance()) return this;
-      if (other.getOperateType() != 0) {
-        setOperateType(other.getOperateType());
+      if (other.operateType_ != 0) {
+        setOperateTypeValue(other.getOperateTypeValue());
       }
       if (other.hasOperateUser()) {
         mergeOperateUser(other.getOperateUser());
@@ -659,24 +666,42 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
-    private int operateType_ ;
+    private int operateType_ = 0;
     /**
-     * <code>uint32 operateType = 1;</code>
+     * <code>.ImGroupOperateType operateType = 1;</code>
      */
-    public int getOperateType() {
+    public int getOperateTypeValue() {
       return operateType_;
     }
     /**
-     * <code>uint32 operateType = 1;</code>
+     * <code>.ImGroupOperateType operateType = 1;</code>
      */
-    public Builder setOperateType(int value) {
-      
+    public Builder setOperateTypeValue(int value) {
       operateType_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>uint32 operateType = 1;</code>
+     * <code>.ImGroupOperateType operateType = 1;</code>
+     */
+    public com.hwl.imcore.improto.ImGroupOperateType getOperateType() {
+      com.hwl.imcore.improto.ImGroupOperateType result = com.hwl.imcore.improto.ImGroupOperateType.valueOf(operateType_);
+      return result == null ? com.hwl.imcore.improto.ImGroupOperateType.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.ImGroupOperateType operateType = 1;</code>
+     */
+    public Builder setOperateType(com.hwl.imcore.improto.ImGroupOperateType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      operateType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.ImGroupOperateType operateType = 1;</code>
      */
     public Builder clearOperateType() {
       

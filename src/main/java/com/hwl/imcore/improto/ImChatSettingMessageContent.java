@@ -54,8 +54,9 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 8: {
+            int rawValue = input.readEnum();
 
-            settingType_ = input.readUInt32();
+            settingType_ = rawValue;
             break;
           }
           case 18: {
@@ -103,10 +104,17 @@ private static final long serialVersionUID = 0L;
   public static final int SETTINGTYPE_FIELD_NUMBER = 1;
   private int settingType_;
   /**
-   * <code>uint32 settingType = 1;</code>
+   * <code>.ImChatSettingType settingType = 1;</code>
    */
-  public int getSettingType() {
+  public int getSettingTypeValue() {
     return settingType_;
+  }
+  /**
+   * <code>.ImChatSettingType settingType = 1;</code>
+   */
+  public com.hwl.imcore.improto.ImChatSettingType getSettingType() {
+    com.hwl.imcore.improto.ImChatSettingType result = com.hwl.imcore.improto.ImChatSettingType.valueOf(settingType_);
+    return result == null ? com.hwl.imcore.improto.ImChatSettingType.UNRECOGNIZED : result;
   }
 
   public static final int GROUPNOTE_FIELD_NUMBER = 2;
@@ -223,8 +231,8 @@ private static final long serialVersionUID = 0L;
 
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (settingType_ != 0) {
-      output.writeUInt32(1, settingType_);
+    if (settingType_ != com.hwl.imcore.improto.ImChatSettingType.SettingNone.getNumber()) {
+      output.writeEnum(1, settingType_);
     }
     if (!getGroupNoteBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, groupNote_);
@@ -243,9 +251,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (settingType_ != 0) {
+    if (settingType_ != com.hwl.imcore.improto.ImChatSettingType.SettingNone.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt32Size(1, settingType_);
+        .computeEnumSize(1, settingType_);
     }
     if (!getGroupNoteBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, groupNote_);
@@ -272,8 +280,7 @@ private static final long serialVersionUID = 0L;
     com.hwl.imcore.improto.ImChatSettingMessageContent other = (com.hwl.imcore.improto.ImChatSettingMessageContent) obj;
 
     boolean result = true;
-    result = result && (getSettingType()
-        == other.getSettingType());
+    result = result && settingType_ == other.settingType_;
     result = result && getGroupNote()
         .equals(other.getGroupNote());
     result = result && getGroupName()
@@ -292,7 +299,7 @@ private static final long serialVersionUID = 0L;
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + SETTINGTYPE_FIELD_NUMBER;
-    hash = (53 * hash) + getSettingType();
+    hash = (53 * hash) + settingType_;
     hash = (37 * hash) + GROUPNOTE_FIELD_NUMBER;
     hash = (53 * hash) + getGroupNote().hashCode();
     hash = (37 * hash) + GROUPNAME_FIELD_NUMBER;
@@ -503,8 +510,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.hwl.imcore.improto.ImChatSettingMessageContent other) {
       if (other == com.hwl.imcore.improto.ImChatSettingMessageContent.getDefaultInstance()) return this;
-      if (other.getSettingType() != 0) {
-        setSettingType(other.getSettingType());
+      if (other.settingType_ != 0) {
+        setSettingTypeValue(other.getSettingTypeValue());
       }
       if (!other.getGroupNote().isEmpty()) {
         groupNote_ = other.groupNote_;
@@ -545,24 +552,42 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int settingType_ ;
+    private int settingType_ = 0;
     /**
-     * <code>uint32 settingType = 1;</code>
+     * <code>.ImChatSettingType settingType = 1;</code>
      */
-    public int getSettingType() {
+    public int getSettingTypeValue() {
       return settingType_;
     }
     /**
-     * <code>uint32 settingType = 1;</code>
+     * <code>.ImChatSettingType settingType = 1;</code>
      */
-    public Builder setSettingType(int value) {
-      
+    public Builder setSettingTypeValue(int value) {
       settingType_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>uint32 settingType = 1;</code>
+     * <code>.ImChatSettingType settingType = 1;</code>
+     */
+    public com.hwl.imcore.improto.ImChatSettingType getSettingType() {
+      com.hwl.imcore.improto.ImChatSettingType result = com.hwl.imcore.improto.ImChatSettingType.valueOf(settingType_);
+      return result == null ? com.hwl.imcore.improto.ImChatSettingType.UNRECOGNIZED : result;
+    }
+    /**
+     * <code>.ImChatSettingType settingType = 1;</code>
+     */
+    public Builder setSettingType(com.hwl.imcore.improto.ImChatSettingType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      
+      settingType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.ImChatSettingType settingType = 1;</code>
      */
     public Builder clearSettingType() {
       

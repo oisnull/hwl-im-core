@@ -204,10 +204,17 @@ message ImChatSettingMessageResponse {
 }
 
 message ImChatSettingMessageContent {
-    uint32 settingType = 1;
+    ImChatSettingType settingType = 1;
     string groupNote = 2;
     string groupName = 3;
     string userRemark = 4;
+}
+
+enum ImChatSettingType{
+    SettingNone = 0;
+    GroupNote = 1;
+    GroupName = 2;
+    UserRemark = 3;
 }
 
 //group operate message
@@ -220,7 +227,7 @@ message ImGroupOperateMessageResponse {
 }
 
 message ImGroupOperateMessageContent {
-    uint32 operateType = 1;
+    ImGroupOperateType operateType = 1;
     ImUserContent operateUser = 2;
     string groupGuid = 3;
     string groupName = 4;
@@ -233,3 +240,13 @@ message ImUserContent {
     string userImage = 3;
     string groupUserRemark = 4;
 }
+
+enum ImGroupOperateType{
+    OperateNone = 0;
+    CreateGroup = 1;
+    ExitGroup= 2;
+    DismissGroup = 3;
+    AddUser = 4;
+    RemoveUser = 5;
+}
+

@@ -8,9 +8,13 @@ public interface ImGroupOperateMessageContentOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>uint32 operateType = 1;</code>
+   * <code>.ImGroupOperateType operateType = 1;</code>
    */
-  int getOperateType();
+  int getOperateTypeValue();
+  /**
+   * <code>.ImGroupOperateType operateType = 1;</code>
+   */
+  com.hwl.imcore.improto.ImGroupOperateType getOperateType();
 
   /**
    * <code>.ImUserContent operateUser = 2;</code>

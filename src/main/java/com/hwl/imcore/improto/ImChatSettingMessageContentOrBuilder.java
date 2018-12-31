@@ -8,9 +8,13 @@ public interface ImChatSettingMessageContentOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>uint32 settingType = 1;</code>
+   * <code>.ImChatSettingType settingType = 1;</code>
    */
-  int getSettingType();
+  int getSettingTypeValue();
+  /**
+   * <code>.ImChatSettingType settingType = 1;</code>
+   */
+  com.hwl.imcore.improto.ImChatSettingType getSettingType();
 
   /**
    * <code>string groupNote = 2;</code>

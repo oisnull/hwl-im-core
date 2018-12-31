@@ -247,32 +247,38 @@ public final class ImMessage {
       "(\0132\034.ImChatSettingMessageContent\"r\n\034ImCh" +
       "atSettingMessageResponse\022?\n\031chatSettingM" +
       "essageContent\030\001 \001(\0132\034.ImChatSettingMessa" +
-      "geContent\022\021\n\tbuildTime\030\002 \001(\004\"l\n\033ImChatSe" +
-      "ttingMessageContent\022\023\n\013settingType\030\001 \001(\r" +
-      "\022\021\n\tgroupNote\030\002 \001(\t\022\021\n\tgroupName\030\003 \001(\t\022\022" +
-      "\n\nuserRemark\030\004 \001(\t\"a\n\034ImGroupOperateMess" +
-      "ageRequest\022A\n\032groupOperateMessageContent" +
-      "\030\001 \001(\0132\035.ImGroupOperateMessageContent\"u\n" +
-      "\035ImGroupOperateMessageResponse\022A\n\032groupO" +
-      "perateMessageContent\030\001 \001(\0132\035.ImGroupOper" +
-      "ateMessageContent\022\021\n\tbuildTime\030\002 \001(\004\"\242\001\n" +
-      "\034ImGroupOperateMessageContent\022\023\n\013operate" +
-      "Type\030\001 \001(\r\022#\n\013operateUser\030\002 \001(\0132\016.ImUser" +
-      "Content\022\021\n\tgroupGuid\030\003 \001(\t\022\021\n\tgroupName\030" +
-      "\004 \001(\t\022\"\n\ngroupUsers\030\005 \003(\0132\016.ImUserConten" +
-      "t\"]\n\rImUserContent\022\016\n\006userId\030\001 \001(\004\022\020\n\010us" +
-      "erName\030\002 \001(\t\022\021\n\tuserImage\030\003 \001(\t\022\027\n\017group" +
-      "UserRemark\030\004 \001(\t*\263\001\n\rImMessageType\022\010\n\004Ba" +
-      "se\020\000\022\020\n\014UserValidate\020\001\022\014\n\010ChatUser\020\002\022\r\n\t" +
-      "ChatGroup\020\003\022\r\n\tHeartBeat\020\004\022\r\n\tAddFriend\020" +
-      "\005\022\022\n\016TestConnection\020\006\022\024\n\020ClientAckMessag" +
-      "e\020\007\022\017\n\013ChatSetting\020\010\022\020\n\014GroupOperate\020\t*S" +
-      "\n\025ImMessageResponseCode\022\t\n\005Other\020\000\022\013\n\007Su" +
-      "ccess\020d\022\013\n\006Failed\020\310\001\022\025\n\020SessionidInvalid" +
-      "\020\311\001*I\n\027ImMessageSourcePosition\022\010\n\004None\020\000" +
-      "\022\014\n\010RealTime\020\001\022\013\n\007Offline\020\002\022\t\n\005Retry\020\003B," +
-      "\n\026com.hwl.imcore.improtoP\001\252\002\017IMCore.Prot" +
-      "ocolb\006proto3"
+      "geContent\022\021\n\tbuildTime\030\002 \001(\004\"\200\001\n\033ImChatS" +
+      "ettingMessageContent\022\'\n\013settingType\030\001 \001(" +
+      "\0162\022.ImChatSettingType\022\021\n\tgroupNote\030\002 \001(\t" +
+      "\022\021\n\tgroupName\030\003 \001(\t\022\022\n\nuserRemark\030\004 \001(\t\"" +
+      "a\n\034ImGroupOperateMessageRequest\022A\n\032group" +
+      "OperateMessageContent\030\001 \001(\0132\035.ImGroupOpe" +
+      "rateMessageContent\"u\n\035ImGroupOperateMess" +
+      "ageResponse\022A\n\032groupOperateMessageConten" +
+      "t\030\001 \001(\0132\035.ImGroupOperateMessageContent\022\021" +
+      "\n\tbuildTime\030\002 \001(\004\"\267\001\n\034ImGroupOperateMess" +
+      "ageContent\022(\n\013operateType\030\001 \001(\0162\023.ImGrou" +
+      "pOperateType\022#\n\013operateUser\030\002 \001(\0132\016.ImUs" +
+      "erContent\022\021\n\tgroupGuid\030\003 \001(\t\022\021\n\tgroupNam" +
+      "e\030\004 \001(\t\022\"\n\ngroupUsers\030\005 \003(\0132\016.ImUserCont" +
+      "ent\"]\n\rImUserContent\022\016\n\006userId\030\001 \001(\004\022\020\n\010" +
+      "userName\030\002 \001(\t\022\021\n\tuserImage\030\003 \001(\t\022\027\n\017gro" +
+      "upUserRemark\030\004 \001(\t*\263\001\n\rImMessageType\022\010\n\004" +
+      "Base\020\000\022\020\n\014UserValidate\020\001\022\014\n\010ChatUser\020\002\022\r" +
+      "\n\tChatGroup\020\003\022\r\n\tHeartBeat\020\004\022\r\n\tAddFrien" +
+      "d\020\005\022\022\n\016TestConnection\020\006\022\024\n\020ClientAckMess" +
+      "age\020\007\022\017\n\013ChatSetting\020\010\022\020\n\014GroupOperate\020\t" +
+      "*S\n\025ImMessageResponseCode\022\t\n\005Other\020\000\022\013\n\007" +
+      "Success\020d\022\013\n\006Failed\020\310\001\022\025\n\020SessionidInval" +
+      "id\020\311\001*I\n\027ImMessageSourcePosition\022\010\n\004None" +
+      "\020\000\022\014\n\010RealTime\020\001\022\013\n\007Offline\020\002\022\t\n\005Retry\020\003" +
+      "*R\n\021ImChatSettingType\022\017\n\013SettingNone\020\000\022\r" +
+      "\n\tGroupNote\020\001\022\r\n\tGroupName\020\002\022\016\n\nUserRema" +
+      "rk\020\003*t\n\022ImGroupOperateType\022\017\n\013OperateNon" +
+      "e\020\000\022\017\n\013CreateGroup\020\001\022\r\n\tExitGroup\020\002\022\020\n\014D" +
+      "ismissGroup\020\003\022\013\n\007AddUser\020\004\022\016\n\nRemoveUser" +
+      "\020\005B,\n\026com.hwl.imcore.improtoP\001\252\002\017IMCore." +
+      "Protocolb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
