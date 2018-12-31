@@ -4,6 +4,10 @@
 package com.hwl.imcore.improto;
 
 /**
+ * <pre>
+ *chat group message
+ * </pre>
+ *
  * Protobuf type {@code ImChatGroupMessageRequest}
  */
 public  final class ImChatGroupMessageRequest extends
@@ -264,6 +268,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   *chat group message
+   * </pre>
+   *
    * Protobuf type {@code ImChatGroupMessageRequest}
    */
   public static final class Builder extends

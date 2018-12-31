@@ -4,6 +4,10 @@
 package com.hwl.imcore.improto;
 
 /**
+ * <pre>
+ *response package
+ * </pre>
+ *
  * Protobuf type {@code ImMessageResponse}
  */
 public  final class ImMessageResponse extends
@@ -132,6 +136,34 @@ private static final long serialVersionUID = 0L;
             responseBodyCase_ = 6;
             break;
           }
+          case 58: {
+            com.hwl.imcore.improto.ImChatSettingMessageResponse.Builder subBuilder = null;
+            if (responseBodyCase_ == 7) {
+              subBuilder = ((com.hwl.imcore.improto.ImChatSettingMessageResponse) responseBody_).toBuilder();
+            }
+            responseBody_ =
+                input.readMessage(com.hwl.imcore.improto.ImChatSettingMessageResponse.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.hwl.imcore.improto.ImChatSettingMessageResponse) responseBody_);
+              responseBody_ = subBuilder.buildPartial();
+            }
+            responseBodyCase_ = 7;
+            break;
+          }
+          case 66: {
+            com.hwl.imcore.improto.ImGroupOperateMessageResponse.Builder subBuilder = null;
+            if (responseBodyCase_ == 8) {
+              subBuilder = ((com.hwl.imcore.improto.ImGroupOperateMessageResponse) responseBody_).toBuilder();
+            }
+            responseBody_ =
+                input.readMessage(com.hwl.imcore.improto.ImGroupOperateMessageResponse.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.hwl.imcore.improto.ImGroupOperateMessageResponse) responseBody_);
+              responseBody_ = subBuilder.buildPartial();
+            }
+            responseBodyCase_ = 8;
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -165,6 +197,8 @@ private static final long serialVersionUID = 0L;
     CHATGROUPMESSAGERESPONSE(4),
     ADDFRIENDMESSAGERESPONSE(5),
     TESTCONNECTIONMESSAGERESPONSE(6),
+    CHATSETTINGMESSAGERESPONSE(7),
+    GROUPOPERATEMESSAGERESPONSE(8),
     RESPONSEBODY_NOT_SET(0);
     private final int value;
     private ResponseBodyCase(int value) {
@@ -185,6 +219,8 @@ private static final long serialVersionUID = 0L;
         case 4: return CHATGROUPMESSAGERESPONSE;
         case 5: return ADDFRIENDMESSAGERESPONSE;
         case 6: return TESTCONNECTIONMESSAGERESPONSE;
+        case 7: return CHATSETTINGMESSAGERESPONSE;
+        case 8: return GROUPOPERATEMESSAGERESPONSE;
         case 0: return RESPONSEBODY_NOT_SET;
         default: return null;
       }
@@ -351,6 +387,58 @@ private static final long serialVersionUID = 0L;
     return com.hwl.imcore.improto.ImTestConnectionMessageResponse.getDefaultInstance();
   }
 
+  public static final int CHATSETTINGMESSAGERESPONSE_FIELD_NUMBER = 7;
+  /**
+   * <code>.ImChatSettingMessageResponse chatSettingMessageResponse = 7;</code>
+   */
+  public boolean hasChatSettingMessageResponse() {
+    return responseBodyCase_ == 7;
+  }
+  /**
+   * <code>.ImChatSettingMessageResponse chatSettingMessageResponse = 7;</code>
+   */
+  public com.hwl.imcore.improto.ImChatSettingMessageResponse getChatSettingMessageResponse() {
+    if (responseBodyCase_ == 7) {
+       return (com.hwl.imcore.improto.ImChatSettingMessageResponse) responseBody_;
+    }
+    return com.hwl.imcore.improto.ImChatSettingMessageResponse.getDefaultInstance();
+  }
+  /**
+   * <code>.ImChatSettingMessageResponse chatSettingMessageResponse = 7;</code>
+   */
+  public com.hwl.imcore.improto.ImChatSettingMessageResponseOrBuilder getChatSettingMessageResponseOrBuilder() {
+    if (responseBodyCase_ == 7) {
+       return (com.hwl.imcore.improto.ImChatSettingMessageResponse) responseBody_;
+    }
+    return com.hwl.imcore.improto.ImChatSettingMessageResponse.getDefaultInstance();
+  }
+
+  public static final int GROUPOPERATEMESSAGERESPONSE_FIELD_NUMBER = 8;
+  /**
+   * <code>.ImGroupOperateMessageResponse groupOperateMessageResponse = 8;</code>
+   */
+  public boolean hasGroupOperateMessageResponse() {
+    return responseBodyCase_ == 8;
+  }
+  /**
+   * <code>.ImGroupOperateMessageResponse groupOperateMessageResponse = 8;</code>
+   */
+  public com.hwl.imcore.improto.ImGroupOperateMessageResponse getGroupOperateMessageResponse() {
+    if (responseBodyCase_ == 8) {
+       return (com.hwl.imcore.improto.ImGroupOperateMessageResponse) responseBody_;
+    }
+    return com.hwl.imcore.improto.ImGroupOperateMessageResponse.getDefaultInstance();
+  }
+  /**
+   * <code>.ImGroupOperateMessageResponse groupOperateMessageResponse = 8;</code>
+   */
+  public com.hwl.imcore.improto.ImGroupOperateMessageResponseOrBuilder getGroupOperateMessageResponseOrBuilder() {
+    if (responseBodyCase_ == 8) {
+       return (com.hwl.imcore.improto.ImGroupOperateMessageResponse) responseBody_;
+    }
+    return com.hwl.imcore.improto.ImGroupOperateMessageResponse.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -380,6 +468,12 @@ private static final long serialVersionUID = 0L;
     }
     if (responseBodyCase_ == 6) {
       output.writeMessage(6, (com.hwl.imcore.improto.ImTestConnectionMessageResponse) responseBody_);
+    }
+    if (responseBodyCase_ == 7) {
+      output.writeMessage(7, (com.hwl.imcore.improto.ImChatSettingMessageResponse) responseBody_);
+    }
+    if (responseBodyCase_ == 8) {
+      output.writeMessage(8, (com.hwl.imcore.improto.ImGroupOperateMessageResponse) responseBody_);
     }
     unknownFields.writeTo(output);
   }
@@ -412,6 +506,14 @@ private static final long serialVersionUID = 0L;
     if (responseBodyCase_ == 6) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(6, (com.hwl.imcore.improto.ImTestConnectionMessageResponse) responseBody_);
+    }
+    if (responseBodyCase_ == 7) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(7, (com.hwl.imcore.improto.ImChatSettingMessageResponse) responseBody_);
+    }
+    if (responseBodyCase_ == 8) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(8, (com.hwl.imcore.improto.ImGroupOperateMessageResponse) responseBody_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -458,6 +560,14 @@ private static final long serialVersionUID = 0L;
         result = result && getTestConnectionMessageResponse()
             .equals(other.getTestConnectionMessageResponse());
         break;
+      case 7:
+        result = result && getChatSettingMessageResponse()
+            .equals(other.getChatSettingMessageResponse());
+        break;
+      case 8:
+        result = result && getGroupOperateMessageResponse()
+            .equals(other.getGroupOperateMessageResponse());
+        break;
       case 0:
       default:
     }
@@ -496,6 +606,14 @@ private static final long serialVersionUID = 0L;
       case 6:
         hash = (37 * hash) + TESTCONNECTIONMESSAGERESPONSE_FIELD_NUMBER;
         hash = (53 * hash) + getTestConnectionMessageResponse().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + CHATSETTINGMESSAGERESPONSE_FIELD_NUMBER;
+        hash = (53 * hash) + getChatSettingMessageResponse().hashCode();
+        break;
+      case 8:
+        hash = (37 * hash) + GROUPOPERATEMESSAGERESPONSE_FIELD_NUMBER;
+        hash = (53 * hash) + getGroupOperateMessageResponse().hashCode();
         break;
       case 0:
       default:
@@ -594,6 +712,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   *response package
+   * </pre>
+   *
    * Protobuf type {@code ImMessageResponse}
    */
   public static final class Builder extends
@@ -699,6 +821,20 @@ private static final long serialVersionUID = 0L;
           result.responseBody_ = testConnectionMessageResponseBuilder_.build();
         }
       }
+      if (responseBodyCase_ == 7) {
+        if (chatSettingMessageResponseBuilder_ == null) {
+          result.responseBody_ = responseBody_;
+        } else {
+          result.responseBody_ = chatSettingMessageResponseBuilder_.build();
+        }
+      }
+      if (responseBodyCase_ == 8) {
+        if (groupOperateMessageResponseBuilder_ == null) {
+          result.responseBody_ = responseBody_;
+        } else {
+          result.responseBody_ = groupOperateMessageResponseBuilder_.build();
+        }
+      }
       result.responseBodyCase_ = responseBodyCase_;
       onBuilt();
       return result;
@@ -763,6 +899,14 @@ private static final long serialVersionUID = 0L;
         }
         case TESTCONNECTIONMESSAGERESPONSE: {
           mergeTestConnectionMessageResponse(other.getTestConnectionMessageResponse());
+          break;
+        }
+        case CHATSETTINGMESSAGERESPONSE: {
+          mergeChatSettingMessageResponse(other.getChatSettingMessageResponse());
+          break;
+        }
+        case GROUPOPERATEMESSAGERESPONSE: {
+          mergeGroupOperateMessageResponse(other.getGroupOperateMessageResponse());
           break;
         }
         case RESPONSEBODY_NOT_SET: {
@@ -1606,6 +1750,278 @@ private static final long serialVersionUID = 0L;
       responseBodyCase_ = 6;
       onChanged();;
       return testConnectionMessageResponseBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.hwl.imcore.improto.ImChatSettingMessageResponse, com.hwl.imcore.improto.ImChatSettingMessageResponse.Builder, com.hwl.imcore.improto.ImChatSettingMessageResponseOrBuilder> chatSettingMessageResponseBuilder_;
+    /**
+     * <code>.ImChatSettingMessageResponse chatSettingMessageResponse = 7;</code>
+     */
+    public boolean hasChatSettingMessageResponse() {
+      return responseBodyCase_ == 7;
+    }
+    /**
+     * <code>.ImChatSettingMessageResponse chatSettingMessageResponse = 7;</code>
+     */
+    public com.hwl.imcore.improto.ImChatSettingMessageResponse getChatSettingMessageResponse() {
+      if (chatSettingMessageResponseBuilder_ == null) {
+        if (responseBodyCase_ == 7) {
+          return (com.hwl.imcore.improto.ImChatSettingMessageResponse) responseBody_;
+        }
+        return com.hwl.imcore.improto.ImChatSettingMessageResponse.getDefaultInstance();
+      } else {
+        if (responseBodyCase_ == 7) {
+          return chatSettingMessageResponseBuilder_.getMessage();
+        }
+        return com.hwl.imcore.improto.ImChatSettingMessageResponse.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.ImChatSettingMessageResponse chatSettingMessageResponse = 7;</code>
+     */
+    public Builder setChatSettingMessageResponse(com.hwl.imcore.improto.ImChatSettingMessageResponse value) {
+      if (chatSettingMessageResponseBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        responseBody_ = value;
+        onChanged();
+      } else {
+        chatSettingMessageResponseBuilder_.setMessage(value);
+      }
+      responseBodyCase_ = 7;
+      return this;
+    }
+    /**
+     * <code>.ImChatSettingMessageResponse chatSettingMessageResponse = 7;</code>
+     */
+    public Builder setChatSettingMessageResponse(
+        com.hwl.imcore.improto.ImChatSettingMessageResponse.Builder builderForValue) {
+      if (chatSettingMessageResponseBuilder_ == null) {
+        responseBody_ = builderForValue.build();
+        onChanged();
+      } else {
+        chatSettingMessageResponseBuilder_.setMessage(builderForValue.build());
+      }
+      responseBodyCase_ = 7;
+      return this;
+    }
+    /**
+     * <code>.ImChatSettingMessageResponse chatSettingMessageResponse = 7;</code>
+     */
+    public Builder mergeChatSettingMessageResponse(com.hwl.imcore.improto.ImChatSettingMessageResponse value) {
+      if (chatSettingMessageResponseBuilder_ == null) {
+        if (responseBodyCase_ == 7 &&
+            responseBody_ != com.hwl.imcore.improto.ImChatSettingMessageResponse.getDefaultInstance()) {
+          responseBody_ = com.hwl.imcore.improto.ImChatSettingMessageResponse.newBuilder((com.hwl.imcore.improto.ImChatSettingMessageResponse) responseBody_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          responseBody_ = value;
+        }
+        onChanged();
+      } else {
+        if (responseBodyCase_ == 7) {
+          chatSettingMessageResponseBuilder_.mergeFrom(value);
+        }
+        chatSettingMessageResponseBuilder_.setMessage(value);
+      }
+      responseBodyCase_ = 7;
+      return this;
+    }
+    /**
+     * <code>.ImChatSettingMessageResponse chatSettingMessageResponse = 7;</code>
+     */
+    public Builder clearChatSettingMessageResponse() {
+      if (chatSettingMessageResponseBuilder_ == null) {
+        if (responseBodyCase_ == 7) {
+          responseBodyCase_ = 0;
+          responseBody_ = null;
+          onChanged();
+        }
+      } else {
+        if (responseBodyCase_ == 7) {
+          responseBodyCase_ = 0;
+          responseBody_ = null;
+        }
+        chatSettingMessageResponseBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.ImChatSettingMessageResponse chatSettingMessageResponse = 7;</code>
+     */
+    public com.hwl.imcore.improto.ImChatSettingMessageResponse.Builder getChatSettingMessageResponseBuilder() {
+      return getChatSettingMessageResponseFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.ImChatSettingMessageResponse chatSettingMessageResponse = 7;</code>
+     */
+    public com.hwl.imcore.improto.ImChatSettingMessageResponseOrBuilder getChatSettingMessageResponseOrBuilder() {
+      if ((responseBodyCase_ == 7) && (chatSettingMessageResponseBuilder_ != null)) {
+        return chatSettingMessageResponseBuilder_.getMessageOrBuilder();
+      } else {
+        if (responseBodyCase_ == 7) {
+          return (com.hwl.imcore.improto.ImChatSettingMessageResponse) responseBody_;
+        }
+        return com.hwl.imcore.improto.ImChatSettingMessageResponse.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.ImChatSettingMessageResponse chatSettingMessageResponse = 7;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.hwl.imcore.improto.ImChatSettingMessageResponse, com.hwl.imcore.improto.ImChatSettingMessageResponse.Builder, com.hwl.imcore.improto.ImChatSettingMessageResponseOrBuilder> 
+        getChatSettingMessageResponseFieldBuilder() {
+      if (chatSettingMessageResponseBuilder_ == null) {
+        if (!(responseBodyCase_ == 7)) {
+          responseBody_ = com.hwl.imcore.improto.ImChatSettingMessageResponse.getDefaultInstance();
+        }
+        chatSettingMessageResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.hwl.imcore.improto.ImChatSettingMessageResponse, com.hwl.imcore.improto.ImChatSettingMessageResponse.Builder, com.hwl.imcore.improto.ImChatSettingMessageResponseOrBuilder>(
+                (com.hwl.imcore.improto.ImChatSettingMessageResponse) responseBody_,
+                getParentForChildren(),
+                isClean());
+        responseBody_ = null;
+      }
+      responseBodyCase_ = 7;
+      onChanged();;
+      return chatSettingMessageResponseBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.hwl.imcore.improto.ImGroupOperateMessageResponse, com.hwl.imcore.improto.ImGroupOperateMessageResponse.Builder, com.hwl.imcore.improto.ImGroupOperateMessageResponseOrBuilder> groupOperateMessageResponseBuilder_;
+    /**
+     * <code>.ImGroupOperateMessageResponse groupOperateMessageResponse = 8;</code>
+     */
+    public boolean hasGroupOperateMessageResponse() {
+      return responseBodyCase_ == 8;
+    }
+    /**
+     * <code>.ImGroupOperateMessageResponse groupOperateMessageResponse = 8;</code>
+     */
+    public com.hwl.imcore.improto.ImGroupOperateMessageResponse getGroupOperateMessageResponse() {
+      if (groupOperateMessageResponseBuilder_ == null) {
+        if (responseBodyCase_ == 8) {
+          return (com.hwl.imcore.improto.ImGroupOperateMessageResponse) responseBody_;
+        }
+        return com.hwl.imcore.improto.ImGroupOperateMessageResponse.getDefaultInstance();
+      } else {
+        if (responseBodyCase_ == 8) {
+          return groupOperateMessageResponseBuilder_.getMessage();
+        }
+        return com.hwl.imcore.improto.ImGroupOperateMessageResponse.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.ImGroupOperateMessageResponse groupOperateMessageResponse = 8;</code>
+     */
+    public Builder setGroupOperateMessageResponse(com.hwl.imcore.improto.ImGroupOperateMessageResponse value) {
+      if (groupOperateMessageResponseBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        responseBody_ = value;
+        onChanged();
+      } else {
+        groupOperateMessageResponseBuilder_.setMessage(value);
+      }
+      responseBodyCase_ = 8;
+      return this;
+    }
+    /**
+     * <code>.ImGroupOperateMessageResponse groupOperateMessageResponse = 8;</code>
+     */
+    public Builder setGroupOperateMessageResponse(
+        com.hwl.imcore.improto.ImGroupOperateMessageResponse.Builder builderForValue) {
+      if (groupOperateMessageResponseBuilder_ == null) {
+        responseBody_ = builderForValue.build();
+        onChanged();
+      } else {
+        groupOperateMessageResponseBuilder_.setMessage(builderForValue.build());
+      }
+      responseBodyCase_ = 8;
+      return this;
+    }
+    /**
+     * <code>.ImGroupOperateMessageResponse groupOperateMessageResponse = 8;</code>
+     */
+    public Builder mergeGroupOperateMessageResponse(com.hwl.imcore.improto.ImGroupOperateMessageResponse value) {
+      if (groupOperateMessageResponseBuilder_ == null) {
+        if (responseBodyCase_ == 8 &&
+            responseBody_ != com.hwl.imcore.improto.ImGroupOperateMessageResponse.getDefaultInstance()) {
+          responseBody_ = com.hwl.imcore.improto.ImGroupOperateMessageResponse.newBuilder((com.hwl.imcore.improto.ImGroupOperateMessageResponse) responseBody_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          responseBody_ = value;
+        }
+        onChanged();
+      } else {
+        if (responseBodyCase_ == 8) {
+          groupOperateMessageResponseBuilder_.mergeFrom(value);
+        }
+        groupOperateMessageResponseBuilder_.setMessage(value);
+      }
+      responseBodyCase_ = 8;
+      return this;
+    }
+    /**
+     * <code>.ImGroupOperateMessageResponse groupOperateMessageResponse = 8;</code>
+     */
+    public Builder clearGroupOperateMessageResponse() {
+      if (groupOperateMessageResponseBuilder_ == null) {
+        if (responseBodyCase_ == 8) {
+          responseBodyCase_ = 0;
+          responseBody_ = null;
+          onChanged();
+        }
+      } else {
+        if (responseBodyCase_ == 8) {
+          responseBodyCase_ = 0;
+          responseBody_ = null;
+        }
+        groupOperateMessageResponseBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.ImGroupOperateMessageResponse groupOperateMessageResponse = 8;</code>
+     */
+    public com.hwl.imcore.improto.ImGroupOperateMessageResponse.Builder getGroupOperateMessageResponseBuilder() {
+      return getGroupOperateMessageResponseFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.ImGroupOperateMessageResponse groupOperateMessageResponse = 8;</code>
+     */
+    public com.hwl.imcore.improto.ImGroupOperateMessageResponseOrBuilder getGroupOperateMessageResponseOrBuilder() {
+      if ((responseBodyCase_ == 8) && (groupOperateMessageResponseBuilder_ != null)) {
+        return groupOperateMessageResponseBuilder_.getMessageOrBuilder();
+      } else {
+        if (responseBodyCase_ == 8) {
+          return (com.hwl.imcore.improto.ImGroupOperateMessageResponse) responseBody_;
+        }
+        return com.hwl.imcore.improto.ImGroupOperateMessageResponse.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.ImGroupOperateMessageResponse groupOperateMessageResponse = 8;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.hwl.imcore.improto.ImGroupOperateMessageResponse, com.hwl.imcore.improto.ImGroupOperateMessageResponse.Builder, com.hwl.imcore.improto.ImGroupOperateMessageResponseOrBuilder> 
+        getGroupOperateMessageResponseFieldBuilder() {
+      if (groupOperateMessageResponseBuilder_ == null) {
+        if (!(responseBodyCase_ == 8)) {
+          responseBody_ = com.hwl.imcore.improto.ImGroupOperateMessageResponse.getDefaultInstance();
+        }
+        groupOperateMessageResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.hwl.imcore.improto.ImGroupOperateMessageResponse, com.hwl.imcore.improto.ImGroupOperateMessageResponse.Builder, com.hwl.imcore.improto.ImGroupOperateMessageResponseOrBuilder>(
+                (com.hwl.imcore.improto.ImGroupOperateMessageResponse) responseBody_,
+                getParentForChildren(),
+                isClean());
+        responseBody_ = null;
+      }
+      responseBodyCase_ = 8;
+      onChanged();;
+      return groupOperateMessageResponseBuilder_;
     }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {

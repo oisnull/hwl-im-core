@@ -40,6 +40,14 @@ public enum ImMessageType
    * <code>ClientAckMessage = 7;</code>
    */
   ClientAckMessage(7),
+  /**
+   * <code>ChatSetting = 8;</code>
+   */
+  ChatSetting(8),
+  /**
+   * <code>GroupOperate = 9;</code>
+   */
+  GroupOperate(9),
   UNRECOGNIZED(-1),
   ;
 
@@ -75,6 +83,14 @@ public enum ImMessageType
    * <code>ClientAckMessage = 7;</code>
    */
   public static final int ClientAckMessage_VALUE = 7;
+  /**
+   * <code>ChatSetting = 8;</code>
+   */
+  public static final int ChatSetting_VALUE = 8;
+  /**
+   * <code>GroupOperate = 9;</code>
+   */
+  public static final int GroupOperate_VALUE = 9;
 
 
   public final int getNumber() {
@@ -103,6 +119,8 @@ public enum ImMessageType
       case 5: return AddFriend;
       case 6: return TestConnection;
       case 7: return ClientAckMessage;
+      case 8: return ChatSetting;
+      case 9: return GroupOperate;
       default: return null;
     }
   }

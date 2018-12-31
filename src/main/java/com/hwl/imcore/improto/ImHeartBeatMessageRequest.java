@@ -4,6 +4,10 @@
 package com.hwl.imcore.improto;
 
 /**
+ * <pre>
+ *heart beat check
+ * </pre>
+ *
  * Protobuf type {@code ImHeartBeatMessageRequest}
  */
 public  final class ImHeartBeatMessageRequest extends
@@ -268,6 +272,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   *heart beat check
+   * </pre>
+   *
    * Protobuf type {@code ImHeartBeatMessageRequest}
    */
   public static final class Builder extends

@@ -4,6 +4,10 @@
 package com.hwl.imcore.improto;
 
 /**
+ * <pre>
+ *context body
+ * </pre>
+ *
  * Protobuf type {@code ImMessageContext}
  */
 public  final class ImMessageContext extends
@@ -406,6 +410,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   *context body
+   * </pre>
+   *
    * Protobuf type {@code ImMessageContext}
    */
   public static final class Builder extends

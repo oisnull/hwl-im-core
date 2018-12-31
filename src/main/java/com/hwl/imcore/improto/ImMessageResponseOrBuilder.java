@@ -85,5 +85,31 @@ public interface ImMessageResponseOrBuilder extends
    */
   com.hwl.imcore.improto.ImTestConnectionMessageResponseOrBuilder getTestConnectionMessageResponseOrBuilder();
 
+  /**
+   * <code>.ImChatSettingMessageResponse chatSettingMessageResponse = 7;</code>
+   */
+  boolean hasChatSettingMessageResponse();
+  /**
+   * <code>.ImChatSettingMessageResponse chatSettingMessageResponse = 7;</code>
+   */
+  com.hwl.imcore.improto.ImChatSettingMessageResponse getChatSettingMessageResponse();
+  /**
+   * <code>.ImChatSettingMessageResponse chatSettingMessageResponse = 7;</code>
+   */
+  com.hwl.imcore.improto.ImChatSettingMessageResponseOrBuilder getChatSettingMessageResponseOrBuilder();
+
+  /**
+   * <code>.ImGroupOperateMessageResponse groupOperateMessageResponse = 8;</code>
+   */
+  boolean hasGroupOperateMessageResponse();
+  /**
+   * <code>.ImGroupOperateMessageResponse groupOperateMessageResponse = 8;</code>
+   */
+  com.hwl.imcore.improto.ImGroupOperateMessageResponse getGroupOperateMessageResponse();
+  /**
+   * <code>.ImGroupOperateMessageResponse groupOperateMessageResponse = 8;</code>
+   */
+  com.hwl.imcore.improto.ImGroupOperateMessageResponseOrBuilder getGroupOperateMessageResponseOrBuilder();
+
   public com.hwl.imcore.improto.ImMessageResponse.ResponseBodyCase getResponseBodyCase();
 }

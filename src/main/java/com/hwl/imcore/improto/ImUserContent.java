@@ -4,25 +4,22 @@
 package com.hwl.imcore.improto;
 
 /**
- * <pre>
- *user validate message
- * </pre>
- *
- * Protobuf type {@code ImUserValidateRequest}
+ * Protobuf type {@code ImUserContent}
  */
-public  final class ImUserValidateRequest extends
+public  final class ImUserContent extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:ImUserValidateRequest)
-    ImUserValidateRequestOrBuilder {
+    // @@protoc_insertion_point(message_implements:ImUserContent)
+    ImUserContentOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use ImUserValidateRequest.newBuilder() to construct.
-  private ImUserValidateRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ImUserContent.newBuilder() to construct.
+  private ImUserContent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ImUserValidateRequest() {
+  private ImUserContent() {
     userId_ = 0L;
-    token_ = "";
-    messageid_ = "";
+    userName_ = "";
+    userImage_ = "";
+    groupUserRemark_ = "";
   }
 
   @java.lang.Override
@@ -30,7 +27,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private ImUserValidateRequest(
+  private ImUserContent(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -64,13 +61,19 @@ private static final long serialVersionUID = 0L;
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            token_ = s;
+            userName_ = s;
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            messageid_ = s;
+            userImage_ = s;
+            break;
+          }
+          case 34: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            groupUserRemark_ = s;
             break;
           }
         }
@@ -87,14 +90,14 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.hwl.imcore.improto.ImMessage.internal_static_ImUserValidateRequest_descriptor;
+    return com.hwl.imcore.improto.ImMessage.internal_static_ImUserContent_descriptor;
   }
 
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.hwl.imcore.improto.ImMessage.internal_static_ImUserValidateRequest_fieldAccessorTable
+    return com.hwl.imcore.improto.ImMessage.internal_static_ImUserContent_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.hwl.imcore.improto.ImUserValidateRequest.class, com.hwl.imcore.improto.ImUserValidateRequest.Builder.class);
+            com.hwl.imcore.improto.ImUserContent.class, com.hwl.imcore.improto.ImUserContent.Builder.class);
   }
 
   public static final int USERID_FIELD_NUMBER = 1;
@@ -106,68 +109,102 @@ private static final long serialVersionUID = 0L;
     return userId_;
   }
 
-  public static final int TOKEN_FIELD_NUMBER = 2;
-  private volatile java.lang.Object token_;
+  public static final int USERNAME_FIELD_NUMBER = 2;
+  private volatile java.lang.Object userName_;
   /**
-   * <code>string token = 2;</code>
+   * <code>string userName = 2;</code>
    */
-  public java.lang.String getToken() {
-    java.lang.Object ref = token_;
+  public java.lang.String getUserName() {
+    java.lang.Object ref = userName_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      token_ = s;
+      userName_ = s;
       return s;
     }
   }
   /**
-   * <code>string token = 2;</code>
+   * <code>string userName = 2;</code>
    */
   public com.google.protobuf.ByteString
-      getTokenBytes() {
-    java.lang.Object ref = token_;
+      getUserNameBytes() {
+    java.lang.Object ref = userName_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      token_ = b;
+      userName_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int MESSAGEID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object messageid_;
+  public static final int USERIMAGE_FIELD_NUMBER = 3;
+  private volatile java.lang.Object userImage_;
   /**
-   * <code>string messageid = 3;</code>
+   * <code>string userImage = 3;</code>
    */
-  public java.lang.String getMessageid() {
-    java.lang.Object ref = messageid_;
+  public java.lang.String getUserImage() {
+    java.lang.Object ref = userImage_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      messageid_ = s;
+      userImage_ = s;
       return s;
     }
   }
   /**
-   * <code>string messageid = 3;</code>
+   * <code>string userImage = 3;</code>
    */
   public com.google.protobuf.ByteString
-      getMessageidBytes() {
-    java.lang.Object ref = messageid_;
+      getUserImageBytes() {
+    java.lang.Object ref = userImage_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      messageid_ = b;
+      userImage_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int GROUPUSERREMARK_FIELD_NUMBER = 4;
+  private volatile java.lang.Object groupUserRemark_;
+  /**
+   * <code>string groupUserRemark = 4;</code>
+   */
+  public java.lang.String getGroupUserRemark() {
+    java.lang.Object ref = groupUserRemark_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      groupUserRemark_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string groupUserRemark = 4;</code>
+   */
+  public com.google.protobuf.ByteString
+      getGroupUserRemarkBytes() {
+    java.lang.Object ref = groupUserRemark_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      groupUserRemark_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -189,11 +226,14 @@ private static final long serialVersionUID = 0L;
     if (userId_ != 0L) {
       output.writeUInt64(1, userId_);
     }
-    if (!getTokenBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, token_);
+    if (!getUserNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, userName_);
     }
-    if (!getMessageidBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, messageid_);
+    if (!getUserImageBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, userImage_);
+    }
+    if (!getGroupUserRemarkBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, groupUserRemark_);
     }
     unknownFields.writeTo(output);
   }
@@ -207,11 +247,14 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeUInt64Size(1, userId_);
     }
-    if (!getTokenBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, token_);
+    if (!getUserNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, userName_);
     }
-    if (!getMessageidBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, messageid_);
+    if (!getUserImageBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, userImage_);
+    }
+    if (!getGroupUserRemarkBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, groupUserRemark_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -223,18 +266,20 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.hwl.imcore.improto.ImUserValidateRequest)) {
+    if (!(obj instanceof com.hwl.imcore.improto.ImUserContent)) {
       return super.equals(obj);
     }
-    com.hwl.imcore.improto.ImUserValidateRequest other = (com.hwl.imcore.improto.ImUserValidateRequest) obj;
+    com.hwl.imcore.improto.ImUserContent other = (com.hwl.imcore.improto.ImUserContent) obj;
 
     boolean result = true;
     result = result && (getUserId()
         == other.getUserId());
-    result = result && getToken()
-        .equals(other.getToken());
-    result = result && getMessageid()
-        .equals(other.getMessageid());
+    result = result && getUserName()
+        .equals(other.getUserName());
+    result = result && getUserImage()
+        .equals(other.getUserImage());
+    result = result && getGroupUserRemark()
+        .equals(other.getGroupUserRemark());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -249,78 +294,80 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + USERID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getUserId());
-    hash = (37 * hash) + TOKEN_FIELD_NUMBER;
-    hash = (53 * hash) + getToken().hashCode();
-    hash = (37 * hash) + MESSAGEID_FIELD_NUMBER;
-    hash = (53 * hash) + getMessageid().hashCode();
+    hash = (37 * hash) + USERNAME_FIELD_NUMBER;
+    hash = (53 * hash) + getUserName().hashCode();
+    hash = (37 * hash) + USERIMAGE_FIELD_NUMBER;
+    hash = (53 * hash) + getUserImage().hashCode();
+    hash = (37 * hash) + GROUPUSERREMARK_FIELD_NUMBER;
+    hash = (53 * hash) + getGroupUserRemark().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.hwl.imcore.improto.ImUserValidateRequest parseFrom(
+  public static com.hwl.imcore.improto.ImUserContent parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hwl.imcore.improto.ImUserValidateRequest parseFrom(
+  public static com.hwl.imcore.improto.ImUserContent parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hwl.imcore.improto.ImUserValidateRequest parseFrom(
+  public static com.hwl.imcore.improto.ImUserContent parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hwl.imcore.improto.ImUserValidateRequest parseFrom(
+  public static com.hwl.imcore.improto.ImUserContent parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hwl.imcore.improto.ImUserValidateRequest parseFrom(byte[] data)
+  public static com.hwl.imcore.improto.ImUserContent parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hwl.imcore.improto.ImUserValidateRequest parseFrom(
+  public static com.hwl.imcore.improto.ImUserContent parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hwl.imcore.improto.ImUserValidateRequest parseFrom(java.io.InputStream input)
+  public static com.hwl.imcore.improto.ImUserContent parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.hwl.imcore.improto.ImUserValidateRequest parseFrom(
+  public static com.hwl.imcore.improto.ImUserContent parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.hwl.imcore.improto.ImUserValidateRequest parseDelimitedFrom(java.io.InputStream input)
+  public static com.hwl.imcore.improto.ImUserContent parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.hwl.imcore.improto.ImUserValidateRequest parseDelimitedFrom(
+  public static com.hwl.imcore.improto.ImUserContent parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.hwl.imcore.improto.ImUserValidateRequest parseFrom(
+  public static com.hwl.imcore.improto.ImUserContent parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.hwl.imcore.improto.ImUserValidateRequest parseFrom(
+  public static com.hwl.imcore.improto.ImUserContent parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -332,7 +379,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.hwl.imcore.improto.ImUserValidateRequest prototype) {
+  public static Builder newBuilder(com.hwl.imcore.improto.ImUserContent prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   public Builder toBuilder() {
@@ -347,29 +394,25 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * <pre>
-   *user validate message
-   * </pre>
-   *
-   * Protobuf type {@code ImUserValidateRequest}
+   * Protobuf type {@code ImUserContent}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:ImUserValidateRequest)
-      com.hwl.imcore.improto.ImUserValidateRequestOrBuilder {
+      // @@protoc_insertion_point(builder_implements:ImUserContent)
+      com.hwl.imcore.improto.ImUserContentOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.hwl.imcore.improto.ImMessage.internal_static_ImUserValidateRequest_descriptor;
+      return com.hwl.imcore.improto.ImMessage.internal_static_ImUserContent_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.hwl.imcore.improto.ImMessage.internal_static_ImUserValidateRequest_fieldAccessorTable
+      return com.hwl.imcore.improto.ImMessage.internal_static_ImUserContent_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.hwl.imcore.improto.ImUserValidateRequest.class, com.hwl.imcore.improto.ImUserValidateRequest.Builder.class);
+              com.hwl.imcore.improto.ImUserContent.class, com.hwl.imcore.improto.ImUserContent.Builder.class);
     }
 
-    // Construct using com.hwl.imcore.improto.ImUserValidateRequest.newBuilder()
+    // Construct using com.hwl.imcore.improto.ImUserContent.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -388,35 +431,38 @@ private static final long serialVersionUID = 0L;
       super.clear();
       userId_ = 0L;
 
-      token_ = "";
+      userName_ = "";
 
-      messageid_ = "";
+      userImage_ = "";
+
+      groupUserRemark_ = "";
 
       return this;
     }
 
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.hwl.imcore.improto.ImMessage.internal_static_ImUserValidateRequest_descriptor;
+      return com.hwl.imcore.improto.ImMessage.internal_static_ImUserContent_descriptor;
     }
 
-    public com.hwl.imcore.improto.ImUserValidateRequest getDefaultInstanceForType() {
-      return com.hwl.imcore.improto.ImUserValidateRequest.getDefaultInstance();
+    public com.hwl.imcore.improto.ImUserContent getDefaultInstanceForType() {
+      return com.hwl.imcore.improto.ImUserContent.getDefaultInstance();
     }
 
-    public com.hwl.imcore.improto.ImUserValidateRequest build() {
-      com.hwl.imcore.improto.ImUserValidateRequest result = buildPartial();
+    public com.hwl.imcore.improto.ImUserContent build() {
+      com.hwl.imcore.improto.ImUserContent result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public com.hwl.imcore.improto.ImUserValidateRequest buildPartial() {
-      com.hwl.imcore.improto.ImUserValidateRequest result = new com.hwl.imcore.improto.ImUserValidateRequest(this);
+    public com.hwl.imcore.improto.ImUserContent buildPartial() {
+      com.hwl.imcore.improto.ImUserContent result = new com.hwl.imcore.improto.ImUserContent(this);
       result.userId_ = userId_;
-      result.token_ = token_;
-      result.messageid_ = messageid_;
+      result.userName_ = userName_;
+      result.userImage_ = userImage_;
+      result.groupUserRemark_ = groupUserRemark_;
       onBuilt();
       return result;
     }
@@ -448,25 +494,29 @@ private static final long serialVersionUID = 0L;
       return (Builder) super.addRepeatedField(field, value);
     }
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.hwl.imcore.improto.ImUserValidateRequest) {
-        return mergeFrom((com.hwl.imcore.improto.ImUserValidateRequest)other);
+      if (other instanceof com.hwl.imcore.improto.ImUserContent) {
+        return mergeFrom((com.hwl.imcore.improto.ImUserContent)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.hwl.imcore.improto.ImUserValidateRequest other) {
-      if (other == com.hwl.imcore.improto.ImUserValidateRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.hwl.imcore.improto.ImUserContent other) {
+      if (other == com.hwl.imcore.improto.ImUserContent.getDefaultInstance()) return this;
       if (other.getUserId() != 0L) {
         setUserId(other.getUserId());
       }
-      if (!other.getToken().isEmpty()) {
-        token_ = other.token_;
+      if (!other.getUserName().isEmpty()) {
+        userName_ = other.userName_;
         onChanged();
       }
-      if (!other.getMessageid().isEmpty()) {
-        messageid_ = other.messageid_;
+      if (!other.getUserImage().isEmpty()) {
+        userImage_ = other.userImage_;
+        onChanged();
+      }
+      if (!other.getGroupUserRemark().isEmpty()) {
+        groupUserRemark_ = other.groupUserRemark_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -482,11 +532,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.hwl.imcore.improto.ImUserValidateRequest parsedMessage = null;
+      com.hwl.imcore.improto.ImUserContent parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.hwl.imcore.improto.ImUserValidateRequest) e.getUnfinishedMessage();
+        parsedMessage = (com.hwl.imcore.improto.ImUserContent) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -522,140 +572,209 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object token_ = "";
+    private java.lang.Object userName_ = "";
     /**
-     * <code>string token = 2;</code>
+     * <code>string userName = 2;</code>
      */
-    public java.lang.String getToken() {
-      java.lang.Object ref = token_;
+    public java.lang.String getUserName() {
+      java.lang.Object ref = userName_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        token_ = s;
+        userName_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string token = 2;</code>
+     * <code>string userName = 2;</code>
      */
     public com.google.protobuf.ByteString
-        getTokenBytes() {
-      java.lang.Object ref = token_;
+        getUserNameBytes() {
+      java.lang.Object ref = userName_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        token_ = b;
+        userName_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string token = 2;</code>
+     * <code>string userName = 2;</code>
      */
-    public Builder setToken(
+    public Builder setUserName(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      token_ = value;
+      userName_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string token = 2;</code>
+     * <code>string userName = 2;</code>
      */
-    public Builder clearToken() {
+    public Builder clearUserName() {
       
-      token_ = getDefaultInstance().getToken();
+      userName_ = getDefaultInstance().getUserName();
       onChanged();
       return this;
     }
     /**
-     * <code>string token = 2;</code>
+     * <code>string userName = 2;</code>
      */
-    public Builder setTokenBytes(
+    public Builder setUserNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      token_ = value;
+      userName_ = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object messageid_ = "";
+    private java.lang.Object userImage_ = "";
     /**
-     * <code>string messageid = 3;</code>
+     * <code>string userImage = 3;</code>
      */
-    public java.lang.String getMessageid() {
-      java.lang.Object ref = messageid_;
+    public java.lang.String getUserImage() {
+      java.lang.Object ref = userImage_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        messageid_ = s;
+        userImage_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string messageid = 3;</code>
+     * <code>string userImage = 3;</code>
      */
     public com.google.protobuf.ByteString
-        getMessageidBytes() {
-      java.lang.Object ref = messageid_;
+        getUserImageBytes() {
+      java.lang.Object ref = userImage_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        messageid_ = b;
+        userImage_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string messageid = 3;</code>
+     * <code>string userImage = 3;</code>
      */
-    public Builder setMessageid(
+    public Builder setUserImage(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      messageid_ = value;
+      userImage_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string messageid = 3;</code>
+     * <code>string userImage = 3;</code>
      */
-    public Builder clearMessageid() {
+    public Builder clearUserImage() {
       
-      messageid_ = getDefaultInstance().getMessageid();
+      userImage_ = getDefaultInstance().getUserImage();
       onChanged();
       return this;
     }
     /**
-     * <code>string messageid = 3;</code>
+     * <code>string userImage = 3;</code>
      */
-    public Builder setMessageidBytes(
+    public Builder setUserImageBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      messageid_ = value;
+      userImage_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object groupUserRemark_ = "";
+    /**
+     * <code>string groupUserRemark = 4;</code>
+     */
+    public java.lang.String getGroupUserRemark() {
+      java.lang.Object ref = groupUserRemark_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        groupUserRemark_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string groupUserRemark = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getGroupUserRemarkBytes() {
+      java.lang.Object ref = groupUserRemark_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        groupUserRemark_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string groupUserRemark = 4;</code>
+     */
+    public Builder setGroupUserRemark(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      groupUserRemark_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string groupUserRemark = 4;</code>
+     */
+    public Builder clearGroupUserRemark() {
+      
+      groupUserRemark_ = getDefaultInstance().getGroupUserRemark();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string groupUserRemark = 4;</code>
+     */
+    public Builder setGroupUserRemarkBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      groupUserRemark_ = value;
       onChanged();
       return this;
     }
@@ -670,39 +789,39 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:ImUserValidateRequest)
+    // @@protoc_insertion_point(builder_scope:ImUserContent)
   }
 
-  // @@protoc_insertion_point(class_scope:ImUserValidateRequest)
-  private static final com.hwl.imcore.improto.ImUserValidateRequest DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:ImUserContent)
+  private static final com.hwl.imcore.improto.ImUserContent DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.hwl.imcore.improto.ImUserValidateRequest();
+    DEFAULT_INSTANCE = new com.hwl.imcore.improto.ImUserContent();
   }
 
-  public static com.hwl.imcore.improto.ImUserValidateRequest getDefaultInstance() {
+  public static com.hwl.imcore.improto.ImUserContent getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ImUserValidateRequest>
-      PARSER = new com.google.protobuf.AbstractParser<ImUserValidateRequest>() {
-    public ImUserValidateRequest parsePartialFrom(
+  private static final com.google.protobuf.Parser<ImUserContent>
+      PARSER = new com.google.protobuf.AbstractParser<ImUserContent>() {
+    public ImUserContent parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ImUserValidateRequest(input, extensionRegistry);
+      return new ImUserContent(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<ImUserValidateRequest> parser() {
+  public static com.google.protobuf.Parser<ImUserContent> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ImUserValidateRequest> getParserForType() {
+  public com.google.protobuf.Parser<ImUserContent> getParserForType() {
     return PARSER;
   }
 
-  public com.hwl.imcore.improto.ImUserValidateRequest getDefaultInstanceForType() {
+  public com.hwl.imcore.improto.ImUserContent getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

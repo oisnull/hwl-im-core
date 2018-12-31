@@ -111,5 +111,31 @@ public interface ImMessageRequestOrBuilder extends
    */
   com.hwl.imcore.improto.ImAckMessageRequestOrBuilder getAckMessageRequestOrBuilder();
 
+  /**
+   * <code>.ImChatSettingMessageRequest chatSettingMessageRequest = 9;</code>
+   */
+  boolean hasChatSettingMessageRequest();
+  /**
+   * <code>.ImChatSettingMessageRequest chatSettingMessageRequest = 9;</code>
+   */
+  com.hwl.imcore.improto.ImChatSettingMessageRequest getChatSettingMessageRequest();
+  /**
+   * <code>.ImChatSettingMessageRequest chatSettingMessageRequest = 9;</code>
+   */
+  com.hwl.imcore.improto.ImChatSettingMessageRequestOrBuilder getChatSettingMessageRequestOrBuilder();
+
+  /**
+   * <code>.ImGroupOperateMessageRequest groupOperateMessageRequest = 10;</code>
+   */
+  boolean hasGroupOperateMessageRequest();
+  /**
+   * <code>.ImGroupOperateMessageRequest groupOperateMessageRequest = 10;</code>
+   */
+  com.hwl.imcore.improto.ImGroupOperateMessageRequest getGroupOperateMessageRequest();
+  /**
+   * <code>.ImGroupOperateMessageRequest groupOperateMessageRequest = 10;</code>
+   */
+  com.hwl.imcore.improto.ImGroupOperateMessageRequestOrBuilder getGroupOperateMessageRequestOrBuilder();
+
   public com.hwl.imcore.improto.ImMessageRequest.RequestBodyCase getRequestBodyCase();
 }

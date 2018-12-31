@@ -4,6 +4,10 @@
 package com.hwl.imcore.improto;
 
 /**
+ * <pre>
+ * ack message
+ * </pre>
+ *
  * Protobuf type {@code ImAckMessageRequest}
  */
 public  final class ImAckMessageRequest extends
@@ -292,6 +296,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * ack message
+   * </pre>
+   *
    * Protobuf type {@code ImAckMessageRequest}
    */
   public static final class Builder extends

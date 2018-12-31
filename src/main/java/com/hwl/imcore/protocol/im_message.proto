@@ -13,6 +13,8 @@ enum ImMessageType {
     AddFriend = 5;
     TestConnection = 6;
     ClientAckMessage = 7;
+    ChatSetting = 8;
+    GroupOperate = 9;
 }
 
 enum ImMessageResponseCode {
@@ -29,6 +31,7 @@ enum ImMessageSourcePosition {
     Retry = 3;
 }
 
+//context body
 message ImMessageContext {
     ImMessageType type = 1;
     oneof body {
@@ -37,6 +40,7 @@ message ImMessageContext {
     }
 }
 
+//request package
 message ImMessageRequest {
     ImMessageRequestHead requestHead = 1;
     oneof requestBody {
@@ -47,17 +51,8 @@ message ImMessageRequest {
         ImAddFriendMessageRequest addFriendMessageRequest = 6;
         ImTestConnectionMessageRequest testConnectionMessageRequest = 7;
         ImAckMessageRequest ackMessageRequest = 8;
-    }
-}
-
-message ImMessageResponse {
-    ImMessageResponseHead responseHead = 1;
-    oneof responseBody {
-        ImUserValidateResponse userValidateResponse = 2;
-        ImChatUserMessageResponse chatUserMessageResponse = 3;
-        ImChatGroupMessageResponse chatGroupMessageResponse = 4;
-        ImAddFriendMessageResponse addFriendMessageResponse = 5;
-        ImTestConnectionMessageResponse testConnectionMessageResponse = 6;
+        ImChatSettingMessageRequest chatSettingMessageRequest = 9;
+        ImGroupOperateMessageRequest groupOperateMessageRequest = 10;
     }
 }
 
@@ -69,6 +64,20 @@ message ImMessageRequestHead {
     string version = 5;
 }
 
+//response package
+message ImMessageResponse {
+    ImMessageResponseHead responseHead = 1;
+    oneof responseBody {
+        ImUserValidateResponse userValidateResponse = 2;
+        ImChatUserMessageResponse chatUserMessageResponse = 3;
+        ImChatGroupMessageResponse chatGroupMessageResponse = 4;
+        ImAddFriendMessageResponse addFriendMessageResponse = 5;
+        ImTestConnectionMessageResponse testConnectionMessageResponse = 6;
+        ImChatSettingMessageResponse chatSettingMessageResponse = 7;
+        ImGroupOperateMessageResponse groupOperateMessageResponse = 8;
+    }
+}
+
 message ImMessageResponseHead {
     uint32 code = 1;
     string message = 2;
@@ -77,6 +86,7 @@ message ImMessageResponseHead {
     ImMessageSourcePosition source = 5;
 }
 
+//user validate message
 message ImUserValidateRequest {
     uint64 userId = 1;
     string token = 2;
@@ -90,6 +100,7 @@ message ImUserValidateResponse {
     string sessionid = 4;
 }
 
+//chat user message
 message ImChatUserMessageRequest {
     ImChatUserMessageContent chatUserMessageContent = 1;
 }
@@ -115,6 +126,7 @@ message ImChatUserMessageContent {
     bool isFriend = 13;
 }
 
+//chat group message
 message ImChatGroupMessageRequest {
     ImChatGroupMessageContent chatGroupMessageContent = 1;
 }
@@ -140,11 +152,13 @@ message ImChatGroupMessageContent {
     bool isFriend = 13;
 }
 
+//heart beat check
 message ImHeartBeatMessageRequest {
     uint64 fromUserId = 1;
     uint64 currentTime = 2;
 }
 
+//add friend message
 message ImAddFriendMessageRequest {
     ImAddFriendMessageContent addFriendMessageContent = 1;
 }
@@ -162,6 +176,7 @@ message ImAddFriendMessageContent {
     string content = 6;
 }
 
+//test message
 message ImTestConnectionMessageRequest {
     uint64 fromUserId = 1;
     string content = 2;
@@ -172,7 +187,49 @@ message ImTestConnectionMessageResponse {
     uint64 sendTime = 2;
 }
 
+// ack message
 message ImAckMessageRequest {
     uint64 fromUserId = 1;
     string messageid = 2;
+}
+
+//chat setting message
+message ImChatSettingMessageRequest {
+    ImChatSettingMessageContent chatSettingMessageContent = 1;
+}
+
+message ImChatSettingMessageResponse {
+    ImChatSettingMessageContent chatSettingMessageContent = 1;
+    uint64 buildTime = 2;
+}
+
+message ImChatSettingMessageContent {
+    uint32 settingType = 1;
+    string groupNote = 2;
+    string groupName = 3;
+    string userRemark = 4;
+}
+
+//group operate message
+message ImGroupOperateMessageRequest {
+    ImGroupOperateMessageContent groupOperateMessageContent = 1;
+}
+message ImGroupOperateMessageResponse {
+    ImGroupOperateMessageContent groupOperateMessageContent = 1;
+    uint64 buildTime = 2;
+}
+
+message ImGroupOperateMessageContent {
+    uint32 operateType = 1;
+    ImUserContent operateUser = 2;
+    string groupGuid = 3;
+    string groupName = 4;
+    repeated ImUserContent groupUsers = 5;
+}
+
+message ImUserContent {
+    uint64 userId = 1;
+    string userName = 2;
+    string userImage = 3;
+    string groupUserRemark = 4;
 }

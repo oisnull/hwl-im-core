@@ -4,6 +4,10 @@
 package com.hwl.imcore.improto;
 
 /**
+ * <pre>
+ *add friend message
+ * </pre>
+ *
  * Protobuf type {@code ImAddFriendMessageRequest}
  */
 public  final class ImAddFriendMessageRequest extends
@@ -264,6 +268,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   *add friend message
+   * </pre>
+   *
    * Protobuf type {@code ImAddFriendMessageRequest}
    */
   public static final class Builder extends

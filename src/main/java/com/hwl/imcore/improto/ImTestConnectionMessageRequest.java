@@ -4,6 +4,10 @@
 package com.hwl.imcore.improto;
 
 /**
+ * <pre>
+ *test message
+ * </pre>
+ *
  * Protobuf type {@code ImTestConnectionMessageRequest}
  */
 public  final class ImTestConnectionMessageRequest extends
@@ -292,6 +296,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   *test message
+   * </pre>
+   *
    * Protobuf type {@code ImTestConnectionMessageRequest}
    */
   public static final class Builder extends
