@@ -17,9 +17,9 @@ private static final long serialVersionUID = 0L;
   }
   private ImChatSettingMessageContent() {
     settingType_ = 0;
+    groupGuid_ = "";
     groupNote_ = "";
     groupName_ = "";
-    userRemark_ = "";
   }
 
   @java.lang.Override
@@ -60,21 +60,34 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+            com.hwl.imcore.improto.ImUserContent.Builder subBuilder = null;
+            if (settingUser_ != null) {
+              subBuilder = settingUser_.toBuilder();
+            }
+            settingUser_ = input.readMessage(com.hwl.imcore.improto.ImUserContent.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(settingUser_);
+              settingUser_ = subBuilder.buildPartial();
+            }
 
-            groupNote_ = s;
             break;
           }
           case 26: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            groupName_ = s;
+            groupGuid_ = s;
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            userRemark_ = s;
+            groupNote_ = s;
+            break;
+          }
+          case 42: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            groupName_ = s;
             break;
           }
         }
@@ -117,10 +130,65 @@ private static final long serialVersionUID = 0L;
     return result == null ? com.hwl.imcore.improto.ImChatSettingType.UNRECOGNIZED : result;
   }
 
-  public static final int GROUPNOTE_FIELD_NUMBER = 2;
+  public static final int SETTINGUSER_FIELD_NUMBER = 2;
+  private com.hwl.imcore.improto.ImUserContent settingUser_;
+  /**
+   * <code>.ImUserContent settingUser = 2;</code>
+   */
+  public boolean hasSettingUser() {
+    return settingUser_ != null;
+  }
+  /**
+   * <code>.ImUserContent settingUser = 2;</code>
+   */
+  public com.hwl.imcore.improto.ImUserContent getSettingUser() {
+    return settingUser_ == null ? com.hwl.imcore.improto.ImUserContent.getDefaultInstance() : settingUser_;
+  }
+  /**
+   * <code>.ImUserContent settingUser = 2;</code>
+   */
+  public com.hwl.imcore.improto.ImUserContentOrBuilder getSettingUserOrBuilder() {
+    return getSettingUser();
+  }
+
+  public static final int GROUPGUID_FIELD_NUMBER = 3;
+  private volatile java.lang.Object groupGuid_;
+  /**
+   * <code>string groupGuid = 3;</code>
+   */
+  public java.lang.String getGroupGuid() {
+    java.lang.Object ref = groupGuid_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      groupGuid_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string groupGuid = 3;</code>
+   */
+  public com.google.protobuf.ByteString
+      getGroupGuidBytes() {
+    java.lang.Object ref = groupGuid_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      groupGuid_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int GROUPNOTE_FIELD_NUMBER = 4;
   private volatile java.lang.Object groupNote_;
   /**
-   * <code>string groupNote = 2;</code>
+   * <code>string groupNote = 4;</code>
    */
   public java.lang.String getGroupNote() {
     java.lang.Object ref = groupNote_;
@@ -135,7 +203,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string groupNote = 2;</code>
+   * <code>string groupNote = 4;</code>
    */
   public com.google.protobuf.ByteString
       getGroupNoteBytes() {
@@ -151,10 +219,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int GROUPNAME_FIELD_NUMBER = 3;
+  public static final int GROUPNAME_FIELD_NUMBER = 5;
   private volatile java.lang.Object groupName_;
   /**
-   * <code>string groupName = 3;</code>
+   * <code>string groupName = 5;</code>
    */
   public java.lang.String getGroupName() {
     java.lang.Object ref = groupName_;
@@ -169,7 +237,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string groupName = 3;</code>
+   * <code>string groupName = 5;</code>
    */
   public com.google.protobuf.ByteString
       getGroupNameBytes() {
@@ -179,40 +247,6 @@ private static final long serialVersionUID = 0L;
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
       groupName_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int USERREMARK_FIELD_NUMBER = 4;
-  private volatile java.lang.Object userRemark_;
-  /**
-   * <code>string userRemark = 4;</code>
-   */
-  public java.lang.String getUserRemark() {
-    java.lang.Object ref = userRemark_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      userRemark_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string userRemark = 4;</code>
-   */
-  public com.google.protobuf.ByteString
-      getUserRemarkBytes() {
-    java.lang.Object ref = userRemark_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      userRemark_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -234,14 +268,17 @@ private static final long serialVersionUID = 0L;
     if (settingType_ != com.hwl.imcore.improto.ImChatSettingType.SettingNone.getNumber()) {
       output.writeEnum(1, settingType_);
     }
+    if (settingUser_ != null) {
+      output.writeMessage(2, getSettingUser());
+    }
+    if (!getGroupGuidBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, groupGuid_);
+    }
     if (!getGroupNoteBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, groupNote_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, groupNote_);
     }
     if (!getGroupNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, groupName_);
-    }
-    if (!getUserRemarkBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, userRemark_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, groupName_);
     }
     unknownFields.writeTo(output);
   }
@@ -255,14 +292,18 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, settingType_);
     }
+    if (settingUser_ != null) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(2, getSettingUser());
+    }
+    if (!getGroupGuidBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, groupGuid_);
+    }
     if (!getGroupNoteBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, groupNote_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, groupNote_);
     }
     if (!getGroupNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, groupName_);
-    }
-    if (!getUserRemarkBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, userRemark_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, groupName_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -281,12 +322,17 @@ private static final long serialVersionUID = 0L;
 
     boolean result = true;
     result = result && settingType_ == other.settingType_;
+    result = result && (hasSettingUser() == other.hasSettingUser());
+    if (hasSettingUser()) {
+      result = result && getSettingUser()
+          .equals(other.getSettingUser());
+    }
+    result = result && getGroupGuid()
+        .equals(other.getGroupGuid());
     result = result && getGroupNote()
         .equals(other.getGroupNote());
     result = result && getGroupName()
         .equals(other.getGroupName());
-    result = result && getUserRemark()
-        .equals(other.getUserRemark());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -300,12 +346,16 @@ private static final long serialVersionUID = 0L;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + SETTINGTYPE_FIELD_NUMBER;
     hash = (53 * hash) + settingType_;
+    if (hasSettingUser()) {
+      hash = (37 * hash) + SETTINGUSER_FIELD_NUMBER;
+      hash = (53 * hash) + getSettingUser().hashCode();
+    }
+    hash = (37 * hash) + GROUPGUID_FIELD_NUMBER;
+    hash = (53 * hash) + getGroupGuid().hashCode();
     hash = (37 * hash) + GROUPNOTE_FIELD_NUMBER;
     hash = (53 * hash) + getGroupNote().hashCode();
     hash = (37 * hash) + GROUPNAME_FIELD_NUMBER;
     hash = (53 * hash) + getGroupName().hashCode();
-    hash = (37 * hash) + USERREMARK_FIELD_NUMBER;
-    hash = (53 * hash) + getUserRemark().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -437,11 +487,17 @@ private static final long serialVersionUID = 0L;
       super.clear();
       settingType_ = 0;
 
+      if (settingUserBuilder_ == null) {
+        settingUser_ = null;
+      } else {
+        settingUser_ = null;
+        settingUserBuilder_ = null;
+      }
+      groupGuid_ = "";
+
       groupNote_ = "";
 
       groupName_ = "";
-
-      userRemark_ = "";
 
       return this;
     }
@@ -466,9 +522,14 @@ private static final long serialVersionUID = 0L;
     public com.hwl.imcore.improto.ImChatSettingMessageContent buildPartial() {
       com.hwl.imcore.improto.ImChatSettingMessageContent result = new com.hwl.imcore.improto.ImChatSettingMessageContent(this);
       result.settingType_ = settingType_;
+      if (settingUserBuilder_ == null) {
+        result.settingUser_ = settingUser_;
+      } else {
+        result.settingUser_ = settingUserBuilder_.build();
+      }
+      result.groupGuid_ = groupGuid_;
       result.groupNote_ = groupNote_;
       result.groupName_ = groupName_;
-      result.userRemark_ = userRemark_;
       onBuilt();
       return result;
     }
@@ -513,16 +574,19 @@ private static final long serialVersionUID = 0L;
       if (other.settingType_ != 0) {
         setSettingTypeValue(other.getSettingTypeValue());
       }
+      if (other.hasSettingUser()) {
+        mergeSettingUser(other.getSettingUser());
+      }
+      if (!other.getGroupGuid().isEmpty()) {
+        groupGuid_ = other.groupGuid_;
+        onChanged();
+      }
       if (!other.getGroupNote().isEmpty()) {
         groupNote_ = other.groupNote_;
         onChanged();
       }
       if (!other.getGroupName().isEmpty()) {
         groupName_ = other.groupName_;
-        onChanged();
-      }
-      if (!other.getUserRemark().isEmpty()) {
-        userRemark_ = other.userRemark_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -596,9 +660,195 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private com.hwl.imcore.improto.ImUserContent settingUser_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.hwl.imcore.improto.ImUserContent, com.hwl.imcore.improto.ImUserContent.Builder, com.hwl.imcore.improto.ImUserContentOrBuilder> settingUserBuilder_;
+    /**
+     * <code>.ImUserContent settingUser = 2;</code>
+     */
+    public boolean hasSettingUser() {
+      return settingUserBuilder_ != null || settingUser_ != null;
+    }
+    /**
+     * <code>.ImUserContent settingUser = 2;</code>
+     */
+    public com.hwl.imcore.improto.ImUserContent getSettingUser() {
+      if (settingUserBuilder_ == null) {
+        return settingUser_ == null ? com.hwl.imcore.improto.ImUserContent.getDefaultInstance() : settingUser_;
+      } else {
+        return settingUserBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.ImUserContent settingUser = 2;</code>
+     */
+    public Builder setSettingUser(com.hwl.imcore.improto.ImUserContent value) {
+      if (settingUserBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        settingUser_ = value;
+        onChanged();
+      } else {
+        settingUserBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.ImUserContent settingUser = 2;</code>
+     */
+    public Builder setSettingUser(
+        com.hwl.imcore.improto.ImUserContent.Builder builderForValue) {
+      if (settingUserBuilder_ == null) {
+        settingUser_ = builderForValue.build();
+        onChanged();
+      } else {
+        settingUserBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.ImUserContent settingUser = 2;</code>
+     */
+    public Builder mergeSettingUser(com.hwl.imcore.improto.ImUserContent value) {
+      if (settingUserBuilder_ == null) {
+        if (settingUser_ != null) {
+          settingUser_ =
+            com.hwl.imcore.improto.ImUserContent.newBuilder(settingUser_).mergeFrom(value).buildPartial();
+        } else {
+          settingUser_ = value;
+        }
+        onChanged();
+      } else {
+        settingUserBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.ImUserContent settingUser = 2;</code>
+     */
+    public Builder clearSettingUser() {
+      if (settingUserBuilder_ == null) {
+        settingUser_ = null;
+        onChanged();
+      } else {
+        settingUser_ = null;
+        settingUserBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.ImUserContent settingUser = 2;</code>
+     */
+    public com.hwl.imcore.improto.ImUserContent.Builder getSettingUserBuilder() {
+      
+      onChanged();
+      return getSettingUserFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.ImUserContent settingUser = 2;</code>
+     */
+    public com.hwl.imcore.improto.ImUserContentOrBuilder getSettingUserOrBuilder() {
+      if (settingUserBuilder_ != null) {
+        return settingUserBuilder_.getMessageOrBuilder();
+      } else {
+        return settingUser_ == null ?
+            com.hwl.imcore.improto.ImUserContent.getDefaultInstance() : settingUser_;
+      }
+    }
+    /**
+     * <code>.ImUserContent settingUser = 2;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.hwl.imcore.improto.ImUserContent, com.hwl.imcore.improto.ImUserContent.Builder, com.hwl.imcore.improto.ImUserContentOrBuilder> 
+        getSettingUserFieldBuilder() {
+      if (settingUserBuilder_ == null) {
+        settingUserBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.hwl.imcore.improto.ImUserContent, com.hwl.imcore.improto.ImUserContent.Builder, com.hwl.imcore.improto.ImUserContentOrBuilder>(
+                getSettingUser(),
+                getParentForChildren(),
+                isClean());
+        settingUser_ = null;
+      }
+      return settingUserBuilder_;
+    }
+
+    private java.lang.Object groupGuid_ = "";
+    /**
+     * <code>string groupGuid = 3;</code>
+     */
+    public java.lang.String getGroupGuid() {
+      java.lang.Object ref = groupGuid_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        groupGuid_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string groupGuid = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getGroupGuidBytes() {
+      java.lang.Object ref = groupGuid_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        groupGuid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string groupGuid = 3;</code>
+     */
+    public Builder setGroupGuid(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      groupGuid_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string groupGuid = 3;</code>
+     */
+    public Builder clearGroupGuid() {
+      
+      groupGuid_ = getDefaultInstance().getGroupGuid();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string groupGuid = 3;</code>
+     */
+    public Builder setGroupGuidBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      groupGuid_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object groupNote_ = "";
     /**
-     * <code>string groupNote = 2;</code>
+     * <code>string groupNote = 4;</code>
      */
     public java.lang.String getGroupNote() {
       java.lang.Object ref = groupNote_;
@@ -613,7 +863,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string groupNote = 2;</code>
+     * <code>string groupNote = 4;</code>
      */
     public com.google.protobuf.ByteString
         getGroupNoteBytes() {
@@ -629,7 +879,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string groupNote = 2;</code>
+     * <code>string groupNote = 4;</code>
      */
     public Builder setGroupNote(
         java.lang.String value) {
@@ -642,7 +892,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string groupNote = 2;</code>
+     * <code>string groupNote = 4;</code>
      */
     public Builder clearGroupNote() {
       
@@ -651,7 +901,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string groupNote = 2;</code>
+     * <code>string groupNote = 4;</code>
      */
     public Builder setGroupNoteBytes(
         com.google.protobuf.ByteString value) {
@@ -667,7 +917,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object groupName_ = "";
     /**
-     * <code>string groupName = 3;</code>
+     * <code>string groupName = 5;</code>
      */
     public java.lang.String getGroupName() {
       java.lang.Object ref = groupName_;
@@ -682,7 +932,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string groupName = 3;</code>
+     * <code>string groupName = 5;</code>
      */
     public com.google.protobuf.ByteString
         getGroupNameBytes() {
@@ -698,7 +948,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string groupName = 3;</code>
+     * <code>string groupName = 5;</code>
      */
     public Builder setGroupName(
         java.lang.String value) {
@@ -711,7 +961,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string groupName = 3;</code>
+     * <code>string groupName = 5;</code>
      */
     public Builder clearGroupName() {
       
@@ -720,7 +970,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string groupName = 3;</code>
+     * <code>string groupName = 5;</code>
      */
     public Builder setGroupNameBytes(
         com.google.protobuf.ByteString value) {
@@ -730,75 +980,6 @@ private static final long serialVersionUID = 0L;
   checkByteStringIsUtf8(value);
       
       groupName_ = value;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object userRemark_ = "";
-    /**
-     * <code>string userRemark = 4;</code>
-     */
-    public java.lang.String getUserRemark() {
-      java.lang.Object ref = userRemark_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        userRemark_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string userRemark = 4;</code>
-     */
-    public com.google.protobuf.ByteString
-        getUserRemarkBytes() {
-      java.lang.Object ref = userRemark_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        userRemark_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string userRemark = 4;</code>
-     */
-    public Builder setUserRemark(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      userRemark_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string userRemark = 4;</code>
-     */
-    public Builder clearUserRemark() {
-      
-      userRemark_ = getDefaultInstance().getUserRemark();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string userRemark = 4;</code>
-     */
-    public Builder setUserRemarkBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      userRemark_ = value;
       onChanged();
       return this;
     }

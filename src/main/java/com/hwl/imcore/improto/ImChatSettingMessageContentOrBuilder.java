@@ -17,32 +17,45 @@ public interface ImChatSettingMessageContentOrBuilder extends
   com.hwl.imcore.improto.ImChatSettingType getSettingType();
 
   /**
-   * <code>string groupNote = 2;</code>
+   * <code>.ImUserContent settingUser = 2;</code>
+   */
+  boolean hasSettingUser();
+  /**
+   * <code>.ImUserContent settingUser = 2;</code>
+   */
+  com.hwl.imcore.improto.ImUserContent getSettingUser();
+  /**
+   * <code>.ImUserContent settingUser = 2;</code>
+   */
+  com.hwl.imcore.improto.ImUserContentOrBuilder getSettingUserOrBuilder();
+
+  /**
+   * <code>string groupGuid = 3;</code>
+   */
+  java.lang.String getGroupGuid();
+  /**
+   * <code>string groupGuid = 3;</code>
+   */
+  com.google.protobuf.ByteString
+      getGroupGuidBytes();
+
+  /**
+   * <code>string groupNote = 4;</code>
    */
   java.lang.String getGroupNote();
   /**
-   * <code>string groupNote = 2;</code>
+   * <code>string groupNote = 4;</code>
    */
   com.google.protobuf.ByteString
       getGroupNoteBytes();
 
   /**
-   * <code>string groupName = 3;</code>
+   * <code>string groupName = 5;</code>
    */
   java.lang.String getGroupName();
   /**
-   * <code>string groupName = 3;</code>
+   * <code>string groupName = 5;</code>
    */
   com.google.protobuf.ByteString
       getGroupNameBytes();
-
-  /**
-   * <code>string userRemark = 4;</code>
-   */
-  java.lang.String getUserRemark();
-  /**
-   * <code>string userRemark = 4;</code>
-   */
-  com.google.protobuf.ByteString
-      getUserRemarkBytes();
 }

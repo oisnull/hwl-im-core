@@ -205,12 +205,13 @@ message ImChatSettingMessageResponse {
 
 message ImChatSettingMessageContent {
     ImChatSettingType settingType = 1;
-    string groupNote = 2;
-    string groupName = 3;
-    string userRemark = 4;
+    ImUserContent settingUser = 2;
+    string groupGuid = 3;
+    string groupNote = 4;
+    string groupName = 5;
 }
 
-enum ImChatSettingType{
+enum ImChatSettingType {
     SettingNone = 0;
     GroupNote = 1;
     GroupName = 2;
@@ -241,10 +242,10 @@ message ImUserContent {
     string groupUserRemark = 4;
 }
 
-enum ImGroupOperateType{
+enum ImGroupOperateType {
     OperateNone = 0;
     CreateGroup = 1;
-    ExitGroup= 2;
+    ExitGroup = 2;
     DismissGroup = 3;
     AddUser = 4;
     RemoveUser = 5;
