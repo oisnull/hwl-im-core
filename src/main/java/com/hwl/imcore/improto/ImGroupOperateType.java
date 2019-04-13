@@ -9,9 +9,9 @@ package com.hwl.imcore.improto;
 public enum ImGroupOperateType
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>OperateNone = 0;</code>
+   * <code>GroupOperateNone = 0;</code>
    */
-  OperateNone(0),
+  GroupOperateNone(0),
   /**
    * <code>CreateGroup = 1;</code>
    */
@@ -36,9 +36,9 @@ public enum ImGroupOperateType
   ;
 
   /**
-   * <code>OperateNone = 0;</code>
+   * <code>GroupOperateNone = 0;</code>
    */
-  public static final int OperateNone_VALUE = 0;
+  public static final int GroupOperateNone_VALUE = 0;
   /**
    * <code>CreateGroup = 1;</code>
    */
@@ -79,7 +79,7 @@ public enum ImGroupOperateType
 
   public static ImGroupOperateType forNumber(int value) {
     switch (value) {
-      case 0: return OperateNone;
+      case 0: return GroupOperateNone;
       case 1: return CreateGroup;
       case 2: return ExitGroup;
       case 3: return DismissGroup;

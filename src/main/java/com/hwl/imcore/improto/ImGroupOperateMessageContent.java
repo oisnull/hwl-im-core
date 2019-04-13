@@ -273,7 +273,7 @@ private static final long serialVersionUID = 0L;
 
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (operateType_ != com.hwl.imcore.improto.ImGroupOperateType.OperateNone.getNumber()) {
+    if (operateType_ != com.hwl.imcore.improto.ImGroupOperateType.GroupOperateNone.getNumber()) {
       output.writeEnum(1, operateType_);
     }
     if (operateUser_ != null) {
@@ -296,7 +296,7 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (operateType_ != com.hwl.imcore.improto.ImGroupOperateType.OperateNone.getNumber()) {
+    if (operateType_ != com.hwl.imcore.improto.ImGroupOperateType.GroupOperateNone.getNumber()) {
       size += com.google.protobuf.CodedOutputStream
         .computeEnumSize(1, operateType_);
     }

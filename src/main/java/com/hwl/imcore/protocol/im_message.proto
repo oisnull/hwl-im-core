@@ -243,7 +243,7 @@ message ImUserContent {
 }
 
 enum ImGroupOperateType {
-    OperateNone = 0;
+    GroupOperateNone = 0;
     CreateGroup = 1;
     ExitGroup = 2;
     DismissGroup = 3;
@@ -253,7 +253,7 @@ enum ImGroupOperateType {
 
 //near circle operate message
 enum ImNearCircleOperateType {
-    OperateNone = 0;
+    NearCircleOperateNone = 0;
     AddLike = 1;
     CancelLike = 2;
     PostComment = 3;
@@ -263,7 +263,7 @@ enum ImNearCircleOperateType {
 message ImNearCircleOperateMessageRequest {
     ImNearCircleOperateMessageContent nearCircleOperateMessageContent = 1;
 }
-message ImGroupOperateMessageResponse {
+message ImNearCircleOperateMessageResponse {
     ImNearCircleOperateMessageContent nearCircleOperateMessageContent = 1;
     uint64 buildTime = 2;
 }

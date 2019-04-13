@@ -149,6 +149,21 @@ public final class ImMessage {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_ImUserContent_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ImNearCircleOperateMessageRequest_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ImNearCircleOperateMessageRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ImNearCircleOperateMessageResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ImNearCircleOperateMessageResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_ImNearCircleOperateMessageContent_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_ImNearCircleOperateMessageContent_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -264,22 +279,37 @@ public final class ImMessage {
       "\001(\t\022\"\n\ngroupUsers\030\005 \003(\0132\016.ImUserContent\"" +
       "]\n\rImUserContent\022\016\n\006userId\030\001 \001(\004\022\020\n\010user" +
       "Name\030\002 \001(\t\022\021\n\tuserImage\030\003 \001(\t\022\027\n\017groupUs" +
-      "erRemark\030\004 \001(\t*\263\001\n\rImMessageType\022\010\n\004Base" +
-      "\020\000\022\020\n\014UserValidate\020\001\022\014\n\010ChatUser\020\002\022\r\n\tCh" +
-      "atGroup\020\003\022\r\n\tHeartBeat\020\004\022\r\n\tAddFriend\020\005\022" +
-      "\022\n\016TestConnection\020\006\022\024\n\020ClientAckMessage\020" +
-      "\007\022\017\n\013ChatSetting\020\010\022\020\n\014GroupOperate\020\t*S\n\025" +
-      "ImMessageResponseCode\022\t\n\005Other\020\000\022\013\n\007Succ" +
-      "ess\020d\022\013\n\006Failed\020\310\001\022\025\n\020SessionidInvalid\020\311" +
-      "\001*I\n\027ImMessageSourcePosition\022\010\n\004None\020\000\022\014" +
-      "\n\010RealTime\020\001\022\013\n\007Offline\020\002\022\t\n\005Retry\020\003*R\n\021" +
-      "ImChatSettingType\022\017\n\013SettingNone\020\000\022\r\n\tGr" +
-      "oupNote\020\001\022\r\n\tGroupName\020\002\022\016\n\nUserRemark\020\003" +
-      "*t\n\022ImGroupOperateType\022\017\n\013OperateNone\020\000\022" +
-      "\017\n\013CreateGroup\020\001\022\r\n\tExitGroup\020\002\022\020\n\014Dismi" +
-      "ssGroup\020\003\022\013\n\007AddUser\020\004\022\016\n\nRemoveUser\020\005B," +
-      "\n\026com.hwl.imcore.improtoP\001\252\002\017IMCore.Prot" +
-      "ocolb\006proto3"
+      "erRemark\030\004 \001(\t\"p\n!ImNearCircleOperateMes" +
+      "sageRequest\022K\n\037nearCircleOperateMessageC" +
+      "ontent\030\001 \001(\0132\".ImNearCircleOperateMessag" +
+      "eContent\"\204\001\n\"ImNearCircleOperateMessageR" +
+      "esponse\022K\n\037nearCircleOperateMessageConte" +
+      "nt\030\001 \001(\0132\".ImNearCircleOperateMessageCon" +
+      "tent\022\021\n\tbuildTime\030\002 \001(\004\"\362\001\n!ImNearCircle" +
+      "OperateMessageContent\022-\n\013operateType\030\001 \001" +
+      "(\0162\030.ImNearCircleOperateType\022 \n\010postUser" +
+      "\030\002 \001(\0132\016.ImUserContent\022\"\n\noriginUser\030\003 \001" +
+      "(\0132\016.ImUserContent\022!\n\treplyUser\030\004 \001(\0132\016." +
+      "ImUserContent\022\024\n\014nearCircleId\030\005 \001(\004\022\016\n\006i" +
+      "sLike\030\006 \001(\010\022\017\n\007content\030\007 \001(\t*\263\001\n\rImMessa" +
+      "geType\022\010\n\004Base\020\000\022\020\n\014UserValidate\020\001\022\014\n\010Ch" +
+      "atUser\020\002\022\r\n\tChatGroup\020\003\022\r\n\tHeartBeat\020\004\022\r" +
+      "\n\tAddFriend\020\005\022\022\n\016TestConnection\020\006\022\024\n\020Cli" +
+      "entAckMessage\020\007\022\017\n\013ChatSetting\020\010\022\020\n\014Grou" +
+      "pOperate\020\t*S\n\025ImMessageResponseCode\022\t\n\005O" +
+      "ther\020\000\022\013\n\007Success\020d\022\013\n\006Failed\020\310\001\022\025\n\020Sess" +
+      "ionidInvalid\020\311\001*I\n\027ImMessageSourcePositi" +
+      "on\022\010\n\004None\020\000\022\014\n\010RealTime\020\001\022\013\n\007Offline\020\002\022" +
+      "\t\n\005Retry\020\003*R\n\021ImChatSettingType\022\017\n\013Setti" +
+      "ngNone\020\000\022\r\n\tGroupNote\020\001\022\r\n\tGroupName\020\002\022\016" +
+      "\n\nUserRemark\020\003*y\n\022ImGroupOperateType\022\024\n\020" +
+      "GroupOperateNone\020\000\022\017\n\013CreateGroup\020\001\022\r\n\tE" +
+      "xitGroup\020\002\022\020\n\014DismissGroup\020\003\022\013\n\007AddUser\020" +
+      "\004\022\016\n\nRemoveUser\020\005*u\n\027ImNearCircleOperate" +
+      "Type\022\031\n\025NearCircleOperateNone\020\000\022\013\n\007AddLi" +
+      "ke\020\001\022\016\n\nCancelLike\020\002\022\017\n\013PostComment\020\003\022\021\n" +
+      "\rCancelComment\020\004B,\n\026com.hwl.imcore.impro" +
+      "toP\001\252\002\017IMCore.Protocolb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -455,6 +485,24 @@ public final class ImMessage {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ImUserContent_descriptor,
         new java.lang.String[] { "UserId", "UserName", "UserImage", "GroupUserRemark", });
+    internal_static_ImNearCircleOperateMessageRequest_descriptor =
+      getDescriptor().getMessageTypes().get(27);
+    internal_static_ImNearCircleOperateMessageRequest_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ImNearCircleOperateMessageRequest_descriptor,
+        new java.lang.String[] { "NearCircleOperateMessageContent", });
+    internal_static_ImNearCircleOperateMessageResponse_descriptor =
+      getDescriptor().getMessageTypes().get(28);
+    internal_static_ImNearCircleOperateMessageResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ImNearCircleOperateMessageResponse_descriptor,
+        new java.lang.String[] { "NearCircleOperateMessageContent", "BuildTime", });
+    internal_static_ImNearCircleOperateMessageContent_descriptor =
+      getDescriptor().getMessageTypes().get(29);
+    internal_static_ImNearCircleOperateMessageContent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_ImNearCircleOperateMessageContent_descriptor,
+        new java.lang.String[] { "OperateType", "PostUser", "OriginUser", "ReplyUser", "NearCircleId", "IsLike", "Content", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
