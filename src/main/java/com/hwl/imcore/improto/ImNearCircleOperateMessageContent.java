@@ -19,7 +19,8 @@ private static final long serialVersionUID = 0L;
     operateType_ = 0;
     nearCircleId_ = 0L;
     isLike_ = false;
-    content_ = "";
+    commentId_ = 0L;
+    commentCont_ = "";
   }
 
   @java.lang.Override
@@ -108,10 +109,15 @@ private static final long serialVersionUID = 0L;
             isLike_ = input.readBool();
             break;
           }
-          case 58: {
+          case 56: {
+
+            commentId_ = input.readUInt64();
+            break;
+          }
+          case 66: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            content_ = s;
+            commentCont_ = s;
             break;
           }
         }
@@ -235,34 +241,43 @@ private static final long serialVersionUID = 0L;
     return isLike_;
   }
 
-  public static final int CONTENT_FIELD_NUMBER = 7;
-  private volatile java.lang.Object content_;
+  public static final int COMMENTID_FIELD_NUMBER = 7;
+  private long commentId_;
   /**
-   * <code>string content = 7;</code>
+   * <code>uint64 commentId = 7;</code>
    */
-  public java.lang.String getContent() {
-    java.lang.Object ref = content_;
+  public long getCommentId() {
+    return commentId_;
+  }
+
+  public static final int COMMENTCONT_FIELD_NUMBER = 8;
+  private volatile java.lang.Object commentCont_;
+  /**
+   * <code>string commentCont = 8;</code>
+   */
+  public java.lang.String getCommentCont() {
+    java.lang.Object ref = commentCont_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      content_ = s;
+      commentCont_ = s;
       return s;
     }
   }
   /**
-   * <code>string content = 7;</code>
+   * <code>string commentCont = 8;</code>
    */
   public com.google.protobuf.ByteString
-      getContentBytes() {
-    java.lang.Object ref = content_;
+      getCommentContBytes() {
+    java.lang.Object ref = commentCont_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      content_ = b;
+      commentCont_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -299,8 +314,11 @@ private static final long serialVersionUID = 0L;
     if (isLike_ != false) {
       output.writeBool(6, isLike_);
     }
-    if (!getContentBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, content_);
+    if (commentId_ != 0L) {
+      output.writeUInt64(7, commentId_);
+    }
+    if (!getCommentContBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, commentCont_);
     }
     unknownFields.writeTo(output);
   }
@@ -334,8 +352,12 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(6, isLike_);
     }
-    if (!getContentBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, content_);
+    if (commentId_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt64Size(7, commentId_);
+    }
+    if (!getCommentContBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, commentCont_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -373,8 +395,10 @@ private static final long serialVersionUID = 0L;
         == other.getNearCircleId());
     result = result && (getIsLike()
         == other.getIsLike());
-    result = result && getContent()
-        .equals(other.getContent());
+    result = result && (getCommentId()
+        == other.getCommentId());
+    result = result && getCommentCont()
+        .equals(other.getCommentCont());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -406,8 +430,11 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ISLIKE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getIsLike());
-    hash = (37 * hash) + CONTENT_FIELD_NUMBER;
-    hash = (53 * hash) + getContent().hashCode();
+    hash = (37 * hash) + COMMENTID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getCommentId());
+    hash = (37 * hash) + COMMENTCONT_FIELD_NUMBER;
+    hash = (53 * hash) + getCommentCont().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -561,7 +588,9 @@ private static final long serialVersionUID = 0L;
 
       isLike_ = false;
 
-      content_ = "";
+      commentId_ = 0L;
+
+      commentCont_ = "";
 
       return this;
     }
@@ -603,7 +632,8 @@ private static final long serialVersionUID = 0L;
       }
       result.nearCircleId_ = nearCircleId_;
       result.isLike_ = isLike_;
-      result.content_ = content_;
+      result.commentId_ = commentId_;
+      result.commentCont_ = commentCont_;
       onBuilt();
       return result;
     }
@@ -663,8 +693,11 @@ private static final long serialVersionUID = 0L;
       if (other.getIsLike() != false) {
         setIsLike(other.getIsLike());
       }
-      if (!other.getContent().isEmpty()) {
-        content_ = other.content_;
+      if (other.getCommentId() != 0L) {
+        setCommentId(other.getCommentId());
+      }
+      if (!other.getCommentCont().isEmpty()) {
+        commentCont_ = other.commentCont_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1141,71 +1174,97 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object content_ = "";
+    private long commentId_ ;
     /**
-     * <code>string content = 7;</code>
+     * <code>uint64 commentId = 7;</code>
      */
-    public java.lang.String getContent() {
-      java.lang.Object ref = content_;
+    public long getCommentId() {
+      return commentId_;
+    }
+    /**
+     * <code>uint64 commentId = 7;</code>
+     */
+    public Builder setCommentId(long value) {
+      
+      commentId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>uint64 commentId = 7;</code>
+     */
+    public Builder clearCommentId() {
+      
+      commentId_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object commentCont_ = "";
+    /**
+     * <code>string commentCont = 8;</code>
+     */
+    public java.lang.String getCommentCont() {
+      java.lang.Object ref = commentCont_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        content_ = s;
+        commentCont_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string content = 7;</code>
+     * <code>string commentCont = 8;</code>
      */
     public com.google.protobuf.ByteString
-        getContentBytes() {
-      java.lang.Object ref = content_;
+        getCommentContBytes() {
+      java.lang.Object ref = commentCont_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        content_ = b;
+        commentCont_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string content = 7;</code>
+     * <code>string commentCont = 8;</code>
      */
-    public Builder setContent(
+    public Builder setCommentCont(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      content_ = value;
+      commentCont_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string content = 7;</code>
+     * <code>string commentCont = 8;</code>
      */
-    public Builder clearContent() {
+    public Builder clearCommentCont() {
       
-      content_ = getDefaultInstance().getContent();
+      commentCont_ = getDefaultInstance().getCommentCont();
       onChanged();
       return this;
     }
     /**
-     * <code>string content = 7;</code>
+     * <code>string commentCont = 8;</code>
      */
-    public Builder setContentBytes(
+    public Builder setCommentContBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      content_ = value;
+      commentCont_ = value;
       onChanged();
       return this;
     }

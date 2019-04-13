@@ -66,12 +66,17 @@ public interface ImNearCircleOperateMessageContentOrBuilder extends
   boolean getIsLike();
 
   /**
-   * <code>string content = 7;</code>
+   * <code>uint64 commentId = 7;</code>
    */
-  java.lang.String getContent();
+  long getCommentId();
+
   /**
-   * <code>string content = 7;</code>
+   * <code>string commentCont = 8;</code>
+   */
+  java.lang.String getCommentCont();
+  /**
+   * <code>string commentCont = 8;</code>
    */
   com.google.protobuf.ByteString
-      getContentBytes();
+      getCommentContBytes();
 }

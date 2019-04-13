@@ -278,6 +278,7 @@ message ImNearCircleOperateMessageContent {
     ImUserContent replyUser = 4;
     uint64 nearCircleId = 5;
     bool isLike = 6;
-    string content = 7;
+    uint64 commentId = 7;
+    string commentCont = 8;
 }
 
