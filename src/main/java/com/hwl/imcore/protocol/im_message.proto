@@ -15,6 +15,7 @@ enum ImMessageType {
     ClientAckMessage = 7;
     ChatSetting = 8;
     GroupOperate = 9;
+    NearCircleOperate = 10;
 }
 
 enum ImMessageResponseCode {
@@ -53,6 +54,7 @@ message ImMessageRequest {
         ImAckMessageRequest ackMessageRequest = 8;
         ImChatSettingMessageRequest chatSettingMessageRequest = 9;
         ImGroupOperateMessageRequest groupOperateMessageRequest = 10;
+        ImNearCircleOperateMessageRequest nearCircleOperateMessageRequest = 11;
     }
 }
 
@@ -75,6 +77,7 @@ message ImMessageResponse {
         ImTestConnectionMessageResponse testConnectionMessageResponse = 6;
         ImChatSettingMessageResponse chatSettingMessageResponse = 7;
         ImGroupOperateMessageResponse groupOperateMessageResponse = 8;
+        ImNearCircleOperateMessageResponse nearCircleOperateMessageResponse = 9;
     }
 }
 

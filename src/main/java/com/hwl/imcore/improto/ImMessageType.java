@@ -48,6 +48,10 @@ public enum ImMessageType
    * <code>GroupOperate = 9;</code>
    */
   GroupOperate(9),
+  /**
+   * <code>NearCircleOperate = 10;</code>
+   */
+  NearCircleOperate(10),
   UNRECOGNIZED(-1),
   ;
 
@@ -91,6 +95,10 @@ public enum ImMessageType
    * <code>GroupOperate = 9;</code>
    */
   public static final int GroupOperate_VALUE = 9;
+  /**
+   * <code>NearCircleOperate = 10;</code>
+   */
+  public static final int NearCircleOperate_VALUE = 10;
 
 
   public final int getNumber() {
@@ -121,6 +129,7 @@ public enum ImMessageType
       case 7: return ClientAckMessage;
       case 8: return ChatSetting;
       case 9: return GroupOperate;
+      case 10: return NearCircleOperate;
       default: return null;
     }
   }

@@ -192,6 +192,20 @@ private static final long serialVersionUID = 0L;
             requestBodyCase_ = 10;
             break;
           }
+          case 90: {
+            com.hwl.imcore.improto.ImNearCircleOperateMessageRequest.Builder subBuilder = null;
+            if (requestBodyCase_ == 11) {
+              subBuilder = ((com.hwl.imcore.improto.ImNearCircleOperateMessageRequest) requestBody_).toBuilder();
+            }
+            requestBody_ =
+                input.readMessage(com.hwl.imcore.improto.ImNearCircleOperateMessageRequest.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.hwl.imcore.improto.ImNearCircleOperateMessageRequest) requestBody_);
+              requestBody_ = subBuilder.buildPartial();
+            }
+            requestBodyCase_ = 11;
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -229,6 +243,7 @@ private static final long serialVersionUID = 0L;
     ACKMESSAGEREQUEST(8),
     CHATSETTINGMESSAGEREQUEST(9),
     GROUPOPERATEMESSAGEREQUEST(10),
+    NEARCIRCLEOPERATEMESSAGEREQUEST(11),
     REQUESTBODY_NOT_SET(0);
     private final int value;
     private RequestBodyCase(int value) {
@@ -253,6 +268,7 @@ private static final long serialVersionUID = 0L;
         case 8: return ACKMESSAGEREQUEST;
         case 9: return CHATSETTINGMESSAGEREQUEST;
         case 10: return GROUPOPERATEMESSAGEREQUEST;
+        case 11: return NEARCIRCLEOPERATEMESSAGEREQUEST;
         case 0: return REQUESTBODY_NOT_SET;
         default: return null;
       }
@@ -523,6 +539,32 @@ private static final long serialVersionUID = 0L;
     return com.hwl.imcore.improto.ImGroupOperateMessageRequest.getDefaultInstance();
   }
 
+  public static final int NEARCIRCLEOPERATEMESSAGEREQUEST_FIELD_NUMBER = 11;
+  /**
+   * <code>.ImNearCircleOperateMessageRequest nearCircleOperateMessageRequest = 11;</code>
+   */
+  public boolean hasNearCircleOperateMessageRequest() {
+    return requestBodyCase_ == 11;
+  }
+  /**
+   * <code>.ImNearCircleOperateMessageRequest nearCircleOperateMessageRequest = 11;</code>
+   */
+  public com.hwl.imcore.improto.ImNearCircleOperateMessageRequest getNearCircleOperateMessageRequest() {
+    if (requestBodyCase_ == 11) {
+       return (com.hwl.imcore.improto.ImNearCircleOperateMessageRequest) requestBody_;
+    }
+    return com.hwl.imcore.improto.ImNearCircleOperateMessageRequest.getDefaultInstance();
+  }
+  /**
+   * <code>.ImNearCircleOperateMessageRequest nearCircleOperateMessageRequest = 11;</code>
+   */
+  public com.hwl.imcore.improto.ImNearCircleOperateMessageRequestOrBuilder getNearCircleOperateMessageRequestOrBuilder() {
+    if (requestBodyCase_ == 11) {
+       return (com.hwl.imcore.improto.ImNearCircleOperateMessageRequest) requestBody_;
+    }
+    return com.hwl.imcore.improto.ImNearCircleOperateMessageRequest.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
@@ -564,6 +606,9 @@ private static final long serialVersionUID = 0L;
     }
     if (requestBodyCase_ == 10) {
       output.writeMessage(10, (com.hwl.imcore.improto.ImGroupOperateMessageRequest) requestBody_);
+    }
+    if (requestBodyCase_ == 11) {
+      output.writeMessage(11, (com.hwl.imcore.improto.ImNearCircleOperateMessageRequest) requestBody_);
     }
     unknownFields.writeTo(output);
   }
@@ -612,6 +657,10 @@ private static final long serialVersionUID = 0L;
     if (requestBodyCase_ == 10) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(10, (com.hwl.imcore.improto.ImGroupOperateMessageRequest) requestBody_);
+    }
+    if (requestBodyCase_ == 11) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(11, (com.hwl.imcore.improto.ImNearCircleOperateMessageRequest) requestBody_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -674,6 +723,10 @@ private static final long serialVersionUID = 0L;
         result = result && getGroupOperateMessageRequest()
             .equals(other.getGroupOperateMessageRequest());
         break;
+      case 11:
+        result = result && getNearCircleOperateMessageRequest()
+            .equals(other.getNearCircleOperateMessageRequest());
+        break;
       case 0:
       default:
     }
@@ -728,6 +781,10 @@ private static final long serialVersionUID = 0L;
       case 10:
         hash = (37 * hash) + GROUPOPERATEMESSAGEREQUEST_FIELD_NUMBER;
         hash = (53 * hash) + getGroupOperateMessageRequest().hashCode();
+        break;
+      case 11:
+        hash = (37 * hash) + NEARCIRCLEOPERATEMESSAGEREQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getNearCircleOperateMessageRequest().hashCode();
         break;
       case 0:
       default:
@@ -963,6 +1020,13 @@ private static final long serialVersionUID = 0L;
           result.requestBody_ = groupOperateMessageRequestBuilder_.build();
         }
       }
+      if (requestBodyCase_ == 11) {
+        if (nearCircleOperateMessageRequestBuilder_ == null) {
+          result.requestBody_ = requestBody_;
+        } else {
+          result.requestBody_ = nearCircleOperateMessageRequestBuilder_.build();
+        }
+      }
       result.requestBodyCase_ = requestBodyCase_;
       onBuilt();
       return result;
@@ -1043,6 +1107,10 @@ private static final long serialVersionUID = 0L;
         }
         case GROUPOPERATEMESSAGEREQUEST: {
           mergeGroupOperateMessageRequest(other.getGroupOperateMessageRequest());
+          break;
+        }
+        case NEARCIRCLEOPERATEMESSAGEREQUEST: {
+          mergeNearCircleOperateMessageRequest(other.getNearCircleOperateMessageRequest());
           break;
         }
         case REQUESTBODY_NOT_SET: {
@@ -2430,6 +2498,142 @@ private static final long serialVersionUID = 0L;
       requestBodyCase_ = 10;
       onChanged();;
       return groupOperateMessageRequestBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.hwl.imcore.improto.ImNearCircleOperateMessageRequest, com.hwl.imcore.improto.ImNearCircleOperateMessageRequest.Builder, com.hwl.imcore.improto.ImNearCircleOperateMessageRequestOrBuilder> nearCircleOperateMessageRequestBuilder_;
+    /**
+     * <code>.ImNearCircleOperateMessageRequest nearCircleOperateMessageRequest = 11;</code>
+     */
+    public boolean hasNearCircleOperateMessageRequest() {
+      return requestBodyCase_ == 11;
+    }
+    /**
+     * <code>.ImNearCircleOperateMessageRequest nearCircleOperateMessageRequest = 11;</code>
+     */
+    public com.hwl.imcore.improto.ImNearCircleOperateMessageRequest getNearCircleOperateMessageRequest() {
+      if (nearCircleOperateMessageRequestBuilder_ == null) {
+        if (requestBodyCase_ == 11) {
+          return (com.hwl.imcore.improto.ImNearCircleOperateMessageRequest) requestBody_;
+        }
+        return com.hwl.imcore.improto.ImNearCircleOperateMessageRequest.getDefaultInstance();
+      } else {
+        if (requestBodyCase_ == 11) {
+          return nearCircleOperateMessageRequestBuilder_.getMessage();
+        }
+        return com.hwl.imcore.improto.ImNearCircleOperateMessageRequest.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.ImNearCircleOperateMessageRequest nearCircleOperateMessageRequest = 11;</code>
+     */
+    public Builder setNearCircleOperateMessageRequest(com.hwl.imcore.improto.ImNearCircleOperateMessageRequest value) {
+      if (nearCircleOperateMessageRequestBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        requestBody_ = value;
+        onChanged();
+      } else {
+        nearCircleOperateMessageRequestBuilder_.setMessage(value);
+      }
+      requestBodyCase_ = 11;
+      return this;
+    }
+    /**
+     * <code>.ImNearCircleOperateMessageRequest nearCircleOperateMessageRequest = 11;</code>
+     */
+    public Builder setNearCircleOperateMessageRequest(
+        com.hwl.imcore.improto.ImNearCircleOperateMessageRequest.Builder builderForValue) {
+      if (nearCircleOperateMessageRequestBuilder_ == null) {
+        requestBody_ = builderForValue.build();
+        onChanged();
+      } else {
+        nearCircleOperateMessageRequestBuilder_.setMessage(builderForValue.build());
+      }
+      requestBodyCase_ = 11;
+      return this;
+    }
+    /**
+     * <code>.ImNearCircleOperateMessageRequest nearCircleOperateMessageRequest = 11;</code>
+     */
+    public Builder mergeNearCircleOperateMessageRequest(com.hwl.imcore.improto.ImNearCircleOperateMessageRequest value) {
+      if (nearCircleOperateMessageRequestBuilder_ == null) {
+        if (requestBodyCase_ == 11 &&
+            requestBody_ != com.hwl.imcore.improto.ImNearCircleOperateMessageRequest.getDefaultInstance()) {
+          requestBody_ = com.hwl.imcore.improto.ImNearCircleOperateMessageRequest.newBuilder((com.hwl.imcore.improto.ImNearCircleOperateMessageRequest) requestBody_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          requestBody_ = value;
+        }
+        onChanged();
+      } else {
+        if (requestBodyCase_ == 11) {
+          nearCircleOperateMessageRequestBuilder_.mergeFrom(value);
+        }
+        nearCircleOperateMessageRequestBuilder_.setMessage(value);
+      }
+      requestBodyCase_ = 11;
+      return this;
+    }
+    /**
+     * <code>.ImNearCircleOperateMessageRequest nearCircleOperateMessageRequest = 11;</code>
+     */
+    public Builder clearNearCircleOperateMessageRequest() {
+      if (nearCircleOperateMessageRequestBuilder_ == null) {
+        if (requestBodyCase_ == 11) {
+          requestBodyCase_ = 0;
+          requestBody_ = null;
+          onChanged();
+        }
+      } else {
+        if (requestBodyCase_ == 11) {
+          requestBodyCase_ = 0;
+          requestBody_ = null;
+        }
+        nearCircleOperateMessageRequestBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.ImNearCircleOperateMessageRequest nearCircleOperateMessageRequest = 11;</code>
+     */
+    public com.hwl.imcore.improto.ImNearCircleOperateMessageRequest.Builder getNearCircleOperateMessageRequestBuilder() {
+      return getNearCircleOperateMessageRequestFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.ImNearCircleOperateMessageRequest nearCircleOperateMessageRequest = 11;</code>
+     */
+    public com.hwl.imcore.improto.ImNearCircleOperateMessageRequestOrBuilder getNearCircleOperateMessageRequestOrBuilder() {
+      if ((requestBodyCase_ == 11) && (nearCircleOperateMessageRequestBuilder_ != null)) {
+        return nearCircleOperateMessageRequestBuilder_.getMessageOrBuilder();
+      } else {
+        if (requestBodyCase_ == 11) {
+          return (com.hwl.imcore.improto.ImNearCircleOperateMessageRequest) requestBody_;
+        }
+        return com.hwl.imcore.improto.ImNearCircleOperateMessageRequest.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.ImNearCircleOperateMessageRequest nearCircleOperateMessageRequest = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.hwl.imcore.improto.ImNearCircleOperateMessageRequest, com.hwl.imcore.improto.ImNearCircleOperateMessageRequest.Builder, com.hwl.imcore.improto.ImNearCircleOperateMessageRequestOrBuilder> 
+        getNearCircleOperateMessageRequestFieldBuilder() {
+      if (nearCircleOperateMessageRequestBuilder_ == null) {
+        if (!(requestBodyCase_ == 11)) {
+          requestBody_ = com.hwl.imcore.improto.ImNearCircleOperateMessageRequest.getDefaultInstance();
+        }
+        nearCircleOperateMessageRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.hwl.imcore.improto.ImNearCircleOperateMessageRequest, com.hwl.imcore.improto.ImNearCircleOperateMessageRequest.Builder, com.hwl.imcore.improto.ImNearCircleOperateMessageRequestOrBuilder>(
+                (com.hwl.imcore.improto.ImNearCircleOperateMessageRequest) requestBody_,
+                getParentForChildren(),
+                isClean());
+        requestBody_ = null;
+      }
+      requestBodyCase_ = 11;
+      onChanged();;
+      return nearCircleOperateMessageRequestBuilder_;
     }
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {

@@ -177,7 +177,7 @@ public final class ImMessage {
       "im_message.proto\"\206\001\n\020ImMessageContext\022\034\n" +
       "\004type\030\001 \001(\0162\016.ImMessageType\022$\n\007request\030\002" +
       " \001(\0132\021.ImMessageRequestH\000\022&\n\010response\030\003 " +
-      "\001(\0132\022.ImMessageResponseH\000B\006\n\004body\"\202\005\n\020Im" +
+      "\001(\0132\022.ImMessageResponseH\000B\006\n\004body\"\321\005\n\020Im" +
       "MessageRequest\022*\n\013requestHead\030\001 \001(\0132\025.Im" +
       "MessageRequestHead\0225\n\023userValidateReques" +
       "t\030\002 \001(\0132\026.ImUserValidateRequestH\000\022;\n\026cha" +
@@ -193,23 +193,27 @@ public final class ImMessage {
       "questH\000\022A\n\031chatSettingMessageRequest\030\t \001" +
       "(\0132\034.ImChatSettingMessageRequestH\000\022C\n\032gr" +
       "oupOperateMessageRequest\030\n \001(\0132\035.ImGroup" +
-      "OperateMessageRequestH\000B\r\n\013requestBody\"o" +
-      "\n\024ImMessageRequestHead\022\021\n\ttimestamp\030\001 \001(" +
-      "\004\022\016\n\006client\030\002 \001(\t\022\021\n\tsessionid\030\003 \001(\t\022\020\n\010" +
-      "language\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\"\242\004\n\021ImMe" +
-      "ssageResponse\022,\n\014responseHead\030\001 \001(\0132\026.Im" +
-      "MessageResponseHead\0227\n\024userValidateRespo" +
-      "nse\030\002 \001(\0132\027.ImUserValidateResponseH\000\022=\n\027" +
-      "chatUserMessageResponse\030\003 \001(\0132\032.ImChatUs" +
-      "erMessageResponseH\000\022?\n\030chatGroupMessageR" +
-      "esponse\030\004 \001(\0132\033.ImChatGroupMessageRespon" +
-      "seH\000\022?\n\030addFriendMessageResponse\030\005 \001(\0132\033" +
-      ".ImAddFriendMessageResponseH\000\022I\n\035testCon" +
-      "nectionMessageResponse\030\006 \001(\0132 .ImTestCon" +
-      "nectionMessageResponseH\000\022C\n\032chatSettingM" +
-      "essageResponse\030\007 \001(\0132\035.ImChatSettingMess" +
-      "ageResponseH\000\022E\n\033groupOperateMessageResp" +
-      "onse\030\010 \001(\0132\036.ImGroupOperateMessageRespon" +
+      "OperateMessageRequestH\000\022M\n\037nearCircleOpe" +
+      "rateMessageRequest\030\013 \001(\0132\".ImNearCircleO" +
+      "perateMessageRequestH\000B\r\n\013requestBody\"o\n" +
+      "\024ImMessageRequestHead\022\021\n\ttimestamp\030\001 \001(\004" +
+      "\022\016\n\006client\030\002 \001(\t\022\021\n\tsessionid\030\003 \001(\t\022\020\n\010l" +
+      "anguage\030\004 \001(\t\022\017\n\007version\030\005 \001(\t\"\363\004\n\021ImMes" +
+      "sageResponse\022,\n\014responseHead\030\001 \001(\0132\026.ImM" +
+      "essageResponseHead\0227\n\024userValidateRespon" +
+      "se\030\002 \001(\0132\027.ImUserValidateResponseH\000\022=\n\027c" +
+      "hatUserMessageResponse\030\003 \001(\0132\032.ImChatUse" +
+      "rMessageResponseH\000\022?\n\030chatGroupMessageRe" +
+      "sponse\030\004 \001(\0132\033.ImChatGroupMessageRespons" +
+      "eH\000\022?\n\030addFriendMessageResponse\030\005 \001(\0132\033." +
+      "ImAddFriendMessageResponseH\000\022I\n\035testConn" +
+      "ectionMessageResponse\030\006 \001(\0132 .ImTestConn" +
+      "ectionMessageResponseH\000\022C\n\032chatSettingMe" +
+      "ssageResponse\030\007 \001(\0132\035.ImChatSettingMessa" +
+      "geResponseH\000\022E\n\033groupOperateMessageRespo" +
+      "nse\030\010 \001(\0132\036.ImGroupOperateMessageRespons" +
+      "eH\000\022O\n nearCircleOperateMessageResponse\030" +
+      "\t \001(\0132#.ImNearCircleOperateMessageRespon" +
       "seH\000B\016\n\014responseBody\"\202\001\n\025ImMessageRespon" +
       "seHead\022\014\n\004code\030\001 \001(\r\022\017\n\007message\030\002 \001(\t\022\r\n" +
       "\005isack\030\003 \001(\010\022\021\n\tmessageid\030\004 \001(\t\022(\n\006sourc" +
@@ -291,25 +295,26 @@ public final class ImMessage {
       "\030\002 \001(\0132\016.ImUserContent\022\"\n\noriginUser\030\003 \001" +
       "(\0132\016.ImUserContent\022!\n\treplyUser\030\004 \001(\0132\016." +
       "ImUserContent\022\024\n\014nearCircleId\030\005 \001(\004\022\016\n\006i" +
-      "sLike\030\006 \001(\010\022\017\n\007content\030\007 \001(\t*\263\001\n\rImMessa" +
+      "sLike\030\006 \001(\010\022\017\n\007content\030\007 \001(\t*\312\001\n\rImMessa" +
       "geType\022\010\n\004Base\020\000\022\020\n\014UserValidate\020\001\022\014\n\010Ch" +
       "atUser\020\002\022\r\n\tChatGroup\020\003\022\r\n\tHeartBeat\020\004\022\r" +
       "\n\tAddFriend\020\005\022\022\n\016TestConnection\020\006\022\024\n\020Cli" +
       "entAckMessage\020\007\022\017\n\013ChatSetting\020\010\022\020\n\014Grou" +
-      "pOperate\020\t*S\n\025ImMessageResponseCode\022\t\n\005O" +
-      "ther\020\000\022\013\n\007Success\020d\022\013\n\006Failed\020\310\001\022\025\n\020Sess" +
-      "ionidInvalid\020\311\001*I\n\027ImMessageSourcePositi" +
-      "on\022\010\n\004None\020\000\022\014\n\010RealTime\020\001\022\013\n\007Offline\020\002\022" +
-      "\t\n\005Retry\020\003*R\n\021ImChatSettingType\022\017\n\013Setti" +
-      "ngNone\020\000\022\r\n\tGroupNote\020\001\022\r\n\tGroupName\020\002\022\016" +
-      "\n\nUserRemark\020\003*y\n\022ImGroupOperateType\022\024\n\020" +
-      "GroupOperateNone\020\000\022\017\n\013CreateGroup\020\001\022\r\n\tE" +
-      "xitGroup\020\002\022\020\n\014DismissGroup\020\003\022\013\n\007AddUser\020" +
-      "\004\022\016\n\nRemoveUser\020\005*u\n\027ImNearCircleOperate" +
-      "Type\022\031\n\025NearCircleOperateNone\020\000\022\013\n\007AddLi" +
-      "ke\020\001\022\016\n\nCancelLike\020\002\022\017\n\013PostComment\020\003\022\021\n" +
-      "\rCancelComment\020\004B,\n\026com.hwl.imcore.impro" +
-      "toP\001\252\002\017IMCore.Protocolb\006proto3"
+      "pOperate\020\t\022\025\n\021NearCircleOperate\020\n*S\n\025ImM" +
+      "essageResponseCode\022\t\n\005Other\020\000\022\013\n\007Success" +
+      "\020d\022\013\n\006Failed\020\310\001\022\025\n\020SessionidInvalid\020\311\001*I" +
+      "\n\027ImMessageSourcePosition\022\010\n\004None\020\000\022\014\n\010R" +
+      "ealTime\020\001\022\013\n\007Offline\020\002\022\t\n\005Retry\020\003*R\n\021ImC" +
+      "hatSettingType\022\017\n\013SettingNone\020\000\022\r\n\tGroup" +
+      "Note\020\001\022\r\n\tGroupName\020\002\022\016\n\nUserRemark\020\003*y\n" +
+      "\022ImGroupOperateType\022\024\n\020GroupOperateNone\020" +
+      "\000\022\017\n\013CreateGroup\020\001\022\r\n\tExitGroup\020\002\022\020\n\014Dis" +
+      "missGroup\020\003\022\013\n\007AddUser\020\004\022\016\n\nRemoveUser\020\005" +
+      "*u\n\027ImNearCircleOperateType\022\031\n\025NearCircl" +
+      "eOperateNone\020\000\022\013\n\007AddLike\020\001\022\016\n\nCancelLik" +
+      "e\020\002\022\017\n\013PostComment\020\003\022\021\n\rCancelComment\020\004B" +
+      ",\n\026com.hwl.imcore.improtoP\001\252\002\017IMCore.Pro" +
+      "tocolb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -334,7 +339,7 @@ public final class ImMessage {
     internal_static_ImMessageRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ImMessageRequest_descriptor,
-        new java.lang.String[] { "RequestHead", "UserValidateRequest", "ChatUserMessageRequest", "ChatGroupMessageRequest", "HeartBeatMessageRequest", "AddFriendMessageRequest", "TestConnectionMessageRequest", "AckMessageRequest", "ChatSettingMessageRequest", "GroupOperateMessageRequest", "RequestBody", });
+        new java.lang.String[] { "RequestHead", "UserValidateRequest", "ChatUserMessageRequest", "ChatGroupMessageRequest", "HeartBeatMessageRequest", "AddFriendMessageRequest", "TestConnectionMessageRequest", "AckMessageRequest", "ChatSettingMessageRequest", "GroupOperateMessageRequest", "NearCircleOperateMessageRequest", "RequestBody", });
     internal_static_ImMessageRequestHead_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_ImMessageRequestHead_fieldAccessorTable = new
@@ -346,7 +351,7 @@ public final class ImMessage {
     internal_static_ImMessageResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ImMessageResponse_descriptor,
-        new java.lang.String[] { "ResponseHead", "UserValidateResponse", "ChatUserMessageResponse", "ChatGroupMessageResponse", "AddFriendMessageResponse", "TestConnectionMessageResponse", "ChatSettingMessageResponse", "GroupOperateMessageResponse", "ResponseBody", });
+        new java.lang.String[] { "ResponseHead", "UserValidateResponse", "ChatUserMessageResponse", "ChatGroupMessageResponse", "AddFriendMessageResponse", "TestConnectionMessageResponse", "ChatSettingMessageResponse", "GroupOperateMessageResponse", "NearCircleOperateMessageResponse", "ResponseBody", });
     internal_static_ImMessageResponseHead_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_ImMessageResponseHead_fieldAccessorTable = new

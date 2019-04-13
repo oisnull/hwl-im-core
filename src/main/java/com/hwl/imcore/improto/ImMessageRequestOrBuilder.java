@@ -137,5 +137,18 @@ public interface ImMessageRequestOrBuilder extends
    */
   com.hwl.imcore.improto.ImGroupOperateMessageRequestOrBuilder getGroupOperateMessageRequestOrBuilder();
 
+  /**
+   * <code>.ImNearCircleOperateMessageRequest nearCircleOperateMessageRequest = 11;</code>
+   */
+  boolean hasNearCircleOperateMessageRequest();
+  /**
+   * <code>.ImNearCircleOperateMessageRequest nearCircleOperateMessageRequest = 11;</code>
+   */
+  com.hwl.imcore.improto.ImNearCircleOperateMessageRequest getNearCircleOperateMessageRequest();
+  /**
+   * <code>.ImNearCircleOperateMessageRequest nearCircleOperateMessageRequest = 11;</code>
+   */
+  com.hwl.imcore.improto.ImNearCircleOperateMessageRequestOrBuilder getNearCircleOperateMessageRequestOrBuilder();
+
   public com.hwl.imcore.improto.ImMessageRequest.RequestBodyCase getRequestBodyCase();
 }
