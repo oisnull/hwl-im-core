@@ -124,5 +124,18 @@ public interface ImMessageResponseOrBuilder extends
    */
   com.hwl.imcore.improto.ImNearCircleOperateMessageResponseOrBuilder getNearCircleOperateMessageResponseOrBuilder();
 
+  /**
+   * <code>.ImCircleOperateMessageResponse circleOperateMessageResponse = 10;</code>
+   */
+  boolean hasCircleOperateMessageResponse();
+  /**
+   * <code>.ImCircleOperateMessageResponse circleOperateMessageResponse = 10;</code>
+   */
+  com.hwl.imcore.improto.ImCircleOperateMessageResponse getCircleOperateMessageResponse();
+  /**
+   * <code>.ImCircleOperateMessageResponse circleOperateMessageResponse = 10;</code>
+   */
+  com.hwl.imcore.improto.ImCircleOperateMessageResponseOrBuilder getCircleOperateMessageResponseOrBuilder();
+
   public com.hwl.imcore.improto.ImMessageResponse.ResponseBodyCase getResponseBodyCase();
 }

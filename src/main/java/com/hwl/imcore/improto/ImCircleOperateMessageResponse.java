@@ -4,18 +4,18 @@
 package com.hwl.imcore.improto;
 
 /**
- * Protobuf type {@code ImChatGroupMessageResponse}
+ * Protobuf type {@code ImCircleOperateMessageResponse}
  */
-public  final class ImChatGroupMessageResponse extends
+public  final class ImCircleOperateMessageResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:ImChatGroupMessageResponse)
-    ImChatGroupMessageResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:ImCircleOperateMessageResponse)
+    ImCircleOperateMessageResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use ImChatGroupMessageResponse.newBuilder() to construct.
-  private ImChatGroupMessageResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ImCircleOperateMessageResponse.newBuilder() to construct.
+  private ImCircleOperateMessageResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ImChatGroupMessageResponse() {
+  private ImCircleOperateMessageResponse() {
     buildTime_ = 0L;
   }
 
@@ -24,7 +24,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private ImChatGroupMessageResponse(
+  private ImCircleOperateMessageResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -44,14 +44,14 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            com.hwl.imcore.improto.ImChatGroupMessageContent.Builder subBuilder = null;
-            if (chatGroupMessageContent_ != null) {
-              subBuilder = chatGroupMessageContent_.toBuilder();
+            com.hwl.imcore.improto.ImCircleOperateMessageContent.Builder subBuilder = null;
+            if (circleOperateMessageContent_ != null) {
+              subBuilder = circleOperateMessageContent_.toBuilder();
             }
-            chatGroupMessageContent_ = input.readMessage(com.hwl.imcore.improto.ImChatGroupMessageContent.parser(), extensionRegistry);
+            circleOperateMessageContent_ = input.readMessage(com.hwl.imcore.improto.ImCircleOperateMessageContent.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(chatGroupMessageContent_);
-              chatGroupMessageContent_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(circleOperateMessageContent_);
+              circleOperateMessageContent_ = subBuilder.buildPartial();
             }
 
             break;
@@ -82,36 +82,36 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.hwl.imcore.improto.ImMessage.internal_static_ImChatGroupMessageResponse_descriptor;
+    return com.hwl.imcore.improto.ImMessage.internal_static_ImCircleOperateMessageResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.hwl.imcore.improto.ImMessage.internal_static_ImChatGroupMessageResponse_fieldAccessorTable
+    return com.hwl.imcore.improto.ImMessage.internal_static_ImCircleOperateMessageResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.hwl.imcore.improto.ImChatGroupMessageResponse.class, com.hwl.imcore.improto.ImChatGroupMessageResponse.Builder.class);
+            com.hwl.imcore.improto.ImCircleOperateMessageResponse.class, com.hwl.imcore.improto.ImCircleOperateMessageResponse.Builder.class);
   }
 
-  public static final int CHATGROUPMESSAGECONTENT_FIELD_NUMBER = 1;
-  private com.hwl.imcore.improto.ImChatGroupMessageContent chatGroupMessageContent_;
+  public static final int CIRCLEOPERATEMESSAGECONTENT_FIELD_NUMBER = 1;
+  private com.hwl.imcore.improto.ImCircleOperateMessageContent circleOperateMessageContent_;
   /**
-   * <code>.ImChatGroupMessageContent chatGroupMessageContent = 1;</code>
+   * <code>.ImCircleOperateMessageContent circleOperateMessageContent = 1;</code>
    */
-  public boolean hasChatGroupMessageContent() {
-    return chatGroupMessageContent_ != null;
+  public boolean hasCircleOperateMessageContent() {
+    return circleOperateMessageContent_ != null;
   }
   /**
-   * <code>.ImChatGroupMessageContent chatGroupMessageContent = 1;</code>
+   * <code>.ImCircleOperateMessageContent circleOperateMessageContent = 1;</code>
    */
-  public com.hwl.imcore.improto.ImChatGroupMessageContent getChatGroupMessageContent() {
-    return chatGroupMessageContent_ == null ? com.hwl.imcore.improto.ImChatGroupMessageContent.getDefaultInstance() : chatGroupMessageContent_;
+  public com.hwl.imcore.improto.ImCircleOperateMessageContent getCircleOperateMessageContent() {
+    return circleOperateMessageContent_ == null ? com.hwl.imcore.improto.ImCircleOperateMessageContent.getDefaultInstance() : circleOperateMessageContent_;
   }
   /**
-   * <code>.ImChatGroupMessageContent chatGroupMessageContent = 1;</code>
+   * <code>.ImCircleOperateMessageContent circleOperateMessageContent = 1;</code>
    */
-  public com.hwl.imcore.improto.ImChatGroupMessageContentOrBuilder getChatGroupMessageContentOrBuilder() {
-    return getChatGroupMessageContent();
+  public com.hwl.imcore.improto.ImCircleOperateMessageContentOrBuilder getCircleOperateMessageContentOrBuilder() {
+    return getCircleOperateMessageContent();
   }
 
   public static final int BUILDTIME_FIELD_NUMBER = 2;
@@ -137,8 +137,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (chatGroupMessageContent_ != null) {
-      output.writeMessage(1, getChatGroupMessageContent());
+    if (circleOperateMessageContent_ != null) {
+      output.writeMessage(1, getCircleOperateMessageContent());
     }
     if (buildTime_ != 0L) {
       output.writeUInt64(2, buildTime_);
@@ -152,9 +152,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (chatGroupMessageContent_ != null) {
+    if (circleOperateMessageContent_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getChatGroupMessageContent());
+        .computeMessageSize(1, getCircleOperateMessageContent());
     }
     if (buildTime_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
@@ -170,16 +170,16 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.hwl.imcore.improto.ImChatGroupMessageResponse)) {
+    if (!(obj instanceof com.hwl.imcore.improto.ImCircleOperateMessageResponse)) {
       return super.equals(obj);
     }
-    com.hwl.imcore.improto.ImChatGroupMessageResponse other = (com.hwl.imcore.improto.ImChatGroupMessageResponse) obj;
+    com.hwl.imcore.improto.ImCircleOperateMessageResponse other = (com.hwl.imcore.improto.ImCircleOperateMessageResponse) obj;
 
     boolean result = true;
-    result = result && (hasChatGroupMessageContent() == other.hasChatGroupMessageContent());
-    if (hasChatGroupMessageContent()) {
-      result = result && getChatGroupMessageContent()
-          .equals(other.getChatGroupMessageContent());
+    result = result && (hasCircleOperateMessageContent() == other.hasCircleOperateMessageContent());
+    if (hasCircleOperateMessageContent()) {
+      result = result && getCircleOperateMessageContent()
+          .equals(other.getCircleOperateMessageContent());
     }
     result = result && (getBuildTime()
         == other.getBuildTime());
@@ -194,9 +194,9 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasChatGroupMessageContent()) {
-      hash = (37 * hash) + CHATGROUPMESSAGECONTENT_FIELD_NUMBER;
-      hash = (53 * hash) + getChatGroupMessageContent().hashCode();
+    if (hasCircleOperateMessageContent()) {
+      hash = (37 * hash) + CIRCLEOPERATEMESSAGECONTENT_FIELD_NUMBER;
+      hash = (53 * hash) + getCircleOperateMessageContent().hashCode();
     }
     hash = (37 * hash) + BUILDTIME_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
@@ -206,69 +206,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.hwl.imcore.improto.ImChatGroupMessageResponse parseFrom(
+  public static com.hwl.imcore.improto.ImCircleOperateMessageResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hwl.imcore.improto.ImChatGroupMessageResponse parseFrom(
+  public static com.hwl.imcore.improto.ImCircleOperateMessageResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hwl.imcore.improto.ImChatGroupMessageResponse parseFrom(
+  public static com.hwl.imcore.improto.ImCircleOperateMessageResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hwl.imcore.improto.ImChatGroupMessageResponse parseFrom(
+  public static com.hwl.imcore.improto.ImCircleOperateMessageResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hwl.imcore.improto.ImChatGroupMessageResponse parseFrom(byte[] data)
+  public static com.hwl.imcore.improto.ImCircleOperateMessageResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hwl.imcore.improto.ImChatGroupMessageResponse parseFrom(
+  public static com.hwl.imcore.improto.ImCircleOperateMessageResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hwl.imcore.improto.ImChatGroupMessageResponse parseFrom(java.io.InputStream input)
+  public static com.hwl.imcore.improto.ImCircleOperateMessageResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.hwl.imcore.improto.ImChatGroupMessageResponse parseFrom(
+  public static com.hwl.imcore.improto.ImCircleOperateMessageResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.hwl.imcore.improto.ImChatGroupMessageResponse parseDelimitedFrom(java.io.InputStream input)
+  public static com.hwl.imcore.improto.ImCircleOperateMessageResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.hwl.imcore.improto.ImChatGroupMessageResponse parseDelimitedFrom(
+  public static com.hwl.imcore.improto.ImCircleOperateMessageResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.hwl.imcore.improto.ImChatGroupMessageResponse parseFrom(
+  public static com.hwl.imcore.improto.ImCircleOperateMessageResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.hwl.imcore.improto.ImChatGroupMessageResponse parseFrom(
+  public static com.hwl.imcore.improto.ImCircleOperateMessageResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -281,7 +281,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.hwl.imcore.improto.ImChatGroupMessageResponse prototype) {
+  public static Builder newBuilder(com.hwl.imcore.improto.ImCircleOperateMessageResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -297,26 +297,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code ImChatGroupMessageResponse}
+   * Protobuf type {@code ImCircleOperateMessageResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:ImChatGroupMessageResponse)
-      com.hwl.imcore.improto.ImChatGroupMessageResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:ImCircleOperateMessageResponse)
+      com.hwl.imcore.improto.ImCircleOperateMessageResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.hwl.imcore.improto.ImMessage.internal_static_ImChatGroupMessageResponse_descriptor;
+      return com.hwl.imcore.improto.ImMessage.internal_static_ImCircleOperateMessageResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.hwl.imcore.improto.ImMessage.internal_static_ImChatGroupMessageResponse_fieldAccessorTable
+      return com.hwl.imcore.improto.ImMessage.internal_static_ImCircleOperateMessageResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.hwl.imcore.improto.ImChatGroupMessageResponse.class, com.hwl.imcore.improto.ImChatGroupMessageResponse.Builder.class);
+              com.hwl.imcore.improto.ImCircleOperateMessageResponse.class, com.hwl.imcore.improto.ImCircleOperateMessageResponse.Builder.class);
     }
 
-    // Construct using com.hwl.imcore.improto.ImChatGroupMessageResponse.newBuilder()
+    // Construct using com.hwl.imcore.improto.ImCircleOperateMessageResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -334,11 +334,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (chatGroupMessageContentBuilder_ == null) {
-        chatGroupMessageContent_ = null;
+      if (circleOperateMessageContentBuilder_ == null) {
+        circleOperateMessageContent_ = null;
       } else {
-        chatGroupMessageContent_ = null;
-        chatGroupMessageContentBuilder_ = null;
+        circleOperateMessageContent_ = null;
+        circleOperateMessageContentBuilder_ = null;
       }
       buildTime_ = 0L;
 
@@ -348,17 +348,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.hwl.imcore.improto.ImMessage.internal_static_ImChatGroupMessageResponse_descriptor;
+      return com.hwl.imcore.improto.ImMessage.internal_static_ImCircleOperateMessageResponse_descriptor;
     }
 
     @java.lang.Override
-    public com.hwl.imcore.improto.ImChatGroupMessageResponse getDefaultInstanceForType() {
-      return com.hwl.imcore.improto.ImChatGroupMessageResponse.getDefaultInstance();
+    public com.hwl.imcore.improto.ImCircleOperateMessageResponse getDefaultInstanceForType() {
+      return com.hwl.imcore.improto.ImCircleOperateMessageResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.hwl.imcore.improto.ImChatGroupMessageResponse build() {
-      com.hwl.imcore.improto.ImChatGroupMessageResponse result = buildPartial();
+    public com.hwl.imcore.improto.ImCircleOperateMessageResponse build() {
+      com.hwl.imcore.improto.ImCircleOperateMessageResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -366,12 +366,12 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.hwl.imcore.improto.ImChatGroupMessageResponse buildPartial() {
-      com.hwl.imcore.improto.ImChatGroupMessageResponse result = new com.hwl.imcore.improto.ImChatGroupMessageResponse(this);
-      if (chatGroupMessageContentBuilder_ == null) {
-        result.chatGroupMessageContent_ = chatGroupMessageContent_;
+    public com.hwl.imcore.improto.ImCircleOperateMessageResponse buildPartial() {
+      com.hwl.imcore.improto.ImCircleOperateMessageResponse result = new com.hwl.imcore.improto.ImCircleOperateMessageResponse(this);
+      if (circleOperateMessageContentBuilder_ == null) {
+        result.circleOperateMessageContent_ = circleOperateMessageContent_;
       } else {
-        result.chatGroupMessageContent_ = chatGroupMessageContentBuilder_.build();
+        result.circleOperateMessageContent_ = circleOperateMessageContentBuilder_.build();
       }
       result.buildTime_ = buildTime_;
       onBuilt();
@@ -412,18 +412,18 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.hwl.imcore.improto.ImChatGroupMessageResponse) {
-        return mergeFrom((com.hwl.imcore.improto.ImChatGroupMessageResponse)other);
+      if (other instanceof com.hwl.imcore.improto.ImCircleOperateMessageResponse) {
+        return mergeFrom((com.hwl.imcore.improto.ImCircleOperateMessageResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.hwl.imcore.improto.ImChatGroupMessageResponse other) {
-      if (other == com.hwl.imcore.improto.ImChatGroupMessageResponse.getDefaultInstance()) return this;
-      if (other.hasChatGroupMessageContent()) {
-        mergeChatGroupMessageContent(other.getChatGroupMessageContent());
+    public Builder mergeFrom(com.hwl.imcore.improto.ImCircleOperateMessageResponse other) {
+      if (other == com.hwl.imcore.improto.ImCircleOperateMessageResponse.getDefaultInstance()) return this;
+      if (other.hasCircleOperateMessageContent()) {
+        mergeCircleOperateMessageContent(other.getCircleOperateMessageContent());
       }
       if (other.getBuildTime() != 0L) {
         setBuildTime(other.getBuildTime());
@@ -443,11 +443,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.hwl.imcore.improto.ImChatGroupMessageResponse parsedMessage = null;
+      com.hwl.imcore.improto.ImCircleOperateMessageResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.hwl.imcore.improto.ImChatGroupMessageResponse) e.getUnfinishedMessage();
+        parsedMessage = (com.hwl.imcore.improto.ImCircleOperateMessageResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -457,121 +457,121 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.hwl.imcore.improto.ImChatGroupMessageContent chatGroupMessageContent_ = null;
+    private com.hwl.imcore.improto.ImCircleOperateMessageContent circleOperateMessageContent_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.hwl.imcore.improto.ImChatGroupMessageContent, com.hwl.imcore.improto.ImChatGroupMessageContent.Builder, com.hwl.imcore.improto.ImChatGroupMessageContentOrBuilder> chatGroupMessageContentBuilder_;
+        com.hwl.imcore.improto.ImCircleOperateMessageContent, com.hwl.imcore.improto.ImCircleOperateMessageContent.Builder, com.hwl.imcore.improto.ImCircleOperateMessageContentOrBuilder> circleOperateMessageContentBuilder_;
     /**
-     * <code>.ImChatGroupMessageContent chatGroupMessageContent = 1;</code>
+     * <code>.ImCircleOperateMessageContent circleOperateMessageContent = 1;</code>
      */
-    public boolean hasChatGroupMessageContent() {
-      return chatGroupMessageContentBuilder_ != null || chatGroupMessageContent_ != null;
+    public boolean hasCircleOperateMessageContent() {
+      return circleOperateMessageContentBuilder_ != null || circleOperateMessageContent_ != null;
     }
     /**
-     * <code>.ImChatGroupMessageContent chatGroupMessageContent = 1;</code>
+     * <code>.ImCircleOperateMessageContent circleOperateMessageContent = 1;</code>
      */
-    public com.hwl.imcore.improto.ImChatGroupMessageContent getChatGroupMessageContent() {
-      if (chatGroupMessageContentBuilder_ == null) {
-        return chatGroupMessageContent_ == null ? com.hwl.imcore.improto.ImChatGroupMessageContent.getDefaultInstance() : chatGroupMessageContent_;
+    public com.hwl.imcore.improto.ImCircleOperateMessageContent getCircleOperateMessageContent() {
+      if (circleOperateMessageContentBuilder_ == null) {
+        return circleOperateMessageContent_ == null ? com.hwl.imcore.improto.ImCircleOperateMessageContent.getDefaultInstance() : circleOperateMessageContent_;
       } else {
-        return chatGroupMessageContentBuilder_.getMessage();
+        return circleOperateMessageContentBuilder_.getMessage();
       }
     }
     /**
-     * <code>.ImChatGroupMessageContent chatGroupMessageContent = 1;</code>
+     * <code>.ImCircleOperateMessageContent circleOperateMessageContent = 1;</code>
      */
-    public Builder setChatGroupMessageContent(com.hwl.imcore.improto.ImChatGroupMessageContent value) {
-      if (chatGroupMessageContentBuilder_ == null) {
+    public Builder setCircleOperateMessageContent(com.hwl.imcore.improto.ImCircleOperateMessageContent value) {
+      if (circleOperateMessageContentBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        chatGroupMessageContent_ = value;
+        circleOperateMessageContent_ = value;
         onChanged();
       } else {
-        chatGroupMessageContentBuilder_.setMessage(value);
+        circleOperateMessageContentBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.ImChatGroupMessageContent chatGroupMessageContent = 1;</code>
+     * <code>.ImCircleOperateMessageContent circleOperateMessageContent = 1;</code>
      */
-    public Builder setChatGroupMessageContent(
-        com.hwl.imcore.improto.ImChatGroupMessageContent.Builder builderForValue) {
-      if (chatGroupMessageContentBuilder_ == null) {
-        chatGroupMessageContent_ = builderForValue.build();
+    public Builder setCircleOperateMessageContent(
+        com.hwl.imcore.improto.ImCircleOperateMessageContent.Builder builderForValue) {
+      if (circleOperateMessageContentBuilder_ == null) {
+        circleOperateMessageContent_ = builderForValue.build();
         onChanged();
       } else {
-        chatGroupMessageContentBuilder_.setMessage(builderForValue.build());
+        circleOperateMessageContentBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.ImChatGroupMessageContent chatGroupMessageContent = 1;</code>
+     * <code>.ImCircleOperateMessageContent circleOperateMessageContent = 1;</code>
      */
-    public Builder mergeChatGroupMessageContent(com.hwl.imcore.improto.ImChatGroupMessageContent value) {
-      if (chatGroupMessageContentBuilder_ == null) {
-        if (chatGroupMessageContent_ != null) {
-          chatGroupMessageContent_ =
-            com.hwl.imcore.improto.ImChatGroupMessageContent.newBuilder(chatGroupMessageContent_).mergeFrom(value).buildPartial();
+    public Builder mergeCircleOperateMessageContent(com.hwl.imcore.improto.ImCircleOperateMessageContent value) {
+      if (circleOperateMessageContentBuilder_ == null) {
+        if (circleOperateMessageContent_ != null) {
+          circleOperateMessageContent_ =
+            com.hwl.imcore.improto.ImCircleOperateMessageContent.newBuilder(circleOperateMessageContent_).mergeFrom(value).buildPartial();
         } else {
-          chatGroupMessageContent_ = value;
+          circleOperateMessageContent_ = value;
         }
         onChanged();
       } else {
-        chatGroupMessageContentBuilder_.mergeFrom(value);
+        circleOperateMessageContentBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.ImChatGroupMessageContent chatGroupMessageContent = 1;</code>
+     * <code>.ImCircleOperateMessageContent circleOperateMessageContent = 1;</code>
      */
-    public Builder clearChatGroupMessageContent() {
-      if (chatGroupMessageContentBuilder_ == null) {
-        chatGroupMessageContent_ = null;
+    public Builder clearCircleOperateMessageContent() {
+      if (circleOperateMessageContentBuilder_ == null) {
+        circleOperateMessageContent_ = null;
         onChanged();
       } else {
-        chatGroupMessageContent_ = null;
-        chatGroupMessageContentBuilder_ = null;
+        circleOperateMessageContent_ = null;
+        circleOperateMessageContentBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <code>.ImChatGroupMessageContent chatGroupMessageContent = 1;</code>
+     * <code>.ImCircleOperateMessageContent circleOperateMessageContent = 1;</code>
      */
-    public com.hwl.imcore.improto.ImChatGroupMessageContent.Builder getChatGroupMessageContentBuilder() {
+    public com.hwl.imcore.improto.ImCircleOperateMessageContent.Builder getCircleOperateMessageContentBuilder() {
       
       onChanged();
-      return getChatGroupMessageContentFieldBuilder().getBuilder();
+      return getCircleOperateMessageContentFieldBuilder().getBuilder();
     }
     /**
-     * <code>.ImChatGroupMessageContent chatGroupMessageContent = 1;</code>
+     * <code>.ImCircleOperateMessageContent circleOperateMessageContent = 1;</code>
      */
-    public com.hwl.imcore.improto.ImChatGroupMessageContentOrBuilder getChatGroupMessageContentOrBuilder() {
-      if (chatGroupMessageContentBuilder_ != null) {
-        return chatGroupMessageContentBuilder_.getMessageOrBuilder();
+    public com.hwl.imcore.improto.ImCircleOperateMessageContentOrBuilder getCircleOperateMessageContentOrBuilder() {
+      if (circleOperateMessageContentBuilder_ != null) {
+        return circleOperateMessageContentBuilder_.getMessageOrBuilder();
       } else {
-        return chatGroupMessageContent_ == null ?
-            com.hwl.imcore.improto.ImChatGroupMessageContent.getDefaultInstance() : chatGroupMessageContent_;
+        return circleOperateMessageContent_ == null ?
+            com.hwl.imcore.improto.ImCircleOperateMessageContent.getDefaultInstance() : circleOperateMessageContent_;
       }
     }
     /**
-     * <code>.ImChatGroupMessageContent chatGroupMessageContent = 1;</code>
+     * <code>.ImCircleOperateMessageContent circleOperateMessageContent = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.hwl.imcore.improto.ImChatGroupMessageContent, com.hwl.imcore.improto.ImChatGroupMessageContent.Builder, com.hwl.imcore.improto.ImChatGroupMessageContentOrBuilder> 
-        getChatGroupMessageContentFieldBuilder() {
-      if (chatGroupMessageContentBuilder_ == null) {
-        chatGroupMessageContentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.hwl.imcore.improto.ImChatGroupMessageContent, com.hwl.imcore.improto.ImChatGroupMessageContent.Builder, com.hwl.imcore.improto.ImChatGroupMessageContentOrBuilder>(
-                getChatGroupMessageContent(),
+        com.hwl.imcore.improto.ImCircleOperateMessageContent, com.hwl.imcore.improto.ImCircleOperateMessageContent.Builder, com.hwl.imcore.improto.ImCircleOperateMessageContentOrBuilder> 
+        getCircleOperateMessageContentFieldBuilder() {
+      if (circleOperateMessageContentBuilder_ == null) {
+        circleOperateMessageContentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.hwl.imcore.improto.ImCircleOperateMessageContent, com.hwl.imcore.improto.ImCircleOperateMessageContent.Builder, com.hwl.imcore.improto.ImCircleOperateMessageContentOrBuilder>(
+                getCircleOperateMessageContent(),
                 getParentForChildren(),
                 isClean());
-        chatGroupMessageContent_ = null;
+        circleOperateMessageContent_ = null;
       }
-      return chatGroupMessageContentBuilder_;
+      return circleOperateMessageContentBuilder_;
     }
 
     private long buildTime_ ;
@@ -612,41 +612,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:ImChatGroupMessageResponse)
+    // @@protoc_insertion_point(builder_scope:ImCircleOperateMessageResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:ImChatGroupMessageResponse)
-  private static final com.hwl.imcore.improto.ImChatGroupMessageResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:ImCircleOperateMessageResponse)
+  private static final com.hwl.imcore.improto.ImCircleOperateMessageResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.hwl.imcore.improto.ImChatGroupMessageResponse();
+    DEFAULT_INSTANCE = new com.hwl.imcore.improto.ImCircleOperateMessageResponse();
   }
 
-  public static com.hwl.imcore.improto.ImChatGroupMessageResponse getDefaultInstance() {
+  public static com.hwl.imcore.improto.ImCircleOperateMessageResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ImChatGroupMessageResponse>
-      PARSER = new com.google.protobuf.AbstractParser<ImChatGroupMessageResponse>() {
+  private static final com.google.protobuf.Parser<ImCircleOperateMessageResponse>
+      PARSER = new com.google.protobuf.AbstractParser<ImCircleOperateMessageResponse>() {
     @java.lang.Override
-    public ImChatGroupMessageResponse parsePartialFrom(
+    public ImCircleOperateMessageResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ImChatGroupMessageResponse(input, extensionRegistry);
+      return new ImCircleOperateMessageResponse(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<ImChatGroupMessageResponse> parser() {
+  public static com.google.protobuf.Parser<ImCircleOperateMessageResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ImChatGroupMessageResponse> getParserForType() {
+  public com.google.protobuf.Parser<ImCircleOperateMessageResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.hwl.imcore.improto.ImChatGroupMessageResponse getDefaultInstanceForType() {
+  public com.hwl.imcore.improto.ImCircleOperateMessageResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

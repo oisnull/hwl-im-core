@@ -46,13 +46,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
             com.hwl.imcore.improto.ImMessageResponseHead.Builder subBuilder = null;
             if (responseHead_ != null) {
@@ -178,6 +171,27 @@ private static final long serialVersionUID = 0L;
             responseBodyCase_ = 9;
             break;
           }
+          case 82: {
+            com.hwl.imcore.improto.ImCircleOperateMessageResponse.Builder subBuilder = null;
+            if (responseBodyCase_ == 10) {
+              subBuilder = ((com.hwl.imcore.improto.ImCircleOperateMessageResponse) responseBody_).toBuilder();
+            }
+            responseBody_ =
+                input.readMessage(com.hwl.imcore.improto.ImCircleOperateMessageResponse.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.hwl.imcore.improto.ImCircleOperateMessageResponse) responseBody_);
+              responseBody_ = subBuilder.buildPartial();
+            }
+            responseBodyCase_ = 10;
+            break;
+          }
+          default: {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -195,6 +209,7 @@ private static final long serialVersionUID = 0L;
     return com.hwl.imcore.improto.ImMessage.internal_static_ImMessageResponse_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.hwl.imcore.improto.ImMessage.internal_static_ImMessageResponse_fieldAccessorTable
@@ -214,6 +229,7 @@ private static final long serialVersionUID = 0L;
     CHATSETTINGMESSAGERESPONSE(7),
     GROUPOPERATEMESSAGERESPONSE(8),
     NEARCIRCLEOPERATEMESSAGERESPONSE(9),
+    CIRCLEOPERATEMESSAGERESPONSE(10),
     RESPONSEBODY_NOT_SET(0);
     private final int value;
     private ResponseBodyCase(int value) {
@@ -237,6 +253,7 @@ private static final long serialVersionUID = 0L;
         case 7: return CHATSETTINGMESSAGERESPONSE;
         case 8: return GROUPOPERATEMESSAGERESPONSE;
         case 9: return NEARCIRCLEOPERATEMESSAGERESPONSE;
+        case 10: return CIRCLEOPERATEMESSAGERESPONSE;
         case 0: return RESPONSEBODY_NOT_SET;
         default: return null;
       }
@@ -481,7 +498,34 @@ private static final long serialVersionUID = 0L;
     return com.hwl.imcore.improto.ImNearCircleOperateMessageResponse.getDefaultInstance();
   }
 
+  public static final int CIRCLEOPERATEMESSAGERESPONSE_FIELD_NUMBER = 10;
+  /**
+   * <code>.ImCircleOperateMessageResponse circleOperateMessageResponse = 10;</code>
+   */
+  public boolean hasCircleOperateMessageResponse() {
+    return responseBodyCase_ == 10;
+  }
+  /**
+   * <code>.ImCircleOperateMessageResponse circleOperateMessageResponse = 10;</code>
+   */
+  public com.hwl.imcore.improto.ImCircleOperateMessageResponse getCircleOperateMessageResponse() {
+    if (responseBodyCase_ == 10) {
+       return (com.hwl.imcore.improto.ImCircleOperateMessageResponse) responseBody_;
+    }
+    return com.hwl.imcore.improto.ImCircleOperateMessageResponse.getDefaultInstance();
+  }
+  /**
+   * <code>.ImCircleOperateMessageResponse circleOperateMessageResponse = 10;</code>
+   */
+  public com.hwl.imcore.improto.ImCircleOperateMessageResponseOrBuilder getCircleOperateMessageResponseOrBuilder() {
+    if (responseBodyCase_ == 10) {
+       return (com.hwl.imcore.improto.ImCircleOperateMessageResponse) responseBody_;
+    }
+    return com.hwl.imcore.improto.ImCircleOperateMessageResponse.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -491,6 +535,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (responseHead_ != null) {
@@ -520,9 +565,13 @@ private static final long serialVersionUID = 0L;
     if (responseBodyCase_ == 9) {
       output.writeMessage(9, (com.hwl.imcore.improto.ImNearCircleOperateMessageResponse) responseBody_);
     }
+    if (responseBodyCase_ == 10) {
+      output.writeMessage(10, (com.hwl.imcore.improto.ImCircleOperateMessageResponse) responseBody_);
+    }
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -563,6 +612,10 @@ private static final long serialVersionUID = 0L;
     if (responseBodyCase_ == 9) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(9, (com.hwl.imcore.improto.ImNearCircleOperateMessageResponse) responseBody_);
+    }
+    if (responseBodyCase_ == 10) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(10, (com.hwl.imcore.improto.ImCircleOperateMessageResponse) responseBody_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -621,6 +674,10 @@ private static final long serialVersionUID = 0L;
         result = result && getNearCircleOperateMessageResponse()
             .equals(other.getNearCircleOperateMessageResponse());
         break;
+      case 10:
+        result = result && getCircleOperateMessageResponse()
+            .equals(other.getCircleOperateMessageResponse());
+        break;
       case 0:
       default:
     }
@@ -671,6 +728,10 @@ private static final long serialVersionUID = 0L;
       case 9:
         hash = (37 * hash) + NEARCIRCLEOPERATEMESSAGERESPONSE_FIELD_NUMBER;
         hash = (53 * hash) + getNearCircleOperateMessageResponse().hashCode();
+        break;
+      case 10:
+        hash = (37 * hash) + CIRCLEOPERATEMESSAGERESPONSE_FIELD_NUMBER;
+        hash = (53 * hash) + getCircleOperateMessageResponse().hashCode();
         break;
       case 0:
       default:
@@ -750,6 +811,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -757,6 +819,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(com.hwl.imcore.improto.ImMessageResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -784,6 +847,7 @@ private static final long serialVersionUID = 0L;
       return com.hwl.imcore.improto.ImMessage.internal_static_ImMessageResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.hwl.imcore.improto.ImMessage.internal_static_ImMessageResponse_fieldAccessorTable
@@ -806,6 +870,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (responseHeadBuilder_ == null) {
@@ -819,15 +884,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.hwl.imcore.improto.ImMessage.internal_static_ImMessageResponse_descriptor;
     }
 
+    @java.lang.Override
     public com.hwl.imcore.improto.ImMessageResponse getDefaultInstanceForType() {
       return com.hwl.imcore.improto.ImMessageResponse.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.hwl.imcore.improto.ImMessageResponse build() {
       com.hwl.imcore.improto.ImMessageResponse result = buildPartial();
       if (!result.isInitialized()) {
@@ -836,6 +904,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.hwl.imcore.improto.ImMessageResponse buildPartial() {
       com.hwl.imcore.improto.ImMessageResponse result = new com.hwl.imcore.improto.ImMessageResponse(this);
       if (responseHeadBuilder_ == null) {
@@ -899,37 +968,51 @@ private static final long serialVersionUID = 0L;
           result.responseBody_ = nearCircleOperateMessageResponseBuilder_.build();
         }
       }
+      if (responseBodyCase_ == 10) {
+        if (circleOperateMessageResponseBuilder_ == null) {
+          result.responseBody_ = responseBody_;
+        } else {
+          result.responseBody_ = circleOperateMessageResponseBuilder_.build();
+        }
+      }
       result.responseBodyCase_ = responseBodyCase_;
       onBuilt();
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.hwl.imcore.improto.ImMessageResponse) {
         return mergeFrom((com.hwl.imcore.improto.ImMessageResponse)other);
@@ -977,6 +1060,10 @@ private static final long serialVersionUID = 0L;
           mergeNearCircleOperateMessageResponse(other.getNearCircleOperateMessageResponse());
           break;
         }
+        case CIRCLEOPERATEMESSAGERESPONSE: {
+          mergeCircleOperateMessageResponse(other.getCircleOperateMessageResponse());
+          break;
+        }
         case RESPONSEBODY_NOT_SET: {
           break;
         }
@@ -986,10 +1073,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2227,11 +2316,149 @@ private static final long serialVersionUID = 0L;
       onChanged();;
       return nearCircleOperateMessageResponseBuilder_;
     }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.hwl.imcore.improto.ImCircleOperateMessageResponse, com.hwl.imcore.improto.ImCircleOperateMessageResponse.Builder, com.hwl.imcore.improto.ImCircleOperateMessageResponseOrBuilder> circleOperateMessageResponseBuilder_;
+    /**
+     * <code>.ImCircleOperateMessageResponse circleOperateMessageResponse = 10;</code>
+     */
+    public boolean hasCircleOperateMessageResponse() {
+      return responseBodyCase_ == 10;
+    }
+    /**
+     * <code>.ImCircleOperateMessageResponse circleOperateMessageResponse = 10;</code>
+     */
+    public com.hwl.imcore.improto.ImCircleOperateMessageResponse getCircleOperateMessageResponse() {
+      if (circleOperateMessageResponseBuilder_ == null) {
+        if (responseBodyCase_ == 10) {
+          return (com.hwl.imcore.improto.ImCircleOperateMessageResponse) responseBody_;
+        }
+        return com.hwl.imcore.improto.ImCircleOperateMessageResponse.getDefaultInstance();
+      } else {
+        if (responseBodyCase_ == 10) {
+          return circleOperateMessageResponseBuilder_.getMessage();
+        }
+        return com.hwl.imcore.improto.ImCircleOperateMessageResponse.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.ImCircleOperateMessageResponse circleOperateMessageResponse = 10;</code>
+     */
+    public Builder setCircleOperateMessageResponse(com.hwl.imcore.improto.ImCircleOperateMessageResponse value) {
+      if (circleOperateMessageResponseBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        responseBody_ = value;
+        onChanged();
+      } else {
+        circleOperateMessageResponseBuilder_.setMessage(value);
+      }
+      responseBodyCase_ = 10;
+      return this;
+    }
+    /**
+     * <code>.ImCircleOperateMessageResponse circleOperateMessageResponse = 10;</code>
+     */
+    public Builder setCircleOperateMessageResponse(
+        com.hwl.imcore.improto.ImCircleOperateMessageResponse.Builder builderForValue) {
+      if (circleOperateMessageResponseBuilder_ == null) {
+        responseBody_ = builderForValue.build();
+        onChanged();
+      } else {
+        circleOperateMessageResponseBuilder_.setMessage(builderForValue.build());
+      }
+      responseBodyCase_ = 10;
+      return this;
+    }
+    /**
+     * <code>.ImCircleOperateMessageResponse circleOperateMessageResponse = 10;</code>
+     */
+    public Builder mergeCircleOperateMessageResponse(com.hwl.imcore.improto.ImCircleOperateMessageResponse value) {
+      if (circleOperateMessageResponseBuilder_ == null) {
+        if (responseBodyCase_ == 10 &&
+            responseBody_ != com.hwl.imcore.improto.ImCircleOperateMessageResponse.getDefaultInstance()) {
+          responseBody_ = com.hwl.imcore.improto.ImCircleOperateMessageResponse.newBuilder((com.hwl.imcore.improto.ImCircleOperateMessageResponse) responseBody_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          responseBody_ = value;
+        }
+        onChanged();
+      } else {
+        if (responseBodyCase_ == 10) {
+          circleOperateMessageResponseBuilder_.mergeFrom(value);
+        }
+        circleOperateMessageResponseBuilder_.setMessage(value);
+      }
+      responseBodyCase_ = 10;
+      return this;
+    }
+    /**
+     * <code>.ImCircleOperateMessageResponse circleOperateMessageResponse = 10;</code>
+     */
+    public Builder clearCircleOperateMessageResponse() {
+      if (circleOperateMessageResponseBuilder_ == null) {
+        if (responseBodyCase_ == 10) {
+          responseBodyCase_ = 0;
+          responseBody_ = null;
+          onChanged();
+        }
+      } else {
+        if (responseBodyCase_ == 10) {
+          responseBodyCase_ = 0;
+          responseBody_ = null;
+        }
+        circleOperateMessageResponseBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.ImCircleOperateMessageResponse circleOperateMessageResponse = 10;</code>
+     */
+    public com.hwl.imcore.improto.ImCircleOperateMessageResponse.Builder getCircleOperateMessageResponseBuilder() {
+      return getCircleOperateMessageResponseFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.ImCircleOperateMessageResponse circleOperateMessageResponse = 10;</code>
+     */
+    public com.hwl.imcore.improto.ImCircleOperateMessageResponseOrBuilder getCircleOperateMessageResponseOrBuilder() {
+      if ((responseBodyCase_ == 10) && (circleOperateMessageResponseBuilder_ != null)) {
+        return circleOperateMessageResponseBuilder_.getMessageOrBuilder();
+      } else {
+        if (responseBodyCase_ == 10) {
+          return (com.hwl.imcore.improto.ImCircleOperateMessageResponse) responseBody_;
+        }
+        return com.hwl.imcore.improto.ImCircleOperateMessageResponse.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.ImCircleOperateMessageResponse circleOperateMessageResponse = 10;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.hwl.imcore.improto.ImCircleOperateMessageResponse, com.hwl.imcore.improto.ImCircleOperateMessageResponse.Builder, com.hwl.imcore.improto.ImCircleOperateMessageResponseOrBuilder> 
+        getCircleOperateMessageResponseFieldBuilder() {
+      if (circleOperateMessageResponseBuilder_ == null) {
+        if (!(responseBodyCase_ == 10)) {
+          responseBody_ = com.hwl.imcore.improto.ImCircleOperateMessageResponse.getDefaultInstance();
+        }
+        circleOperateMessageResponseBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.hwl.imcore.improto.ImCircleOperateMessageResponse, com.hwl.imcore.improto.ImCircleOperateMessageResponse.Builder, com.hwl.imcore.improto.ImCircleOperateMessageResponseOrBuilder>(
+                (com.hwl.imcore.improto.ImCircleOperateMessageResponse) responseBody_,
+                getParentForChildren(),
+                isClean());
+        responseBody_ = null;
+      }
+      responseBodyCase_ = 10;
+      onChanged();;
+      return circleOperateMessageResponseBuilder_;
+    }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -2253,6 +2480,7 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<ImMessageResponse>
       PARSER = new com.google.protobuf.AbstractParser<ImMessageResponse>() {
+    @java.lang.Override
     public ImMessageResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2270,6 +2498,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.hwl.imcore.improto.ImMessageResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

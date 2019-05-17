@@ -3,8 +3,8 @@
 
 package com.hwl.imcore.improto;
 
-public interface ImNearCircleOperateMessageContentOrBuilder extends
-    // @@protoc_insertion_point(interface_extends:ImNearCircleOperateMessageContent)
+public interface ImCircleOperateMessageContentOrBuilder extends
+    // @@protoc_insertion_point(interface_extends:ImCircleOperateMessageContent)
     com.google.protobuf.MessageOrBuilder {
 
   /**
@@ -56,9 +56,9 @@ public interface ImNearCircleOperateMessageContentOrBuilder extends
   com.hwl.imcore.improto.ImUserContentOrBuilder getReplyUserOrBuilder();
 
   /**
-   * <code>uint64 nearCircleId = 5;</code>
+   * <code>uint64 circleId = 5;</code>
    */
-  long getNearCircleId();
+  long getCircleId();
 
   /**
    * <code>uint64 commentId = 6;</code>

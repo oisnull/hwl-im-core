@@ -4,20 +4,20 @@
 package com.hwl.imcore.improto;
 
 /**
- * Protobuf type {@code ImNearCircleOperateMessageContent}
+ * Protobuf type {@code ImCircleOperateMessageContent}
  */
-public  final class ImNearCircleOperateMessageContent extends
+public  final class ImCircleOperateMessageContent extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:ImNearCircleOperateMessageContent)
-    ImNearCircleOperateMessageContentOrBuilder {
+    // @@protoc_insertion_point(message_implements:ImCircleOperateMessageContent)
+    ImCircleOperateMessageContentOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use ImNearCircleOperateMessageContent.newBuilder() to construct.
-  private ImNearCircleOperateMessageContent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ImCircleOperateMessageContent.newBuilder() to construct.
+  private ImCircleOperateMessageContent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ImNearCircleOperateMessageContent() {
+  private ImCircleOperateMessageContent() {
     operateType_ = 0;
-    nearCircleId_ = 0L;
+    circleId_ = 0L;
     commentId_ = 0L;
     commentCont_ = "";
   }
@@ -27,7 +27,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private ImNearCircleOperateMessageContent(
+  private ImCircleOperateMessageContent(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -93,7 +93,7 @@ private static final long serialVersionUID = 0L;
           }
           case 40: {
 
-            nearCircleId_ = input.readUInt64();
+            circleId_ = input.readUInt64();
             break;
           }
           case 48: {
@@ -128,15 +128,15 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.hwl.imcore.improto.ImMessage.internal_static_ImNearCircleOperateMessageContent_descriptor;
+    return com.hwl.imcore.improto.ImMessage.internal_static_ImCircleOperateMessageContent_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.hwl.imcore.improto.ImMessage.internal_static_ImNearCircleOperateMessageContent_fieldAccessorTable
+    return com.hwl.imcore.improto.ImMessage.internal_static_ImCircleOperateMessageContent_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.hwl.imcore.improto.ImNearCircleOperateMessageContent.class, com.hwl.imcore.improto.ImNearCircleOperateMessageContent.Builder.class);
+            com.hwl.imcore.improto.ImCircleOperateMessageContent.class, com.hwl.imcore.improto.ImCircleOperateMessageContent.Builder.class);
   }
 
   public static final int OPERATETYPE_FIELD_NUMBER = 1;
@@ -219,13 +219,13 @@ private static final long serialVersionUID = 0L;
     return getReplyUser();
   }
 
-  public static final int NEARCIRCLEID_FIELD_NUMBER = 5;
-  private long nearCircleId_;
+  public static final int CIRCLEID_FIELD_NUMBER = 5;
+  private long circleId_;
   /**
-   * <code>uint64 nearCircleId = 5;</code>
+   * <code>uint64 circleId = 5;</code>
    */
-  public long getNearCircleId() {
-    return nearCircleId_;
+  public long getCircleId() {
+    return circleId_;
   }
 
   public static final int COMMENTID_FIELD_NUMBER = 6;
@@ -297,8 +297,8 @@ private static final long serialVersionUID = 0L;
     if (replyUser_ != null) {
       output.writeMessage(4, getReplyUser());
     }
-    if (nearCircleId_ != 0L) {
-      output.writeUInt64(5, nearCircleId_);
+    if (circleId_ != 0L) {
+      output.writeUInt64(5, circleId_);
     }
     if (commentId_ != 0L) {
       output.writeUInt64(6, commentId_);
@@ -331,9 +331,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(4, getReplyUser());
     }
-    if (nearCircleId_ != 0L) {
+    if (circleId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt64Size(5, nearCircleId_);
+        .computeUInt64Size(5, circleId_);
     }
     if (commentId_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
@@ -352,10 +352,10 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.hwl.imcore.improto.ImNearCircleOperateMessageContent)) {
+    if (!(obj instanceof com.hwl.imcore.improto.ImCircleOperateMessageContent)) {
       return super.equals(obj);
     }
-    com.hwl.imcore.improto.ImNearCircleOperateMessageContent other = (com.hwl.imcore.improto.ImNearCircleOperateMessageContent) obj;
+    com.hwl.imcore.improto.ImCircleOperateMessageContent other = (com.hwl.imcore.improto.ImCircleOperateMessageContent) obj;
 
     boolean result = true;
     result = result && operateType_ == other.operateType_;
@@ -374,8 +374,8 @@ private static final long serialVersionUID = 0L;
       result = result && getReplyUser()
           .equals(other.getReplyUser());
     }
-    result = result && (getNearCircleId()
-        == other.getNearCircleId());
+    result = result && (getCircleId()
+        == other.getCircleId());
     result = result && (getCommentId()
         == other.getCommentId());
     result = result && getCommentCont()
@@ -405,9 +405,9 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + REPLYUSER_FIELD_NUMBER;
       hash = (53 * hash) + getReplyUser().hashCode();
     }
-    hash = (37 * hash) + NEARCIRCLEID_FIELD_NUMBER;
+    hash = (37 * hash) + CIRCLEID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getNearCircleId());
+        getCircleId());
     hash = (37 * hash) + COMMENTID_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
         getCommentId());
@@ -418,69 +418,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.hwl.imcore.improto.ImNearCircleOperateMessageContent parseFrom(
+  public static com.hwl.imcore.improto.ImCircleOperateMessageContent parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hwl.imcore.improto.ImNearCircleOperateMessageContent parseFrom(
+  public static com.hwl.imcore.improto.ImCircleOperateMessageContent parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hwl.imcore.improto.ImNearCircleOperateMessageContent parseFrom(
+  public static com.hwl.imcore.improto.ImCircleOperateMessageContent parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hwl.imcore.improto.ImNearCircleOperateMessageContent parseFrom(
+  public static com.hwl.imcore.improto.ImCircleOperateMessageContent parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hwl.imcore.improto.ImNearCircleOperateMessageContent parseFrom(byte[] data)
+  public static com.hwl.imcore.improto.ImCircleOperateMessageContent parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hwl.imcore.improto.ImNearCircleOperateMessageContent parseFrom(
+  public static com.hwl.imcore.improto.ImCircleOperateMessageContent parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hwl.imcore.improto.ImNearCircleOperateMessageContent parseFrom(java.io.InputStream input)
+  public static com.hwl.imcore.improto.ImCircleOperateMessageContent parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.hwl.imcore.improto.ImNearCircleOperateMessageContent parseFrom(
+  public static com.hwl.imcore.improto.ImCircleOperateMessageContent parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.hwl.imcore.improto.ImNearCircleOperateMessageContent parseDelimitedFrom(java.io.InputStream input)
+  public static com.hwl.imcore.improto.ImCircleOperateMessageContent parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.hwl.imcore.improto.ImNearCircleOperateMessageContent parseDelimitedFrom(
+  public static com.hwl.imcore.improto.ImCircleOperateMessageContent parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.hwl.imcore.improto.ImNearCircleOperateMessageContent parseFrom(
+  public static com.hwl.imcore.improto.ImCircleOperateMessageContent parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.hwl.imcore.improto.ImNearCircleOperateMessageContent parseFrom(
+  public static com.hwl.imcore.improto.ImCircleOperateMessageContent parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -493,7 +493,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.hwl.imcore.improto.ImNearCircleOperateMessageContent prototype) {
+  public static Builder newBuilder(com.hwl.imcore.improto.ImCircleOperateMessageContent prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -509,26 +509,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code ImNearCircleOperateMessageContent}
+   * Protobuf type {@code ImCircleOperateMessageContent}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:ImNearCircleOperateMessageContent)
-      com.hwl.imcore.improto.ImNearCircleOperateMessageContentOrBuilder {
+      // @@protoc_insertion_point(builder_implements:ImCircleOperateMessageContent)
+      com.hwl.imcore.improto.ImCircleOperateMessageContentOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.hwl.imcore.improto.ImMessage.internal_static_ImNearCircleOperateMessageContent_descriptor;
+      return com.hwl.imcore.improto.ImMessage.internal_static_ImCircleOperateMessageContent_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.hwl.imcore.improto.ImMessage.internal_static_ImNearCircleOperateMessageContent_fieldAccessorTable
+      return com.hwl.imcore.improto.ImMessage.internal_static_ImCircleOperateMessageContent_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.hwl.imcore.improto.ImNearCircleOperateMessageContent.class, com.hwl.imcore.improto.ImNearCircleOperateMessageContent.Builder.class);
+              com.hwl.imcore.improto.ImCircleOperateMessageContent.class, com.hwl.imcore.improto.ImCircleOperateMessageContent.Builder.class);
     }
 
-    // Construct using com.hwl.imcore.improto.ImNearCircleOperateMessageContent.newBuilder()
+    // Construct using com.hwl.imcore.improto.ImCircleOperateMessageContent.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -566,7 +566,7 @@ private static final long serialVersionUID = 0L;
         replyUser_ = null;
         replyUserBuilder_ = null;
       }
-      nearCircleId_ = 0L;
+      circleId_ = 0L;
 
       commentId_ = 0L;
 
@@ -578,17 +578,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.hwl.imcore.improto.ImMessage.internal_static_ImNearCircleOperateMessageContent_descriptor;
+      return com.hwl.imcore.improto.ImMessage.internal_static_ImCircleOperateMessageContent_descriptor;
     }
 
     @java.lang.Override
-    public com.hwl.imcore.improto.ImNearCircleOperateMessageContent getDefaultInstanceForType() {
-      return com.hwl.imcore.improto.ImNearCircleOperateMessageContent.getDefaultInstance();
+    public com.hwl.imcore.improto.ImCircleOperateMessageContent getDefaultInstanceForType() {
+      return com.hwl.imcore.improto.ImCircleOperateMessageContent.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.hwl.imcore.improto.ImNearCircleOperateMessageContent build() {
-      com.hwl.imcore.improto.ImNearCircleOperateMessageContent result = buildPartial();
+    public com.hwl.imcore.improto.ImCircleOperateMessageContent build() {
+      com.hwl.imcore.improto.ImCircleOperateMessageContent result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -596,8 +596,8 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.hwl.imcore.improto.ImNearCircleOperateMessageContent buildPartial() {
-      com.hwl.imcore.improto.ImNearCircleOperateMessageContent result = new com.hwl.imcore.improto.ImNearCircleOperateMessageContent(this);
+    public com.hwl.imcore.improto.ImCircleOperateMessageContent buildPartial() {
+      com.hwl.imcore.improto.ImCircleOperateMessageContent result = new com.hwl.imcore.improto.ImCircleOperateMessageContent(this);
       result.operateType_ = operateType_;
       if (postUserBuilder_ == null) {
         result.postUser_ = postUser_;
@@ -614,7 +614,7 @@ private static final long serialVersionUID = 0L;
       } else {
         result.replyUser_ = replyUserBuilder_.build();
       }
-      result.nearCircleId_ = nearCircleId_;
+      result.circleId_ = circleId_;
       result.commentId_ = commentId_;
       result.commentCont_ = commentCont_;
       onBuilt();
@@ -655,16 +655,16 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.hwl.imcore.improto.ImNearCircleOperateMessageContent) {
-        return mergeFrom((com.hwl.imcore.improto.ImNearCircleOperateMessageContent)other);
+      if (other instanceof com.hwl.imcore.improto.ImCircleOperateMessageContent) {
+        return mergeFrom((com.hwl.imcore.improto.ImCircleOperateMessageContent)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.hwl.imcore.improto.ImNearCircleOperateMessageContent other) {
-      if (other == com.hwl.imcore.improto.ImNearCircleOperateMessageContent.getDefaultInstance()) return this;
+    public Builder mergeFrom(com.hwl.imcore.improto.ImCircleOperateMessageContent other) {
+      if (other == com.hwl.imcore.improto.ImCircleOperateMessageContent.getDefaultInstance()) return this;
       if (other.operateType_ != 0) {
         setOperateTypeValue(other.getOperateTypeValue());
       }
@@ -677,8 +677,8 @@ private static final long serialVersionUID = 0L;
       if (other.hasReplyUser()) {
         mergeReplyUser(other.getReplyUser());
       }
-      if (other.getNearCircleId() != 0L) {
-        setNearCircleId(other.getNearCircleId());
+      if (other.getCircleId() != 0L) {
+        setCircleId(other.getCircleId());
       }
       if (other.getCommentId() != 0L) {
         setCommentId(other.getCommentId());
@@ -702,11 +702,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.hwl.imcore.improto.ImNearCircleOperateMessageContent parsedMessage = null;
+      com.hwl.imcore.improto.ImCircleOperateMessageContent parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.hwl.imcore.improto.ImNearCircleOperateMessageContent) e.getUnfinishedMessage();
+        parsedMessage = (com.hwl.imcore.improto.ImCircleOperateMessageContent) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -1112,28 +1112,28 @@ private static final long serialVersionUID = 0L;
       return replyUserBuilder_;
     }
 
-    private long nearCircleId_ ;
+    private long circleId_ ;
     /**
-     * <code>uint64 nearCircleId = 5;</code>
+     * <code>uint64 circleId = 5;</code>
      */
-    public long getNearCircleId() {
-      return nearCircleId_;
+    public long getCircleId() {
+      return circleId_;
     }
     /**
-     * <code>uint64 nearCircleId = 5;</code>
+     * <code>uint64 circleId = 5;</code>
      */
-    public Builder setNearCircleId(long value) {
+    public Builder setCircleId(long value) {
       
-      nearCircleId_ = value;
+      circleId_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>uint64 nearCircleId = 5;</code>
+     * <code>uint64 circleId = 5;</code>
      */
-    public Builder clearNearCircleId() {
+    public Builder clearCircleId() {
       
-      nearCircleId_ = 0L;
+      circleId_ = 0L;
       onChanged();
       return this;
     }
@@ -1245,41 +1245,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:ImNearCircleOperateMessageContent)
+    // @@protoc_insertion_point(builder_scope:ImCircleOperateMessageContent)
   }
 
-  // @@protoc_insertion_point(class_scope:ImNearCircleOperateMessageContent)
-  private static final com.hwl.imcore.improto.ImNearCircleOperateMessageContent DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:ImCircleOperateMessageContent)
+  private static final com.hwl.imcore.improto.ImCircleOperateMessageContent DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.hwl.imcore.improto.ImNearCircleOperateMessageContent();
+    DEFAULT_INSTANCE = new com.hwl.imcore.improto.ImCircleOperateMessageContent();
   }
 
-  public static com.hwl.imcore.improto.ImNearCircleOperateMessageContent getDefaultInstance() {
+  public static com.hwl.imcore.improto.ImCircleOperateMessageContent getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ImNearCircleOperateMessageContent>
-      PARSER = new com.google.protobuf.AbstractParser<ImNearCircleOperateMessageContent>() {
+  private static final com.google.protobuf.Parser<ImCircleOperateMessageContent>
+      PARSER = new com.google.protobuf.AbstractParser<ImCircleOperateMessageContent>() {
     @java.lang.Override
-    public ImNearCircleOperateMessageContent parsePartialFrom(
+    public ImCircleOperateMessageContent parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ImNearCircleOperateMessageContent(input, extensionRegistry);
+      return new ImCircleOperateMessageContent(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<ImNearCircleOperateMessageContent> parser() {
+  public static com.google.protobuf.Parser<ImCircleOperateMessageContent> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ImNearCircleOperateMessageContent> getParserForType() {
+  public com.google.protobuf.Parser<ImCircleOperateMessageContent> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.hwl.imcore.improto.ImNearCircleOperateMessageContent getDefaultInstanceForType() {
+  public com.hwl.imcore.improto.ImCircleOperateMessageContent getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

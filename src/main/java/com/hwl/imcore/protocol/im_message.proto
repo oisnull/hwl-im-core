@@ -16,6 +16,7 @@ enum ImMessageType {
     ChatSetting = 8;
     GroupOperate = 9;
     NearCircleOperate = 10;
+    CircleOperate = 11;
 }
 
 enum ImMessageResponseCode {
@@ -55,6 +56,7 @@ message ImMessageRequest {
         ImChatSettingMessageRequest chatSettingMessageRequest = 9;
         ImGroupOperateMessageRequest groupOperateMessageRequest = 10;
         ImNearCircleOperateMessageRequest nearCircleOperateMessageRequest = 11;
+        ImCircleOperateMessageRequest circleOperateMessageRequest = 12;
     }
 }
 
@@ -78,6 +80,7 @@ message ImMessageResponse {
         ImChatSettingMessageResponse chatSettingMessageResponse = 7;
         ImGroupOperateMessageResponse groupOperateMessageResponse = 8;
         ImNearCircleOperateMessageResponse nearCircleOperateMessageResponse = 9;
+        ImCircleOperateMessageResponse circleOperateMessageResponse = 10;
     }
 }
 
@@ -255,7 +258,7 @@ enum ImGroupOperateType {
 }
 
 //near circle operate message
-enum ImNearCircleOperateType {
+enum ImCircleOperateType {
     NearCircleOperateNone = 0;
     AddLike = 1;
     CancelLike = 2;
@@ -272,13 +275,31 @@ message ImNearCircleOperateMessageResponse {
 }
 
 message ImNearCircleOperateMessageContent {
-    ImNearCircleOperateType operateType = 1;
+    ImCircleOperateType operateType = 1;
     ImUserContent postUser = 2;
     ImUserContent originUser = 3;
     ImUserContent replyUser = 4;
     uint64 nearCircleId = 5;
-    bool isLike = 6;
-    uint64 commentId = 7;
-    string commentCont = 8;
+    uint64 commentId = 6;
+    string commentCont = 7;
+}
+
+//circle operate message
+message ImCircleOperateMessageRequest {
+    ImCircleOperateMessageContent circleOperateMessageContent = 1;
+}
+message ImCircleOperateMessageResponse {
+    ImCircleOperateMessageContent circleOperateMessageContent = 1;
+    uint64 buildTime = 2;
+}
+
+message ImCircleOperateMessageContent {
+    ImCircleOperateType operateType = 1;
+    ImUserContent postUser = 2;
+    ImUserContent originUser = 3;
+    ImUserContent replyUser = 4;
+    uint64 circleId = 5;
+    uint64 commentId = 6;
+    string commentCont = 7;
 }
 
