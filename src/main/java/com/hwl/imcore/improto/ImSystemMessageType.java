@@ -4,45 +4,25 @@
 package com.hwl.imcore.improto;
 
 /**
- * Protobuf enum {@code ImMessageResponseCode}
+ * <pre>
+ *system message
+ * </pre>
+ *
+ * Protobuf enum {@code ImSystemMessageType}
  */
-public enum ImMessageResponseCode
+public enum ImSystemMessageType
     implements com.google.protobuf.ProtocolMessageEnum {
   /**
-   * <code>Other = 0;</code>
+   * <code>AddNearGroup = 0;</code>
    */
-  Other(0),
-  /**
-   * <code>Success = 100;</code>
-   */
-  Success(100),
-  /**
-   * <code>Failed = 200;</code>
-   */
-  Failed(200),
-  /**
-   * <code>SessionInvalid = 201;</code>
-   */
-  SessionInvalid(201),
+  AddNearGroup(0),
   UNRECOGNIZED(-1),
   ;
 
   /**
-   * <code>Other = 0;</code>
+   * <code>AddNearGroup = 0;</code>
    */
-  public static final int Other_VALUE = 0;
-  /**
-   * <code>Success = 100;</code>
-   */
-  public static final int Success_VALUE = 100;
-  /**
-   * <code>Failed = 200;</code>
-   */
-  public static final int Failed_VALUE = 200;
-  /**
-   * <code>SessionInvalid = 201;</code>
-   */
-  public static final int SessionInvalid_VALUE = 201;
+  public static final int AddNearGroup_VALUE = 0;
 
 
   public final int getNumber() {
@@ -57,29 +37,26 @@ public enum ImMessageResponseCode
    * @deprecated Use {@link #forNumber(int)} instead.
    */
   @java.lang.Deprecated
-  public static ImMessageResponseCode valueOf(int value) {
+  public static ImSystemMessageType valueOf(int value) {
     return forNumber(value);
   }
 
-  public static ImMessageResponseCode forNumber(int value) {
+  public static ImSystemMessageType forNumber(int value) {
     switch (value) {
-      case 0: return Other;
-      case 100: return Success;
-      case 200: return Failed;
-      case 201: return SessionInvalid;
+      case 0: return AddNearGroup;
       default: return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<ImMessageResponseCode>
+  public static com.google.protobuf.Internal.EnumLiteMap<ImSystemMessageType>
       internalGetValueMap() {
     return internalValueMap;
   }
   private static final com.google.protobuf.Internal.EnumLiteMap<
-      ImMessageResponseCode> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<ImMessageResponseCode>() {
-          public ImMessageResponseCode findValueByNumber(int number) {
-            return ImMessageResponseCode.forNumber(number);
+      ImSystemMessageType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<ImSystemMessageType>() {
+          public ImSystemMessageType findValueByNumber(int number) {
+            return ImSystemMessageType.forNumber(number);
           }
         };
 
@@ -93,12 +70,12 @@ public enum ImMessageResponseCode
   }
   public static final com.google.protobuf.Descriptors.EnumDescriptor
       getDescriptor() {
-    return com.hwl.imcore.improto.ImMessage.getDescriptor().getEnumTypes().get(1);
+    return com.hwl.imcore.improto.ImMessage.getDescriptor().getEnumTypes().get(6);
   }
 
-  private static final ImMessageResponseCode[] VALUES = values();
+  private static final ImSystemMessageType[] VALUES = values();
 
-  public static ImMessageResponseCode valueOf(
+  public static ImSystemMessageType valueOf(
       com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
       throw new java.lang.IllegalArgumentException(
@@ -112,10 +89,10 @@ public enum ImMessageResponseCode
 
   private final int value;
 
-  private ImMessageResponseCode(int value) {
+  private ImSystemMessageType(int value) {
     this.value = value;
   }
 
-  // @@protoc_insertion_point(enum_scope:ImMessageResponseCode)
+  // @@protoc_insertion_point(enum_scope:ImSystemMessageType)
 }
 

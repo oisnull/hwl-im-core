@@ -23,14 +23,14 @@ public interface ImMessageRequestHeadOrBuilder extends
       getClientBytes();
 
   /**
-   * <code>string sessionid = 3;</code>
+   * <code>string session = 3;</code>
    */
-  java.lang.String getSessionid();
+  java.lang.String getSession();
   /**
-   * <code>string sessionid = 3;</code>
+   * <code>string session = 3;</code>
    */
   com.google.protobuf.ByteString
-      getSessionidBytes();
+      getSessionBytes();
 
   /**
    * <code>string language = 4;</code>

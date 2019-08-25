@@ -1,6 +1,7 @@
 syntax = "proto3";
 //protoc --java_out=src/main/java src/main/java/com/hwl/imcore/protocol/im_message.proto
-option csharp_namespace = "IMCore.Protocol";
+//protoc --csharp_out=Protocol im_message.proto
+option csharp_namespace = "HWL.IMCore.Protocol";
 option java_multiple_files = true;
 option java_package = "com.hwl.imcore.improto";
 
@@ -17,13 +18,14 @@ enum ImMessageType {
     GroupOperate = 9;
     NearCircleOperate = 10;
     CircleOperate = 11;
+    SystemMessage = 12;
 }
 
 enum ImMessageResponseCode {
     Other = 0;
     Success = 100;
     Failed = 200;
-    SessionidInvalid = 201;
+    SessionInvalid = 201;
 }
 
 enum ImMessageSourcePosition {
@@ -57,13 +59,14 @@ message ImMessageRequest {
         ImGroupOperateMessageRequest groupOperateMessageRequest = 10;
         ImNearCircleOperateMessageRequest nearCircleOperateMessageRequest = 11;
         ImCircleOperateMessageRequest circleOperateMessageRequest = 12;
+        ImSystemMessageRequest systemMessageRequest = 13;
     }
 }
 
 message ImMessageRequestHead {
     uint64 timestamp = 1;
     string client = 2;
-    string sessionid = 3;
+    string session = 3;
     string language = 4;
     string version = 5;
 }
@@ -81,6 +84,7 @@ message ImMessageResponse {
         ImGroupOperateMessageResponse groupOperateMessageResponse = 8;
         ImNearCircleOperateMessageResponse nearCircleOperateMessageResponse = 9;
         ImCircleOperateMessageResponse circleOperateMessageResponse = 10;
+        ImSystemMessageResponse systemMessageResponse = 11;
     }
 }
 
@@ -103,7 +107,7 @@ message ImUserValidateResponse {
     bool isSuccess = 1;
     string message = 2;
     bool isOnline = 3;
-    string sessionid = 4;
+    string session = 4;
 }
 
 //chat user message
@@ -303,3 +307,24 @@ message ImCircleOperateMessageContent {
     string commentCont = 7;
 }
 
+//system message
+enum ImSystemMessageType {
+    AddNearGroup = 0;
+}
+
+message ImSystemMessageRequest {
+    uint64 toUserId = 1;
+    string toGroupGuid = 2;
+    ImSystemMessageContent systemMessageContent = 3;
+}
+
+message ImSystemMessageResponse {
+    ImSystemMessageContent systemMessageContent = 1;
+    uint64 buildTime = 2;
+}
+
+message ImSystemMessageContent {
+    ImSystemMessageType systemMessageType = 1;
+    string toUserDesc = 2;
+    string addGroupDesc = 3;
+}

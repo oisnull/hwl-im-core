@@ -56,6 +56,10 @@ public enum ImMessageType
    * <code>CircleOperate = 11;</code>
    */
   CircleOperate(11),
+  /**
+   * <code>SystemMessage = 12;</code>
+   */
+  SystemMessage(12),
   UNRECOGNIZED(-1),
   ;
 
@@ -107,6 +111,10 @@ public enum ImMessageType
    * <code>CircleOperate = 11;</code>
    */
   public static final int CircleOperate_VALUE = 11;
+  /**
+   * <code>SystemMessage = 12;</code>
+   */
+  public static final int SystemMessage_VALUE = 12;
 
 
   public final int getNumber() {
@@ -139,6 +147,7 @@ public enum ImMessageType
       case 9: return GroupOperate;
       case 10: return NearCircleOperate;
       case 11: return CircleOperate;
+      case 12: return SystemMessage;
       default: return null;
     }
   }

@@ -19,7 +19,7 @@ private static final long serialVersionUID = 0L;
     isSuccess_ = false;
     message_ = "";
     isOnline_ = false;
-    sessionid_ = "";
+    session_ = "";
   }
 
   @java.lang.Override
@@ -46,6 +46,13 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
+          default: {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
           case 8: {
 
             isSuccess_ = input.readBool();
@@ -65,14 +72,7 @@ private static final long serialVersionUID = 0L;
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            sessionid_ = s;
-            break;
-          }
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
+            session_ = s;
             break;
           }
         }
@@ -92,7 +92,6 @@ private static final long serialVersionUID = 0L;
     return com.hwl.imcore.improto.ImMessage.internal_static_ImUserValidateResponse_descriptor;
   }
 
-  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.hwl.imcore.improto.ImMessage.internal_static_ImUserValidateResponse_fieldAccessorTable
@@ -152,34 +151,34 @@ private static final long serialVersionUID = 0L;
     return isOnline_;
   }
 
-  public static final int SESSIONID_FIELD_NUMBER = 4;
-  private volatile java.lang.Object sessionid_;
+  public static final int SESSION_FIELD_NUMBER = 4;
+  private volatile java.lang.Object session_;
   /**
-   * <code>string sessionid = 4;</code>
+   * <code>string session = 4;</code>
    */
-  public java.lang.String getSessionid() {
-    java.lang.Object ref = sessionid_;
+  public java.lang.String getSession() {
+    java.lang.Object ref = session_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      sessionid_ = s;
+      session_ = s;
       return s;
     }
   }
   /**
-   * <code>string sessionid = 4;</code>
+   * <code>string session = 4;</code>
    */
   public com.google.protobuf.ByteString
-      getSessionidBytes() {
-    java.lang.Object ref = sessionid_;
+      getSessionBytes() {
+    java.lang.Object ref = session_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      sessionid_ = b;
+      session_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -187,7 +186,6 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
-  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -197,7 +195,6 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (isSuccess_ != false) {
@@ -209,13 +206,12 @@ private static final long serialVersionUID = 0L;
     if (isOnline_ != false) {
       output.writeBool(3, isOnline_);
     }
-    if (!getSessionidBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, sessionid_);
+    if (!getSessionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, session_);
     }
     unknownFields.writeTo(output);
   }
 
-  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -232,8 +228,8 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeBoolSize(3, isOnline_);
     }
-    if (!getSessionidBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, sessionid_);
+    if (!getSessionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, session_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -257,8 +253,8 @@ private static final long serialVersionUID = 0L;
         .equals(other.getMessage());
     result = result && (getIsOnline()
         == other.getIsOnline());
-    result = result && getSessionid()
-        .equals(other.getSessionid());
+    result = result && getSession()
+        .equals(other.getSession());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -278,8 +274,8 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ISONLINE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
         getIsOnline());
-    hash = (37 * hash) + SESSIONID_FIELD_NUMBER;
-    hash = (53 * hash) + getSessionid().hashCode();
+    hash = (37 * hash) + SESSION_FIELD_NUMBER;
+    hash = (53 * hash) + getSession().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -355,7 +351,6 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
-  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -363,7 +358,6 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(com.hwl.imcore.improto.ImUserValidateResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
-  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -387,7 +381,6 @@ private static final long serialVersionUID = 0L;
       return com.hwl.imcore.improto.ImMessage.internal_static_ImUserValidateResponse_descriptor;
     }
 
-    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.hwl.imcore.improto.ImMessage.internal_static_ImUserValidateResponse_fieldAccessorTable
@@ -410,7 +403,6 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
-    @java.lang.Override
     public Builder clear() {
       super.clear();
       isSuccess_ = false;
@@ -419,23 +411,20 @@ private static final long serialVersionUID = 0L;
 
       isOnline_ = false;
 
-      sessionid_ = "";
+      session_ = "";
 
       return this;
     }
 
-    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.hwl.imcore.improto.ImMessage.internal_static_ImUserValidateResponse_descriptor;
     }
 
-    @java.lang.Override
     public com.hwl.imcore.improto.ImUserValidateResponse getDefaultInstanceForType() {
       return com.hwl.imcore.improto.ImUserValidateResponse.getDefaultInstance();
     }
 
-    @java.lang.Override
     public com.hwl.imcore.improto.ImUserValidateResponse build() {
       com.hwl.imcore.improto.ImUserValidateResponse result = buildPartial();
       if (!result.isInitialized()) {
@@ -444,50 +433,42 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
-    @java.lang.Override
     public com.hwl.imcore.improto.ImUserValidateResponse buildPartial() {
       com.hwl.imcore.improto.ImUserValidateResponse result = new com.hwl.imcore.improto.ImUserValidateResponse(this);
       result.isSuccess_ = isSuccess_;
       result.message_ = message_;
       result.isOnline_ = isOnline_;
-      result.sessionid_ = sessionid_;
+      result.session_ = session_;
       onBuilt();
       return result;
     }
 
-    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
-    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
-    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
-    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
-    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.hwl.imcore.improto.ImUserValidateResponse) {
         return mergeFrom((com.hwl.imcore.improto.ImUserValidateResponse)other);
@@ -509,8 +490,8 @@ private static final long serialVersionUID = 0L;
       if (other.getIsOnline() != false) {
         setIsOnline(other.getIsOnline());
       }
-      if (!other.getSessionid().isEmpty()) {
-        sessionid_ = other.sessionid_;
+      if (!other.getSession().isEmpty()) {
+        session_ = other.session_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -518,12 +499,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
-    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -663,81 +642,79 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object sessionid_ = "";
+    private java.lang.Object session_ = "";
     /**
-     * <code>string sessionid = 4;</code>
+     * <code>string session = 4;</code>
      */
-    public java.lang.String getSessionid() {
-      java.lang.Object ref = sessionid_;
+    public java.lang.String getSession() {
+      java.lang.Object ref = session_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        sessionid_ = s;
+        session_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string sessionid = 4;</code>
+     * <code>string session = 4;</code>
      */
     public com.google.protobuf.ByteString
-        getSessionidBytes() {
-      java.lang.Object ref = sessionid_;
+        getSessionBytes() {
+      java.lang.Object ref = session_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        sessionid_ = b;
+        session_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string sessionid = 4;</code>
+     * <code>string session = 4;</code>
      */
-    public Builder setSessionid(
+    public Builder setSession(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      sessionid_ = value;
+      session_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string sessionid = 4;</code>
+     * <code>string session = 4;</code>
      */
-    public Builder clearSessionid() {
+    public Builder clearSession() {
       
-      sessionid_ = getDefaultInstance().getSessionid();
+      session_ = getDefaultInstance().getSession();
       onChanged();
       return this;
     }
     /**
-     * <code>string sessionid = 4;</code>
+     * <code>string session = 4;</code>
      */
-    public Builder setSessionidBytes(
+    public Builder setSessionBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      sessionid_ = value;
+      session_ = value;
       onChanged();
       return this;
     }
-    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
-    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -759,7 +736,6 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<ImUserValidateResponse>
       PARSER = new com.google.protobuf.AbstractParser<ImUserValidateResponse>() {
-    @java.lang.Override
     public ImUserValidateResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -777,7 +753,6 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  @java.lang.Override
   public com.hwl.imcore.improto.ImUserValidateResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

@@ -28,12 +28,12 @@ public interface ImUserValidateResponseOrBuilder extends
   boolean getIsOnline();
 
   /**
-   * <code>string sessionid = 4;</code>
+   * <code>string session = 4;</code>
    */
-  java.lang.String getSessionid();
+  java.lang.String getSession();
   /**
-   * <code>string sessionid = 4;</code>
+   * <code>string session = 4;</code>
    */
   com.google.protobuf.ByteString
-      getSessionidBytes();
+      getSessionBytes();
 }

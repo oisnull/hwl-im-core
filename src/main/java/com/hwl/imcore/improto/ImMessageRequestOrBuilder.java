@@ -163,5 +163,18 @@ public interface ImMessageRequestOrBuilder extends
    */
   com.hwl.imcore.improto.ImCircleOperateMessageRequestOrBuilder getCircleOperateMessageRequestOrBuilder();
 
+  /**
+   * <code>.ImSystemMessageRequest systemMessageRequest = 13;</code>
+   */
+  boolean hasSystemMessageRequest();
+  /**
+   * <code>.ImSystemMessageRequest systemMessageRequest = 13;</code>
+   */
+  com.hwl.imcore.improto.ImSystemMessageRequest getSystemMessageRequest();
+  /**
+   * <code>.ImSystemMessageRequest systemMessageRequest = 13;</code>
+   */
+  com.hwl.imcore.improto.ImSystemMessageRequestOrBuilder getSystemMessageRequestOrBuilder();
+
   public com.hwl.imcore.improto.ImMessageRequest.RequestBodyCase getRequestBodyCase();
 }
