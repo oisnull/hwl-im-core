@@ -343,37 +343,39 @@ public final class ImMessage {
       "\030\002 \001(\0132\016.ImUserContent\022\"\n\noriginUser\030\003 \001" +
       "(\0132\016.ImUserContent\022!\n\treplyUser\030\004 \001(\0132\016." +
       "ImUserContent\022\020\n\010circleId\030\005 \001(\004\022\021\n\tcomme" +
-      "ntId\030\006 \001(\004\022\023\n\013commentCont\030\007 \001(\t\"v\n\026ImSys" +
-      "temMessageRequest\022\020\n\010toUserId\030\001 \001(\004\022\023\n\013t" +
-      "oGroupGuid\030\002 \001(\t\0225\n\024systemMessageContent" +
-      "\030\003 \001(\0132\027.ImSystemMessageContent\"\212\001\n\027ImSy" +
-      "stemMessageResponse\022\020\n\010toUserId\030\001 \001(\004\022\023\n" +
-      "\013toGroupGuid\030\002 \001(\t\0225\n\024systemMessageConte" +
-      "nt\030\003 \001(\0132\027.ImSystemMessageContent\022\021\n\tbui" +
-      "ldTime\030\004 \001(\004\"s\n\026ImSystemMessageContent\022/" +
-      "\n\021systemMessageType\030\001 \001(\0162\024.ImSystemMess" +
-      "ageType\022\022\n\ntoUserDesc\030\002 \001(\t\022\024\n\014addGroupD" +
-      "esc\030\003 \001(\t*\360\001\n\rImMessageType\022\010\n\004Base\020\000\022\020\n" +
-      "\014UserValidate\020\001\022\014\n\010ChatUser\020\002\022\r\n\tChatGro" +
-      "up\020\003\022\r\n\tHeartBeat\020\004\022\r\n\tAddFriend\020\005\022\022\n\016Te" +
-      "stConnection\020\006\022\024\n\020ClientAckMessage\020\007\022\017\n\013" +
-      "ChatSetting\020\010\022\020\n\014GroupOperate\020\t\022\025\n\021NearC" +
-      "ircleOperate\020\n\022\021\n\rCircleOperate\020\013\022\021\n\rSys" +
-      "temMessage\020\014*Q\n\025ImMessageResponseCode\022\t\n" +
-      "\005Other\020\000\022\013\n\007Success\020d\022\013\n\006Failed\020\310\001\022\023\n\016Se" +
-      "ssionInvalid\020\311\001*I\n\027ImMessageSourcePositi" +
-      "on\022\010\n\004None\020\000\022\014\n\010RealTime\020\001\022\013\n\007Offline\020\002\022" +
-      "\t\n\005Retry\020\003*R\n\021ImChatSettingType\022\017\n\013Setti" +
-      "ngNone\020\000\022\r\n\tGroupNote\020\001\022\r\n\tGroupName\020\002\022\016" +
-      "\n\nUserRemark\020\003*y\n\022ImGroupOperateType\022\024\n\020" +
-      "GroupOperateNone\020\000\022\017\n\013CreateGroup\020\001\022\r\n\tE" +
-      "xitGroup\020\002\022\020\n\014DismissGroup\020\003\022\013\n\007AddUser\020" +
-      "\004\022\016\n\nRemoveUser\020\005*q\n\023ImCircleOperateType" +
-      "\022\031\n\025NearCircleOperateNone\020\000\022\013\n\007AddLike\020\001" +
-      "\022\016\n\nCancelLike\020\002\022\017\n\013PostComment\020\003\022\021\n\rCan" +
-      "celComment\020\004*\'\n\023ImSystemMessageType\022\020\n\014A" +
-      "ddNearGroup\020\000B0\n\026com.hwl.imcore.improtoP" +
-      "\001\252\002\023HWL.IMCore.Protocolb\006proto3"
+      "ntId\030\006 \001(\004\022\023\n\013commentCont\030\007 \001(\t\"\231\001\n\026ImSy" +
+      "stemMessageRequest\022\036\n\006toUser\030\001 \001(\0132\016.ImU" +
+      "serContent\022\023\n\013toGroupGuid\030\002 \001(\t\022\023\n\013toGro" +
+      "upName\030\003 \001(\t\0225\n\024systemMessageContent\030\004 \001" +
+      "(\0132\027.ImSystemMessageContent\"\255\001\n\027ImSystem" +
+      "MessageResponse\022\036\n\006toUser\030\001 \001(\0132\016.ImUser" +
+      "Content\022\023\n\013toGroupGuid\030\002 \001(\t\022\023\n\013toGroupN" +
+      "ame\030\003 \001(\t\0225\n\024systemMessageContent\030\004 \001(\0132" +
+      "\027.ImSystemMessageContent\022\021\n\tbuildTime\030\005 " +
+      "\001(\004\"s\n\026ImSystemMessageContent\022/\n\021systemM" +
+      "essageType\030\001 \001(\0162\024.ImSystemMessageType\022\022" +
+      "\n\ntoUserDesc\030\002 \001(\t\022\024\n\014addGroupDesc\030\003 \001(\t" +
+      "*\360\001\n\rImMessageType\022\010\n\004Base\020\000\022\020\n\014UserVali" +
+      "date\020\001\022\014\n\010ChatUser\020\002\022\r\n\tChatGroup\020\003\022\r\n\tH" +
+      "eartBeat\020\004\022\r\n\tAddFriend\020\005\022\022\n\016TestConnect" +
+      "ion\020\006\022\024\n\020ClientAckMessage\020\007\022\017\n\013ChatSetti" +
+      "ng\020\010\022\020\n\014GroupOperate\020\t\022\025\n\021NearCircleOper" +
+      "ate\020\n\022\021\n\rCircleOperate\020\013\022\021\n\rSystemMessag" +
+      "e\020\014*Q\n\025ImMessageResponseCode\022\t\n\005Other\020\000\022" +
+      "\013\n\007Success\020d\022\013\n\006Failed\020\310\001\022\023\n\016SessionInva" +
+      "lid\020\311\001*I\n\027ImMessageSourcePosition\022\010\n\004Non" +
+      "e\020\000\022\014\n\010RealTime\020\001\022\013\n\007Offline\020\002\022\t\n\005Retry\020" +
+      "\003*R\n\021ImChatSettingType\022\017\n\013SettingNone\020\000\022" +
+      "\r\n\tGroupNote\020\001\022\r\n\tGroupName\020\002\022\016\n\nUserRem" +
+      "ark\020\003*y\n\022ImGroupOperateType\022\024\n\020GroupOper" +
+      "ateNone\020\000\022\017\n\013CreateGroup\020\001\022\r\n\tExitGroup\020" +
+      "\002\022\020\n\014DismissGroup\020\003\022\013\n\007AddUser\020\004\022\016\n\nRemo" +
+      "veUser\020\005*q\n\023ImCircleOperateType\022\031\n\025NearC" +
+      "ircleOperateNone\020\000\022\013\n\007AddLike\020\001\022\016\n\nCance" +
+      "lLike\020\002\022\017\n\013PostComment\020\003\022\021\n\rCancelCommen" +
+      "t\020\004*\'\n\023ImSystemMessageType\022\020\n\014AddNearGro" +
+      "up\020\000B0\n\026com.hwl.imcore.improtoP\001\252\002\023HWL.I" +
+      "MCore.Protocolb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -590,13 +592,13 @@ public final class ImMessage {
     internal_static_ImSystemMessageRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ImSystemMessageRequest_descriptor,
-        new java.lang.String[] { "ToUserId", "ToGroupGuid", "SystemMessageContent", });
+        new java.lang.String[] { "ToUser", "ToGroupGuid", "ToGroupName", "SystemMessageContent", });
     internal_static_ImSystemMessageResponse_descriptor =
       getDescriptor().getMessageTypes().get(34);
     internal_static_ImSystemMessageResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ImSystemMessageResponse_descriptor,
-        new java.lang.String[] { "ToUserId", "ToGroupGuid", "SystemMessageContent", "BuildTime", });
+        new java.lang.String[] { "ToUser", "ToGroupGuid", "ToGroupName", "SystemMessageContent", "BuildTime", });
     internal_static_ImSystemMessageContent_descriptor =
       getDescriptor().getMessageTypes().get(35);
     internal_static_ImSystemMessageContent_fieldAccessorTable = new

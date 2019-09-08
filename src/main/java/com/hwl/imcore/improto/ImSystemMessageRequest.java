@@ -16,8 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ImSystemMessageRequest() {
-    toUserId_ = 0L;
     toGroupGuid_ = "";
+    toGroupName_ = "";
   }
 
   @java.lang.Override
@@ -51,9 +51,17 @@ private static final long serialVersionUID = 0L;
             }
             break;
           }
-          case 8: {
+          case 10: {
+            com.hwl.imcore.improto.ImUserContent.Builder subBuilder = null;
+            if (toUser_ != null) {
+              subBuilder = toUser_.toBuilder();
+            }
+            toUser_ = input.readMessage(com.hwl.imcore.improto.ImUserContent.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(toUser_);
+              toUser_ = subBuilder.buildPartial();
+            }
 
-            toUserId_ = input.readUInt64();
             break;
           }
           case 18: {
@@ -63,6 +71,12 @@ private static final long serialVersionUID = 0L;
             break;
           }
           case 26: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            toGroupName_ = s;
+            break;
+          }
+          case 34: {
             com.hwl.imcore.improto.ImSystemMessageContent.Builder subBuilder = null;
             if (systemMessageContent_ != null) {
               subBuilder = systemMessageContent_.toBuilder();
@@ -99,13 +113,25 @@ private static final long serialVersionUID = 0L;
             com.hwl.imcore.improto.ImSystemMessageRequest.class, com.hwl.imcore.improto.ImSystemMessageRequest.Builder.class);
   }
 
-  public static final int TOUSERID_FIELD_NUMBER = 1;
-  private long toUserId_;
+  public static final int TOUSER_FIELD_NUMBER = 1;
+  private com.hwl.imcore.improto.ImUserContent toUser_;
   /**
-   * <code>uint64 toUserId = 1;</code>
+   * <code>.ImUserContent toUser = 1;</code>
    */
-  public long getToUserId() {
-    return toUserId_;
+  public boolean hasToUser() {
+    return toUser_ != null;
+  }
+  /**
+   * <code>.ImUserContent toUser = 1;</code>
+   */
+  public com.hwl.imcore.improto.ImUserContent getToUser() {
+    return toUser_ == null ? com.hwl.imcore.improto.ImUserContent.getDefaultInstance() : toUser_;
+  }
+  /**
+   * <code>.ImUserContent toUser = 1;</code>
+   */
+  public com.hwl.imcore.improto.ImUserContentOrBuilder getToUserOrBuilder() {
+    return getToUser();
   }
 
   public static final int TOGROUPGUID_FIELD_NUMBER = 2;
@@ -142,22 +168,56 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int SYSTEMMESSAGECONTENT_FIELD_NUMBER = 3;
+  public static final int TOGROUPNAME_FIELD_NUMBER = 3;
+  private volatile java.lang.Object toGroupName_;
+  /**
+   * <code>string toGroupName = 3;</code>
+   */
+  public java.lang.String getToGroupName() {
+    java.lang.Object ref = toGroupName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      toGroupName_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string toGroupName = 3;</code>
+   */
+  public com.google.protobuf.ByteString
+      getToGroupNameBytes() {
+    java.lang.Object ref = toGroupName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      toGroupName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SYSTEMMESSAGECONTENT_FIELD_NUMBER = 4;
   private com.hwl.imcore.improto.ImSystemMessageContent systemMessageContent_;
   /**
-   * <code>.ImSystemMessageContent systemMessageContent = 3;</code>
+   * <code>.ImSystemMessageContent systemMessageContent = 4;</code>
    */
   public boolean hasSystemMessageContent() {
     return systemMessageContent_ != null;
   }
   /**
-   * <code>.ImSystemMessageContent systemMessageContent = 3;</code>
+   * <code>.ImSystemMessageContent systemMessageContent = 4;</code>
    */
   public com.hwl.imcore.improto.ImSystemMessageContent getSystemMessageContent() {
     return systemMessageContent_ == null ? com.hwl.imcore.improto.ImSystemMessageContent.getDefaultInstance() : systemMessageContent_;
   }
   /**
-   * <code>.ImSystemMessageContent systemMessageContent = 3;</code>
+   * <code>.ImSystemMessageContent systemMessageContent = 4;</code>
    */
   public com.hwl.imcore.improto.ImSystemMessageContentOrBuilder getSystemMessageContentOrBuilder() {
     return getSystemMessageContent();
@@ -175,14 +235,17 @@ private static final long serialVersionUID = 0L;
 
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (toUserId_ != 0L) {
-      output.writeUInt64(1, toUserId_);
+    if (toUser_ != null) {
+      output.writeMessage(1, getToUser());
     }
     if (!getToGroupGuidBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, toGroupGuid_);
     }
+    if (!getToGroupNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, toGroupName_);
+    }
     if (systemMessageContent_ != null) {
-      output.writeMessage(3, getSystemMessageContent());
+      output.writeMessage(4, getSystemMessageContent());
     }
     unknownFields.writeTo(output);
   }
@@ -192,16 +255,19 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (toUserId_ != 0L) {
+    if (toUser_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt64Size(1, toUserId_);
+        .computeMessageSize(1, getToUser());
     }
     if (!getToGroupGuidBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, toGroupGuid_);
     }
+    if (!getToGroupNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, toGroupName_);
+    }
     if (systemMessageContent_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getSystemMessageContent());
+        .computeMessageSize(4, getSystemMessageContent());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -219,10 +285,15 @@ private static final long serialVersionUID = 0L;
     com.hwl.imcore.improto.ImSystemMessageRequest other = (com.hwl.imcore.improto.ImSystemMessageRequest) obj;
 
     boolean result = true;
-    result = result && (getToUserId()
-        == other.getToUserId());
+    result = result && (hasToUser() == other.hasToUser());
+    if (hasToUser()) {
+      result = result && getToUser()
+          .equals(other.getToUser());
+    }
     result = result && getToGroupGuid()
         .equals(other.getToGroupGuid());
+    result = result && getToGroupName()
+        .equals(other.getToGroupName());
     result = result && (hasSystemMessageContent() == other.hasSystemMessageContent());
     if (hasSystemMessageContent()) {
       result = result && getSystemMessageContent()
@@ -239,11 +310,14 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + TOUSERID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getToUserId());
+    if (hasToUser()) {
+      hash = (37 * hash) + TOUSER_FIELD_NUMBER;
+      hash = (53 * hash) + getToUser().hashCode();
+    }
     hash = (37 * hash) + TOGROUPGUID_FIELD_NUMBER;
     hash = (53 * hash) + getToGroupGuid().hashCode();
+    hash = (37 * hash) + TOGROUPNAME_FIELD_NUMBER;
+    hash = (53 * hash) + getToGroupName().hashCode();
     if (hasSystemMessageContent()) {
       hash = (37 * hash) + SYSTEMMESSAGECONTENT_FIELD_NUMBER;
       hash = (53 * hash) + getSystemMessageContent().hashCode();
@@ -377,9 +451,15 @@ private static final long serialVersionUID = 0L;
     }
     public Builder clear() {
       super.clear();
-      toUserId_ = 0L;
-
+      if (toUserBuilder_ == null) {
+        toUser_ = null;
+      } else {
+        toUser_ = null;
+        toUserBuilder_ = null;
+      }
       toGroupGuid_ = "";
+
+      toGroupName_ = "";
 
       if (systemMessageContentBuilder_ == null) {
         systemMessageContent_ = null;
@@ -409,8 +489,13 @@ private static final long serialVersionUID = 0L;
 
     public com.hwl.imcore.improto.ImSystemMessageRequest buildPartial() {
       com.hwl.imcore.improto.ImSystemMessageRequest result = new com.hwl.imcore.improto.ImSystemMessageRequest(this);
-      result.toUserId_ = toUserId_;
+      if (toUserBuilder_ == null) {
+        result.toUser_ = toUser_;
+      } else {
+        result.toUser_ = toUserBuilder_.build();
+      }
       result.toGroupGuid_ = toGroupGuid_;
+      result.toGroupName_ = toGroupName_;
       if (systemMessageContentBuilder_ == null) {
         result.systemMessageContent_ = systemMessageContent_;
       } else {
@@ -457,11 +542,15 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.hwl.imcore.improto.ImSystemMessageRequest other) {
       if (other == com.hwl.imcore.improto.ImSystemMessageRequest.getDefaultInstance()) return this;
-      if (other.getToUserId() != 0L) {
-        setToUserId(other.getToUserId());
+      if (other.hasToUser()) {
+        mergeToUser(other.getToUser());
       }
       if (!other.getToGroupGuid().isEmpty()) {
         toGroupGuid_ = other.toGroupGuid_;
+        onChanged();
+      }
+      if (!other.getToGroupName().isEmpty()) {
+        toGroupName_ = other.toGroupName_;
         onChanged();
       }
       if (other.hasSystemMessageContent()) {
@@ -494,30 +583,121 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long toUserId_ ;
+    private com.hwl.imcore.improto.ImUserContent toUser_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.hwl.imcore.improto.ImUserContent, com.hwl.imcore.improto.ImUserContent.Builder, com.hwl.imcore.improto.ImUserContentOrBuilder> toUserBuilder_;
     /**
-     * <code>uint64 toUserId = 1;</code>
+     * <code>.ImUserContent toUser = 1;</code>
      */
-    public long getToUserId() {
-      return toUserId_;
+    public boolean hasToUser() {
+      return toUserBuilder_ != null || toUser_ != null;
     }
     /**
-     * <code>uint64 toUserId = 1;</code>
+     * <code>.ImUserContent toUser = 1;</code>
      */
-    public Builder setToUserId(long value) {
-      
-      toUserId_ = value;
-      onChanged();
+    public com.hwl.imcore.improto.ImUserContent getToUser() {
+      if (toUserBuilder_ == null) {
+        return toUser_ == null ? com.hwl.imcore.improto.ImUserContent.getDefaultInstance() : toUser_;
+      } else {
+        return toUserBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.ImUserContent toUser = 1;</code>
+     */
+    public Builder setToUser(com.hwl.imcore.improto.ImUserContent value) {
+      if (toUserBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        toUser_ = value;
+        onChanged();
+      } else {
+        toUserBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
-     * <code>uint64 toUserId = 1;</code>
+     * <code>.ImUserContent toUser = 1;</code>
      */
-    public Builder clearToUserId() {
-      
-      toUserId_ = 0L;
-      onChanged();
+    public Builder setToUser(
+        com.hwl.imcore.improto.ImUserContent.Builder builderForValue) {
+      if (toUserBuilder_ == null) {
+        toUser_ = builderForValue.build();
+        onChanged();
+      } else {
+        toUserBuilder_.setMessage(builderForValue.build());
+      }
+
       return this;
+    }
+    /**
+     * <code>.ImUserContent toUser = 1;</code>
+     */
+    public Builder mergeToUser(com.hwl.imcore.improto.ImUserContent value) {
+      if (toUserBuilder_ == null) {
+        if (toUser_ != null) {
+          toUser_ =
+            com.hwl.imcore.improto.ImUserContent.newBuilder(toUser_).mergeFrom(value).buildPartial();
+        } else {
+          toUser_ = value;
+        }
+        onChanged();
+      } else {
+        toUserBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.ImUserContent toUser = 1;</code>
+     */
+    public Builder clearToUser() {
+      if (toUserBuilder_ == null) {
+        toUser_ = null;
+        onChanged();
+      } else {
+        toUser_ = null;
+        toUserBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     * <code>.ImUserContent toUser = 1;</code>
+     */
+    public com.hwl.imcore.improto.ImUserContent.Builder getToUserBuilder() {
+      
+      onChanged();
+      return getToUserFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.ImUserContent toUser = 1;</code>
+     */
+    public com.hwl.imcore.improto.ImUserContentOrBuilder getToUserOrBuilder() {
+      if (toUserBuilder_ != null) {
+        return toUserBuilder_.getMessageOrBuilder();
+      } else {
+        return toUser_ == null ?
+            com.hwl.imcore.improto.ImUserContent.getDefaultInstance() : toUser_;
+      }
+    }
+    /**
+     * <code>.ImUserContent toUser = 1;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.hwl.imcore.improto.ImUserContent, com.hwl.imcore.improto.ImUserContent.Builder, com.hwl.imcore.improto.ImUserContentOrBuilder> 
+        getToUserFieldBuilder() {
+      if (toUserBuilder_ == null) {
+        toUserBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.hwl.imcore.improto.ImUserContent, com.hwl.imcore.improto.ImUserContent.Builder, com.hwl.imcore.improto.ImUserContentOrBuilder>(
+                getToUser(),
+                getParentForChildren(),
+                isClean());
+        toUser_ = null;
+      }
+      return toUserBuilder_;
     }
 
     private java.lang.Object toGroupGuid_ = "";
@@ -589,17 +769,86 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object toGroupName_ = "";
+    /**
+     * <code>string toGroupName = 3;</code>
+     */
+    public java.lang.String getToGroupName() {
+      java.lang.Object ref = toGroupName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        toGroupName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string toGroupName = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getToGroupNameBytes() {
+      java.lang.Object ref = toGroupName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        toGroupName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string toGroupName = 3;</code>
+     */
+    public Builder setToGroupName(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      toGroupName_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string toGroupName = 3;</code>
+     */
+    public Builder clearToGroupName() {
+      
+      toGroupName_ = getDefaultInstance().getToGroupName();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string toGroupName = 3;</code>
+     */
+    public Builder setToGroupNameBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      toGroupName_ = value;
+      onChanged();
+      return this;
+    }
+
     private com.hwl.imcore.improto.ImSystemMessageContent systemMessageContent_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.hwl.imcore.improto.ImSystemMessageContent, com.hwl.imcore.improto.ImSystemMessageContent.Builder, com.hwl.imcore.improto.ImSystemMessageContentOrBuilder> systemMessageContentBuilder_;
     /**
-     * <code>.ImSystemMessageContent systemMessageContent = 3;</code>
+     * <code>.ImSystemMessageContent systemMessageContent = 4;</code>
      */
     public boolean hasSystemMessageContent() {
       return systemMessageContentBuilder_ != null || systemMessageContent_ != null;
     }
     /**
-     * <code>.ImSystemMessageContent systemMessageContent = 3;</code>
+     * <code>.ImSystemMessageContent systemMessageContent = 4;</code>
      */
     public com.hwl.imcore.improto.ImSystemMessageContent getSystemMessageContent() {
       if (systemMessageContentBuilder_ == null) {
@@ -609,7 +858,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.ImSystemMessageContent systemMessageContent = 3;</code>
+     * <code>.ImSystemMessageContent systemMessageContent = 4;</code>
      */
     public Builder setSystemMessageContent(com.hwl.imcore.improto.ImSystemMessageContent value) {
       if (systemMessageContentBuilder_ == null) {
@@ -625,7 +874,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.ImSystemMessageContent systemMessageContent = 3;</code>
+     * <code>.ImSystemMessageContent systemMessageContent = 4;</code>
      */
     public Builder setSystemMessageContent(
         com.hwl.imcore.improto.ImSystemMessageContent.Builder builderForValue) {
@@ -639,7 +888,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.ImSystemMessageContent systemMessageContent = 3;</code>
+     * <code>.ImSystemMessageContent systemMessageContent = 4;</code>
      */
     public Builder mergeSystemMessageContent(com.hwl.imcore.improto.ImSystemMessageContent value) {
       if (systemMessageContentBuilder_ == null) {
@@ -657,7 +906,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.ImSystemMessageContent systemMessageContent = 3;</code>
+     * <code>.ImSystemMessageContent systemMessageContent = 4;</code>
      */
     public Builder clearSystemMessageContent() {
       if (systemMessageContentBuilder_ == null) {
@@ -671,7 +920,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.ImSystemMessageContent systemMessageContent = 3;</code>
+     * <code>.ImSystemMessageContent systemMessageContent = 4;</code>
      */
     public com.hwl.imcore.improto.ImSystemMessageContent.Builder getSystemMessageContentBuilder() {
       
@@ -679,7 +928,7 @@ private static final long serialVersionUID = 0L;
       return getSystemMessageContentFieldBuilder().getBuilder();
     }
     /**
-     * <code>.ImSystemMessageContent systemMessageContent = 3;</code>
+     * <code>.ImSystemMessageContent systemMessageContent = 4;</code>
      */
     public com.hwl.imcore.improto.ImSystemMessageContentOrBuilder getSystemMessageContentOrBuilder() {
       if (systemMessageContentBuilder_ != null) {
@@ -690,7 +939,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.ImSystemMessageContent systemMessageContent = 3;</code>
+     * <code>.ImSystemMessageContent systemMessageContent = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.hwl.imcore.improto.ImSystemMessageContent, com.hwl.imcore.improto.ImSystemMessageContent.Builder, com.hwl.imcore.improto.ImSystemMessageContentOrBuilder> 

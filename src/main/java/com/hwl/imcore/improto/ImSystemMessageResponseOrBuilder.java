@@ -8,9 +8,17 @@ public interface ImSystemMessageResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>uint64 toUserId = 1;</code>
+   * <code>.ImUserContent toUser = 1;</code>
    */
-  long getToUserId();
+  boolean hasToUser();
+  /**
+   * <code>.ImUserContent toUser = 1;</code>
+   */
+  com.hwl.imcore.improto.ImUserContent getToUser();
+  /**
+   * <code>.ImUserContent toUser = 1;</code>
+   */
+  com.hwl.imcore.improto.ImUserContentOrBuilder getToUserOrBuilder();
 
   /**
    * <code>string toGroupGuid = 2;</code>
@@ -23,20 +31,30 @@ public interface ImSystemMessageResponseOrBuilder extends
       getToGroupGuidBytes();
 
   /**
-   * <code>.ImSystemMessageContent systemMessageContent = 3;</code>
+   * <code>string toGroupName = 3;</code>
+   */
+  java.lang.String getToGroupName();
+  /**
+   * <code>string toGroupName = 3;</code>
+   */
+  com.google.protobuf.ByteString
+      getToGroupNameBytes();
+
+  /**
+   * <code>.ImSystemMessageContent systemMessageContent = 4;</code>
    */
   boolean hasSystemMessageContent();
   /**
-   * <code>.ImSystemMessageContent systemMessageContent = 3;</code>
+   * <code>.ImSystemMessageContent systemMessageContent = 4;</code>
    */
   com.hwl.imcore.improto.ImSystemMessageContent getSystemMessageContent();
   /**
-   * <code>.ImSystemMessageContent systemMessageContent = 3;</code>
+   * <code>.ImSystemMessageContent systemMessageContent = 4;</code>
    */
   com.hwl.imcore.improto.ImSystemMessageContentOrBuilder getSystemMessageContentOrBuilder();
 
   /**
-   * <code>uint64 buildTime = 4;</code>
+   * <code>uint64 buildTime = 5;</code>
    */
   long getBuildTime();
 }

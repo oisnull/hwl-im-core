@@ -313,16 +313,18 @@ enum ImSystemMessageType {
 }
 
 message ImSystemMessageRequest {
-    uint64 toUserId = 1;
+    ImUserContent toUser = 1;
     string toGroupGuid = 2;
-    ImSystemMessageContent systemMessageContent = 3;
+    string toGroupName = 3;
+    ImSystemMessageContent systemMessageContent = 4;
 }
 
 message ImSystemMessageResponse {
-    uint64 toUserId = 1;
+    ImUserContent toUser = 1;
     string toGroupGuid = 2;
-    ImSystemMessageContent systemMessageContent = 3;
-    uint64 buildTime = 4;
+    string toGroupName = 3;
+    ImSystemMessageContent systemMessageContent = 4;
+    uint64 buildTime = 5;
 }
 
 message ImSystemMessageContent {
