@@ -8,20 +8,35 @@ public interface ImSystemMessageResponseOrBuilder extends
     com.google.protobuf.MessageOrBuilder {
 
   /**
-   * <code>.ImSystemMessageContent systemMessageContent = 1;</code>
+   * <code>uint64 toUserId = 1;</code>
+   */
+  long getToUserId();
+
+  /**
+   * <code>string toGroupGuid = 2;</code>
+   */
+  java.lang.String getToGroupGuid();
+  /**
+   * <code>string toGroupGuid = 2;</code>
+   */
+  com.google.protobuf.ByteString
+      getToGroupGuidBytes();
+
+  /**
+   * <code>.ImSystemMessageContent systemMessageContent = 3;</code>
    */
   boolean hasSystemMessageContent();
   /**
-   * <code>.ImSystemMessageContent systemMessageContent = 1;</code>
+   * <code>.ImSystemMessageContent systemMessageContent = 3;</code>
    */
   com.hwl.imcore.improto.ImSystemMessageContent getSystemMessageContent();
   /**
-   * <code>.ImSystemMessageContent systemMessageContent = 1;</code>
+   * <code>.ImSystemMessageContent systemMessageContent = 3;</code>
    */
   com.hwl.imcore.improto.ImSystemMessageContentOrBuilder getSystemMessageContentOrBuilder();
 
   /**
-   * <code>uint64 buildTime = 2;</code>
+   * <code>uint64 buildTime = 4;</code>
    */
   long getBuildTime();
 }

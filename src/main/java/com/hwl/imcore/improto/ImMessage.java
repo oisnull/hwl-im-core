@@ -346,10 +346,11 @@ public final class ImMessage {
       "ntId\030\006 \001(\004\022\023\n\013commentCont\030\007 \001(\t\"v\n\026ImSys" +
       "temMessageRequest\022\020\n\010toUserId\030\001 \001(\004\022\023\n\013t" +
       "oGroupGuid\030\002 \001(\t\0225\n\024systemMessageContent" +
-      "\030\003 \001(\0132\027.ImSystemMessageContent\"c\n\027ImSys" +
-      "temMessageResponse\0225\n\024systemMessageConte" +
-      "nt\030\001 \001(\0132\027.ImSystemMessageContent\022\021\n\tbui" +
-      "ldTime\030\002 \001(\004\"s\n\026ImSystemMessageContent\022/" +
+      "\030\003 \001(\0132\027.ImSystemMessageContent\"\212\001\n\027ImSy" +
+      "stemMessageResponse\022\020\n\010toUserId\030\001 \001(\004\022\023\n" +
+      "\013toGroupGuid\030\002 \001(\t\0225\n\024systemMessageConte" +
+      "nt\030\003 \001(\0132\027.ImSystemMessageContent\022\021\n\tbui" +
+      "ldTime\030\004 \001(\004\"s\n\026ImSystemMessageContent\022/" +
       "\n\021systemMessageType\030\001 \001(\0162\024.ImSystemMess" +
       "ageType\022\022\n\ntoUserDesc\030\002 \001(\t\022\024\n\014addGroupD" +
       "esc\030\003 \001(\t*\360\001\n\rImMessageType\022\010\n\004Base\020\000\022\020\n" +
@@ -595,7 +596,7 @@ public final class ImMessage {
     internal_static_ImSystemMessageResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_ImSystemMessageResponse_descriptor,
-        new java.lang.String[] { "SystemMessageContent", "BuildTime", });
+        new java.lang.String[] { "ToUserId", "ToGroupGuid", "SystemMessageContent", "BuildTime", });
     internal_static_ImSystemMessageContent_descriptor =
       getDescriptor().getMessageTypes().get(35);
     internal_static_ImSystemMessageContent_fieldAccessorTable = new

@@ -319,8 +319,10 @@ message ImSystemMessageRequest {
 }
 
 message ImSystemMessageResponse {
-    ImSystemMessageContent systemMessageContent = 1;
-    uint64 buildTime = 2;
+    uint64 toUserId = 1;
+    string toGroupGuid = 2;
+    ImSystemMessageContent systemMessageContent = 3;
+    uint64 buildTime = 4;
 }
 
 message ImSystemMessageContent {

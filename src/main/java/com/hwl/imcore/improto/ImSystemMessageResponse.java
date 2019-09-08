@@ -16,6 +16,8 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private ImSystemMessageResponse() {
+    toUserId_ = 0L;
+    toGroupGuid_ = "";
     buildTime_ = 0L;
   }
 
@@ -50,7 +52,18 @@ private static final long serialVersionUID = 0L;
             }
             break;
           }
-          case 10: {
+          case 8: {
+
+            toUserId_ = input.readUInt64();
+            break;
+          }
+          case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            toGroupGuid_ = s;
+            break;
+          }
+          case 26: {
             com.hwl.imcore.improto.ImSystemMessageContent.Builder subBuilder = null;
             if (systemMessageContent_ != null) {
               subBuilder = systemMessageContent_.toBuilder();
@@ -63,7 +76,7 @@ private static final long serialVersionUID = 0L;
 
             break;
           }
-          case 16: {
+          case 32: {
 
             buildTime_ = input.readUInt64();
             break;
@@ -92,31 +105,74 @@ private static final long serialVersionUID = 0L;
             com.hwl.imcore.improto.ImSystemMessageResponse.class, com.hwl.imcore.improto.ImSystemMessageResponse.Builder.class);
   }
 
-  public static final int SYSTEMMESSAGECONTENT_FIELD_NUMBER = 1;
+  public static final int TOUSERID_FIELD_NUMBER = 1;
+  private long toUserId_;
+  /**
+   * <code>uint64 toUserId = 1;</code>
+   */
+  public long getToUserId() {
+    return toUserId_;
+  }
+
+  public static final int TOGROUPGUID_FIELD_NUMBER = 2;
+  private volatile java.lang.Object toGroupGuid_;
+  /**
+   * <code>string toGroupGuid = 2;</code>
+   */
+  public java.lang.String getToGroupGuid() {
+    java.lang.Object ref = toGroupGuid_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      toGroupGuid_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string toGroupGuid = 2;</code>
+   */
+  public com.google.protobuf.ByteString
+      getToGroupGuidBytes() {
+    java.lang.Object ref = toGroupGuid_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      toGroupGuid_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SYSTEMMESSAGECONTENT_FIELD_NUMBER = 3;
   private com.hwl.imcore.improto.ImSystemMessageContent systemMessageContent_;
   /**
-   * <code>.ImSystemMessageContent systemMessageContent = 1;</code>
+   * <code>.ImSystemMessageContent systemMessageContent = 3;</code>
    */
   public boolean hasSystemMessageContent() {
     return systemMessageContent_ != null;
   }
   /**
-   * <code>.ImSystemMessageContent systemMessageContent = 1;</code>
+   * <code>.ImSystemMessageContent systemMessageContent = 3;</code>
    */
   public com.hwl.imcore.improto.ImSystemMessageContent getSystemMessageContent() {
     return systemMessageContent_ == null ? com.hwl.imcore.improto.ImSystemMessageContent.getDefaultInstance() : systemMessageContent_;
   }
   /**
-   * <code>.ImSystemMessageContent systemMessageContent = 1;</code>
+   * <code>.ImSystemMessageContent systemMessageContent = 3;</code>
    */
   public com.hwl.imcore.improto.ImSystemMessageContentOrBuilder getSystemMessageContentOrBuilder() {
     return getSystemMessageContent();
   }
 
-  public static final int BUILDTIME_FIELD_NUMBER = 2;
+  public static final int BUILDTIME_FIELD_NUMBER = 4;
   private long buildTime_;
   /**
-   * <code>uint64 buildTime = 2;</code>
+   * <code>uint64 buildTime = 4;</code>
    */
   public long getBuildTime() {
     return buildTime_;
@@ -134,11 +190,17 @@ private static final long serialVersionUID = 0L;
 
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (toUserId_ != 0L) {
+      output.writeUInt64(1, toUserId_);
+    }
+    if (!getToGroupGuidBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, toGroupGuid_);
+    }
     if (systemMessageContent_ != null) {
-      output.writeMessage(1, getSystemMessageContent());
+      output.writeMessage(3, getSystemMessageContent());
     }
     if (buildTime_ != 0L) {
-      output.writeUInt64(2, buildTime_);
+      output.writeUInt64(4, buildTime_);
     }
     unknownFields.writeTo(output);
   }
@@ -148,13 +210,20 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (toUserId_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeUInt64Size(1, toUserId_);
+    }
+    if (!getToGroupGuidBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, toGroupGuid_);
+    }
     if (systemMessageContent_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getSystemMessageContent());
+        .computeMessageSize(3, getSystemMessageContent());
     }
     if (buildTime_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt64Size(2, buildTime_);
+        .computeUInt64Size(4, buildTime_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -172,6 +241,10 @@ private static final long serialVersionUID = 0L;
     com.hwl.imcore.improto.ImSystemMessageResponse other = (com.hwl.imcore.improto.ImSystemMessageResponse) obj;
 
     boolean result = true;
+    result = result && (getToUserId()
+        == other.getToUserId());
+    result = result && getToGroupGuid()
+        .equals(other.getToGroupGuid());
     result = result && (hasSystemMessageContent() == other.hasSystemMessageContent());
     if (hasSystemMessageContent()) {
       result = result && getSystemMessageContent()
@@ -190,6 +263,11 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + TOUSERID_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+        getToUserId());
+    hash = (37 * hash) + TOGROUPGUID_FIELD_NUMBER;
+    hash = (53 * hash) + getToGroupGuid().hashCode();
     if (hasSystemMessageContent()) {
       hash = (37 * hash) + SYSTEMMESSAGECONTENT_FIELD_NUMBER;
       hash = (53 * hash) + getSystemMessageContent().hashCode();
@@ -326,6 +404,10 @@ private static final long serialVersionUID = 0L;
     }
     public Builder clear() {
       super.clear();
+      toUserId_ = 0L;
+
+      toGroupGuid_ = "";
+
       if (systemMessageContentBuilder_ == null) {
         systemMessageContent_ = null;
       } else {
@@ -356,6 +438,8 @@ private static final long serialVersionUID = 0L;
 
     public com.hwl.imcore.improto.ImSystemMessageResponse buildPartial() {
       com.hwl.imcore.improto.ImSystemMessageResponse result = new com.hwl.imcore.improto.ImSystemMessageResponse(this);
+      result.toUserId_ = toUserId_;
+      result.toGroupGuid_ = toGroupGuid_;
       if (systemMessageContentBuilder_ == null) {
         result.systemMessageContent_ = systemMessageContent_;
       } else {
@@ -403,6 +487,13 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.hwl.imcore.improto.ImSystemMessageResponse other) {
       if (other == com.hwl.imcore.improto.ImSystemMessageResponse.getDefaultInstance()) return this;
+      if (other.getToUserId() != 0L) {
+        setToUserId(other.getToUserId());
+      }
+      if (!other.getToGroupGuid().isEmpty()) {
+        toGroupGuid_ = other.toGroupGuid_;
+        onChanged();
+      }
       if (other.hasSystemMessageContent()) {
         mergeSystemMessageContent(other.getSystemMessageContent());
       }
@@ -436,17 +527,112 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private long toUserId_ ;
+    /**
+     * <code>uint64 toUserId = 1;</code>
+     */
+    public long getToUserId() {
+      return toUserId_;
+    }
+    /**
+     * <code>uint64 toUserId = 1;</code>
+     */
+    public Builder setToUserId(long value) {
+      
+      toUserId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>uint64 toUserId = 1;</code>
+     */
+    public Builder clearToUserId() {
+      
+      toUserId_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object toGroupGuid_ = "";
+    /**
+     * <code>string toGroupGuid = 2;</code>
+     */
+    public java.lang.String getToGroupGuid() {
+      java.lang.Object ref = toGroupGuid_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        toGroupGuid_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string toGroupGuid = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getToGroupGuidBytes() {
+      java.lang.Object ref = toGroupGuid_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        toGroupGuid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string toGroupGuid = 2;</code>
+     */
+    public Builder setToGroupGuid(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      toGroupGuid_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string toGroupGuid = 2;</code>
+     */
+    public Builder clearToGroupGuid() {
+      
+      toGroupGuid_ = getDefaultInstance().getToGroupGuid();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string toGroupGuid = 2;</code>
+     */
+    public Builder setToGroupGuidBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      toGroupGuid_ = value;
+      onChanged();
+      return this;
+    }
+
     private com.hwl.imcore.improto.ImSystemMessageContent systemMessageContent_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.hwl.imcore.improto.ImSystemMessageContent, com.hwl.imcore.improto.ImSystemMessageContent.Builder, com.hwl.imcore.improto.ImSystemMessageContentOrBuilder> systemMessageContentBuilder_;
     /**
-     * <code>.ImSystemMessageContent systemMessageContent = 1;</code>
+     * <code>.ImSystemMessageContent systemMessageContent = 3;</code>
      */
     public boolean hasSystemMessageContent() {
       return systemMessageContentBuilder_ != null || systemMessageContent_ != null;
     }
     /**
-     * <code>.ImSystemMessageContent systemMessageContent = 1;</code>
+     * <code>.ImSystemMessageContent systemMessageContent = 3;</code>
      */
     public com.hwl.imcore.improto.ImSystemMessageContent getSystemMessageContent() {
       if (systemMessageContentBuilder_ == null) {
@@ -456,7 +642,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.ImSystemMessageContent systemMessageContent = 1;</code>
+     * <code>.ImSystemMessageContent systemMessageContent = 3;</code>
      */
     public Builder setSystemMessageContent(com.hwl.imcore.improto.ImSystemMessageContent value) {
       if (systemMessageContentBuilder_ == null) {
@@ -472,7 +658,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.ImSystemMessageContent systemMessageContent = 1;</code>
+     * <code>.ImSystemMessageContent systemMessageContent = 3;</code>
      */
     public Builder setSystemMessageContent(
         com.hwl.imcore.improto.ImSystemMessageContent.Builder builderForValue) {
@@ -486,7 +672,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.ImSystemMessageContent systemMessageContent = 1;</code>
+     * <code>.ImSystemMessageContent systemMessageContent = 3;</code>
      */
     public Builder mergeSystemMessageContent(com.hwl.imcore.improto.ImSystemMessageContent value) {
       if (systemMessageContentBuilder_ == null) {
@@ -504,7 +690,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.ImSystemMessageContent systemMessageContent = 1;</code>
+     * <code>.ImSystemMessageContent systemMessageContent = 3;</code>
      */
     public Builder clearSystemMessageContent() {
       if (systemMessageContentBuilder_ == null) {
@@ -518,7 +704,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.ImSystemMessageContent systemMessageContent = 1;</code>
+     * <code>.ImSystemMessageContent systemMessageContent = 3;</code>
      */
     public com.hwl.imcore.improto.ImSystemMessageContent.Builder getSystemMessageContentBuilder() {
       
@@ -526,7 +712,7 @@ private static final long serialVersionUID = 0L;
       return getSystemMessageContentFieldBuilder().getBuilder();
     }
     /**
-     * <code>.ImSystemMessageContent systemMessageContent = 1;</code>
+     * <code>.ImSystemMessageContent systemMessageContent = 3;</code>
      */
     public com.hwl.imcore.improto.ImSystemMessageContentOrBuilder getSystemMessageContentOrBuilder() {
       if (systemMessageContentBuilder_ != null) {
@@ -537,7 +723,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.ImSystemMessageContent systemMessageContent = 1;</code>
+     * <code>.ImSystemMessageContent systemMessageContent = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.hwl.imcore.improto.ImSystemMessageContent, com.hwl.imcore.improto.ImSystemMessageContent.Builder, com.hwl.imcore.improto.ImSystemMessageContentOrBuilder> 
@@ -555,13 +741,13 @@ private static final long serialVersionUID = 0L;
 
     private long buildTime_ ;
     /**
-     * <code>uint64 buildTime = 2;</code>
+     * <code>uint64 buildTime = 4;</code>
      */
     public long getBuildTime() {
       return buildTime_;
     }
     /**
-     * <code>uint64 buildTime = 2;</code>
+     * <code>uint64 buildTime = 4;</code>
      */
     public Builder setBuildTime(long value) {
       
@@ -570,7 +756,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>uint64 buildTime = 2;</code>
+     * <code>uint64 buildTime = 4;</code>
      */
     public Builder clearBuildTime() {
       
