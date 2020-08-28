@@ -4,18 +4,18 @@
 package com.hwl.imcore.improto;
 
 /**
- * Protobuf type {@code ImChatGroupMessageResponse}
+ * Protobuf type {@code ImAppVersionResponse}
  */
-public  final class ImChatGroupMessageResponse extends
+public  final class ImAppVersionResponse extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:ImChatGroupMessageResponse)
-    ImChatGroupMessageResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:ImAppVersionResponse)
+    ImAppVersionResponseOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use ImChatGroupMessageResponse.newBuilder() to construct.
-  private ImChatGroupMessageResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ImAppVersionResponse.newBuilder() to construct.
+  private ImAppVersionResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ImChatGroupMessageResponse() {
+  private ImAppVersionResponse() {
     buildTime_ = 0L;
   }
 
@@ -24,7 +24,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private ImChatGroupMessageResponse(
+  private ImAppVersionResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -44,14 +44,14 @@ private static final long serialVersionUID = 0L;
             done = true;
             break;
           case 10: {
-            com.hwl.imcore.improto.ImChatGroupMessageContent.Builder subBuilder = null;
-            if (chatGroupMessageContent_ != null) {
-              subBuilder = chatGroupMessageContent_.toBuilder();
+            com.hwl.imcore.improto.ImAppVersionContent.Builder subBuilder = null;
+            if (appVersionContent_ != null) {
+              subBuilder = appVersionContent_.toBuilder();
             }
-            chatGroupMessageContent_ = input.readMessage(com.hwl.imcore.improto.ImChatGroupMessageContent.parser(), extensionRegistry);
+            appVersionContent_ = input.readMessage(com.hwl.imcore.improto.ImAppVersionContent.parser(), extensionRegistry);
             if (subBuilder != null) {
-              subBuilder.mergeFrom(chatGroupMessageContent_);
-              chatGroupMessageContent_ = subBuilder.buildPartial();
+              subBuilder.mergeFrom(appVersionContent_);
+              appVersionContent_ = subBuilder.buildPartial();
             }
 
             break;
@@ -82,36 +82,36 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.hwl.imcore.improto.ImMessage.internal_static_ImChatGroupMessageResponse_descriptor;
+    return com.hwl.imcore.improto.ImMessage.internal_static_ImAppVersionResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.hwl.imcore.improto.ImMessage.internal_static_ImChatGroupMessageResponse_fieldAccessorTable
+    return com.hwl.imcore.improto.ImMessage.internal_static_ImAppVersionResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.hwl.imcore.improto.ImChatGroupMessageResponse.class, com.hwl.imcore.improto.ImChatGroupMessageResponse.Builder.class);
+            com.hwl.imcore.improto.ImAppVersionResponse.class, com.hwl.imcore.improto.ImAppVersionResponse.Builder.class);
   }
 
-  public static final int CHATGROUPMESSAGECONTENT_FIELD_NUMBER = 1;
-  private com.hwl.imcore.improto.ImChatGroupMessageContent chatGroupMessageContent_;
+  public static final int APPVERSIONCONTENT_FIELD_NUMBER = 1;
+  private com.hwl.imcore.improto.ImAppVersionContent appVersionContent_;
   /**
-   * <code>.ImChatGroupMessageContent chatGroupMessageContent = 1;</code>
+   * <code>.ImAppVersionContent appVersionContent = 1;</code>
    */
-  public boolean hasChatGroupMessageContent() {
-    return chatGroupMessageContent_ != null;
+  public boolean hasAppVersionContent() {
+    return appVersionContent_ != null;
   }
   /**
-   * <code>.ImChatGroupMessageContent chatGroupMessageContent = 1;</code>
+   * <code>.ImAppVersionContent appVersionContent = 1;</code>
    */
-  public com.hwl.imcore.improto.ImChatGroupMessageContent getChatGroupMessageContent() {
-    return chatGroupMessageContent_ == null ? com.hwl.imcore.improto.ImChatGroupMessageContent.getDefaultInstance() : chatGroupMessageContent_;
+  public com.hwl.imcore.improto.ImAppVersionContent getAppVersionContent() {
+    return appVersionContent_ == null ? com.hwl.imcore.improto.ImAppVersionContent.getDefaultInstance() : appVersionContent_;
   }
   /**
-   * <code>.ImChatGroupMessageContent chatGroupMessageContent = 1;</code>
+   * <code>.ImAppVersionContent appVersionContent = 1;</code>
    */
-  public com.hwl.imcore.improto.ImChatGroupMessageContentOrBuilder getChatGroupMessageContentOrBuilder() {
-    return getChatGroupMessageContent();
+  public com.hwl.imcore.improto.ImAppVersionContentOrBuilder getAppVersionContentOrBuilder() {
+    return getAppVersionContent();
   }
 
   public static final int BUILDTIME_FIELD_NUMBER = 2;
@@ -137,8 +137,8 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (chatGroupMessageContent_ != null) {
-      output.writeMessage(1, getChatGroupMessageContent());
+    if (appVersionContent_ != null) {
+      output.writeMessage(1, getAppVersionContent());
     }
     if (buildTime_ != 0L) {
       output.writeUInt64(2, buildTime_);
@@ -152,9 +152,9 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (chatGroupMessageContent_ != null) {
+    if (appVersionContent_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getChatGroupMessageContent());
+        .computeMessageSize(1, getAppVersionContent());
     }
     if (buildTime_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
@@ -170,16 +170,16 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.hwl.imcore.improto.ImChatGroupMessageResponse)) {
+    if (!(obj instanceof com.hwl.imcore.improto.ImAppVersionResponse)) {
       return super.equals(obj);
     }
-    com.hwl.imcore.improto.ImChatGroupMessageResponse other = (com.hwl.imcore.improto.ImChatGroupMessageResponse) obj;
+    com.hwl.imcore.improto.ImAppVersionResponse other = (com.hwl.imcore.improto.ImAppVersionResponse) obj;
 
     boolean result = true;
-    result = result && (hasChatGroupMessageContent() == other.hasChatGroupMessageContent());
-    if (hasChatGroupMessageContent()) {
-      result = result && getChatGroupMessageContent()
-          .equals(other.getChatGroupMessageContent());
+    result = result && (hasAppVersionContent() == other.hasAppVersionContent());
+    if (hasAppVersionContent()) {
+      result = result && getAppVersionContent()
+          .equals(other.getAppVersionContent());
     }
     result = result && (getBuildTime()
         == other.getBuildTime());
@@ -194,9 +194,9 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    if (hasChatGroupMessageContent()) {
-      hash = (37 * hash) + CHATGROUPMESSAGECONTENT_FIELD_NUMBER;
-      hash = (53 * hash) + getChatGroupMessageContent().hashCode();
+    if (hasAppVersionContent()) {
+      hash = (37 * hash) + APPVERSIONCONTENT_FIELD_NUMBER;
+      hash = (53 * hash) + getAppVersionContent().hashCode();
     }
     hash = (37 * hash) + BUILDTIME_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
@@ -206,69 +206,69 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.hwl.imcore.improto.ImChatGroupMessageResponse parseFrom(
+  public static com.hwl.imcore.improto.ImAppVersionResponse parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hwl.imcore.improto.ImChatGroupMessageResponse parseFrom(
+  public static com.hwl.imcore.improto.ImAppVersionResponse parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hwl.imcore.improto.ImChatGroupMessageResponse parseFrom(
+  public static com.hwl.imcore.improto.ImAppVersionResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hwl.imcore.improto.ImChatGroupMessageResponse parseFrom(
+  public static com.hwl.imcore.improto.ImAppVersionResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hwl.imcore.improto.ImChatGroupMessageResponse parseFrom(byte[] data)
+  public static com.hwl.imcore.improto.ImAppVersionResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hwl.imcore.improto.ImChatGroupMessageResponse parseFrom(
+  public static com.hwl.imcore.improto.ImAppVersionResponse parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hwl.imcore.improto.ImChatGroupMessageResponse parseFrom(java.io.InputStream input)
+  public static com.hwl.imcore.improto.ImAppVersionResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.hwl.imcore.improto.ImChatGroupMessageResponse parseFrom(
+  public static com.hwl.imcore.improto.ImAppVersionResponse parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.hwl.imcore.improto.ImChatGroupMessageResponse parseDelimitedFrom(java.io.InputStream input)
+  public static com.hwl.imcore.improto.ImAppVersionResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.hwl.imcore.improto.ImChatGroupMessageResponse parseDelimitedFrom(
+  public static com.hwl.imcore.improto.ImAppVersionResponse parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.hwl.imcore.improto.ImChatGroupMessageResponse parseFrom(
+  public static com.hwl.imcore.improto.ImAppVersionResponse parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.hwl.imcore.improto.ImChatGroupMessageResponse parseFrom(
+  public static com.hwl.imcore.improto.ImAppVersionResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -281,7 +281,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.hwl.imcore.improto.ImChatGroupMessageResponse prototype) {
+  public static Builder newBuilder(com.hwl.imcore.improto.ImAppVersionResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -297,26 +297,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code ImChatGroupMessageResponse}
+   * Protobuf type {@code ImAppVersionResponse}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:ImChatGroupMessageResponse)
-      com.hwl.imcore.improto.ImChatGroupMessageResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:ImAppVersionResponse)
+      com.hwl.imcore.improto.ImAppVersionResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.hwl.imcore.improto.ImMessage.internal_static_ImChatGroupMessageResponse_descriptor;
+      return com.hwl.imcore.improto.ImMessage.internal_static_ImAppVersionResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.hwl.imcore.improto.ImMessage.internal_static_ImChatGroupMessageResponse_fieldAccessorTable
+      return com.hwl.imcore.improto.ImMessage.internal_static_ImAppVersionResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.hwl.imcore.improto.ImChatGroupMessageResponse.class, com.hwl.imcore.improto.ImChatGroupMessageResponse.Builder.class);
+              com.hwl.imcore.improto.ImAppVersionResponse.class, com.hwl.imcore.improto.ImAppVersionResponse.Builder.class);
     }
 
-    // Construct using com.hwl.imcore.improto.ImChatGroupMessageResponse.newBuilder()
+    // Construct using com.hwl.imcore.improto.ImAppVersionResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -334,11 +334,11 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      if (chatGroupMessageContentBuilder_ == null) {
-        chatGroupMessageContent_ = null;
+      if (appVersionContentBuilder_ == null) {
+        appVersionContent_ = null;
       } else {
-        chatGroupMessageContent_ = null;
-        chatGroupMessageContentBuilder_ = null;
+        appVersionContent_ = null;
+        appVersionContentBuilder_ = null;
       }
       buildTime_ = 0L;
 
@@ -348,17 +348,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.hwl.imcore.improto.ImMessage.internal_static_ImChatGroupMessageResponse_descriptor;
+      return com.hwl.imcore.improto.ImMessage.internal_static_ImAppVersionResponse_descriptor;
     }
 
     @java.lang.Override
-    public com.hwl.imcore.improto.ImChatGroupMessageResponse getDefaultInstanceForType() {
-      return com.hwl.imcore.improto.ImChatGroupMessageResponse.getDefaultInstance();
+    public com.hwl.imcore.improto.ImAppVersionResponse getDefaultInstanceForType() {
+      return com.hwl.imcore.improto.ImAppVersionResponse.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.hwl.imcore.improto.ImChatGroupMessageResponse build() {
-      com.hwl.imcore.improto.ImChatGroupMessageResponse result = buildPartial();
+    public com.hwl.imcore.improto.ImAppVersionResponse build() {
+      com.hwl.imcore.improto.ImAppVersionResponse result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -366,12 +366,12 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.hwl.imcore.improto.ImChatGroupMessageResponse buildPartial() {
-      com.hwl.imcore.improto.ImChatGroupMessageResponse result = new com.hwl.imcore.improto.ImChatGroupMessageResponse(this);
-      if (chatGroupMessageContentBuilder_ == null) {
-        result.chatGroupMessageContent_ = chatGroupMessageContent_;
+    public com.hwl.imcore.improto.ImAppVersionResponse buildPartial() {
+      com.hwl.imcore.improto.ImAppVersionResponse result = new com.hwl.imcore.improto.ImAppVersionResponse(this);
+      if (appVersionContentBuilder_ == null) {
+        result.appVersionContent_ = appVersionContent_;
       } else {
-        result.chatGroupMessageContent_ = chatGroupMessageContentBuilder_.build();
+        result.appVersionContent_ = appVersionContentBuilder_.build();
       }
       result.buildTime_ = buildTime_;
       onBuilt();
@@ -412,18 +412,18 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.hwl.imcore.improto.ImChatGroupMessageResponse) {
-        return mergeFrom((com.hwl.imcore.improto.ImChatGroupMessageResponse)other);
+      if (other instanceof com.hwl.imcore.improto.ImAppVersionResponse) {
+        return mergeFrom((com.hwl.imcore.improto.ImAppVersionResponse)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.hwl.imcore.improto.ImChatGroupMessageResponse other) {
-      if (other == com.hwl.imcore.improto.ImChatGroupMessageResponse.getDefaultInstance()) return this;
-      if (other.hasChatGroupMessageContent()) {
-        mergeChatGroupMessageContent(other.getChatGroupMessageContent());
+    public Builder mergeFrom(com.hwl.imcore.improto.ImAppVersionResponse other) {
+      if (other == com.hwl.imcore.improto.ImAppVersionResponse.getDefaultInstance()) return this;
+      if (other.hasAppVersionContent()) {
+        mergeAppVersionContent(other.getAppVersionContent());
       }
       if (other.getBuildTime() != 0L) {
         setBuildTime(other.getBuildTime());
@@ -443,11 +443,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.hwl.imcore.improto.ImChatGroupMessageResponse parsedMessage = null;
+      com.hwl.imcore.improto.ImAppVersionResponse parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.hwl.imcore.improto.ImChatGroupMessageResponse) e.getUnfinishedMessage();
+        parsedMessage = (com.hwl.imcore.improto.ImAppVersionResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -457,121 +457,121 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private com.hwl.imcore.improto.ImChatGroupMessageContent chatGroupMessageContent_ = null;
+    private com.hwl.imcore.improto.ImAppVersionContent appVersionContent_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.hwl.imcore.improto.ImChatGroupMessageContent, com.hwl.imcore.improto.ImChatGroupMessageContent.Builder, com.hwl.imcore.improto.ImChatGroupMessageContentOrBuilder> chatGroupMessageContentBuilder_;
+        com.hwl.imcore.improto.ImAppVersionContent, com.hwl.imcore.improto.ImAppVersionContent.Builder, com.hwl.imcore.improto.ImAppVersionContentOrBuilder> appVersionContentBuilder_;
     /**
-     * <code>.ImChatGroupMessageContent chatGroupMessageContent = 1;</code>
+     * <code>.ImAppVersionContent appVersionContent = 1;</code>
      */
-    public boolean hasChatGroupMessageContent() {
-      return chatGroupMessageContentBuilder_ != null || chatGroupMessageContent_ != null;
+    public boolean hasAppVersionContent() {
+      return appVersionContentBuilder_ != null || appVersionContent_ != null;
     }
     /**
-     * <code>.ImChatGroupMessageContent chatGroupMessageContent = 1;</code>
+     * <code>.ImAppVersionContent appVersionContent = 1;</code>
      */
-    public com.hwl.imcore.improto.ImChatGroupMessageContent getChatGroupMessageContent() {
-      if (chatGroupMessageContentBuilder_ == null) {
-        return chatGroupMessageContent_ == null ? com.hwl.imcore.improto.ImChatGroupMessageContent.getDefaultInstance() : chatGroupMessageContent_;
+    public com.hwl.imcore.improto.ImAppVersionContent getAppVersionContent() {
+      if (appVersionContentBuilder_ == null) {
+        return appVersionContent_ == null ? com.hwl.imcore.improto.ImAppVersionContent.getDefaultInstance() : appVersionContent_;
       } else {
-        return chatGroupMessageContentBuilder_.getMessage();
+        return appVersionContentBuilder_.getMessage();
       }
     }
     /**
-     * <code>.ImChatGroupMessageContent chatGroupMessageContent = 1;</code>
+     * <code>.ImAppVersionContent appVersionContent = 1;</code>
      */
-    public Builder setChatGroupMessageContent(com.hwl.imcore.improto.ImChatGroupMessageContent value) {
-      if (chatGroupMessageContentBuilder_ == null) {
+    public Builder setAppVersionContent(com.hwl.imcore.improto.ImAppVersionContent value) {
+      if (appVersionContentBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        chatGroupMessageContent_ = value;
+        appVersionContent_ = value;
         onChanged();
       } else {
-        chatGroupMessageContentBuilder_.setMessage(value);
+        appVersionContentBuilder_.setMessage(value);
       }
 
       return this;
     }
     /**
-     * <code>.ImChatGroupMessageContent chatGroupMessageContent = 1;</code>
+     * <code>.ImAppVersionContent appVersionContent = 1;</code>
      */
-    public Builder setChatGroupMessageContent(
-        com.hwl.imcore.improto.ImChatGroupMessageContent.Builder builderForValue) {
-      if (chatGroupMessageContentBuilder_ == null) {
-        chatGroupMessageContent_ = builderForValue.build();
+    public Builder setAppVersionContent(
+        com.hwl.imcore.improto.ImAppVersionContent.Builder builderForValue) {
+      if (appVersionContentBuilder_ == null) {
+        appVersionContent_ = builderForValue.build();
         onChanged();
       } else {
-        chatGroupMessageContentBuilder_.setMessage(builderForValue.build());
+        appVersionContentBuilder_.setMessage(builderForValue.build());
       }
 
       return this;
     }
     /**
-     * <code>.ImChatGroupMessageContent chatGroupMessageContent = 1;</code>
+     * <code>.ImAppVersionContent appVersionContent = 1;</code>
      */
-    public Builder mergeChatGroupMessageContent(com.hwl.imcore.improto.ImChatGroupMessageContent value) {
-      if (chatGroupMessageContentBuilder_ == null) {
-        if (chatGroupMessageContent_ != null) {
-          chatGroupMessageContent_ =
-            com.hwl.imcore.improto.ImChatGroupMessageContent.newBuilder(chatGroupMessageContent_).mergeFrom(value).buildPartial();
+    public Builder mergeAppVersionContent(com.hwl.imcore.improto.ImAppVersionContent value) {
+      if (appVersionContentBuilder_ == null) {
+        if (appVersionContent_ != null) {
+          appVersionContent_ =
+            com.hwl.imcore.improto.ImAppVersionContent.newBuilder(appVersionContent_).mergeFrom(value).buildPartial();
         } else {
-          chatGroupMessageContent_ = value;
+          appVersionContent_ = value;
         }
         onChanged();
       } else {
-        chatGroupMessageContentBuilder_.mergeFrom(value);
+        appVersionContentBuilder_.mergeFrom(value);
       }
 
       return this;
     }
     /**
-     * <code>.ImChatGroupMessageContent chatGroupMessageContent = 1;</code>
+     * <code>.ImAppVersionContent appVersionContent = 1;</code>
      */
-    public Builder clearChatGroupMessageContent() {
-      if (chatGroupMessageContentBuilder_ == null) {
-        chatGroupMessageContent_ = null;
+    public Builder clearAppVersionContent() {
+      if (appVersionContentBuilder_ == null) {
+        appVersionContent_ = null;
         onChanged();
       } else {
-        chatGroupMessageContent_ = null;
-        chatGroupMessageContentBuilder_ = null;
+        appVersionContent_ = null;
+        appVersionContentBuilder_ = null;
       }
 
       return this;
     }
     /**
-     * <code>.ImChatGroupMessageContent chatGroupMessageContent = 1;</code>
+     * <code>.ImAppVersionContent appVersionContent = 1;</code>
      */
-    public com.hwl.imcore.improto.ImChatGroupMessageContent.Builder getChatGroupMessageContentBuilder() {
+    public com.hwl.imcore.improto.ImAppVersionContent.Builder getAppVersionContentBuilder() {
       
       onChanged();
-      return getChatGroupMessageContentFieldBuilder().getBuilder();
+      return getAppVersionContentFieldBuilder().getBuilder();
     }
     /**
-     * <code>.ImChatGroupMessageContent chatGroupMessageContent = 1;</code>
+     * <code>.ImAppVersionContent appVersionContent = 1;</code>
      */
-    public com.hwl.imcore.improto.ImChatGroupMessageContentOrBuilder getChatGroupMessageContentOrBuilder() {
-      if (chatGroupMessageContentBuilder_ != null) {
-        return chatGroupMessageContentBuilder_.getMessageOrBuilder();
+    public com.hwl.imcore.improto.ImAppVersionContentOrBuilder getAppVersionContentOrBuilder() {
+      if (appVersionContentBuilder_ != null) {
+        return appVersionContentBuilder_.getMessageOrBuilder();
       } else {
-        return chatGroupMessageContent_ == null ?
-            com.hwl.imcore.improto.ImChatGroupMessageContent.getDefaultInstance() : chatGroupMessageContent_;
+        return appVersionContent_ == null ?
+            com.hwl.imcore.improto.ImAppVersionContent.getDefaultInstance() : appVersionContent_;
       }
     }
     /**
-     * <code>.ImChatGroupMessageContent chatGroupMessageContent = 1;</code>
+     * <code>.ImAppVersionContent appVersionContent = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.hwl.imcore.improto.ImChatGroupMessageContent, com.hwl.imcore.improto.ImChatGroupMessageContent.Builder, com.hwl.imcore.improto.ImChatGroupMessageContentOrBuilder> 
-        getChatGroupMessageContentFieldBuilder() {
-      if (chatGroupMessageContentBuilder_ == null) {
-        chatGroupMessageContentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.hwl.imcore.improto.ImChatGroupMessageContent, com.hwl.imcore.improto.ImChatGroupMessageContent.Builder, com.hwl.imcore.improto.ImChatGroupMessageContentOrBuilder>(
-                getChatGroupMessageContent(),
+        com.hwl.imcore.improto.ImAppVersionContent, com.hwl.imcore.improto.ImAppVersionContent.Builder, com.hwl.imcore.improto.ImAppVersionContentOrBuilder> 
+        getAppVersionContentFieldBuilder() {
+      if (appVersionContentBuilder_ == null) {
+        appVersionContentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.hwl.imcore.improto.ImAppVersionContent, com.hwl.imcore.improto.ImAppVersionContent.Builder, com.hwl.imcore.improto.ImAppVersionContentOrBuilder>(
+                getAppVersionContent(),
                 getParentForChildren(),
                 isClean());
-        chatGroupMessageContent_ = null;
+        appVersionContent_ = null;
       }
-      return chatGroupMessageContentBuilder_;
+      return appVersionContentBuilder_;
     }
 
     private long buildTime_ ;
@@ -612,41 +612,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:ImChatGroupMessageResponse)
+    // @@protoc_insertion_point(builder_scope:ImAppVersionResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:ImChatGroupMessageResponse)
-  private static final com.hwl.imcore.improto.ImChatGroupMessageResponse DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:ImAppVersionResponse)
+  private static final com.hwl.imcore.improto.ImAppVersionResponse DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.hwl.imcore.improto.ImChatGroupMessageResponse();
+    DEFAULT_INSTANCE = new com.hwl.imcore.improto.ImAppVersionResponse();
   }
 
-  public static com.hwl.imcore.improto.ImChatGroupMessageResponse getDefaultInstance() {
+  public static com.hwl.imcore.improto.ImAppVersionResponse getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ImChatGroupMessageResponse>
-      PARSER = new com.google.protobuf.AbstractParser<ImChatGroupMessageResponse>() {
+  private static final com.google.protobuf.Parser<ImAppVersionResponse>
+      PARSER = new com.google.protobuf.AbstractParser<ImAppVersionResponse>() {
     @java.lang.Override
-    public ImChatGroupMessageResponse parsePartialFrom(
+    public ImAppVersionResponse parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ImChatGroupMessageResponse(input, extensionRegistry);
+      return new ImAppVersionResponse(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<ImChatGroupMessageResponse> parser() {
+  public static com.google.protobuf.Parser<ImAppVersionResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ImChatGroupMessageResponse> getParserForType() {
+  public com.google.protobuf.Parser<ImAppVersionResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.hwl.imcore.improto.ImChatGroupMessageResponse getDefaultInstanceForType() {
+  public com.hwl.imcore.improto.ImAppVersionResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

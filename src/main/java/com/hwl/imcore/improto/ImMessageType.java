@@ -60,6 +60,10 @@ public enum ImMessageType
    * <code>SystemMessage = 12;</code>
    */
   SystemMessage(12),
+  /**
+   * <code>AppVersion = 13;</code>
+   */
+  AppVersion(13),
   UNRECOGNIZED(-1),
   ;
 
@@ -115,6 +119,10 @@ public enum ImMessageType
    * <code>SystemMessage = 12;</code>
    */
   public static final int SystemMessage_VALUE = 12;
+  /**
+   * <code>AppVersion = 13;</code>
+   */
+  public static final int AppVersion_VALUE = 13;
 
 
   public final int getNumber() {
@@ -148,6 +156,7 @@ public enum ImMessageType
       case 10: return NearCircleOperate;
       case 11: return CircleOperate;
       case 12: return SystemMessage;
+      case 13: return AppVersion;
       default: return null;
     }
   }

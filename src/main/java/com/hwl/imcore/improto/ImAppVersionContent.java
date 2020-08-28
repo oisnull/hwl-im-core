@@ -4,23 +4,23 @@
 package com.hwl.imcore.improto;
 
 /**
- * Protobuf type {@code ImMessageRequestHead}
+ * Protobuf type {@code ImAppVersionContent}
  */
-public  final class ImMessageRequestHead extends
+public  final class ImAppVersionContent extends
     com.google.protobuf.GeneratedMessageV3 implements
-    // @@protoc_insertion_point(message_implements:ImMessageRequestHead)
-    ImMessageRequestHeadOrBuilder {
+    // @@protoc_insertion_point(message_implements:ImAppVersionContent)
+    ImAppVersionContentOrBuilder {
 private static final long serialVersionUID = 0L;
-  // Use ImMessageRequestHead.newBuilder() to construct.
-  private ImMessageRequestHead(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use ImAppVersionContent.newBuilder() to construct.
+  private ImAppVersionContent(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ImMessageRequestHead() {
-    timestamp_ = 0L;
-    client_ = "";
-    session_ = "";
-    language_ = "";
-    version_ = "";
+  private ImAppVersionContent() {
+    appName_ = "";
+    appVersion_ = "";
+    appSize_ = 0L;
+    downloadUrl_ = "";
+    upgradeLog_ = "";
   }
 
   @java.lang.Override
@@ -28,7 +28,7 @@ private static final long serialVersionUID = 0L;
   getUnknownFields() {
     return this.unknownFields;
   }
-  private ImMessageRequestHead(
+  private ImAppVersionContent(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
@@ -47,33 +47,33 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          case 8: {
+          case 10: {
+            java.lang.String s = input.readStringRequireUtf8();
 
-            timestamp_ = input.readUInt64();
+            appName_ = s;
             break;
           }
           case 18: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            client_ = s;
+            appVersion_ = s;
             break;
           }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 24: {
 
-            session_ = s;
+            appSize_ = input.readUInt64();
             break;
           }
           case 34: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            language_ = s;
+            downloadUrl_ = s;
             break;
           }
           case 42: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            version_ = s;
+            upgradeLog_ = s;
             break;
           }
           default: {
@@ -97,156 +97,156 @@ private static final long serialVersionUID = 0L;
   }
   public static final com.google.protobuf.Descriptors.Descriptor
       getDescriptor() {
-    return com.hwl.imcore.improto.ImMessage.internal_static_ImMessageRequestHead_descriptor;
+    return com.hwl.imcore.improto.ImMessage.internal_static_ImAppVersionContent_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.hwl.imcore.improto.ImMessage.internal_static_ImMessageRequestHead_fieldAccessorTable
+    return com.hwl.imcore.improto.ImMessage.internal_static_ImAppVersionContent_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.hwl.imcore.improto.ImMessageRequestHead.class, com.hwl.imcore.improto.ImMessageRequestHead.Builder.class);
+            com.hwl.imcore.improto.ImAppVersionContent.class, com.hwl.imcore.improto.ImAppVersionContent.Builder.class);
   }
 
-  public static final int TIMESTAMP_FIELD_NUMBER = 1;
-  private long timestamp_;
+  public static final int APPNAME_FIELD_NUMBER = 1;
+  private volatile java.lang.Object appName_;
   /**
-   * <code>uint64 timestamp = 1;</code>
+   * <code>string appName = 1;</code>
    */
-  public long getTimestamp() {
-    return timestamp_;
-  }
-
-  public static final int CLIENT_FIELD_NUMBER = 2;
-  private volatile java.lang.Object client_;
-  /**
-   * <code>string client = 2;</code>
-   */
-  public java.lang.String getClient() {
-    java.lang.Object ref = client_;
+  public java.lang.String getAppName() {
+    java.lang.Object ref = appName_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      client_ = s;
+      appName_ = s;
       return s;
     }
   }
   /**
-   * <code>string client = 2;</code>
+   * <code>string appName = 1;</code>
    */
   public com.google.protobuf.ByteString
-      getClientBytes() {
-    java.lang.Object ref = client_;
+      getAppNameBytes() {
+    java.lang.Object ref = appName_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      client_ = b;
+      appName_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int SESSION_FIELD_NUMBER = 3;
-  private volatile java.lang.Object session_;
+  public static final int APPVERSION_FIELD_NUMBER = 2;
+  private volatile java.lang.Object appVersion_;
   /**
-   * <code>string session = 3;</code>
+   * <code>string appVersion = 2;</code>
    */
-  public java.lang.String getSession() {
-    java.lang.Object ref = session_;
+  public java.lang.String getAppVersion() {
+    java.lang.Object ref = appVersion_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      session_ = s;
+      appVersion_ = s;
       return s;
     }
   }
   /**
-   * <code>string session = 3;</code>
+   * <code>string appVersion = 2;</code>
    */
   public com.google.protobuf.ByteString
-      getSessionBytes() {
-    java.lang.Object ref = session_;
+      getAppVersionBytes() {
+    java.lang.Object ref = appVersion_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      session_ = b;
+      appVersion_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int LANGUAGE_FIELD_NUMBER = 4;
-  private volatile java.lang.Object language_;
+  public static final int APPSIZE_FIELD_NUMBER = 3;
+  private long appSize_;
   /**
-   * <code>string language = 4;</code>
+   * <code>uint64 appSize = 3;</code>
    */
-  public java.lang.String getLanguage() {
-    java.lang.Object ref = language_;
+  public long getAppSize() {
+    return appSize_;
+  }
+
+  public static final int DOWNLOADURL_FIELD_NUMBER = 4;
+  private volatile java.lang.Object downloadUrl_;
+  /**
+   * <code>string downloadUrl = 4;</code>
+   */
+  public java.lang.String getDownloadUrl() {
+    java.lang.Object ref = downloadUrl_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      language_ = s;
+      downloadUrl_ = s;
       return s;
     }
   }
   /**
-   * <code>string language = 4;</code>
+   * <code>string downloadUrl = 4;</code>
    */
   public com.google.protobuf.ByteString
-      getLanguageBytes() {
-    java.lang.Object ref = language_;
+      getDownloadUrlBytes() {
+    java.lang.Object ref = downloadUrl_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      language_ = b;
+      downloadUrl_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int VERSION_FIELD_NUMBER = 5;
-  private volatile java.lang.Object version_;
+  public static final int UPGRADELOG_FIELD_NUMBER = 5;
+  private volatile java.lang.Object upgradeLog_;
   /**
-   * <code>string version = 5;</code>
+   * <code>string upgradeLog = 5;</code>
    */
-  public java.lang.String getVersion() {
-    java.lang.Object ref = version_;
+  public java.lang.String getUpgradeLog() {
+    java.lang.Object ref = upgradeLog_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = 
           (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      version_ = s;
+      upgradeLog_ = s;
       return s;
     }
   }
   /**
-   * <code>string version = 5;</code>
+   * <code>string upgradeLog = 5;</code>
    */
   public com.google.protobuf.ByteString
-      getVersionBytes() {
-    java.lang.Object ref = version_;
+      getUpgradeLogBytes() {
+    java.lang.Object ref = upgradeLog_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b = 
           com.google.protobuf.ByteString.copyFromUtf8(
               (java.lang.String) ref);
-      version_ = b;
+      upgradeLog_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -267,20 +267,20 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
-    if (timestamp_ != 0L) {
-      output.writeUInt64(1, timestamp_);
+    if (!getAppNameBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, appName_);
     }
-    if (!getClientBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, client_);
+    if (!getAppVersionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, appVersion_);
     }
-    if (!getSessionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, session_);
+    if (appSize_ != 0L) {
+      output.writeUInt64(3, appSize_);
     }
-    if (!getLanguageBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, language_);
+    if (!getDownloadUrlBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, downloadUrl_);
     }
-    if (!getVersionBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, version_);
+    if (!getUpgradeLogBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, upgradeLog_);
     }
     unknownFields.writeTo(output);
   }
@@ -291,21 +291,21 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
-    if (timestamp_ != 0L) {
+    if (!getAppNameBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, appName_);
+    }
+    if (!getAppVersionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, appVersion_);
+    }
+    if (appSize_ != 0L) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt64Size(1, timestamp_);
+        .computeUInt64Size(3, appSize_);
     }
-    if (!getClientBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, client_);
+    if (!getDownloadUrlBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, downloadUrl_);
     }
-    if (!getSessionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, session_);
-    }
-    if (!getLanguageBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, language_);
-    }
-    if (!getVersionBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, version_);
+    if (!getUpgradeLogBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, upgradeLog_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -317,22 +317,22 @@ private static final long serialVersionUID = 0L;
     if (obj == this) {
      return true;
     }
-    if (!(obj instanceof com.hwl.imcore.improto.ImMessageRequestHead)) {
+    if (!(obj instanceof com.hwl.imcore.improto.ImAppVersionContent)) {
       return super.equals(obj);
     }
-    com.hwl.imcore.improto.ImMessageRequestHead other = (com.hwl.imcore.improto.ImMessageRequestHead) obj;
+    com.hwl.imcore.improto.ImAppVersionContent other = (com.hwl.imcore.improto.ImAppVersionContent) obj;
 
     boolean result = true;
-    result = result && (getTimestamp()
-        == other.getTimestamp());
-    result = result && getClient()
-        .equals(other.getClient());
-    result = result && getSession()
-        .equals(other.getSession());
-    result = result && getLanguage()
-        .equals(other.getLanguage());
-    result = result && getVersion()
-        .equals(other.getVersion());
+    result = result && getAppName()
+        .equals(other.getAppName());
+    result = result && getAppVersion()
+        .equals(other.getAppVersion());
+    result = result && (getAppSize()
+        == other.getAppSize());
+    result = result && getDownloadUrl()
+        .equals(other.getDownloadUrl());
+    result = result && getUpgradeLog()
+        .equals(other.getUpgradeLog());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -344,85 +344,85 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
+    hash = (37 * hash) + APPNAME_FIELD_NUMBER;
+    hash = (53 * hash) + getAppName().hashCode();
+    hash = (37 * hash) + APPVERSION_FIELD_NUMBER;
+    hash = (53 * hash) + getAppVersion().hashCode();
+    hash = (37 * hash) + APPSIZE_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getTimestamp());
-    hash = (37 * hash) + CLIENT_FIELD_NUMBER;
-    hash = (53 * hash) + getClient().hashCode();
-    hash = (37 * hash) + SESSION_FIELD_NUMBER;
-    hash = (53 * hash) + getSession().hashCode();
-    hash = (37 * hash) + LANGUAGE_FIELD_NUMBER;
-    hash = (53 * hash) + getLanguage().hashCode();
-    hash = (37 * hash) + VERSION_FIELD_NUMBER;
-    hash = (53 * hash) + getVersion().hashCode();
+        getAppSize());
+    hash = (37 * hash) + DOWNLOADURL_FIELD_NUMBER;
+    hash = (53 * hash) + getDownloadUrl().hashCode();
+    hash = (37 * hash) + UPGRADELOG_FIELD_NUMBER;
+    hash = (53 * hash) + getUpgradeLog().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.hwl.imcore.improto.ImMessageRequestHead parseFrom(
+  public static com.hwl.imcore.improto.ImAppVersionContent parseFrom(
       java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hwl.imcore.improto.ImMessageRequestHead parseFrom(
+  public static com.hwl.imcore.improto.ImAppVersionContent parseFrom(
       java.nio.ByteBuffer data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hwl.imcore.improto.ImMessageRequestHead parseFrom(
+  public static com.hwl.imcore.improto.ImAppVersionContent parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hwl.imcore.improto.ImMessageRequestHead parseFrom(
+  public static com.hwl.imcore.improto.ImAppVersionContent parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hwl.imcore.improto.ImMessageRequestHead parseFrom(byte[] data)
+  public static com.hwl.imcore.improto.ImAppVersionContent parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
-  public static com.hwl.imcore.improto.ImMessageRequestHead parseFrom(
+  public static com.hwl.imcore.improto.ImAppVersionContent parseFrom(
       byte[] data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.hwl.imcore.improto.ImMessageRequestHead parseFrom(java.io.InputStream input)
+  public static com.hwl.imcore.improto.ImAppVersionContent parseFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.hwl.imcore.improto.ImMessageRequestHead parseFrom(
+  public static com.hwl.imcore.improto.ImAppVersionContent parseFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.hwl.imcore.improto.ImMessageRequestHead parseDelimitedFrom(java.io.InputStream input)
+  public static com.hwl.imcore.improto.ImAppVersionContent parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input);
   }
-  public static com.hwl.imcore.improto.ImMessageRequestHead parseDelimitedFrom(
+  public static com.hwl.imcore.improto.ImAppVersionContent parseDelimitedFrom(
       java.io.InputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
   }
-  public static com.hwl.imcore.improto.ImMessageRequestHead parseFrom(
+  public static com.hwl.imcore.improto.ImAppVersionContent parseFrom(
       com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3
         .parseWithIOException(PARSER, input);
   }
-  public static com.hwl.imcore.improto.ImMessageRequestHead parseFrom(
+  public static com.hwl.imcore.improto.ImAppVersionContent parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -435,7 +435,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.hwl.imcore.improto.ImMessageRequestHead prototype) {
+  public static Builder newBuilder(com.hwl.imcore.improto.ImAppVersionContent prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
   @java.lang.Override
@@ -451,26 +451,26 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * Protobuf type {@code ImMessageRequestHead}
+   * Protobuf type {@code ImAppVersionContent}
    */
   public static final class Builder extends
       com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-      // @@protoc_insertion_point(builder_implements:ImMessageRequestHead)
-      com.hwl.imcore.improto.ImMessageRequestHeadOrBuilder {
+      // @@protoc_insertion_point(builder_implements:ImAppVersionContent)
+      com.hwl.imcore.improto.ImAppVersionContentOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.hwl.imcore.improto.ImMessage.internal_static_ImMessageRequestHead_descriptor;
+      return com.hwl.imcore.improto.ImMessage.internal_static_ImAppVersionContent_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.hwl.imcore.improto.ImMessage.internal_static_ImMessageRequestHead_fieldAccessorTable
+      return com.hwl.imcore.improto.ImMessage.internal_static_ImAppVersionContent_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.hwl.imcore.improto.ImMessageRequestHead.class, com.hwl.imcore.improto.ImMessageRequestHead.Builder.class);
+              com.hwl.imcore.improto.ImAppVersionContent.class, com.hwl.imcore.improto.ImAppVersionContent.Builder.class);
     }
 
-    // Construct using com.hwl.imcore.improto.ImMessageRequestHead.newBuilder()
+    // Construct using com.hwl.imcore.improto.ImAppVersionContent.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
@@ -488,15 +488,15 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
-      timestamp_ = 0L;
+      appName_ = "";
 
-      client_ = "";
+      appVersion_ = "";
 
-      session_ = "";
+      appSize_ = 0L;
 
-      language_ = "";
+      downloadUrl_ = "";
 
-      version_ = "";
+      upgradeLog_ = "";
 
       return this;
     }
@@ -504,17 +504,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
-      return com.hwl.imcore.improto.ImMessage.internal_static_ImMessageRequestHead_descriptor;
+      return com.hwl.imcore.improto.ImMessage.internal_static_ImAppVersionContent_descriptor;
     }
 
     @java.lang.Override
-    public com.hwl.imcore.improto.ImMessageRequestHead getDefaultInstanceForType() {
-      return com.hwl.imcore.improto.ImMessageRequestHead.getDefaultInstance();
+    public com.hwl.imcore.improto.ImAppVersionContent getDefaultInstanceForType() {
+      return com.hwl.imcore.improto.ImAppVersionContent.getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.hwl.imcore.improto.ImMessageRequestHead build() {
-      com.hwl.imcore.improto.ImMessageRequestHead result = buildPartial();
+    public com.hwl.imcore.improto.ImAppVersionContent build() {
+      com.hwl.imcore.improto.ImAppVersionContent result = buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -522,13 +522,13 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public com.hwl.imcore.improto.ImMessageRequestHead buildPartial() {
-      com.hwl.imcore.improto.ImMessageRequestHead result = new com.hwl.imcore.improto.ImMessageRequestHead(this);
-      result.timestamp_ = timestamp_;
-      result.client_ = client_;
-      result.session_ = session_;
-      result.language_ = language_;
-      result.version_ = version_;
+    public com.hwl.imcore.improto.ImAppVersionContent buildPartial() {
+      com.hwl.imcore.improto.ImAppVersionContent result = new com.hwl.imcore.improto.ImAppVersionContent(this);
+      result.appName_ = appName_;
+      result.appVersion_ = appVersion_;
+      result.appSize_ = appSize_;
+      result.downloadUrl_ = downloadUrl_;
+      result.upgradeLog_ = upgradeLog_;
       onBuilt();
       return result;
     }
@@ -567,33 +567,33 @@ private static final long serialVersionUID = 0L;
     }
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.hwl.imcore.improto.ImMessageRequestHead) {
-        return mergeFrom((com.hwl.imcore.improto.ImMessageRequestHead)other);
+      if (other instanceof com.hwl.imcore.improto.ImAppVersionContent) {
+        return mergeFrom((com.hwl.imcore.improto.ImAppVersionContent)other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.hwl.imcore.improto.ImMessageRequestHead other) {
-      if (other == com.hwl.imcore.improto.ImMessageRequestHead.getDefaultInstance()) return this;
-      if (other.getTimestamp() != 0L) {
-        setTimestamp(other.getTimestamp());
-      }
-      if (!other.getClient().isEmpty()) {
-        client_ = other.client_;
+    public Builder mergeFrom(com.hwl.imcore.improto.ImAppVersionContent other) {
+      if (other == com.hwl.imcore.improto.ImAppVersionContent.getDefaultInstance()) return this;
+      if (!other.getAppName().isEmpty()) {
+        appName_ = other.appName_;
         onChanged();
       }
-      if (!other.getSession().isEmpty()) {
-        session_ = other.session_;
+      if (!other.getAppVersion().isEmpty()) {
+        appVersion_ = other.appVersion_;
         onChanged();
       }
-      if (!other.getLanguage().isEmpty()) {
-        language_ = other.language_;
+      if (other.getAppSize() != 0L) {
+        setAppSize(other.getAppSize());
+      }
+      if (!other.getDownloadUrl().isEmpty()) {
+        downloadUrl_ = other.downloadUrl_;
         onChanged();
       }
-      if (!other.getVersion().isEmpty()) {
-        version_ = other.version_;
+      if (!other.getUpgradeLog().isEmpty()) {
+        upgradeLog_ = other.upgradeLog_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -611,11 +611,11 @@ private static final long serialVersionUID = 0L;
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.hwl.imcore.improto.ImMessageRequestHead parsedMessage = null;
+      com.hwl.imcore.improto.ImAppVersionContent parsedMessage = null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.hwl.imcore.improto.ImMessageRequestHead) e.getUnfinishedMessage();
+        parsedMessage = (com.hwl.imcore.improto.ImAppVersionContent) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -625,304 +625,304 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long timestamp_ ;
+    private java.lang.Object appName_ = "";
     /**
-     * <code>uint64 timestamp = 1;</code>
+     * <code>string appName = 1;</code>
      */
-    public long getTimestamp() {
-      return timestamp_;
-    }
-    /**
-     * <code>uint64 timestamp = 1;</code>
-     */
-    public Builder setTimestamp(long value) {
-      
-      timestamp_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>uint64 timestamp = 1;</code>
-     */
-    public Builder clearTimestamp() {
-      
-      timestamp_ = 0L;
-      onChanged();
-      return this;
-    }
-
-    private java.lang.Object client_ = "";
-    /**
-     * <code>string client = 2;</code>
-     */
-    public java.lang.String getClient() {
-      java.lang.Object ref = client_;
+    public java.lang.String getAppName() {
+      java.lang.Object ref = appName_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        client_ = s;
+        appName_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string client = 2;</code>
+     * <code>string appName = 1;</code>
      */
     public com.google.protobuf.ByteString
-        getClientBytes() {
-      java.lang.Object ref = client_;
+        getAppNameBytes() {
+      java.lang.Object ref = appName_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        client_ = b;
+        appName_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string client = 2;</code>
+     * <code>string appName = 1;</code>
      */
-    public Builder setClient(
+    public Builder setAppName(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      client_ = value;
+      appName_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string client = 2;</code>
+     * <code>string appName = 1;</code>
      */
-    public Builder clearClient() {
+    public Builder clearAppName() {
       
-      client_ = getDefaultInstance().getClient();
+      appName_ = getDefaultInstance().getAppName();
       onChanged();
       return this;
     }
     /**
-     * <code>string client = 2;</code>
+     * <code>string appName = 1;</code>
      */
-    public Builder setClientBytes(
+    public Builder setAppNameBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      client_ = value;
+      appName_ = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object session_ = "";
+    private java.lang.Object appVersion_ = "";
     /**
-     * <code>string session = 3;</code>
+     * <code>string appVersion = 2;</code>
      */
-    public java.lang.String getSession() {
-      java.lang.Object ref = session_;
+    public java.lang.String getAppVersion() {
+      java.lang.Object ref = appVersion_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        session_ = s;
+        appVersion_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string session = 3;</code>
+     * <code>string appVersion = 2;</code>
      */
     public com.google.protobuf.ByteString
-        getSessionBytes() {
-      java.lang.Object ref = session_;
+        getAppVersionBytes() {
+      java.lang.Object ref = appVersion_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        session_ = b;
+        appVersion_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string session = 3;</code>
+     * <code>string appVersion = 2;</code>
      */
-    public Builder setSession(
+    public Builder setAppVersion(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      session_ = value;
+      appVersion_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string session = 3;</code>
+     * <code>string appVersion = 2;</code>
      */
-    public Builder clearSession() {
+    public Builder clearAppVersion() {
       
-      session_ = getDefaultInstance().getSession();
+      appVersion_ = getDefaultInstance().getAppVersion();
       onChanged();
       return this;
     }
     /**
-     * <code>string session = 3;</code>
+     * <code>string appVersion = 2;</code>
      */
-    public Builder setSessionBytes(
+    public Builder setAppVersionBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      session_ = value;
+      appVersion_ = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object language_ = "";
+    private long appSize_ ;
     /**
-     * <code>string language = 4;</code>
+     * <code>uint64 appSize = 3;</code>
      */
-    public java.lang.String getLanguage() {
-      java.lang.Object ref = language_;
+    public long getAppSize() {
+      return appSize_;
+    }
+    /**
+     * <code>uint64 appSize = 3;</code>
+     */
+    public Builder setAppSize(long value) {
+      
+      appSize_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>uint64 appSize = 3;</code>
+     */
+    public Builder clearAppSize() {
+      
+      appSize_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object downloadUrl_ = "";
+    /**
+     * <code>string downloadUrl = 4;</code>
+     */
+    public java.lang.String getDownloadUrl() {
+      java.lang.Object ref = downloadUrl_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        language_ = s;
+        downloadUrl_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string language = 4;</code>
+     * <code>string downloadUrl = 4;</code>
      */
     public com.google.protobuf.ByteString
-        getLanguageBytes() {
-      java.lang.Object ref = language_;
+        getDownloadUrlBytes() {
+      java.lang.Object ref = downloadUrl_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        language_ = b;
+        downloadUrl_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string language = 4;</code>
+     * <code>string downloadUrl = 4;</code>
      */
-    public Builder setLanguage(
+    public Builder setDownloadUrl(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      language_ = value;
+      downloadUrl_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string language = 4;</code>
+     * <code>string downloadUrl = 4;</code>
      */
-    public Builder clearLanguage() {
+    public Builder clearDownloadUrl() {
       
-      language_ = getDefaultInstance().getLanguage();
+      downloadUrl_ = getDefaultInstance().getDownloadUrl();
       onChanged();
       return this;
     }
     /**
-     * <code>string language = 4;</code>
+     * <code>string downloadUrl = 4;</code>
      */
-    public Builder setLanguageBytes(
+    public Builder setDownloadUrlBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      language_ = value;
+      downloadUrl_ = value;
       onChanged();
       return this;
     }
 
-    private java.lang.Object version_ = "";
+    private java.lang.Object upgradeLog_ = "";
     /**
-     * <code>string version = 5;</code>
+     * <code>string upgradeLog = 5;</code>
      */
-    public java.lang.String getVersion() {
-      java.lang.Object ref = version_;
+    public java.lang.String getUpgradeLog() {
+      java.lang.Object ref = upgradeLog_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs =
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        version_ = s;
+        upgradeLog_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
       }
     }
     /**
-     * <code>string version = 5;</code>
+     * <code>string upgradeLog = 5;</code>
      */
     public com.google.protobuf.ByteString
-        getVersionBytes() {
-      java.lang.Object ref = version_;
+        getUpgradeLogBytes() {
+      java.lang.Object ref = upgradeLog_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        version_ = b;
+        upgradeLog_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
     /**
-     * <code>string version = 5;</code>
+     * <code>string upgradeLog = 5;</code>
      */
-    public Builder setVersion(
+    public Builder setUpgradeLog(
         java.lang.String value) {
       if (value == null) {
     throw new NullPointerException();
   }
   
-      version_ = value;
+      upgradeLog_ = value;
       onChanged();
       return this;
     }
     /**
-     * <code>string version = 5;</code>
+     * <code>string upgradeLog = 5;</code>
      */
-    public Builder clearVersion() {
+    public Builder clearUpgradeLog() {
       
-      version_ = getDefaultInstance().getVersion();
+      upgradeLog_ = getDefaultInstance().getUpgradeLog();
       onChanged();
       return this;
     }
     /**
-     * <code>string version = 5;</code>
+     * <code>string upgradeLog = 5;</code>
      */
-    public Builder setVersionBytes(
+    public Builder setUpgradeLogBytes(
         com.google.protobuf.ByteString value) {
       if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
       
-      version_ = value;
+      upgradeLog_ = value;
       onChanged();
       return this;
     }
@@ -939,41 +939,41 @@ private static final long serialVersionUID = 0L;
     }
 
 
-    // @@protoc_insertion_point(builder_scope:ImMessageRequestHead)
+    // @@protoc_insertion_point(builder_scope:ImAppVersionContent)
   }
 
-  // @@protoc_insertion_point(class_scope:ImMessageRequestHead)
-  private static final com.hwl.imcore.improto.ImMessageRequestHead DEFAULT_INSTANCE;
+  // @@protoc_insertion_point(class_scope:ImAppVersionContent)
+  private static final com.hwl.imcore.improto.ImAppVersionContent DEFAULT_INSTANCE;
   static {
-    DEFAULT_INSTANCE = new com.hwl.imcore.improto.ImMessageRequestHead();
+    DEFAULT_INSTANCE = new com.hwl.imcore.improto.ImAppVersionContent();
   }
 
-  public static com.hwl.imcore.improto.ImMessageRequestHead getDefaultInstance() {
+  public static com.hwl.imcore.improto.ImAppVersionContent getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ImMessageRequestHead>
-      PARSER = new com.google.protobuf.AbstractParser<ImMessageRequestHead>() {
+  private static final com.google.protobuf.Parser<ImAppVersionContent>
+      PARSER = new com.google.protobuf.AbstractParser<ImAppVersionContent>() {
     @java.lang.Override
-    public ImMessageRequestHead parsePartialFrom(
+    public ImAppVersionContent parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
-      return new ImMessageRequestHead(input, extensionRegistry);
+      return new ImAppVersionContent(input, extensionRegistry);
     }
   };
 
-  public static com.google.protobuf.Parser<ImMessageRequestHead> parser() {
+  public static com.google.protobuf.Parser<ImAppVersionContent> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<ImMessageRequestHead> getParserForType() {
+  public com.google.protobuf.Parser<ImAppVersionContent> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.hwl.imcore.improto.ImMessageRequestHead getDefaultInstanceForType() {
+  public com.hwl.imcore.improto.ImAppVersionContent getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
 

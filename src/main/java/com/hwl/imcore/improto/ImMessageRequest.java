@@ -46,13 +46,6 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
           case 10: {
             com.hwl.imcore.improto.ImMessageRequestHead.Builder subBuilder = null;
             if (requestHead_ != null) {
@@ -234,6 +227,27 @@ private static final long serialVersionUID = 0L;
             requestBodyCase_ = 13;
             break;
           }
+          case 114: {
+            com.hwl.imcore.improto.ImAppVersionRequest.Builder subBuilder = null;
+            if (requestBodyCase_ == 14) {
+              subBuilder = ((com.hwl.imcore.improto.ImAppVersionRequest) requestBody_).toBuilder();
+            }
+            requestBody_ =
+                input.readMessage(com.hwl.imcore.improto.ImAppVersionRequest.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom((com.hwl.imcore.improto.ImAppVersionRequest) requestBody_);
+              requestBody_ = subBuilder.buildPartial();
+            }
+            requestBodyCase_ = 14;
+            break;
+          }
+          default: {
+            if (!parseUnknownFieldProto3(
+                input, unknownFields, extensionRegistry, tag)) {
+              done = true;
+            }
+            break;
+          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -251,6 +265,7 @@ private static final long serialVersionUID = 0L;
     return com.hwl.imcore.improto.ImMessage.internal_static_ImMessageRequest_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.hwl.imcore.improto.ImMessage.internal_static_ImMessageRequest_fieldAccessorTable
@@ -274,6 +289,7 @@ private static final long serialVersionUID = 0L;
     NEARCIRCLEOPERATEMESSAGEREQUEST(11),
     CIRCLEOPERATEMESSAGEREQUEST(12),
     SYSTEMMESSAGEREQUEST(13),
+    APPVERSIONREQUEST(14),
     REQUESTBODY_NOT_SET(0);
     private final int value;
     private RequestBodyCase(int value) {
@@ -301,6 +317,7 @@ private static final long serialVersionUID = 0L;
         case 11: return NEARCIRCLEOPERATEMESSAGEREQUEST;
         case 12: return CIRCLEOPERATEMESSAGEREQUEST;
         case 13: return SYSTEMMESSAGEREQUEST;
+        case 14: return APPVERSIONREQUEST;
         case 0: return REQUESTBODY_NOT_SET;
         default: return null;
       }
@@ -649,7 +666,34 @@ private static final long serialVersionUID = 0L;
     return com.hwl.imcore.improto.ImSystemMessageRequest.getDefaultInstance();
   }
 
+  public static final int APPVERSIONREQUEST_FIELD_NUMBER = 14;
+  /**
+   * <code>.ImAppVersionRequest appVersionRequest = 14;</code>
+   */
+  public boolean hasAppVersionRequest() {
+    return requestBodyCase_ == 14;
+  }
+  /**
+   * <code>.ImAppVersionRequest appVersionRequest = 14;</code>
+   */
+  public com.hwl.imcore.improto.ImAppVersionRequest getAppVersionRequest() {
+    if (requestBodyCase_ == 14) {
+       return (com.hwl.imcore.improto.ImAppVersionRequest) requestBody_;
+    }
+    return com.hwl.imcore.improto.ImAppVersionRequest.getDefaultInstance();
+  }
+  /**
+   * <code>.ImAppVersionRequest appVersionRequest = 14;</code>
+   */
+  public com.hwl.imcore.improto.ImAppVersionRequestOrBuilder getAppVersionRequestOrBuilder() {
+    if (requestBodyCase_ == 14) {
+       return (com.hwl.imcore.improto.ImAppVersionRequest) requestBody_;
+    }
+    return com.hwl.imcore.improto.ImAppVersionRequest.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -659,6 +703,7 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
+  @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
     if (requestHead_ != null) {
@@ -700,9 +745,13 @@ private static final long serialVersionUID = 0L;
     if (requestBodyCase_ == 13) {
       output.writeMessage(13, (com.hwl.imcore.improto.ImSystemMessageRequest) requestBody_);
     }
+    if (requestBodyCase_ == 14) {
+      output.writeMessage(14, (com.hwl.imcore.improto.ImAppVersionRequest) requestBody_);
+    }
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -759,6 +808,10 @@ private static final long serialVersionUID = 0L;
     if (requestBodyCase_ == 13) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(13, (com.hwl.imcore.improto.ImSystemMessageRequest) requestBody_);
+    }
+    if (requestBodyCase_ == 14) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(14, (com.hwl.imcore.improto.ImAppVersionRequest) requestBody_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -833,6 +886,10 @@ private static final long serialVersionUID = 0L;
         result = result && getSystemMessageRequest()
             .equals(other.getSystemMessageRequest());
         break;
+      case 14:
+        result = result && getAppVersionRequest()
+            .equals(other.getAppVersionRequest());
+        break;
       case 0:
       default:
     }
@@ -899,6 +956,10 @@ private static final long serialVersionUID = 0L;
       case 13:
         hash = (37 * hash) + SYSTEMMESSAGEREQUEST_FIELD_NUMBER;
         hash = (53 * hash) + getSystemMessageRequest().hashCode();
+        break;
+      case 14:
+        hash = (37 * hash) + APPVERSIONREQUEST_FIELD_NUMBER;
+        hash = (53 * hash) + getAppVersionRequest().hashCode();
         break;
       case 0:
       default:
@@ -978,6 +1039,7 @@ private static final long serialVersionUID = 0L;
         .parseWithIOException(PARSER, input, extensionRegistry);
   }
 
+  @java.lang.Override
   public Builder newBuilderForType() { return newBuilder(); }
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
@@ -985,6 +1047,7 @@ private static final long serialVersionUID = 0L;
   public static Builder newBuilder(com.hwl.imcore.improto.ImMessageRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+  @java.lang.Override
   public Builder toBuilder() {
     return this == DEFAULT_INSTANCE
         ? new Builder() : new Builder().mergeFrom(this);
@@ -1012,6 +1075,7 @@ private static final long serialVersionUID = 0L;
       return com.hwl.imcore.improto.ImMessage.internal_static_ImMessageRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.hwl.imcore.improto.ImMessage.internal_static_ImMessageRequest_fieldAccessorTable
@@ -1034,6 +1098,7 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
       }
     }
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (requestHeadBuilder_ == null) {
@@ -1047,15 +1112,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor
         getDescriptorForType() {
       return com.hwl.imcore.improto.ImMessage.internal_static_ImMessageRequest_descriptor;
     }
 
+    @java.lang.Override
     public com.hwl.imcore.improto.ImMessageRequest getDefaultInstanceForType() {
       return com.hwl.imcore.improto.ImMessageRequest.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.hwl.imcore.improto.ImMessageRequest build() {
       com.hwl.imcore.improto.ImMessageRequest result = buildPartial();
       if (!result.isInitialized()) {
@@ -1064,6 +1132,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.hwl.imcore.improto.ImMessageRequest buildPartial() {
       com.hwl.imcore.improto.ImMessageRequest result = new com.hwl.imcore.improto.ImMessageRequest(this);
       if (requestHeadBuilder_ == null) {
@@ -1155,37 +1224,51 @@ private static final long serialVersionUID = 0L;
           result.requestBody_ = systemMessageRequestBuilder_.build();
         }
       }
+      if (requestBodyCase_ == 14) {
+        if (appVersionRequestBuilder_ == null) {
+          result.requestBody_ = requestBody_;
+        } else {
+          result.requestBody_ = appVersionRequestBuilder_.build();
+        }
+      }
       result.requestBodyCase_ = requestBodyCase_;
       onBuilt();
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+    @java.lang.Override
     public Builder setField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
+    @java.lang.Override
     public Builder clearField(
         com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
+    @java.lang.Override
     public Builder clearOneof(
         com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+    @java.lang.Override
     public Builder setRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+    @java.lang.Override
     public Builder addRepeatedField(
         com.google.protobuf.Descriptors.FieldDescriptor field,
         java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.hwl.imcore.improto.ImMessageRequest) {
         return mergeFrom((com.hwl.imcore.improto.ImMessageRequest)other);
@@ -1249,6 +1332,10 @@ private static final long serialVersionUID = 0L;
           mergeSystemMessageRequest(other.getSystemMessageRequest());
           break;
         }
+        case APPVERSIONREQUEST: {
+          mergeAppVersionRequest(other.getAppVersionRequest());
+          break;
+        }
         case REQUESTBODY_NOT_SET: {
           break;
         }
@@ -1258,10 +1345,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3043,11 +3132,149 @@ private static final long serialVersionUID = 0L;
       onChanged();;
       return systemMessageRequestBuilder_;
     }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.hwl.imcore.improto.ImAppVersionRequest, com.hwl.imcore.improto.ImAppVersionRequest.Builder, com.hwl.imcore.improto.ImAppVersionRequestOrBuilder> appVersionRequestBuilder_;
+    /**
+     * <code>.ImAppVersionRequest appVersionRequest = 14;</code>
+     */
+    public boolean hasAppVersionRequest() {
+      return requestBodyCase_ == 14;
+    }
+    /**
+     * <code>.ImAppVersionRequest appVersionRequest = 14;</code>
+     */
+    public com.hwl.imcore.improto.ImAppVersionRequest getAppVersionRequest() {
+      if (appVersionRequestBuilder_ == null) {
+        if (requestBodyCase_ == 14) {
+          return (com.hwl.imcore.improto.ImAppVersionRequest) requestBody_;
+        }
+        return com.hwl.imcore.improto.ImAppVersionRequest.getDefaultInstance();
+      } else {
+        if (requestBodyCase_ == 14) {
+          return appVersionRequestBuilder_.getMessage();
+        }
+        return com.hwl.imcore.improto.ImAppVersionRequest.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.ImAppVersionRequest appVersionRequest = 14;</code>
+     */
+    public Builder setAppVersionRequest(com.hwl.imcore.improto.ImAppVersionRequest value) {
+      if (appVersionRequestBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        requestBody_ = value;
+        onChanged();
+      } else {
+        appVersionRequestBuilder_.setMessage(value);
+      }
+      requestBodyCase_ = 14;
+      return this;
+    }
+    /**
+     * <code>.ImAppVersionRequest appVersionRequest = 14;</code>
+     */
+    public Builder setAppVersionRequest(
+        com.hwl.imcore.improto.ImAppVersionRequest.Builder builderForValue) {
+      if (appVersionRequestBuilder_ == null) {
+        requestBody_ = builderForValue.build();
+        onChanged();
+      } else {
+        appVersionRequestBuilder_.setMessage(builderForValue.build());
+      }
+      requestBodyCase_ = 14;
+      return this;
+    }
+    /**
+     * <code>.ImAppVersionRequest appVersionRequest = 14;</code>
+     */
+    public Builder mergeAppVersionRequest(com.hwl.imcore.improto.ImAppVersionRequest value) {
+      if (appVersionRequestBuilder_ == null) {
+        if (requestBodyCase_ == 14 &&
+            requestBody_ != com.hwl.imcore.improto.ImAppVersionRequest.getDefaultInstance()) {
+          requestBody_ = com.hwl.imcore.improto.ImAppVersionRequest.newBuilder((com.hwl.imcore.improto.ImAppVersionRequest) requestBody_)
+              .mergeFrom(value).buildPartial();
+        } else {
+          requestBody_ = value;
+        }
+        onChanged();
+      } else {
+        if (requestBodyCase_ == 14) {
+          appVersionRequestBuilder_.mergeFrom(value);
+        }
+        appVersionRequestBuilder_.setMessage(value);
+      }
+      requestBodyCase_ = 14;
+      return this;
+    }
+    /**
+     * <code>.ImAppVersionRequest appVersionRequest = 14;</code>
+     */
+    public Builder clearAppVersionRequest() {
+      if (appVersionRequestBuilder_ == null) {
+        if (requestBodyCase_ == 14) {
+          requestBodyCase_ = 0;
+          requestBody_ = null;
+          onChanged();
+        }
+      } else {
+        if (requestBodyCase_ == 14) {
+          requestBodyCase_ = 0;
+          requestBody_ = null;
+        }
+        appVersionRequestBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     * <code>.ImAppVersionRequest appVersionRequest = 14;</code>
+     */
+    public com.hwl.imcore.improto.ImAppVersionRequest.Builder getAppVersionRequestBuilder() {
+      return getAppVersionRequestFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.ImAppVersionRequest appVersionRequest = 14;</code>
+     */
+    public com.hwl.imcore.improto.ImAppVersionRequestOrBuilder getAppVersionRequestOrBuilder() {
+      if ((requestBodyCase_ == 14) && (appVersionRequestBuilder_ != null)) {
+        return appVersionRequestBuilder_.getMessageOrBuilder();
+      } else {
+        if (requestBodyCase_ == 14) {
+          return (com.hwl.imcore.improto.ImAppVersionRequest) requestBody_;
+        }
+        return com.hwl.imcore.improto.ImAppVersionRequest.getDefaultInstance();
+      }
+    }
+    /**
+     * <code>.ImAppVersionRequest appVersionRequest = 14;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.hwl.imcore.improto.ImAppVersionRequest, com.hwl.imcore.improto.ImAppVersionRequest.Builder, com.hwl.imcore.improto.ImAppVersionRequestOrBuilder> 
+        getAppVersionRequestFieldBuilder() {
+      if (appVersionRequestBuilder_ == null) {
+        if (!(requestBodyCase_ == 14)) {
+          requestBody_ = com.hwl.imcore.improto.ImAppVersionRequest.getDefaultInstance();
+        }
+        appVersionRequestBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.hwl.imcore.improto.ImAppVersionRequest, com.hwl.imcore.improto.ImAppVersionRequest.Builder, com.hwl.imcore.improto.ImAppVersionRequestOrBuilder>(
+                (com.hwl.imcore.improto.ImAppVersionRequest) requestBody_,
+                getParentForChildren(),
+                isClean());
+        requestBody_ = null;
+      }
+      requestBodyCase_ = 14;
+      onChanged();;
+      return appVersionRequestBuilder_;
+    }
+    @java.lang.Override
     public final Builder setUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
@@ -3069,6 +3296,7 @@ private static final long serialVersionUID = 0L;
 
   private static final com.google.protobuf.Parser<ImMessageRequest>
       PARSER = new com.google.protobuf.AbstractParser<ImMessageRequest>() {
+    @java.lang.Override
     public ImMessageRequest parsePartialFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3086,6 +3314,7 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.hwl.imcore.improto.ImMessageRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

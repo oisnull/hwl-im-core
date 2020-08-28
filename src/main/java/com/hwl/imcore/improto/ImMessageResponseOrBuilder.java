@@ -150,5 +150,18 @@ public interface ImMessageResponseOrBuilder extends
    */
   com.hwl.imcore.improto.ImSystemMessageResponseOrBuilder getSystemMessageResponseOrBuilder();
 
+  /**
+   * <code>.ImAppVersionResponse appVersionResponse = 12;</code>
+   */
+  boolean hasAppVersionResponse();
+  /**
+   * <code>.ImAppVersionResponse appVersionResponse = 12;</code>
+   */
+  com.hwl.imcore.improto.ImAppVersionResponse getAppVersionResponse();
+  /**
+   * <code>.ImAppVersionResponse appVersionResponse = 12;</code>
+   */
+  com.hwl.imcore.improto.ImAppVersionResponseOrBuilder getAppVersionResponseOrBuilder();
+
   public com.hwl.imcore.improto.ImMessageResponse.ResponseBodyCase getResponseBodyCase();
 }

@@ -176,5 +176,18 @@ public interface ImMessageRequestOrBuilder extends
    */
   com.hwl.imcore.improto.ImSystemMessageRequestOrBuilder getSystemMessageRequestOrBuilder();
 
+  /**
+   * <code>.ImAppVersionRequest appVersionRequest = 14;</code>
+   */
+  boolean hasAppVersionRequest();
+  /**
+   * <code>.ImAppVersionRequest appVersionRequest = 14;</code>
+   */
+  com.hwl.imcore.improto.ImAppVersionRequest getAppVersionRequest();
+  /**
+   * <code>.ImAppVersionRequest appVersionRequest = 14;</code>
+   */
+  com.hwl.imcore.improto.ImAppVersionRequestOrBuilder getAppVersionRequestOrBuilder();
+
   public com.hwl.imcore.improto.ImMessageRequest.RequestBodyCase getRequestBodyCase();
 }
